@@ -1,0 +1,650 @@
+name: Validate Submission
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "content/skills/**"
+      - "content/plugins/**"
+  issues:
+    types: [opened, edited]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  # ──────────────────────────────────────────────────────────────
+  # Job 1: Validate PR-based submissions (YAML files in content/)
+  # ──────────────────────────────────────────────────────────────
+  validate-pr-submission:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    name: Validate PR Skill/Plugin YAML
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            content/skills/**/*.yml
+            content/skills/**/*.yaml
+            content/plugins/**/*.yml
+            content/plugins/**/*.yaml
+
+      - name: Validate YAML format and schema
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Validating YAML files..."
+          ERRORS=""
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "Checking: $file"
+
+            # 1. Validate YAML syntax
+            if ! npx yaml-lint "$file" 2>/dev/null; then
+              if ! python3 -c "import yaml; yaml.safe_load(open('$file'))" 2>/dev/null; then
+                ERRORS="${ERRORS}\n- **${file}**: Invalid YAML syntax"
+                continue
+              fi
+            fi
+
+            # 1.5. Validate YAML schema structure
+            python3 - "$file" <<'SCHEMA_VALIDATOR' || ERRORS="${ERRORS}\n- **${file}**: Schema validation failed"
+          import sys
+          import yaml
+
+          required_fields = ['name', 'display_name', 'description', 'author', 'repository', 'category', 'version', 'license', 'install']
+
+          try:
+              with open(sys.argv[1], 'r') as f:
+                  data = yaml.safe_load(f)
+
+              if not isinstance(data, dict):
+                  print(f"Error: File must contain a YAML object")
+                  sys.exit(1)
+
+              for field in required_fields:
+                  if field not in data:
+                      print(f"Error: Missing required field '{field}'")
+                      sys.exit(1)
+
+              if 'install' in data and not isinstance(data['install'], dict):
+                  print(f"Error: 'install' must be an object with at least one install method")
+                  sys.exit(1)
+
+              sys.exit(0)
+          except Exception as e:
+              print(f"Schema validation error: {e}")
+              sys.exit(1)
+          SCHEMA_VALIDATOR
+
+            # 2. Determine if skill or plugin
+            TYPE="unknown"
+            if echo "$file" | grep -q "content/skills/"; then
+              TYPE="skill"
+            elif echo "$file" | grep -q "content/plugins/"; then
+              TYPE="plugin"
+            fi
+
+            # 3. Check required fields
+            REQUIRED_FIELDS="name display_name description author repository category version license"
+            for field in $REQUIRED_FIELDS; do
+              if ! grep -q "^${field}:" "$file"; then
+                ERRORS="${ERRORS}\n- **${file}**: Missing required field \`${field}\`"
+              fi
+            done
+
+            # 4. Check install section exists with at least one method
+            if ! grep -q "^install:" "$file"; then
+              ERRORS="${ERRORS}\n- **${file}**: Missing \`install\` section (at least one install method required)"
+            fi
+
+            # 5. Validate category is in allowed list
+            CATEGORY=$(grep "^category:" "$file" | sed 's/^category:\s*//' | tr -d '"' | tr -d "'" | xargs)
+            VALID_CATEGORIES="clinical diagnostic administrative research education pharmacology radiology pathology surgery mental-health pediatrics emergency-medicine public-health telemedicine ehr-integration workflow-automation other"
+            if [ -n "$CATEGORY" ] && ! echo "$VALID_CATEGORIES" | tr ' ' '\n' | grep -qx "$CATEGORY"; then
+              ERRORS="${ERRORS}\n- **${file}**: Invalid category \`${CATEGORY}\`. Must be one of: ${VALID_CATEGORIES}"
+            fi
+
+            # 6. Validate version format (semver)
+            VERSION=$(grep "^version:" "$file" | sed 's/^version:\s*//' | tr -d '"' | tr -d "'" | xargs)
+            if [ -n "$VERSION" ] && ! echo "$VERSION" | grep -qE '^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.]+)?(\+[a-zA-Z0-9.]+)?$'; then
+              ERRORS="${ERRORS}\n- **${file}**: Invalid version \`${VERSION}\`. Must follow semantic versioning (e.g., 1.0.0)"
+            fi
+
+            # 7. Validate name format (lowercase, hyphens only)
+            NAME=$(grep "^name:" "$file" | sed 's/^name:\s*//' | tr -d '"' | tr -d "'" | xargs)
+            if [ -n "$NAME" ] && ! echo "$NAME" | grep -qE '^[a-z][a-z0-9-]*[a-z0-9]$'; then
+              ERRORS="${ERRORS}\n- **${file}**: Invalid name \`${NAME}\`. Must be lowercase, alphanumeric with hyphens only"
+            fi
+
+            echo "Validated: $file (type: $TYPE)"
+          done
+
+          if [ -n "$ERRORS" ]; then
+            echo "VALIDATION_ERRORS<<EOF" >> $GITHUB_ENV
+            echo -e "$ERRORS" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "HAS_ERRORS=true" >> $GITHUB_ENV
+          else
+            echo "HAS_ERRORS=false" >> $GITHUB_ENV
+          fi
+
+      - name: Check for duplicate names
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Checking for duplicate skill/plugin names..."
+          DUPES=""
+
+          # Collect all names from existing content
+          ALL_NAMES=$(find content/skills content/plugins -name "*.yml" -o -name "*.yaml" 2>/dev/null | xargs grep "^name:" 2>/dev/null | sed 's/.*name:\s*//' | tr -d '"' | tr -d "'" | xargs -I{} echo {} | sort)
+
+          # Check for duplicates
+          DUPLICATE_NAMES=$(echo "$ALL_NAMES" | sort | uniq -d)
+
+          if [ -n "$DUPLICATE_NAMES" ]; then
+            for dup in $DUPLICATE_NAMES; do
+              DUPES="${DUPES}\n- Duplicate name found: \`${dup}\`"
+            done
+            echo "DUPLICATE_ERRORS<<EOF" >> $GITHUB_ENV
+            echo -e "$DUPES" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "HAS_DUPES=true" >> $GITHUB_ENV
+          else
+            echo "HAS_DUPES=false" >> $GITHUB_ENV
+          fi
+
+      - name: Check repository accessibility
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: |
+          echo "Checking repository URLs..."
+          REPO_ERRORS=""
+
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            REPO_URL=$(grep "^repository:" "$file" | sed 's/^repository:\s*//' | tr -d '"' | tr -d "'" | xargs)
+
+            if [ -n "$REPO_URL" ]; then
+              # Normalize URL
+              if ! echo "$REPO_URL" | grep -q "^https://"; then
+                REPO_URL="https://${REPO_URL}"
+              fi
+
+              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" -L --max-time 10 "$REPO_URL" 2>/dev/null || echo "000")
+
+              if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "301" ] && [ "$HTTP_CODE" != "302" ]; then
+                REPO_ERRORS="${REPO_ERRORS}\n- **${file}**: Repository URL \`${REPO_URL}\` returned HTTP ${HTTP_CODE} (not accessible)"
+              else
+                echo "Repository accessible: $REPO_URL ($HTTP_CODE)"
+              fi
+            fi
+          done
+
+          if [ -n "$REPO_ERRORS" ]; then
+            echo "REPO_ERRORS<<EOF" >> $GITHUB_ENV
+            echo -e "$REPO_ERRORS" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "HAS_REPO_ERRORS=true" >> $GITHUB_ENV
+          else
+            echo "HAS_REPO_ERRORS=false" >> $GITHUB_ENV
+          fi
+
+      - name: Post validation results
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const hasErrors = process.env.HAS_ERRORS === 'true';
+            const hasDupes = process.env.HAS_DUPES === 'true';
+            const hasRepoErrors = process.env.HAS_REPO_ERRORS === 'true';
+
+            let body = '## Submission Validation Results\n\n';
+
+            if (!hasErrors && !hasDupes && !hasRepoErrors) {
+              body += '### All checks passed\n\n';
+              body += '- YAML format: Valid\n';
+              body += '- Required fields: Present\n';
+              body += '- No duplicate names found\n';
+              body += '- Repository URLs: Accessible\n\n';
+              body += '> This submission is ready for **maintainer review** and **physician review**.\n';
+            } else {
+              body += '### Validation failed\n\n';
+
+              if (hasErrors) {
+                body += '#### YAML Validation Errors\n';
+                body += process.env.VALIDATION_ERRORS + '\n\n';
+              }
+
+              if (hasDupes) {
+                body += '#### Duplicate Name Errors\n';
+                body += process.env.DUPLICATE_ERRORS + '\n\n';
+              }
+
+              if (hasRepoErrors) {
+                body += '#### Repository Accessibility Errors\n';
+                body += process.env.REPO_ERRORS + '\n\n';
+              }
+
+              body += '\n> Please fix the errors above and push updated commits.\n';
+            }
+
+            // Find existing bot comment or create new one
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('Submission Validation Results')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }
+
+            // Fail the workflow if there are errors
+            if (hasErrors || hasDupes || hasRepoErrors) {
+              core.setFailed('Submission validation failed. See PR comment for details.');
+            }
+
+  # ──────────────────────────────────────────────────────────
+  # Job 2: Auto-label PRs based on content type and category
+  # ──────────────────────────────────────────────────────────
+  auto-label:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    name: Auto-Label Submission
+    permissions:
+      contents: read
+      pull-requests: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with:
+          files: |
+            content/skills/**
+            content/plugins/**
+
+      - name: Apply labels
+        if: steps.changed-files.outputs.any_changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labelsToAdd = new Set(['submission', 'pending-review']);
+            const files = `${{ steps.changed-files.outputs.all_changed_files }}`.split(' ');
+
+            for (const file of files) {
+              // Determine type
+              if (file.startsWith('content/skills/')) {
+                labelsToAdd.add('skill');
+              } else if (file.startsWith('content/plugins/')) {
+                labelsToAdd.add('plugin');
+              }
+
+              // Read file and extract category
+              try {
+                const fs = require('fs');
+                const content = fs.readFileSync(file, 'utf8');
+                const categoryMatch = content.match(/^category:\s*["']?([a-z-]+)["']?/m);
+                if (categoryMatch) {
+                  labelsToAdd.add(`category:${categoryMatch[1]}`);
+                }
+              } catch (e) {
+                console.log(`Could not read file ${file}: ${e.message}`);
+              }
+            }
+
+            // Ensure labels exist, create if not
+            for (const label of labelsToAdd) {
+              try {
+                await github.rest.issues.getLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label,
+                });
+              } catch (e) {
+                // Label doesn't exist, create it
+                const colors = {
+                  'submission': '0075ca',
+                  'skill': '7057ff',
+                  'plugin': 'e4e669',
+                  'pending-review': 'fbca04',
+                  'physician-review': 'd93f0b',
+                  'approved': '0e8a16',
+                  'rejected': 'b60205',
+                };
+                const categoryColor = '1d76db';
+                const color = colors[label] || (label.startsWith('category:') ? categoryColor : 'ededed');
+
+                await github.rest.issues.createLabel({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  name: label,
+                  color: color,
+                });
+              }
+            }
+
+            // Apply labels
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: [...labelsToAdd],
+            });
+
+            console.log(`Applied labels: ${[...labelsToAdd].join(', ')}`);
+
+  # ──────────────────────────────────────────────────────────
+  # Job 3: Flag for physician review
+  # ──────────────────────────────────────────────────────────
+  flag-physician-review:
+    if: github.event_name == 'pull_request'
+    needs: [validate-pr-submission]
+    runs-on: ubuntu-latest
+    name: Flag for Physician Review
+
+    steps:
+      - name: Add physician review label and request review
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Add the physician-review label
+            try {
+              await github.rest.issues.getLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'physician-review',
+              });
+            } catch (e) {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: 'physician-review',
+                color: 'd93f0b',
+                description: 'Requires review by a physician maintainer',
+              });
+            }
+
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              labels: ['physician-review'],
+            });
+
+            // Post a comment requesting physician review
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: [
+                '## Physician Review Required',
+                '',
+                'This submission has passed automated validation and is now awaiting physician review.',
+                '',
+                '**Physician reviewers**: Please evaluate the following:',
+                '- [ ] Medical accuracy of the described functionality',
+                '- [ ] Appropriateness of safety guardrails',
+                '- [ ] Clinical evidence references (if provided)',
+                '- [ ] Potential for patient harm if misused',
+                '- [ ] Compliance with medical AI best practices',
+                '',
+                'To approve, add the `approved` label and leave a review comment.',
+                'To request changes, leave a review requesting changes.',
+                'To reject, add the `rejected` label with a reason.',
+              ].join('\n'),
+            });
+
+            // Request review from physician team (if team exists)
+            try {
+              await github.rest.pulls.requestReviewers({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: context.issue.number,
+                team_reviewers: ['physician-reviewers'],
+              });
+            } catch (e) {
+              console.log('Could not request team review (team may not exist yet):', e.message);
+            }
+
+  # ──────────────────────────────────────────────────────────────
+  # Job 4: Process issue-based submissions (from web form/template)
+  # ──────────────────────────────────────────────────────────────
+  process-issue-submission:
+    if: >
+      github.event_name == 'issues' &&
+      (contains(github.event.issue.labels.*.name, 'skill') ||
+       contains(github.event.issue.labels.*.name, 'plugin'))
+    runs-on: ubuntu-latest
+    name: Process Issue Submission
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Parse issue and create YAML file
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || '';
+            const labels = issue.labels.map(l => l.name);
+            const isPlugin = labels.includes('plugin');
+            const type = isPlugin ? 'plugin' : 'skill';
+            const contentDir = isPlugin ? 'content/plugins' : 'content/skills';
+
+            // Parse form fields from issue body
+            function parseField(fieldLabel) {
+              // GitHub issue forms use ### Field Name\n\nValue format
+              const regex = new RegExp(`### ${fieldLabel}[^\\n]*\\n+([\\s\\S]*?)(?=###|$)`, 'i');
+              const match = body.match(regex);
+              if (match) {
+                const value = match[1].trim();
+                if (value === '_No response_' || value === 'None') return '';
+                return value;
+              }
+              return '';
+            }
+
+            // Extract fields
+            const name = parseField('Skill Name|Plugin Name').toLowerCase().replace(/[^a-z0-9-]/g, '-').replace(/-+/g, '-').replace(/^-|-$/g, '');
+            const displayName = parseField('Display Name');
+            const description = parseField('Description');
+            const author = parseField('Author');
+            const authorEmail = parseField('Author Email');
+            const category = parseField('Medical Category').toLowerCase();
+            const repository = parseField('Repository URL');
+            const version = parseField('Version') || '1.0.0';
+            const license = parseField('License');
+            const tags = parseField('Tags');
+            const installNpx = parseField('Install Command \\(npx\\)');
+            const installWget = parseField('Install Command \\(wget/curl\\)');
+            const installGit = parseField('Install Command \\(git clone\\)');
+            const installDocker = parseField('Install Command \\(Docker\\)');
+            const clinicalEvidence = parseField('Clinical Evidence');
+            const safetyGuardrails = parseField('Safety Guardrails');
+
+            if (!name || !displayName || !description || !author || !repository) {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                body: '## Submission Incomplete\n\nCould not parse required fields from this issue. Please ensure all required fields are filled out.\n\nMissing: ' +
+                  [!name && 'name', !displayName && 'display_name', !description && 'description', !author && 'author', !repository && 'repository'].filter(Boolean).join(', '),
+              });
+              return;
+            }
+
+            // Build YAML content
+            const today = new Date().toISOString().split('T')[0];
+            let yaml = `# Auto-generated from issue #${issue.number}\n`;
+            yaml += `# ${issue.html_url}\n\n`;
+            yaml += `name: "${name}"\n`;
+            yaml += `display_name: "${displayName}"\n`;
+            yaml += `description: "${description.replace(/"/g, '\\"').replace(/\n/g, ' ')}"\n`;
+            yaml += `type: "${type}"\n`;
+            yaml += `author: "${author}"\n`;
+            if (authorEmail) yaml += `author_email: "${authorEmail}"\n`;
+            yaml += `repository: "${repository}"\n`;
+            yaml += `category: "${category}"\n`;
+            yaml += `version: "${version}"\n`;
+            yaml += `license: "${license}"\n`;
+
+            if (tags) {
+              const tagList = tags.split(',').map(t => t.trim()).filter(Boolean);
+              yaml += `tags:\n`;
+              tagList.forEach(t => { yaml += `  - "${t}"\n`; });
+            }
+
+            yaml += `install:\n`;
+            if (installNpx) yaml += `  npx: "${installNpx}"\n`;
+            if (installWget) yaml += `  wget: "${installWget}"\n`;
+            if (installGit) yaml += `  git: "${installGit}"\n`;
+            if (installDocker) yaml += `  docker: "${installDocker}"\n`;
+            if (!installNpx && !installWget && !installGit && !installDocker) {
+              yaml += `  git: "git clone ${repository}.git"\n`;
+            }
+
+            yaml += `\nverified: false\n`;
+            yaml += `reviewer: "pending"\n`;
+            yaml += `date_submitted: "${today}"\n`;
+            yaml += `date_added: null\n`;
+            yaml += `source_issue: ${issue.number}\n`;
+
+            if (clinicalEvidence) {
+              yaml += `\nclinical_evidence: |\n`;
+              clinicalEvidence.split('\n').forEach(line => {
+                yaml += `  ${line}\n`;
+              });
+            }
+
+            if (safetyGuardrails) {
+              yaml += `\nsafety_guardrails: |\n`;
+              safetyGuardrails.split('\n').forEach(line => {
+                yaml += `  ${line}\n`;
+              });
+            }
+
+            // Write to environment for next step
+            const fs = require('fs');
+            const fileName = `${name}.yml`;
+            const filePath = `${contentDir}/${fileName}`;
+
+            fs.writeFileSync(filePath, yaml);
+            core.exportVariable('YAML_FILE_PATH', filePath);
+            core.exportVariable('YAML_FILE_NAME', fileName);
+            core.exportVariable('SUBMISSION_NAME', name);
+            core.exportVariable('SUBMISSION_TYPE', type);
+            core.exportVariable('ISSUE_NUMBER', issue.number.toString());
+
+            console.log(`Generated YAML at ${filePath}`);
+            console.log(yaml);
+
+      - name: Create branch and PR
+        if: env.YAML_FILE_PATH != ''
+        run: |
+          git config user.name "OMS Bot"
+          git config user.email "oms-bot@users.noreply.github.com"
+
+          BRANCH="submission/${SUBMISSION_TYPE}/${SUBMISSION_NAME}-issue-${ISSUE_NUMBER}"
+          git checkout -b "$BRANCH"
+          git add "$YAML_FILE_PATH"
+          git commit -m "Add ${SUBMISSION_TYPE}: ${SUBMISSION_NAME} (from issue #${ISSUE_NUMBER})"
+          git push origin "$BRANCH"
+
+          echo "BRANCH_NAME=$BRANCH" >> $GITHUB_ENV
+
+      - name: Open PR from issue
+        if: env.BRANCH_NAME != ''
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const type = process.env.SUBMISSION_TYPE;
+            const name = process.env.SUBMISSION_NAME;
+            const branch = process.env.BRANCH_NAME;
+
+            const { data: pr } = await github.rest.pulls.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `[${type.charAt(0).toUpperCase() + type.slice(1)} Submission] ${name}`,
+              head: branch,
+              base: 'main',
+              body: [
+                `## ${type.charAt(0).toUpperCase() + type.slice(1)} Submission: ${name}`,
+                '',
+                `Auto-generated from issue #${issue.number}.`,
+                '',
+                `**Source Issue:** ${issue.html_url}`,
+                '',
+                '### Review Checklist',
+                '- [ ] Automated validation passed',
+                '- [ ] Maintainer review complete',
+                '- [ ] Physician review complete',
+                '- [ ] Approved for listing',
+              ].join('\n'),
+            });
+
+            // Comment on the original issue with PR link
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: [
+                `## PR Created`,
+                '',
+                `A pull request has been automatically created from this submission:`,
+                `**PR:** #${pr.number} - ${pr.html_url}`,
+                '',
+                `The PR will now go through automated validation and physician review.`,
+                `You will be notified when the review is complete.`,
+              ].join('\n'),
+            });
+
+            // Add labels to the PR
+            await github.rest.issues.addLabels({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: pr.number,
+              labels: ['submission', type, 'pending-review', 'from-issue'],
+            });

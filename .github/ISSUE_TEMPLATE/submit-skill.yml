@@ -1,0 +1,265 @@
+name: "Submit a Medical Skill"
+description: "Submit a new medical AI skill for review and listing on Open Medical Skills."
+title: "[Skill Submission]: "
+labels:
+  - "submission"
+  - "skill"
+  - "pending-review"
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Submit a Medical AI Skill
+
+        Thank you for contributing to Open Medical Skills! Please fill out the form below
+        to submit your skill for physician review. All fields marked with an asterisk (*) are required.
+
+        **What happens next?**
+        1. Automated validation checks run on your submission
+        2. A maintainer reviews the submission for completeness
+        3. A physician reviewer evaluates medical accuracy and safety
+        4. If approved, your skill is listed on the marketplace
+
+  - type: input
+    id: skill-name
+    attributes:
+      label: "Skill Name *"
+      description: "A unique, URL-safe identifier for the skill (lowercase, hyphens only)."
+      placeholder: "e.g., clinical-note-summarizer"
+    validations:
+      required: true
+
+  - type: input
+    id: display-name
+    attributes:
+      label: "Display Name *"
+      description: "The human-readable name shown on the marketplace."
+      placeholder: "e.g., Clinical Note Summarizer"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description *"
+      description: "A clear, concise description of what this skill does (2-5 sentences)."
+      placeholder: "Describe the skill's purpose, what problem it solves, and who it's for."
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: "Author / Organization *"
+      description: "Your name, GitHub username, or organization name."
+      placeholder: "e.g., Dr. Jane Smith or @janesmith"
+    validations:
+      required: true
+
+  - type: input
+    id: author-email
+    attributes:
+      label: "Author Email"
+      description: "Contact email for correspondence about this submission (optional)."
+      placeholder: "e.g., jane@example.com"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Medical Category *"
+      description: "Select the primary category for this skill."
+      options:
+        - clinical
+        - diagnostic
+        - administrative
+        - research
+        - education
+        - pharmacology
+        - radiology
+        - pathology
+        - surgery
+        - mental-health
+        - pediatrics
+        - emergency-medicine
+        - public-health
+        - telemedicine
+        - other
+    validations:
+      required: true
+
+  - type: input
+    id: category-other
+    attributes:
+      label: "Other Category (if 'other' selected above)"
+      description: "Specify the category if you selected 'other'."
+      placeholder: "e.g., rehabilitation"
+    validations:
+      required: false
+
+  - type: input
+    id: repository
+    attributes:
+      label: "Repository URL *"
+      description: "The public GitHub repository URL for this skill."
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "Version *"
+      description: "Semantic version of the skill (e.g., 1.0.0)."
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: "License *"
+      description: "The open-source license for this skill."
+      options:
+        - MIT
+        - Apache-2.0
+        - GPL-3.0
+        - BSD-3-Clause
+        - BSD-2-Clause
+        - MPL-2.0
+        - LGPL-3.0
+        - AGPL-3.0
+        - Unlicense
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: "Tags"
+      description: "Comma-separated tags for discoverability (max 10)."
+      placeholder: "e.g., nlp, clinical-notes, summarization, ehr"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-npx
+    attributes:
+      label: "Install Command (npx)"
+      description: "The npx install command, if applicable."
+      placeholder: "npx skills add owner/repo@skill"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-wget
+    attributes:
+      label: "Install Command (wget/curl)"
+      description: "The wget or curl install command, if applicable."
+      placeholder: "wget https://raw.githubusercontent.com/owner/repo/main/install.sh && bash install.sh"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-git
+    attributes:
+      label: "Install Command (git clone)"
+      description: "The git clone install command, if applicable."
+      placeholder: "git clone https://github.com/owner/repo.git"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-docker
+    attributes:
+      label: "Install Command (Docker)"
+      description: "The Docker install command, if applicable."
+      placeholder: "docker pull owner/skill-name:latest"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: ai-platform
+    attributes:
+      label: "Target AI Platform(s)"
+      description: "Which AI platform(s) does this skill work with?"
+      multiple: true
+      options:
+        - OpenAI (GPT)
+        - Anthropic (Claude)
+        - Google (Gemini)
+        - Meta (Llama)
+        - Mistral
+        - Open WebUI
+        - LangChain
+        - LlamaIndex
+        - AutoGen
+        - CrewAI
+        - Platform-agnostic
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: "Requirements / Dependencies"
+      description: "List any prerequisites, dependencies, or system requirements."
+      placeholder: |
+        - Python 3.11+
+        - OpenAI API key
+        - Access to EHR system (optional)
+    validations:
+      required: false
+
+  - type: textarea
+    id: clinical-evidence
+    attributes:
+      label: "Clinical Evidence / Guidelines"
+      description: "Reference any clinical guidelines, research papers, or evidence base this skill is built upon. This helps physician reviewers evaluate medical accuracy."
+      placeholder: |
+        - Based on AHA 2024 Guidelines for CPR
+        - References UpToDate clinical decision support
+        - Validated against MIMIC-IV dataset
+    validations:
+      required: false
+
+  - type: textarea
+    id: safety-guardrails
+    attributes:
+      label: "Safety Guardrails"
+      description: "Describe any safety mechanisms, disclaimers, or guardrails built into this skill."
+      placeholder: |
+        - Includes disclaimer that output is not a substitute for clinical judgment
+        - Flags high-risk recommendations for physician review
+        - Does not store or transmit PHI
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots / Demo"
+      description: "Attach screenshots or provide a link to a demo/video (optional but recommended)."
+      placeholder: "Drag and drop images here, or paste a URL to a demo video."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: "Attestation *"
+      description: "Please confirm the following before submitting."
+      options:
+        - label: "This skill is open source and the repository is publicly accessible."
+          required: true
+        - label: "This skill does not store, transmit, or expose Protected Health Information (PHI) without appropriate safeguards."
+          required: true
+        - label: "I understand that this submission will be reviewed by physician maintainers and may be modified or rejected."
+          required: true
+        - label: "This skill includes appropriate disclaimers that AI output is not a substitute for professional medical judgment."
+          required: true
