@@ -1,0 +1,26 @@
+name: "openemr-integration"
+display_name: "OpenEMR Full EHR Integration"
+description: "Complete MCP plugin for OpenEMR, the world's most popular open-source EHR. Connects any MCP-compatible AI assistant to an OpenEMR instance for patient records, scheduling, e-prescriptions, lab integration, and HIPAA ASC X12 billing support. Works in mock mode for evaluation without OpenEMR installation."
+author: "shruti-jn"
+repository: "https://github.com/shruti-jn/openemr-mcp"
+category: "administrative"
+tags: ["mcp-plugin", "ehr", "openemr", "patient-records", "billing", "e-prescriptions"]
+version: "1.0.0"
+license: "GPL-3.0"
+type: "plugin"
+install:
+  git: "git clone https://github.com/shruti-jn/openemr-mcp"
+evidence_level: "moderate"
+safety_classification: "restricted"
+specialty: ["health-informatics", "primary-care"]
+tools:
+  - "Patient records management"
+  - "Appointment scheduling"
+  - "E-prescription workflow"
+  - "Lab integration and results"
+  - "HIPAA ASC X12 billing support"
+  - "Mock mode for testing (no OpenEMR needed)"
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false
+plugin_type: "mcp-server"

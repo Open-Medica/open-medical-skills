@@ -1,0 +1,220 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Privacy Policy for Open Medical Skills — learn about our data collection practices, cookie usage, medical data handling, and HIPAA compliance stance."
+>
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+      Privacy Policy
+    </h1>
+
+    <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">
+      Last updated: March 2, 2026
+    </p>
+
+    <div class="mt-8 space-y-8 text-slate-600 dark:text-slate-400 leading-7">
+
+      <!-- Introduction -->
+      <section>
+        <p>
+          Open Medical Skills is a project of <strong>IntelMedica.ai</strong>, a company founded by a physician.
+          We are committed to protecting your privacy and being transparent about our data practices. This Privacy
+          Policy explains what data we collect, how we use it, and your rights regarding that data.
+        </p>
+      </section>
+
+      <!-- 1. What We Collect -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">1. What Data We Collect</h2>
+        <p class="mt-4">
+          Open Medical Skills is a <strong>directory website</strong> — we catalog medical AI skills and plugins,
+          but we do not currently require user accounts or collect personally identifiable information (PII).
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.1 Analytics Data (Anonymous)</h3>
+        <p class="mt-2">
+          We may use privacy-focused web analytics (such as Plausible or similar) to understand how visitors use the site.
+          This may include:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Page views and navigation paths</li>
+          <li>Referral sources (where visitors came from)</li>
+          <li>Device type and browser (aggregated, not user-specific)</li>
+          <li>General geographic region (country-level only)</li>
+        </ul>
+        <p class="mt-2">
+          We <strong>do not</strong> use invasive tracking, cross-site cookies, or fingerprinting technologies.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.2 Theme Preference (Local Storage Only)</h3>
+        <p class="mt-2">
+          Your dark mode / light mode preference is stored in your browser's <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm dark:bg-slate-800">localStorage</code>.
+          This data never leaves your device and is not transmitted to our servers.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.3 GitHub Submissions</h3>
+        <p class="mt-2">
+          If you submit a skill or plugin via GitHub pull request or our web form, your submission will be publicly
+          visible on GitHub. Your GitHub username and any information you include in the submission will be part of
+          the public repository history.
+        </p>
+      </section>
+
+      <!-- 2. Patient Data & PHI -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">2. Patient Data and Protected Health Information (PHI)</h2>
+        <p class="mt-4">
+          Open Medical Skills is a <strong>directory of tools</strong> — we do not collect, process, store, or transmit
+          any patient data or Protected Health Information (PHI). We are <strong>not a covered entity</strong> under HIPAA.
+        </p>
+        <p class="mt-4">
+          Each listed skill is an independent third-party project with its own data handling practices.
+          <strong>You are responsible for reviewing the privacy policy, data handling practices, and compliance posture
+          of any skill or plugin before deploying it in a clinical, research, or production environment.</strong>
+        </p>
+      </section>
+
+      <!-- 3. Cookies -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">3. Cookies and Tracking Technologies</h2>
+        <p class="mt-4">
+          We use minimal cookies or similar technologies:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li><strong>Essential cookies</strong>: None currently required for site functionality</li>
+          <li><strong>Analytics cookies</strong>: Only if privacy-focused analytics are enabled (anonymous, no PII)</li>
+          <li><strong>Third-party cookies</strong>: We do not embed third-party trackers, ad networks, or social media pixels</li>
+        </ul>
+        <p class="mt-4">
+          You can disable cookies in your browser settings. Disabling cookies will not affect your ability to browse the directory.
+        </p>
+      </section>
+
+      <!-- 4. Third-Party Services -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">4. Third-Party Services</h2>
+        <p class="mt-4">
+          We rely on the following third-party services:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            <strong>GitHub</strong>: Skill submissions, pull requests, and issue tracking are hosted on GitHub.
+            GitHub's privacy policy applies to any data you submit via GitHub.
+          </li>
+          <li>
+            <strong>Cloudflare Pages (or similar)</strong>: Our website is hosted on a content delivery network (CDN)
+            for performance and security. The CDN provider may log basic request metadata (IP addresses, timestamps)
+            for security and DDoS protection purposes.
+          </li>
+        </ul>
+      </section>
+
+      <!-- 5. Medical Disclaimer -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">5. Medical Disclaimer</h2>
+        <div class="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800/50 dark:bg-amber-950/30">
+          <p class="font-medium text-amber-800 dark:text-amber-200">Important Medical Disclaimer</p>
+          <p class="mt-2 text-sm text-amber-800 dark:text-amber-200">
+            Open Medical Skills is a <strong>directory of tools</strong> — it does not provide medical advice,
+            diagnosis, or treatment. The skills listed here are third-party software tools intended to assist
+            healthcare professionals. They are <strong>not medical devices</strong> (unless explicitly stated and
+            FDA-cleared) and do not replace clinical judgment, medical training, or the physician-patient relationship.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6. HIPAA Disclaimer -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">6. HIPAA Compliance Stance</h2>
+        <p class="mt-4">
+          Open Medical Skills is a <strong>publicly accessible directory website</strong>. We are not a covered entity
+          or business associate under the Health Insurance Portability and Accountability Act (HIPAA). We do not handle
+          PHI or enter into Business Associate Agreements (BAAs).
+        </p>
+        <p class="mt-4">
+          If you deploy a skill from this directory in a HIPAA-regulated environment, you are responsible for ensuring
+          that the skill's author has appropriate compliance measures in place and that you execute any necessary BAAs
+          with the skill provider.
+        </p>
+      </section>
+
+      <!-- 7. Data Retention -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">7. Data Retention</h2>
+        <p class="mt-4">
+          Because we do not collect personal data (beyond anonymous analytics), there is no personal data to retain or delete.
+          If we introduce user accounts or personalized features in the future, we will update this policy accordingly.
+        </p>
+      </section>
+
+      <!-- 8. Your Rights -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">8. Your Privacy Rights</h2>
+        <p class="mt-4">
+          Depending on your location, you may have rights under data protection laws such as GDPR (Europe), CCPA (California),
+          or similar regulations. Because we do not collect PII, these rights are largely not applicable to our current operations.
+        </p>
+        <p class="mt-4">
+          If you have questions about your privacy rights or wish to exercise them, contact us at the address below.
+        </p>
+      </section>
+
+      <!-- 9. Children's Privacy -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">9. Children's Privacy</h2>
+        <p class="mt-4">
+          Open Medical Skills is not directed at children under the age of 13 (or 16 in the EU). We do not knowingly
+          collect personal information from children. If you believe a child has submitted information to us, please
+          contact us immediately.
+        </p>
+      </section>
+
+      <!-- 10. International Users -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">10. International Users</h2>
+        <p class="mt-4">
+          Open Medical Skills is accessible worldwide. If you access the site from outside the United States, you
+          acknowledge that any data you submit (e.g., via GitHub) may be processed and stored in the United States
+          or other jurisdictions where our service providers operate.
+        </p>
+      </section>
+
+      <!-- 11. Changes to This Policy -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">11. Changes to This Privacy Policy</h2>
+        <p class="mt-4">
+          We may update this Privacy Policy from time to time to reflect changes in our practices or legal requirements.
+          Updates will be posted on this page with a new "Last updated" date. Your continued use of the site after
+          changes are posted constitutes acceptance of the updated policy.
+        </p>
+      </section>
+
+      <!-- 12. Contact -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">12. Contact Information</h2>
+        <p class="mt-4">
+          If you have questions or concerns about this Privacy Policy or our data practices, please contact:
+        </p>
+        <div class="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/50">
+          <p class="font-medium text-slate-900 dark:text-white">IntelMedica.ai</p>
+          <p class="mt-1 text-sm">Email: <a href="mailto:privacy@intelmedica.ai" class="text-primary hover:underline">privacy@intelmedica.ai</a></p>
+          <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">
+            (Contact details will be updated with full mailing address and phone number when available)
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer Note -->
+      <section class="mt-12 border-t border-slate-200 pt-8 dark:border-slate-800">
+        <p class="text-sm text-slate-500 dark:text-slate-500">
+          <strong>Open Medical Skills</strong> is a project of <strong>IntelMedica.ai</strong>, founded by a physician.
+          We are committed to transparency, privacy, and building tools that serve the healthcare community responsibly.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

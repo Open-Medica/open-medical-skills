@@ -1,0 +1,18 @@
+name: "developmental-milestone-tracker"
+display_name: "Developmental Milestone Tracker"
+description: "Track and assess pediatric developmental milestones from birth to 5 years. Flags potential delays using CDC developmental surveillance guidelines."
+author: "Open Medical Skills Community"
+repository: "https://github.com/open-medical-skills/developmental-milestones"
+category: "pediatrics"
+tags: ["development", "milestones", "pediatrics", "screening"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  git: "git clone https://github.com/open-medical-skills/developmental-milestones ~/.claude/skills/milestones"
+evidence_level: "high"
+safety_classification: "safe"
+specialty: ["pediatrics", "developmental-pediatrics"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false

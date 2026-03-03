@@ -1,0 +1,18 @@
+name: "medicare-drug-stats"
+display_name: "Medicare Drug Spending & Utilization"
+description: "Access CMS Medicare data including physician services, prescriber data, hospital utilization, and drug spending analysis via Socrata API."
+author: "openpharma-org"
+repository: "https://github.com/openpharma-org/medicare-mcp"
+category: "administrative"
+tags: ["medicare", "cms", "drug-spending", "utilization"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  git: "git clone https://github.com/openpharma-org/medicare-mcp"
+evidence_level: "high"
+safety_classification: "safe"
+specialty: ["health-economics", "policy"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false

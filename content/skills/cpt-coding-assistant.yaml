@@ -1,0 +1,18 @@
+name: "cpt-coding-assistant"
+display_name: "CPT Procedure Code Assistant"
+description: "AI-driven CPT coding validation and suggestion tool. Validates procedure codes against clinical documentation and identifies potential coding gaps."
+author: "Medikode"
+repository: "https://github.com/medikode-ai/mcp-server"
+category: "administrative"
+tags: ["cpt", "medical-coding", "billing", "reimbursement"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  git: "git clone https://github.com/medikode-ai/mcp-server"
+evidence_level: "moderate"
+safety_classification: "caution"
+specialty: ["medical-coding", "billing"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false

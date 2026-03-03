@@ -1,0 +1,274 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const skills = await getCollection("skills");
+const plugins = await getCollection("plugins");
+const totalItems = skills.length + plugins.length;
+const categories = new Set(skills.map((s) => s.data.category)).size;
+const verifiedCount = skills.filter((s) => s.data.verified).length;
+
+const faqs = [
+  {
+    q: "Who maintains Open Medical Skills?",
+    a: "Open Medical Skills is compiled, curated, and maintained by practicing physicians who work at the intersection of clinical medicine and artificial intelligence. Every skill undergoes physician review before it is listed.",
+  },
+  {
+    q: "How are medical AI skills reviewed?",
+    a: "Every submission passes through a rigorous multi-step pipeline: automated schema and format validation, repository accessibility checks, duplicate detection, medical accuracy evaluation, safety classification review, and final physician sign-off. Only skills that meet all criteria are published.",
+  },
+  {
+    q: "Can I submit my own medical AI skill or plugin?",
+    a: 'Absolutely. We welcome contributions from developers, researchers, clinicians, and healthcare organizations. You can submit through a GitHub pull request (for technical users) or through our guided web form (no GitHub account required). Visit the <a href="/submit" class="text-primary hover:underline dark:text-primary-light">Submit page</a> to get started.',
+  },
+  {
+    q: "Is Open Medical Skills free to use?",
+    a: "Yes. Open Medical Skills is entirely open source and free. All listed skills link directly to their source repositories. There are no paywalls, premium tiers, or hidden fees.",
+  },
+  {
+    q: "What about patient data, privacy, and HIPAA?",
+    a: "Open Medical Skills is a directory of tools and skill definitions — it does not collect, process, store, or transmit any patient data. Each listed skill is an independent project with its own data handling practices. Always review a skill's documentation, privacy policy, and compliance posture before deploying it in clinical or research settings.",
+  },
+  {
+    q: "How is this different from general AI skill marketplaces?",
+    a: "General-purpose marketplaces like SkillsMP (10,000+ skills) and skills.sh (~85 curated skills) serve broad audiences but lack the clinical expertise to properly evaluate medical tools. Open Medical Skills is the first marketplace built specifically for healthcare — every listing is classified by medical specialty, evidence level, and safety risk, and reviewed by a physician.",
+  },
+  {
+    q: "What types of tools are listed?",
+    a: "We catalog standalone AI agent skills (single-purpose tools like drug interaction checkers or clinical coding assistants) and comprehensive plugins (multi-capability integrations like FHIR data platforms or EHR analysis suites). Skills span 14 medical categories from diagnosis and treatment to research and administration.",
+  },
+  {
+    q: "Can I trust the safety classifications?",
+    a: "Safety classifications (Safe, Caution, Restricted) are assigned based on a tool's potential impact on clinical decisions. 'Safe' tools are informational or administrative. 'Caution' tools inform but don't make clinical decisions. 'Restricted' tools directly influence patient care and carry the highest review bar. These classifications are reviewed by physicians, not auto-generated.",
+  },
+];
+---
+
+<BaseLayout
+  title="About"
+  description="Open Medical Skills is the first physician-curated marketplace for medical AI skills and plugins. Learn about our mission, review process, and why healthcare needs a dedicated AI skills directory."
+>
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+
+    <!-- Hero / Mission -->
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+      The First Physician-Curated Marketplace for Medical AI
+    </h1>
+    <p class="mt-6 text-lg leading-8 text-slate-600 dark:text-slate-400">
+      Open Medical Skills is a trusted, open-source hub for discovering, sharing, and installing
+      medical AI agent skills and plugins. Built and maintained by physicians, for physicians
+      and the healthcare industry.
+    </p>
+
+    <!-- Stats bar -->
+    <div class="mt-8 grid grid-cols-3 gap-4 rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-800 dark:bg-slate-900/50">
+      <div class="text-center">
+        <p class="text-2xl font-bold text-primary">{totalItems}</p>
+        <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">Skills & Plugins</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-bold text-primary">{categories}</p>
+        <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">Medical Categories</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-bold text-primary">100%</p>
+        <p class="mt-1 text-xs font-medium text-slate-500 dark:text-slate-400">Physician-Reviewed</p>
+      </div>
+    </div>
+
+    <!-- Why This Exists -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Why Healthcare Needs a Dedicated AI Skills Directory</h2>
+      <div class="mt-6 space-y-4 text-slate-600 dark:text-slate-400 leading-7">
+        <p>
+          The adoption of AI agents in healthcare is accelerating. Clinicians, researchers, and health IT
+          teams are building powerful tools — drug interaction checkers, clinical coding assistants, FHIR
+          data connectors, medical imaging analyzers, and clinical trial search engines. But until now,
+          there has been no single place to find these tools with confidence that they've been evaluated
+          by someone who understands clinical medicine.
+        </p>
+        <p>
+          General-purpose AI skill marketplaces serve broad audiences. They catalog thousands of skills
+          across every industry, but they lack the clinical expertise required to evaluate whether a
+          medical tool is accurate, safe, and appropriate for healthcare workflows. A drug dosing
+          calculator that passes a JSON schema check is not the same as one that has been reviewed
+          by a physician for clinical accuracy.
+        </p>
+        <p>
+          <strong>Open Medical Skills fills this gap.</strong> We are the first marketplace where every
+          medical AI skill is classified by medical specialty, graded by evidence level, assigned a safety
+          classification, and reviewed by a practicing physician before publication. We combine the
+          discoverability of modern skill marketplaces with the rigor that healthcare demands.
+        </p>
+      </div>
+    </section>
+
+    <!-- What Makes Us Different -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">What Makes Open Medical Skills Different</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-2">
+        <div class="rounded-lg border border-slate-200 p-6 dark:border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-900/30">
+              <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Physician-Reviewed</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">
+            Every skill is vetted by medical professionals who evaluate clinical accuracy,
+            safety guardrails, and appropriateness for healthcare workflows before it appears
+            in the directory.
+          </p>
+        </div>
+
+        <div class="rounded-lg border border-slate-200 p-6 dark:border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-900/30">
+              <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Evidence-Informed</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">
+            Each skill carries an evidence level rating — from peer-reviewed and guideline-based
+            tools to experimental research utilities — so you know the clinical foundation
+            behind what you're installing.
+          </p>
+        </div>
+
+        <div class="rounded-lg border border-slate-200 p-6 dark:border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-900/30">
+              <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Safety-Classified</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">
+            Skills are classified as Safe, Caution, or Restricted based on their potential
+            impact on clinical decisions. Tools that directly influence patient care carry
+            the highest review bar.
+          </p>
+        </div>
+
+        <div class="rounded-lg border border-slate-200 p-6 dark:border-slate-800">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-primary-50 dark:bg-primary-900/30">
+              <svg class="h-5 w-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+              </svg>
+            </div>
+            <h3 class="font-semibold text-slate-900 dark:text-white">Open Source</h3>
+          </div>
+          <p class="mt-3 text-sm text-slate-600 dark:text-slate-400">
+            The entire directory is transparent and auditable. Every listing links to its
+            source repository. The marketplace itself is open source — you can verify
+            our review process and contribute to it.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Review Process -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">How Skills Are Reviewed</h2>
+      <p class="mt-4 text-slate-600 dark:text-slate-400">
+        Every submission — whether from a GitHub pull request or our web form — goes through a
+        structured review pipeline before it reaches the directory.
+      </p>
+      <div class="mt-8 space-y-8">
+        {[
+          {
+            step: "1",
+            title: "Submission",
+            desc: "A developer, researcher, or clinician submits a skill via GitHub pull request or our guided web form. The form auto-generates a properly formatted PR for non-technical contributors.",
+          },
+          {
+            step: "2",
+            title: "Automated Validation",
+            desc: "Our CI pipeline validates the YAML schema, checks for duplicate entries, verifies repository URL accessibility, confirms proper metadata (category, evidence level, safety classification), and validates the install commands.",
+          },
+          {
+            step: "3",
+            title: "Physician Review",
+            desc: "A physician maintainer evaluates the skill for medical accuracy, appropriateness of safety classification, quality of clinical evidence references, potential for patient harm if misused, and compliance with medical AI best practices.",
+          },
+          {
+            step: "4",
+            title: "Publication",
+            desc: "Approved skills are merged into the main branch and automatically deployed to the live directory. The search index rebuilds, and the skill becomes discoverable within minutes.",
+          },
+        ].map((item) => (
+          <div class="flex gap-5">
+            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-primary text-sm font-bold text-primary">
+              {item.step}
+            </div>
+            <div>
+              <h3 class="text-lg font-medium text-slate-900 dark:text-white">{item.title}</h3>
+              <p class="mt-1 text-sm leading-6 text-slate-600 dark:text-slate-400">{item.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Who We Serve -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Built for the Healthcare Community</h2>
+      <div class="mt-6 space-y-4 text-slate-600 dark:text-slate-400 leading-7">
+        <p>
+          Open Medical Skills serves clinicians looking for trusted AI tools to enhance their practice,
+          health IT teams evaluating AI integrations for their organizations, medical researchers
+          building computational pipelines, and developers creating the next generation of healthcare
+          AI applications.
+        </p>
+        <p>
+          Whether you need a FHIR data connector for your EHR integration, a drug interaction checker
+          for your pharmacy workflow, an ICD-10 coding assistant to streamline documentation, or a
+          clinical trial search tool for your research — you'll find it here, reviewed by someone
+          who understands the clinical context.
+        </p>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="mt-16">
+      <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">Frequently Asked Questions</h2>
+      <dl class="mt-8 divide-y divide-slate-200 dark:divide-slate-800">
+        {faqs.map((faq) => (
+          <div class="py-6 first:pt-0 last:pb-0">
+            <dt class="text-base font-medium text-slate-900 dark:text-white">{faq.q}</dt>
+            <dd class="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">{faq.a}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    <!-- CTA -->
+    <section class="mt-16 rounded-xl border border-primary/20 bg-primary-50 p-8 text-center dark:border-primary/10 dark:bg-primary-900/10">
+      <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Ready to Contribute?</h2>
+      <p class="mt-3 text-slate-600 dark:text-slate-400">
+        Open Medical Skills grows through community contributions. If you've built or discovered
+        a medical AI tool that deserves wider visibility, submit it for physician review.
+      </p>
+      <div class="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+        <a
+          href="/submit"
+          class="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-primary-dark"
+        >
+          Submit a Skill
+        </a>
+        <a
+          href="/skills"
+          class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700"
+        >
+          Browse the Catalog
+        </a>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

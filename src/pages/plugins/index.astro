@@ -1,0 +1,109 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SkillGrid from "../../components/SkillGrid.astro";
+import CategoryFilter from "../../components/CategoryFilter.tsx";
+import SearchBar from "../../components/SearchBar.tsx";
+
+const allPlugins = await getCollection("plugins");
+
+const sorted = [...allPlugins].sort((a, b) =>
+  b.data.date_added.localeCompare(a.data.date_added)
+);
+
+const categoryCounts: Record<string, number> = {};
+for (const plugin of allPlugins) {
+  categoryCounts[plugin.data.category] = (categoryCounts[plugin.data.category] ?? 0) + 1;
+}
+
+const searchData = allPlugins.map((p) => ({
+  id: p.id,
+  display_name: p.data.display_name,
+  description: p.data.description,
+  category: p.data.category,
+  tags: p.data.tags,
+  type: "plugin",
+}));
+---
+
+<BaseLayout title="Plugins" description="Browse physician-curated AI plugins for healthcare.">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-1">
+      <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Plugins</h1>
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        {allPlugins.length} full AI plugins with multi-tool integrations for healthcare
+      </p>
+    </div>
+
+    <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <SearchBar client:load skills={searchData} />
+    </div>
+    <div class="mt-4">
+      <CategoryFilter client:load counts={categoryCounts} total={allPlugins.length} />
+    </div>
+
+    <div class="mt-6" id="skills-grid">
+      <SkillGrid skills={sorted} basePath="/plugins" emptyMessage="No plugins found matching your criteria." />
+    </div>
+  </div>
+
+  <script>
+    function applyFilters() {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category") || "all";
+      const grid = document.getElementById("skills-grid");
+      if (!grid) return;
+      const cards = grid.querySelectorAll<HTMLElement>("a[href]");
+
+      const categoryLabels: Record<string, string> = {
+        diagnosis: "diagnosis",
+        treatment: "treatment",
+        "lab & imaging": "lab-imaging",
+        pharmacy: "pharmacy",
+        emergency: "emergency",
+        surgery: "surgery",
+        nursing: "nursing",
+        pediatrics: "pediatrics",
+        "mental health": "mental-health",
+        "public health": "public-health",
+        research: "research",
+        education: "education",
+        administrative: "administrative",
+        "clinical research": "clinical-research-summarizing",
+      };
+
+      cards.forEach((card) => {
+        const badge = card.querySelector("span[class*='rounded-full']");
+        const cardCategory = badge?.textContent?.trim().toLowerCase() ?? "";
+        let show = true;
+        if (category !== "all") {
+          const matchedSlug = categoryLabels[cardCategory];
+          show = matchedSlug === category;
+        }
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    window.addEventListener("category-change", () => {
+      setTimeout(applyFilters, 0);
+    });
+
+    window.addEventListener("search-change", ((e: CustomEvent) => {
+      const { query, matchedIds } = e.detail;
+      const grid = document.getElementById("skills-grid");
+      if (!grid) return;
+      const cards = grid.querySelectorAll<HTMLAnchorElement>("a[href]");
+
+      if (!query) {
+        applyFilters();
+        return;
+      }
+
+      cards.forEach((card) => {
+        const href = card.getAttribute("href") ?? "";
+        const slug = href.split("/").pop() ?? "";
+        card.style.display = matchedIds.includes(slug) ? "" : "none";
+      });
+    }) as EventListener);
+  </script>
+</BaseLayout>

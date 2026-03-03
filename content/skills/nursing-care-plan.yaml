@@ -1,0 +1,18 @@
+name: "nursing-care-plan"
+display_name: "Nursing Care Plan Generator"
+description: "Generate evidence-based nursing care plans with NANDA-I diagnoses, NOC outcomes, and NIC interventions. Supports individualized patient care planning."
+author: "Open Medical Skills Community"
+repository: "https://github.com/open-medical-skills/nursing-care-plans"
+category: "nursing"
+tags: ["nursing-care-plans", "nanda", "noc", "nic"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  git: "git clone https://github.com/open-medical-skills/nursing-care-plans ~/.claude/skills/care-plans"
+evidence_level: "moderate"
+safety_classification: "caution"
+specialty: ["nursing"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false

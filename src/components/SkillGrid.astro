@@ -1,0 +1,36 @@
+---
+import SkillCard from "./SkillCard.astro";
+
+interface Props {
+  skills: Array<{
+    id: string;
+    data: {
+      display_name: string;
+      description: string;
+      author: string;
+      category: string;
+      tags: string[];
+      evidence_level: string;
+      safety_classification: string;
+      verified: boolean;
+      type?: string;
+    };
+  }>;
+  basePath?: string;
+  emptyMessage?: string;
+}
+
+const { skills, basePath = "/skills", emptyMessage = "No skills found." } = Astro.props;
+---
+
+{skills.length > 0 ? (
+  <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+    {skills.map((skill) => (
+      <SkillCard skill={skill} basePath={basePath} />
+    ))}
+  </div>
+) : (
+  <div class="rounded-xl border border-slate-200 bg-white px-6 py-12 text-center dark:border-slate-800 dark:bg-slate-900">
+    <p class="text-slate-500 dark:text-slate-400">{emptyMessage}</p>
+  </div>
+)}

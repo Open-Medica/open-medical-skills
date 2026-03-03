@@ -1,0 +1,12 @@
+name = "oms-submission-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+GITHUB_OWNER = "gitjfmd"
+GITHUB_REPO = "open-medical-skills"
+ALLOWED_ORIGIN = "https://oms.jfmd.win"
+
+# Secrets (set via wrangler secret put):
+# GITHUB_TOKEN - fine-grained PAT with contents:write and pull_requests:write

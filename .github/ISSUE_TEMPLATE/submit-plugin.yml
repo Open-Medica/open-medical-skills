@@ -1,0 +1,346 @@
+name: "Submit a Medical Plugin"
+description: "Submit a new medical AI plugin (full application/integration) for review and listing."
+title: "[Plugin Submission]: "
+labels:
+  - "submission"
+  - "plugin"
+  - "pending-review"
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Submit a Medical AI Plugin
+
+        Plugins are more comprehensive than skills - they are full applications, integrations,
+        or multi-skill packages that provide complete workflows for medical AI use cases.
+
+        **What happens next?**
+        1. Automated validation checks run on your submission
+        2. A maintainer reviews the submission for completeness
+        3. A physician reviewer evaluates medical accuracy and safety
+        4. If approved, your plugin is listed on the marketplace
+
+  - type: input
+    id: plugin-name
+    attributes:
+      label: "Plugin Name *"
+      description: "A unique, URL-safe identifier for the plugin (lowercase, hyphens only)."
+      placeholder: "e.g., ehr-integration-suite"
+    validations:
+      required: true
+
+  - type: input
+    id: display-name
+    attributes:
+      label: "Display Name *"
+      description: "The human-readable name shown on the marketplace."
+      placeholder: "e.g., EHR Integration Suite"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: "Description *"
+      description: "A clear, concise description of what this plugin does (2-5 sentences)."
+      placeholder: "Describe the plugin's purpose, capabilities, and target users."
+    validations:
+      required: true
+
+  - type: textarea
+    id: long-description
+    attributes:
+      label: "Detailed Description"
+      description: "A longer description with features, use cases, and capabilities (Markdown supported)."
+      placeholder: |
+        ## Features
+        - Feature 1
+        - Feature 2
+
+        ## Use Cases
+        - Use case 1
+        - Use case 2
+    validations:
+      required: false
+
+  - type: input
+    id: author
+    attributes:
+      label: "Author / Organization *"
+      description: "Your name, GitHub username, or organization name."
+      placeholder: "e.g., MedTech Solutions or @medtechsolutions"
+    validations:
+      required: true
+
+  - type: input
+    id: author-email
+    attributes:
+      label: "Author Email"
+      description: "Contact email for correspondence about this submission (optional)."
+      placeholder: "e.g., contact@medtechsolutions.com"
+    validations:
+      required: false
+
+  - type: input
+    id: author-website
+    attributes:
+      label: "Author Website"
+      description: "Website or documentation URL for the author/organization."
+      placeholder: "https://medtechsolutions.com"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: "Medical Category *"
+      description: "Select the primary category for this plugin."
+      options:
+        - clinical
+        - diagnostic
+        - administrative
+        - research
+        - education
+        - pharmacology
+        - radiology
+        - pathology
+        - surgery
+        - mental-health
+        - pediatrics
+        - emergency-medicine
+        - public-health
+        - telemedicine
+        - ehr-integration
+        - workflow-automation
+        - other
+    validations:
+      required: true
+
+  - type: input
+    id: category-other
+    attributes:
+      label: "Other Category (if 'other' selected above)"
+      description: "Specify the category if you selected 'other'."
+      placeholder: "e.g., rehabilitation"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: subcategories
+    attributes:
+      label: "Secondary Categories"
+      description: "Select any additional categories that apply."
+      multiple: true
+      options:
+        - clinical
+        - diagnostic
+        - administrative
+        - research
+        - education
+        - pharmacology
+        - radiology
+        - pathology
+        - surgery
+        - mental-health
+        - pediatrics
+        - emergency-medicine
+        - public-health
+        - telemedicine
+        - ehr-integration
+        - workflow-automation
+    validations:
+      required: false
+
+  - type: input
+    id: repository
+    attributes:
+      label: "Repository URL *"
+      description: "The public GitHub repository URL for this plugin."
+      placeholder: "https://github.com/owner/repo"
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: "Version *"
+      description: "Semantic version of the plugin (e.g., 1.0.0)."
+      placeholder: "1.0.0"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: "License *"
+      description: "The open-source license for this plugin."
+      options:
+        - MIT
+        - Apache-2.0
+        - GPL-3.0
+        - BSD-3-Clause
+        - BSD-2-Clause
+        - MPL-2.0
+        - LGPL-3.0
+        - AGPL-3.0
+        - Unlicense
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: "Tags"
+      description: "Comma-separated tags for discoverability (max 10)."
+      placeholder: "e.g., ehr, fhir, integration, workflow, epic"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-npx
+    attributes:
+      label: "Install Command (npx)"
+      description: "The npx install command, if applicable."
+      placeholder: "npx skills add owner/repo@plugin"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-wget
+    attributes:
+      label: "Install Command (wget/curl)"
+      description: "The wget or curl install command, if applicable."
+      placeholder: "curl -fsSL https://raw.githubusercontent.com/owner/repo/main/install.sh | bash"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-git
+    attributes:
+      label: "Install Command (git clone)"
+      description: "The git clone install command, if applicable."
+      placeholder: "git clone https://github.com/owner/repo.git && cd repo && make install"
+    validations:
+      required: false
+
+  - type: textarea
+    id: install-docker
+    attributes:
+      label: "Install Command (Docker)"
+      description: "The Docker install/run command, if applicable."
+      placeholder: "docker compose up -d"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: ai-platform
+    attributes:
+      label: "Target AI Platform(s)"
+      description: "Which AI platform(s) does this plugin work with?"
+      multiple: true
+      options:
+        - OpenAI (GPT)
+        - Anthropic (Claude)
+        - Google (Gemini)
+        - Meta (Llama)
+        - Mistral
+        - Open WebUI
+        - LangChain
+        - LlamaIndex
+        - AutoGen
+        - CrewAI
+        - Platform-agnostic
+        - Other
+    validations:
+      required: false
+
+  - type: textarea
+    id: included-skills
+    attributes:
+      label: "Included Skills"
+      description: "If this plugin bundles multiple skills, list them here."
+      placeholder: |
+        - clinical-note-summarizer
+        - medication-checker
+        - patient-intake-form
+    validations:
+      required: false
+
+  - type: textarea
+    id: requirements
+    attributes:
+      label: "Requirements / Dependencies"
+      description: "List any prerequisites, dependencies, or system requirements."
+      placeholder: |
+        - Python 3.11+
+        - Docker & Docker Compose
+        - PostgreSQL 16+
+        - FHIR-compatible EHR system
+    validations:
+      required: false
+
+  - type: textarea
+    id: clinical-evidence
+    attributes:
+      label: "Clinical Evidence / Guidelines"
+      description: "Reference any clinical guidelines, research papers, or evidence base this plugin is built upon."
+      placeholder: |
+        - Implements HL7 FHIR R4 standard
+        - Based on AMA CPT coding guidelines
+        - Validated at [Hospital/Institution Name]
+    validations:
+      required: false
+
+  - type: textarea
+    id: safety-guardrails
+    attributes:
+      label: "Safety Guardrails"
+      description: "Describe any safety mechanisms, disclaimers, or guardrails built into this plugin."
+      placeholder: |
+        - All clinical outputs marked as AI-generated
+        - Physician approval required before any action
+        - PHI encryption at rest and in transit
+        - HIPAA BAA available for enterprise deployments
+    validations:
+      required: false
+
+  - type: textarea
+    id: compliance
+    attributes:
+      label: "Compliance & Certifications"
+      description: "List any regulatory compliance or certifications (HIPAA, FDA, CE marking, etc.)."
+      placeholder: |
+        - HIPAA compliant (BAA available)
+        - SOC 2 Type II certified
+        - FDA 510(k) cleared (if applicable)
+    validations:
+      required: false
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: "Screenshots / Demo"
+      description: "Attach screenshots or provide a link to a demo/video."
+      placeholder: "Drag and drop images here, or paste a URL to a demo video."
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: attestation
+    attributes:
+      label: "Attestation *"
+      description: "Please confirm the following before submitting."
+      options:
+        - label: "This plugin is open source and the repository is publicly accessible."
+          required: true
+        - label: "This plugin does not store, transmit, or expose Protected Health Information (PHI) without appropriate safeguards."
+          required: true
+        - label: "I understand that this submission will be reviewed by physician maintainers and may be modified or rejected."
+          required: true
+        - label: "This plugin includes appropriate disclaimers that AI output is not a substitute for professional medical judgment."
+          required: true
+        - label: "I have documented all external API dependencies and data flows."
+          required: true

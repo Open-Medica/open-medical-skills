@@ -1,0 +1,215 @@
+name: Deploy Site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "src/**"
+      - "public/**"
+      - "package.json"
+      - "package-lock.json"
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: "Reason for manual deploy"
+        required: false
+        default: "Manual trigger"
+
+permissions:
+  contents: read
+  deployments: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "cloudflare-pages"
+  cancel-in-progress: false
+
+jobs:
+  # ──────────────────────────────────────────────────
+  # Job 1: Build the site
+  # ──────────────────────────────────────────────────
+  build:
+    runs-on: ubuntu-latest
+    name: Build Site
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Validate all content
+        run: |
+          echo "Validating all skill and plugin YAML files..."
+          ERRORS=""
+
+          for file in $(find content/skills content/plugins -name "*.yml" -o -name "*.yaml" 2>/dev/null); do
+            # Basic YAML syntax check
+            if ! python3 -c "import yaml; yaml.safe_load(open('$file'))" 2>/dev/null; then
+              ERRORS="${ERRORS}\nInvalid YAML: $file"
+            fi
+          done
+
+          if [ -n "$ERRORS" ]; then
+            echo -e "Content validation errors found:$ERRORS"
+            exit 1
+          fi
+
+          echo "All content files valid."
+
+      - name: Build site
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+  # ──────────────────────────────────────────────────
+  # Job 2: Deploy to Cloudflare Pages
+  # ──────────────────────────────────────────────────
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    name: Deploy to Cloudflare Pages
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+        env:
+          NODE_ENV: production
+
+      - name: Deploy to Cloudflare Pages
+        id: deployment
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: open-medical-skills
+          directory: dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  # ──────────────────────────────────────────────────
+  # Job 3: Post-deployment notifications
+  # ──────────────────────────────────────────────────
+  notify:
+    needs: deploy
+    runs-on: ubuntu-latest
+    name: Post-Deploy Notifications
+    if: success()
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Identify newly added skills/plugins
+        id: new-content
+        run: |
+          # Get files changed in the latest commit
+          ADDED_FILES=$(git diff --name-only --diff-filter=A HEAD~1 HEAD -- 'content/skills/*.yml' 'content/skills/*.yaml' 'content/plugins/*.yml' 'content/plugins/*.yaml' 2>/dev/null || echo "")
+
+          if [ -n "$ADDED_FILES" ]; then
+            echo "NEW_CONTENT=true" >> $GITHUB_ENV
+            echo "ADDED_FILES<<EOF" >> $GITHUB_ENV
+            echo "$ADDED_FILES" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+          else
+            echo "NEW_CONTENT=false" >> $GITHUB_ENV
+          fi
+
+      - name: Close related issues
+        if: env.NEW_CONTENT == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const files = process.env.ADDED_FILES.split('\n').filter(Boolean);
+            const fs = require('fs');
+
+            for (const file of files) {
+              try {
+                const content = fs.readFileSync(file, 'utf8');
+                const issueMatch = content.match(/source_issue:\s*(\d+)/);
+
+                if (issueMatch) {
+                  const issueNumber = parseInt(issueMatch[1]);
+
+                  // Get the skill/plugin name
+                  const nameMatch = content.match(/display_name:\s*["']?([^"'\n]+)/);
+                  const displayName = nameMatch ? nameMatch[1] : file;
+
+                  // Comment on the issue
+                  await github.rest.issues.createComment({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    body: [
+                      `## Deployed!`,
+                      '',
+                      `**${displayName}** has been approved, merged, and is now live on Open Medical Skills.`,
+                      '',
+                      `Thank you for your contribution to the medical AI community!`,
+                    ].join('\n'),
+                  });
+
+                  // Close the issue
+                  await github.rest.issues.update({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issueNumber,
+                    state: 'closed',
+                    state_reason: 'completed',
+                  });
+
+                  console.log(`Closed issue #${issueNumber} for ${displayName}`);
+                }
+              } catch (e) {
+                console.log(`Could not process ${file}: ${e.message}`);
+              }
+            }
+
+      - name: Create deployment summary
+        run: |
+          echo "## Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Triggered by:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Commit:** ${{ github.sha }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Branch:** ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Time:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+
+          if [ "$NEW_CONTENT" = "true" ]; then
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### New Content Added" >> $GITHUB_STEP_SUMMARY
+            echo "$ADDED_FILES" | while read -r file; do
+              if [ -n "$file" ]; then
+                echo "- \`$file\`" >> $GITHUB_STEP_SUMMARY
+              fi
+            done
+          fi
+
+  # ──────────────────────────────────────────────────
+  # Job 4: Auto-merge approved PRs (runs on PR approval)
+  # ──────────────────────────────────────────────────
+  # NOTE: Auto-merge is handled separately via branch protection rules.
+  # Configure in GitHub Settings > Branches > main:
+  #   - Require pull request reviews (1 review from physician-reviewers team)
+  #   - Require status checks (validate-pr-submission must pass)
+  #   - Enable auto-merge for PRs with the 'approved' label

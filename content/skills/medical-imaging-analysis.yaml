@@ -1,0 +1,18 @@
+name: "medical-imaging-analysis"
+display_name: "Medical Imaging & DICOM Analysis"
+description: "Analyze medical imaging data from DICOM servers and PACS systems. Extract metadata, query imaging studies by patient or modality, and process diagnostic imaging reports for clinical decision support."
+author: "K-Dense-AI"
+repository: "https://github.com/K-Dense-AI/claude-scientific-skills"
+category: "diagnosis"
+tags: ["dicom", "medical-imaging", "radiology", "pacs"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  git: "git clone https://github.com/K-Dense-AI/claude-scientific-skills ~/.claude/skills/scientific"
+evidence_level: "moderate"
+safety_classification: "caution"
+specialty: ["radiology", "diagnostic-imaging"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false

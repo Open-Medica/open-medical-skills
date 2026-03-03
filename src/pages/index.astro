@@ -1,0 +1,183 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SkillGrid from "../components/SkillGrid.astro";
+import CategoryFilter from "../components/CategoryFilter.tsx";
+import SearchBar from "../components/SearchBar.tsx";
+import { CATEGORIES, CATEGORY_LABELS } from "../lib/categories";
+
+const allSkills = await getCollection("skills");
+const allPlugins = await getCollection("plugins");
+const allItems = [...allSkills, ...allPlugins];
+
+// Stats
+const totalSkills = allSkills.length;
+const totalPlugins = allPlugins.length;
+const verifiedCount = allItems.filter((s) => s.data.verified).length;
+const categoryCount = new Set(allItems.map((s) => s.data.category)).size;
+
+// Featured: verified items first, then by date
+const featured = [...allItems]
+  .sort((a, b) => {
+    if (a.data.verified !== b.data.verified) return a.data.verified ? -1 : 1;
+    return b.data.date_added.localeCompare(a.data.date_added);
+  })
+  .slice(0, 6);
+
+// Category counts
+const categoryCounts: Record<string, number> = {};
+for (const item of allItems) {
+  categoryCounts[item.data.category] = (categoryCounts[item.data.category] ?? 0) + 1;
+}
+
+// Search data for the client
+const searchData = allItems.map((s) => ({
+  id: s.id,
+  display_name: s.data.display_name,
+  description: s.data.description,
+  category: s.data.category,
+  tags: s.data.tags,
+  type: s.data.type ?? "skill",
+}));
+---
+
+<BaseLayout>
+  <!-- Hero -->
+  <section class="border-b border-slate-200 bg-gradient-to-b from-primary-50 to-white dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+    <div class="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
+      <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl dark:text-white">
+        Open Medical Skills
+      </h1>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-slate-600 dark:text-slate-400">
+        Physician-curated AI skills and plugins for healthcare professionals.
+        Vetted, evidence-informed, and open source.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/skills"
+          class="rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-primary-dark"
+        >
+          Browse Skills
+        </a>
+        <a
+          href="/submit"
+          class="rounded-lg border border-slate-300 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+        >
+          Submit a Skill
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats bar -->
+  <section class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+    <div class="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 py-6 sm:grid-cols-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-2xl font-bold text-slate-900 dark:text-white">{totalSkills}</p>
+        <p class="text-sm text-slate-500">Skills</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-bold text-slate-900 dark:text-white">{totalPlugins}</p>
+        <p class="text-sm text-slate-500">Plugins</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-bold text-slate-900 dark:text-white">{categoryCount}</p>
+        <p class="text-sm text-slate-500">Categories</p>
+      </div>
+      <div class="text-center">
+        <p class="text-2xl font-bold text-slate-900 dark:text-white">{verifiedCount > 0 ? verifiedCount : "All"}</p>
+        <p class="text-sm text-slate-500">Physician-Reviewed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured -->
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Featured</h2>
+    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Top verified and recently added skills</p>
+    <div class="mt-6">
+      <SkillGrid skills={featured} />
+    </div>
+  </section>
+
+  <!-- All items with search + filter -->
+  <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
+    <h2 class="text-xl font-semibold text-slate-900 dark:text-white">All Skills & Plugins</h2>
+    <div class="mt-4 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <SearchBar client:load skills={searchData} />
+    </div>
+    <div class="mt-4">
+      <CategoryFilter client:load counts={categoryCounts} total={allItems.length} />
+    </div>
+
+    <!-- Grid (filtered by JS on client) -->
+    <div class="mt-6" id="skills-grid">
+      <SkillGrid skills={allItems} />
+    </div>
+  </section>
+
+  <!-- Client-side filtering script -->
+  <script>
+    function applyFilters() {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category") || "all";
+      const grid = document.getElementById("skills-grid");
+      if (!grid) return;
+      const cards = grid.querySelectorAll<HTMLElement>("a[href]");
+
+      cards.forEach((card) => {
+        // Read category from the badge text
+        const badge = card.querySelector("span[class*='rounded-full']");
+        const cardCategory = badge?.textContent?.trim().toLowerCase() ?? "";
+
+        let show = true;
+        if (category !== "all") {
+          // Map label back to slug — simple includes check
+          const categoryLabels: Record<string, string> = {
+            diagnosis: "diagnosis",
+            treatment: "treatment",
+            "lab & imaging": "lab-imaging",
+            pharmacy: "pharmacy",
+            emergency: "emergency",
+            surgery: "surgery",
+            nursing: "nursing",
+            pediatrics: "pediatrics",
+            "mental health": "mental-health",
+            "public health": "public-health",
+            research: "research",
+            education: "education",
+            administrative: "administrative",
+            "clinical research": "clinical-research-summarizing",
+          };
+          const matchedSlug = categoryLabels[cardCategory];
+          show = matchedSlug === category;
+        }
+
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    window.addEventListener("category-change", () => {
+      setTimeout(applyFilters, 0);
+    });
+
+    window.addEventListener("search-change", ((e: CustomEvent) => {
+      const { query, matchedIds } = e.detail;
+      const grid = document.getElementById("skills-grid");
+      if (!grid) return;
+      const cards = grid.querySelectorAll<HTMLAnchorElement>("a[href]");
+
+      if (!query) {
+        // Reset to show all (respecting category filter)
+        applyFilters();
+        return;
+      }
+
+      cards.forEach((card) => {
+        const href = card.getAttribute("href") ?? "";
+        const slug = href.split("/").pop() ?? "";
+        card.style.display = matchedIds.includes(slug) ? "" : "none";
+      });
+    }) as EventListener);
+  </script>
+</BaseLayout>

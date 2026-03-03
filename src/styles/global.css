@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Primary palette */
+  --color-primary: #0D9488;
+  --color-primary-light: #14B8A6;
+  --color-primary-dark: #0F766E;
+  --color-primary-50: #F0FDFA;
+  --color-primary-100: #CCFBF1;
+  --color-primary-200: #99F6E4;
+  --color-primary-600: #0D9488;
+  --color-primary-700: #0F766E;
+  --color-primary-800: #115E59;
+  --color-primary-900: #134E4A;
+
+  /* Medical category colors */
+  --color-cat-diagnosis: #3B82F6;
+  --color-cat-treatment: #22C55E;
+  --color-cat-lab-imaging: #A855F7;
+  --color-cat-pharmacy: #EF4444;
+  --color-cat-emergency: #F97316;
+  --color-cat-surgery: #14B8A6;
+  --color-cat-nursing: #EC4899;
+  --color-cat-pediatrics: #06B6D4;
+  --color-cat-mental-health: #6366F1;
+  --color-cat-public-health: #84CC16;
+  --color-cat-research: #F59E0B;
+  --color-cat-education: #8B5CF6;
+  --color-cat-administrative: #6B7280;
+  --color-cat-clinical-research-summarizing: #10B981;
+
+  /* Evidence level colors */
+  --color-evidence-high: #22C55E;
+  --color-evidence-moderate: #F59E0B;
+  --color-evidence-low: #EF4444;
+  --color-evidence-expert-opinion: #6B7280;
+
+  /* Safety classification colors */
+  --color-safety-safe: #22C55E;
+  --color-safety-caution: #F59E0B;
+  --color-safety-restricted: #EF4444;
+
+  /* Fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Dark mode overrides */
+.dark {
+  color-scheme: dark;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Code block styling */
+pre,
+code {
+  font-family: var(--font-mono);
+}
+
+/* Scrollbar styling for category filter */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,111 @@
+---
+import { CATEGORY_LABELS, CATEGORY_STYLES, EVIDENCE_STYLES, SAFETY_STYLES } from "../lib/categories";
+
+interface Props {
+  skill: {
+    id: string;
+    data: {
+      display_name: string;
+      description: string;
+      author: string;
+      category: string;
+      tags: string[];
+      evidence_level: string;
+      safety_classification: string;
+      verified: boolean;
+      type?: string;
+    };
+  };
+  basePath?: string;
+}
+
+const { skill, basePath = "/skills" } = Astro.props;
+const { data } = skill;
+
+const catStyle = CATEGORY_STYLES[data.category as keyof typeof CATEGORY_STYLES];
+const catLabel = CATEGORY_LABELS[data.category as keyof typeof CATEGORY_LABELS] ?? data.category;
+const evidenceStyle = EVIDENCE_STYLES[data.evidence_level] ?? EVIDENCE_STYLES.moderate;
+const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.safe;
+---
+
+<a
+  href={`${basePath}/${skill.id}`}
+  class="group block rounded-xl border border-slate-200 bg-white p-5 transition-all hover:shadow-md hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900 dark:hover:border-slate-700 dark:hover:shadow-slate-900/50"
+>
+  <!-- Top row: category badge + verified -->
+  <div class="flex items-center justify-between gap-2">
+    <span
+      class:list={[
+        "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium",
+        catStyle?.bg,
+        catStyle?.text,
+        catStyle?.border,
+      ]}
+    >
+      {catLabel}
+    </span>
+
+    <div class="flex items-center gap-2">
+      <!-- Safety badge -->
+      {data.safety_classification !== "safe" && (
+        <span
+          class:list={[
+            "inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium",
+            safetyStyle.bg,
+            safetyStyle.text,
+          ]}
+        >
+          {safetyStyle.label}
+        </span>
+      )}
+
+      <!-- Verified badge -->
+      {data.verified && (
+        <span class="inline-flex items-center text-primary" title="Physician verified">
+          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
+            <path
+              fill-rule="evenodd"
+              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </span>
+      )}
+    </div>
+  </div>
+
+  <!-- Title -->
+  <h3 class="mt-3 text-base font-semibold text-slate-900 group-hover:text-primary dark:text-white dark:group-hover:text-primary-light">
+    {data.display_name}
+  </h3>
+
+  <!-- Description -->
+  <p class="mt-1.5 line-clamp-2 text-sm text-slate-600 dark:text-slate-400">
+    {data.description}
+  </p>
+
+  <!-- Bottom row: author + evidence -->
+  <div class="mt-4 flex items-center justify-between text-xs text-slate-500 dark:text-slate-500">
+    <span class="truncate">{data.author}</span>
+    <span class="flex items-center gap-1.5" title={evidenceStyle.label}>
+      <span class:list={["inline-block h-2 w-2 rounded-full", evidenceStyle.dot]}></span>
+      {evidenceStyle.label}
+    </span>
+  </div>
+
+  <!-- Tags -->
+  {data.tags.length > 0 && (
+    <div class="mt-3 flex flex-wrap gap-1.5">
+      {data.tags.slice(0, 3).map((tag) => (
+        <span class="rounded-md bg-slate-100 px-2 py-0.5 text-xs text-slate-600 dark:bg-slate-800 dark:text-slate-400">
+          {tag}
+        </span>
+      ))}
+      {data.tags.length > 3 && (
+        <span class="rounded-md bg-slate-100 px-2 py-0.5 text-xs text-slate-500 dark:bg-slate-800 dark:text-slate-500">
+          +{data.tags.length - 3}
+        </span>
+      )}
+    </div>
+  )}
+</a>

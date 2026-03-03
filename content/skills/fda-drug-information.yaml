@@ -1,0 +1,18 @@
+name: "fda-drug-information"
+display_name: "FDA Drug Information & Adverse Events"
+description: "Access comprehensive FDA drug databases including adverse events (FAERS), drug labels, NDC directory, recalls, shortages, and 510(k) device clearances via openFDA API."
+author: "Augmented-Nature"
+repository: "https://github.com/Augmented-Nature/OpenFDA-MCP-Server"
+category: "pharmacy"
+tags: ["fda", "drug-safety", "adverse-events", "recalls"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  git: "git clone https://github.com/Augmented-Nature/OpenFDA-MCP-Server"
+evidence_level: "high"
+safety_classification: "safe"
+specialty: ["pharmacy", "regulatory-affairs"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false
