@@ -36,7 +36,7 @@ High
 
 ## Author
 
-longevity-genie
+Longevity Genie (Bio x AI Hackathon 2025)
 
 ## Version
 
@@ -46,20 +46,33 @@ longevity-genie
 
 MIT
 
-## Repository
+## Original Repository
 
-https://github.com/gitjfmd/open-medical-skills/tree/main/plugins/holy-bio-research-suite
+https://github.com/longevity-genie/holy-bio-mcp
 
 ## Installation
 
-**npx:**
-```bash
-npx skills add gitjfmd/open-medical-skills --skill holy-bio-research-suite
+**Use the unified MCP configuration** (`mcp-config-stdio.json`) to enable all servers:
+
+```json
+{
+  "mcpServers": {
+    "biothings-mcp": { "command": "uvx", "args": ["--from", "biothings-mcp", "stdio"] },
+    "gget-mcp": { "command": "uvx", "args": ["gget-mcp", "stdio"] },
+    "synergy-age-mcp": { "command": "uvx", "args": ["synergy-age-mcp"], "env": { "MCP_TRANSPORT": "stdio" } },
+    "opengenes-mcp": { "command": "uvx", "args": ["opengenes-mcp"], "env": { "MCP_TRANSPORT": "stdio" } },
+    "pharmacology-mcp": { "command": "uvx", "args": ["--from", "pharmacology-mcp", "stdio"] }
+  }
+}
 ```
 
-**git:**
+**Individual servers via uvx:**
 ```bash
-git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/holy-bio-research-suite ~/.claude/plugins/
+uvx gget-mcp stdio
+uvx opengenes-mcp
+uvx synergy-age-mcp
+uvx --from biothings-mcp stdio
+uvx --from pharmacology-mcp stdio
 ```
 
 ---

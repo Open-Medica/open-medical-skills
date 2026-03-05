@@ -16,7 +16,7 @@ health-informatics, enterprise-health-it
 
 ## Tags
 
-mcp-plugin, aws, fhir, ehr, enterprise, cloud
+mcp-plugin, aws, fhir, ehr, enterprise, cloud, healthlake
 
 ## Safety Classification
 
@@ -28,39 +28,44 @@ High
 
 ## Tools
 
-- 6 read-only FHIR tools
-- 5 write FHIR tools
-- Automatic datastore discovery
+- 6 read-only FHIR tools (list datastores, get details, read resource, search, patient-everything, list jobs)
+- 5 write FHIR tools (create, update, delete, import job, export job)
+- Automatic datastore discovery via MCP Resources
 - Advanced search (chained parameters, _include, _revinclude)
 - Patient-everything operations
 - FHIR job management (import/export)
 
 ## Author
 
-AWS Labs
+Amazon Web Services (AWS Labs)
 
 ## Version
 
-1.0.0
+0.0.10
 
 ## License
 
 Apache-2.0
 
-## Repository
+## Original Repository
 
-https://github.com/gitjfmd/open-medical-skills/tree/main/plugins/aws-healthlake-fhir
+https://github.com/awslabs/mcp/tree/main/src/healthlake-mcp-server
 
 ## Installation
 
-**npx:**
+**Via uvx (recommended):**
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill aws-healthlake-fhir
+uvx awslabs.healthlake-mcp-server@latest
 ```
 
-**git:**
+**Via uv install:**
 ```bash
-git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/aws-healthlake-fhir ~/.claude/plugins/
+uv tool install awslabs.healthlake-mcp-server
+```
+
+**Via Docker:**
+```bash
+docker run -e AWS_ACCESS_KEY_ID=xxx -e AWS_SECRET_ACCESS_KEY=yyy awslabs/healthlake-mcp-server
 ```
 
 ---

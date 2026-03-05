@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "openemr-mcp"
+version = "0.1.0"
+description = "MCP server for OpenEMR -- patient, medication, FDA drug safety, and clinical trajectory tools for Claude Desktop, Cursor, and any MCP-compatible AI client"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "openemr-mcp contributors"},
+]
+keywords = ["openemr", "mcp", "healthcare", "fhir", "ai", "claude"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Healthcare Industry",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "mcp>=1.0.0",
+    "pydantic>=2.0.0",
+    "httpx>=0.25.0",
+    "PyMySQL>=1.0.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.23.0",
+    "pytest-cov>=4.0.0",
+    "ruff>=0.4.0",
+]
+
+[project.scripts]
+openemr-mcp = "openemr_mcp.server:run"
+
+[project.urls]
+Homepage = "https://github.com/shruti-jn/openemr-mcp"
+Repository = "https://github.com/shruti-jn/openemr-mcp"
+Issues = "https://github.com/shruti-jn/openemr-mcp/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/openemr_mcp"]

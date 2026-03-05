@@ -1,0 +1,43 @@
+{
+  "name": "@medikode/mcp-server",
+  "version": "1.2.9",
+  "description": "Model Context Protocol (MCP) server for Medikode healthcare SaaS platform",
+  "main": "mcp-server-stdio.js",
+  "bin": {
+    "medikode-mcp-server": "mcp-server-stdio.js"
+  },
+  "type": "commonjs",
+  "engines": {
+    "node": ">=24.7.0"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test-unit.js"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "healthcare",
+    "medical-coding",
+    "medikode",
+    "claude",
+    "ai-assistant",
+    "medical-ai"
+  ],
+  "author": "Medikode",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.2",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0",
+    "joi": "^18.0.1",
+    "uuid": "^12.0.0",
+    "ws": "^8.18.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raelango/medikode-mcp-server.git"
+  },
+  "homepage": "https://mcp.medikode.ai"
+}

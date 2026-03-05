@@ -40,31 +40,48 @@ High
 
 ## Author
 
-Cicatriiz (Forrest B)
+Cicatriiz (Forrest Babola)
 
 ## Version
 
-1.0.0
+2.1.1
 
 ## License
 
 MIT
 
-## Repository
+## Original Repository
 
-https://github.com/gitjfmd/open-medical-skills/tree/main/plugins/healthcare-mcp-comprehensive
+https://github.com/Cicatriiz/healthcare-mcp-public
 
 ## Installation
 
-**npx:**
+**Via Smithery:**
 ```bash
-npx healthcare-mcp-public
+npx -y @smithery/cli install @Cicatriiz/healthcare-mcp-public --client claude
 ```
 
-**git:**
+**Via npm:**
 ```bash
-git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/healthcare-mcp-comprehensive ~/.claude/plugins/
+npm install healthcare-mcp
+npx healthcare-mcp
 ```
+
+**From source:**
+```bash
+git clone https://github.com/Cicatriiz/healthcare-mcp-public.git
+cd healthcare-mcp-public/server && npm install && npm start
+```
+
+## Data Sources
+
+- FDA OpenFDA API
+- PubMed E-utilities API
+- Health.gov API v4
+- ClinicalTrials.gov API v2
+- NLM Clinical Table Search Service (ICD-10-CM)
+- medRxiv API
+- NCBI Bookshelf (E-utilities)
 
 ---
 

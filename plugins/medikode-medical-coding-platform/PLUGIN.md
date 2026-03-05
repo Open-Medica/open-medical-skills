@@ -28,39 +28,56 @@ Moderate
 
 ## Tools
 
-- Code Validation (CPT/ICD-10 against documentation)
-- Quality Assurance (coding QA, gap identification)
-- EOB Parsing (Explanation of Benefits structured data)
-- RAF Score Calculation (HCC capture from encounters)
-- Composite Workflow (validates chart coding + RAF in one step)
+- process_chart (ICD/CPT code suggestions from chart text)
+- validate_codes (CPT/ICD-10 validation against documentation)
+- calculate_raf (Risk Adjustment Factor / HCC scoring)
+- qa_validate_codes (Comprehensive QA validation)
+- parse_eob (EOB document parsing to structured data)
 
 ## Author
 
-medikode-ai
+Medikode (raelango)
 
 ## Version
 
-1.0.0
+1.2.9
 
 ## License
 
-Commercial
+ISC
 
-## Repository
+## Original Repository
 
-https://github.com/gitjfmd/open-medical-skills/tree/main/plugins/medikode-medical-coding-platform
+https://github.com/raelango/medikode-mcp-server
 
 ## Installation
 
-**npx:**
+**Via npx:**
 ```bash
 npx @medikode/mcp-server
 ```
 
-**git:**
+**Via npm:**
 ```bash
-git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/medikode-medical-coding-platform ~/.claude/plugins/
+npm install -g @medikode/mcp-server
 ```
+
+**Claude Desktop config:**
+```json
+{
+  "mcpServers": {
+    "medikode": {
+      "command": "npx",
+      "args": ["-y", "@medikode/mcp-server"],
+      "env": { "MEDIKODE_API_KEY": "your_api_key_here" }
+    }
+  }
+}
+```
+
+## Authentication
+
+Requires a valid Medikode API key. Register at [medikode.ai](https://medikode.ai).
 
 ---
 
