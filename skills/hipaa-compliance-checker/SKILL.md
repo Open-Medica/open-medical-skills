@@ -1,3 +1,11 @@
+---
+name: hipaa-compliance-checker
+description: >
+  Clinical de-identification pipeline that detects 30+ PHI entity types.
+  Provides masked and obfuscated output modes for HIPAA compliance. Runs
+  locally with data never leaving secure environment.
+---
+
 # HIPAA Compliance & De-identification
 
 A clinical de-identification pipeline capable of detecting and removing 30+ Protected Health Information (PHI) entity types from clinical text. The skill provides both masked output (replacing PHI with category tags like [PATIENT_NAME]) and obfuscated output (replacing PHI with realistic synthetic values) for HIPAA Safe Harbor and Expert Determination compliance. All processing runs locally with data never leaving the secure environment.

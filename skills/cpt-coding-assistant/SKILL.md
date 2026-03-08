@@ -1,3 +1,10 @@
+---
+name: cpt-coding-assistant
+description: >
+  AI-driven CPT coding validation and suggestion tool. Validates procedure
+  codes against clinical documentation and identifies potential coding gaps.
+---
+
 # CPT Procedure Code Assistant
 
 An AI-driven CPT (Current Procedural Terminology) coding validation and suggestion tool that analyzes clinical documentation to identify appropriate procedure codes, detect coding gaps, validate code-documentation alignment, and flag potential compliance issues. Designed to support medical coders, billers, and clinicians in accurate charge capture and reimbursement optimization.

@@ -1,3 +1,12 @@
+---
+name: clinical-differential-diagnosis
+description: >
+  AI-powered clinical decision support tool that helps generate comprehensive
+  differential diagnoses based on patient symptoms, lab results, and medical
+  history. Integrates evidence-based clinical reasoning and medical
+  literature.
+---
+
 # Clinical Differential Diagnosis Assistant
 
 An AI-powered clinical decision support tool that generates comprehensive, ranked differential diagnoses from patient symptoms, physical examination findings, laboratory results, and medical history. The skill applies Bayesian reasoning principles and pattern recognition across organ systems, prioritizing diagnoses by probability and clinical urgency while referencing current medical literature and diagnostic criteria.

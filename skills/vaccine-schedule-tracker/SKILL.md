@@ -1,3 +1,10 @@
+---
+name: vaccine-schedule-tracker
+description: >
+  CDC/WHO immunization schedule tracker for pediatric and adult vaccinations.
+  Identifies overdue vaccines and generates catch-up schedules.
+---
+
 # Immunization Schedule Tracker
 
 Track pediatric and adult immunization status against the CDC Advisory Committee on Immunization Practices (ACIP) recommended schedule. This skill identifies overdue vaccines, generates catch-up schedules with minimum intervals and minimum ages, screens for contraindications, and supports opportunistic immunization at every clinical encounter to reduce missed vaccination opportunities.

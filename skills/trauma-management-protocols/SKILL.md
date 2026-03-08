@@ -1,3 +1,11 @@
+---
+name: trauma-management-protocols
+description: >
+  Advanced Trauma Life Support (ATLS) protocol assistant for initial
+  assessment and management of trauma patients. Covers primary/secondary
+  surveys and critical interventions.
+---
+
 # Trauma Management Protocols (ATLS)
 
 ## Overview

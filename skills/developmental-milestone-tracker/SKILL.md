@@ -1,3 +1,10 @@
+---
+name: developmental-milestone-tracker
+description: >
+  Track and assess pediatric developmental milestones from birth to 5 years.
+  Flags potential delays using CDC developmental surveillance guidelines.
+---
+
 # Developmental Milestone Tracker
 
 Track and assess pediatric developmental milestones from birth to 5 years across five developmental domains. Based on the CDC's 2022 updated "Learn the Signs. Act Early." milestones and the AAP Bright Futures framework, this skill provides structured checklists with automated delay detection, critical milestone flagging, and referral guidance for well-child visits.

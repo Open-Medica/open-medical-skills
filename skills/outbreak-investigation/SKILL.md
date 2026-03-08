@@ -1,3 +1,10 @@
+---
+name: outbreak-investigation
+description: >
+  Systematic approach to outbreak investigation using CDC guidelines. Assists
+  with case definition, epidemic curve analysis, and source identification.
+---
+
 # Outbreak Investigation Assistant
 
 ## Overview

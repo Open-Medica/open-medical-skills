@@ -1,3 +1,11 @@
+---
+name: epidemiology-surveillance
+description: >
+  Access WHO Global Health Observatory data for epidemiological analysis.
+  Track disease prevalence, mortality rates, and public health indicators by
+  country and region.
+---
+
 # Epidemiology & Disease Surveillance
 
 Access WHO Global Health Observatory data for epidemiological analysis. Track disease prevalence, mortality rates, and public health indicators by country and region.

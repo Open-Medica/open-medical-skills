@@ -7,6 +7,7 @@ const navItems = [
   { href: "/about", label: "About" },
   { href: "/skills", label: "Skills" },
   { href: "/plugins", label: "Plugins" },
+  { href: "/create-skill", label: "Create" },
   { href: "/submit", label: "Submit" },
 ];
 
@@ -16,9 +17,12 @@ const currentPath = Astro.url.pathname;
 <header class="sticky top-0 z-50 border-b border-slate-800 bg-black/80 backdrop-blur-lg dark:border-slate-800 dark:bg-black/80">
   <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
     <!-- Logo -->
-    <a href="/" class="flex flex-col">
+    <a href="/" class="group flex flex-col">
       <span class="text-lg font-light tracking-tight text-white sm:text-xl">Open Medical <span class="font-bold bg-gradient-to-r from-cyan-400 to-cyan-500 bg-clip-text text-transparent">Skills</span></span>
-      <span class="text-[10px] text-slate-400 -mt-0.5">by IntelMedica.ai</span>
+      <span class="flex items-center gap-1 -mt-0.5">
+        <span class="text-[10px] text-slate-400">by IntelMedica.ai</span>
+        <span class="h-[1.5px] w-8 rounded-full bg-red-500/50 transition-all duration-300 group-hover:w-12 group-hover:bg-red-500/80"></span>
+      </span>
     </a>
 
     <!-- Desktop nav -->

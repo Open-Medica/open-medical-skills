@@ -2,9 +2,14 @@ import { useState, useEffect, useRef } from "react";
 import { CATEGORIES, CATEGORY_LABELS } from "../lib/categories";
 import { getUser, isLoggedIn, type GitHubUser } from "../lib/auth";
 
+const API_BASE_URL =
+  import.meta.env.PUBLIC_API_BASE_URL || "https://api.openmedicalskills.org";
+
 export default function SubmissionForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [prUrl, setPrUrl] = useState("");
   const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
   const [authUser, setAuthUser] = useState<GitHubUser | null>(null);
   const authorInputRef = useRef<HTMLInputElement>(null);
 
@@ -33,18 +38,20 @@ export default function SubmissionForm() {
     return () => window.removeEventListener("oms:auth-user", handleAuthUser);
   }, []);
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const formData = new FormData(form);
 
     // Basic validation
-    const name = formData.get("name") as string;
-    const displayName = formData.get("display_name") as string;
-    const description = formData.get("description") as string;
-    const repository = formData.get("repository") as string;
+    const name = (formData.get("name") as string).trim();
+    const displayName = (formData.get("display_name") as string).trim();
+    const description = (formData.get("description") as string).trim();
+    const author = (formData.get("author") as string).trim();
+    const repository = (formData.get("repository") as string).trim();
+    const category = (formData.get("category") as string).trim();
 
-    if (!name || !displayName || !description || !repository) {
+    if (!name || !displayName || !description || !author || !repository || !category) {
       setError("Please fill in all required fields.");
       return;
     }
@@ -57,10 +64,62 @@ export default function SubmissionForm() {
       return;
     }
 
-    // In production this would POST to a Cloudflare Worker
-    // For now, show success
-    setSubmitted(true);
+    // Build the JSON payload matching the Worker's expected SubmissionData
+    const tagsRaw = (formData.get("tags") as string) || "";
+    const tags = tagsRaw
+      .split(",")
+      .map((t) => t.trim())
+      .filter(Boolean);
+
+    const installGit = (formData.get("install_git") as string)?.trim();
+
+    const payload: Record<string, unknown> = {
+      name,
+      display_name: displayName,
+      description,
+      author,
+      repository,
+      category,
+      tags: tags.length > 0 ? tags : undefined,
+      install: installGit ? { git: installGit } : undefined,
+    };
+
     setError("");
+    setSubmitting(true);
+
+    try {
+      const response = await fetch(`${API_BASE_URL}/api/submit`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = (await response.json()) as {
+        success: boolean;
+        pr_url?: string;
+        error?: string;
+        errors?: string[];
+      };
+
+      if (!response.ok || !data.success) {
+        const messages = data.errors?.length
+          ? data.errors.join(". ")
+          : data.error || "Submission failed. Please try again.";
+        setError(messages);
+        return;
+      }
+
+      setPrUrl(data.pr_url || "");
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Network error. Please check your connection and try again."
+      );
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   if (submitted) {
@@ -73,8 +132,19 @@ export default function SubmissionForm() {
         <p className="mt-1 text-sm text-green-600 dark:text-green-400">
           Your skill has been submitted for review. A physician maintainer will review it shortly.
         </p>
+        {prUrl && (
+          <a
+            href={prUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-3 inline-block text-sm font-medium text-primary hover:underline dark:text-primary-light"
+          >
+            View Pull Request
+          </a>
+        )}
+        <br />
         <button
-          onClick={() => setSubmitted(false)}
+          onClick={() => { setSubmitted(false); setPrUrl(""); }}
           className="mt-4 text-sm font-medium text-primary hover:underline dark:text-primary-light"
         >
           Submit another
@@ -235,9 +305,10 @@ export default function SubmissionForm() {
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+        disabled={submitting}
+        className="w-full rounded-lg bg-primary px-4 py-3 text-sm font-semibold text-white transition-colors hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-60 dark:focus:ring-offset-slate-900"
       >
-        Submit for Review
+        {submitting ? "Submitting..." : "Submit for Review"}
       </button>
     </form>
   );

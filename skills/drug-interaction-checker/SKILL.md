@@ -1,3 +1,11 @@
+---
+name: drug-interaction-checker
+description: >
+  Real-time drug-drug interaction detection with five-level severity
+  classification (A/B/C/D/X). Checks for drug-disease, drug-dose, and
+  drug-food interactions using FDA and clinical databases.
+---
+
 # Drug Interaction Safety Checker
 
 Real-time drug-drug interaction detection with five-level severity classification (A/B/C/D/X), modeled after the Lexicomp grading system. This skill checks for drug-disease contraindications, drug-dose range violations, and drug-food interactions by referencing FDA adverse event databases and peer-reviewed clinical pharmacology sources.

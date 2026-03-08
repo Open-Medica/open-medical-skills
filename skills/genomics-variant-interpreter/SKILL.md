@@ -1,3 +1,11 @@
+---
+name: genomics-variant-interpreter
+description: >
+  Interpret genomic variants using ClinVar, gnomAD, and other genomic
+  databases. Provides pathogenicity classification and clinical significance
+  assessment.
+---
+
 # Genomic Variant Interpretation
 
 Interpret genomic variants by querying ClinVar, gnomAD, COSMIC, and other curated genomic databases. This skill provides ACMG/AMP-aligned pathogenicity classification, population frequency analysis, clinical significance assessment, and actionability evaluation for germline and somatic variants identified through clinical genomic testing.

@@ -10,7 +10,13 @@
     "astro": "astro",
     "generate-cli-index": "node scripts/generate-cli-index.js"
   },
-  "keywords": ["medical", "ai", "skills", "plugins", "healthcare"],
+  "keywords": [
+    "medical",
+    "ai",
+    "skills",
+    "plugins",
+    "healthcare"
+  ],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.29.3",
@@ -20,15 +26,21 @@
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "astro": "^5.18.0",
+    "js-yaml": "^4.1.1",
     "pagefind": "^1.4.0",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4"
+    "react-dom": "^19.2.4",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.2.1",
+    "@types/js-yaml": "^4.0.9",
     "tailwindcss": "^4.2.1"
   },
   "pnpm": {
-    "onlyBuiltDependencies": ["esbuild", "sharp"]
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp"
+    ]
   }
 }

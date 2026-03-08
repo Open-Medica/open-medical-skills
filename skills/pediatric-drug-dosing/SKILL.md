@@ -1,3 +1,11 @@
+---
+name: pediatric-drug-dosing
+description: >
+  Weight-based and body-surface-area-based drug dosing calculator for
+  pediatric patients. Includes common pediatric medications with
+  age-appropriate dosing ranges.
+---
+
 # Pediatric Drug Dosing Calculator
 
 Calculate weight-based and body-surface-area-based drug doses for pediatric patients with built-in safety checks, maximum dose enforcement, and age-appropriate validation. Medication errors are three times more common in children than adults, and this skill provides multiple safety layers to reduce dosing errors at the point of care.

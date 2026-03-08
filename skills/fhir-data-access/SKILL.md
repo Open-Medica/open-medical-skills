@@ -1,3 +1,11 @@
+---
+name: fhir-data-access
+description: >
+  Connect to FHIR-compliant electronic health record systems to query,
+  retrieve, and analyze patient data using natural language. Supports full
+  CRUD operations on FHIR resources with SMART-on-FHIR authentication.
+---
+
 # FHIR Healthcare Data Access
 
 Connect to FHIR-compliant (Fast Healthcare Interoperability Resources) electronic health record systems to query, retrieve, and analyze patient data using natural language. This skill supports full CRUD operations on FHIR R4 resources with SMART-on-FHIR OAuth2 authentication, enabling AI agents to interact with EHR data in a standards-compliant, auditable manner.

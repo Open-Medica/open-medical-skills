@@ -1,3 +1,11 @@
+---
+name: nursing-care-plan
+description: >
+  Generate evidence-based nursing care plans with NANDA-I diagnoses, NOC
+  outcomes, and NIC interventions. Supports individualized patient care
+  planning.
+---
+
 # Nursing Care Plan Generator
 
 Generate evidence-based nursing care plans using the NANDA-I, NOC, NIC (NNN) linkage framework. This skill connects standardized nursing diagnoses to measurable patient outcomes and specific interventions, producing structured care plans with PES-format diagnostic statements, Likert-scale outcome indicators, and detailed nursing activity lists with frequency recommendations and evidence rationale.

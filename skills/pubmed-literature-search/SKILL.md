@@ -1,3 +1,11 @@
+---
+name: pubmed-literature-search
+description: >
+  Search 36M+ citations from PubMed and PubMed Central. Advanced search with
+  boolean operators, MeSH terms, author/journal filters, and full-text
+  access.
+---
+
 # PubMed Medical Literature Search
 
 Search over 36 million biomedical citations from PubMed and PubMed Central using the NCBI E-utilities API. This skill enables AI agents to perform advanced literature searches with boolean operators, MeSH term expansion, author and journal filtering, date range restrictions, and direct full-text access links -- bringing the power of systematic literature review directly into clinical and research AI workflows.

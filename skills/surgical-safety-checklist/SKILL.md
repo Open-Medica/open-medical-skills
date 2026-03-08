@@ -1,3 +1,11 @@
+---
+name: surgical-safety-checklist
+description: >
+  Digital implementation of the WHO Surgical Safety Checklist for
+  pre-operative, intra-operative, and post-operative verification. Reduces
+  surgical complications and improves team communication.
+---
+
 # WHO Surgical Safety Checklist
 
 ## Overview

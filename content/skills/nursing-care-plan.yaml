@@ -16,6 +16,7 @@ safety_classification: "caution"
 specialty: ["nursing"]
 reviewer: "Pending Review"
 date_added: "2026-03-02"
+status: "published"
 verified: false
 script_language: "python"
 script_content: |

@@ -1,3 +1,10 @@
+---
+name: raf-score-calculator
+description: >
+  Risk Adjustment Factor (RAF) score calculator with Hierarchical Condition
+  Category (HCC) capture from encounter documentation for Medicare Advantage.
+---
+
 # RAF Score & HCC Calculator
 
 A Risk Adjustment Factor (RAF) score calculator with Hierarchical Condition Category (HCC) capture from encounter documentation, purpose-built for Medicare Advantage risk adjustment workflows. The skill analyzes clinical notes to identify HCC-eligible diagnoses, maps ICD-10 codes to HCC categories using the CMS-HCC risk adjustment model, and calculates expected RAF scores for individual patients and panel-level projections.

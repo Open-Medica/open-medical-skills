@@ -1,3 +1,11 @@
+---
+name: fda-510k-documentation
+description: >
+  Automates FDA-required documentation for Software as a Medical Device
+  (SaMD) including 510(k) submissions. Generates traceability matrices
+  linking code to regulatory requirements.
+---
+
 # FDA 510(k) Documentation Automation
 
 Automate the generation of FDA-required documentation for Software as a Medical Device (SaMD) under the 510(k) premarket notification pathway. This skill produces traceability matrices linking software requirements to regulatory obligations, generates predicate device comparison tables, drafts software documentation per FDA guidance, and creates the structured narrative sections required for a complete 510(k) submission package.

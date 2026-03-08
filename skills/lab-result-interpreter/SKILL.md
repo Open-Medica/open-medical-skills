@@ -1,3 +1,11 @@
+---
+name: lab-result-interpreter
+description: >
+  Automatically extract and interpret biochemical test data from lab reports.
+  Provides clinical significance analysis, reference range comparisons, and
+  flags critical values.
+---
+
 # Lab Result Interpretation Assistant
 
 Automatically extract, organize, and interpret biochemical and hematological laboratory test data from clinical lab reports. This skill provides AI agents with structured interpretation of lab values including reference range comparison, critical value flagging, clinical significance analysis, pattern recognition across related analytes, and differential diagnosis suggestions based on abnormal result patterns -- serving as a clinical decision-support tool for laboratory medicine workflows.

@@ -1,3 +1,11 @@
+---
+name: radiation-exposure-tracker
+description: >
+  Track cumulative radiation exposure from medical imaging procedures
+  (X-rays, CT scans). Includes body surface area adjustments and radioactive
+  decay models for comprehensive dosimetry.
+---
+
 # Medical Radiation Exposure Tracker
 
 Track cumulative radiation exposure from medical imaging procedures across a patient's lifetime. This skill calculates effective doses from diagnostic X-rays, CT scans, fluoroscopy, nuclear medicine studies, and interventional radiology procedures, incorporating body surface area adjustments, organ-specific weighting factors, and radioactive decay models for comprehensive dosimetry tracking.

@@ -14,6 +14,7 @@ install:
 evidence_level: "moderate"
 safety_classification: "safe"
 specialty: ["utilization-management", "insurance"]
-reviewer: "Verified - Anthropic Official"
+reviewer: "Pending Review"
 date_added: "2026-03-02"
-verified: true
+status: "coming-soon"
+verified: false

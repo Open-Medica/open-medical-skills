@@ -1,3 +1,11 @@
+---
+name: dicom-metadata-extractor
+description: >
+  Extract metadata from DICOM medical images, anonymize protected health
+  information (PHI), and process imaging data for research or clinical
+  workflows. Supports pydicom integration.
+---
+
 # DICOM Metadata & PHI Anonymization
 
 Extract, inspect, and anonymize metadata from DICOM (Digital Imaging and Communications in Medicine) medical image files. This skill provides AI agents with the ability to parse DICOM headers for study and patient information, batch-extract metadata fields across imaging series, identify and redact protected health information (PHI) embedded in DICOM tags for de-identification, and prepare imaging datasets for research use in compliance with HIPAA Safe Harbor and Expert Determination methods -- powered by the pydicom library.

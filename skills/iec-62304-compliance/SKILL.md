@@ -1,3 +1,11 @@
+---
+name: iec-62304-compliance
+description: >
+  Modular skills for AI coding agents working on medical device software.
+  Aligned to IEC 62304, ISO 14971, FDA, and EU MDR standards for software
+  lifecycle management.
+---
+
 # IEC 62304 Medical Device Software Lifecycle
 
 A modular skill set for AI coding agents working on medical device software development. Provides structured guidance aligned to IEC 62304 (Medical Device Software Lifecycle Processes), ISO 14971 (Risk Management), FDA 21 CFR Part 820, and EU MDR (Medical Device Regulation) standards. The skill ensures that software development activities produce the documentation, testing, and traceability artifacts required for regulatory submissions and quality system compliance.

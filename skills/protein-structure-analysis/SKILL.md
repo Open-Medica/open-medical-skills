@@ -1,3 +1,11 @@
+---
+name: protein-structure-analysis
+description: >
+  Access AlphaFold Protein Structure Database and Protein Data Bank (PDB) for
+  structural biology research. Analyze protein structures and molecular
+  interactions.
+---
+
 # Protein Structure Database (AlphaFold & PDB)
 
 Access the AlphaFold Protein Structure Database and Protein Data Bank (PDB) for structural biology research, drug target analysis, and molecular interaction studies. This skill enables querying protein structures by gene name, UniProt accession, or PDB ID, retrieving 3D structural data, analyzing binding sites and protein-ligand interactions, and comparing predicted (AlphaFold) and experimentally determined (PDB) structures.

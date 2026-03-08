@@ -1,3 +1,11 @@
+---
+name: medical-anatomy-tutor
+description: >
+  Interactive anatomy education tool with 3D anatomical references, clinical
+  correlations, and self-assessment questions. Covers all major organ
+  systems.
+---
+
 # Interactive Anatomy Learning Assistant
 
 Study human anatomy interactively with structured anatomical references organized by body region and organ system, each linked to high-yield clinical correlations. This skill provides detailed structure lookups with origin, insertion, innervation, and blood supply data, plus board-style clinical vignette quizzes that test applied anatomical knowledge -- the type of integrated anatomy-pathology reasoning tested on USMLE and applied in clinical rotations.

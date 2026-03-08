@@ -1,3 +1,11 @@
+---
+name: fda-drug-information
+description: >
+  Access comprehensive FDA drug databases including adverse events (FAERS),
+  drug labels, NDC directory, recalls, shortages, and 510(k) device
+  clearances via openFDA API.
+---
+
 # FDA Drug Information & Adverse Events
 
 Access comprehensive U.S. Food and Drug Administration drug safety databases through the openFDA API. This skill provides AI agents with real-time access to the FDA Adverse Event Reporting System (FAERS), structured product labeling (SPL), the National Drug Code (NDC) directory, drug recalls and enforcement actions, drug shortage reports, and 510(k) medical device clearance data -- enabling pharmacovigilance, regulatory research, and patient safety workflows.

@@ -1,3 +1,11 @@
+---
+name: systematic-review-assistant
+description: >
+  Assists with systematic review methodology including PICO formulation,
+  search strategy development, study selection, and quality assessment using
+  PRISMA guidelines.
+---
+
 # Systematic Review & Meta-Analysis Assistant
 
 A comprehensive assistant for conducting systematic reviews and meta-analyses following PRISMA 2020 guidelines. This skill supports the entire systematic review workflow from research question formulation through PICO framework development, search strategy construction, study screening and selection, quality assessment, data extraction, and evidence synthesis reporting.

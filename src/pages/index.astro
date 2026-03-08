@@ -13,12 +13,17 @@ const allItems = [...allSkills, ...allPlugins];
 // Stats
 const totalSkills = allSkills.length;
 const totalPlugins = allPlugins.length;
+const publishedCount = allItems.filter((s) => s.data.status === "published").length;
 const verifiedCount = allItems.filter((s) => s.data.verified).length;
 const categoryCount = new Set(allItems.map((s) => s.data.category)).size;
 
-// Featured: verified items first, then by date
+// Featured: published first, then verified, then by date
+const featuredStatusOrder: Record<string, number> = { published: 0, draft: 1, "coming-soon": 2 };
 const featured = [...allItems]
   .sort((a, b) => {
+    const aStatus = featuredStatusOrder[a.data.status ?? "draft"] ?? 1;
+    const bStatus = featuredStatusOrder[b.data.status ?? "draft"] ?? 1;
+    if (aStatus !== bStatus) return aStatus - bStatus;
     if (a.data.verified !== b.data.verified) return a.data.verified ? -1 : 1;
     return b.data.date_added.localeCompare(a.data.date_added);
   })
@@ -93,8 +98,8 @@ const searchData = allItems.map((s) => ({
         <p class="text-sm text-slate-500">Categories</p>
       </div>
       <div class="text-center">
-        <p class="text-2xl font-bold text-slate-900 dark:text-white">{verifiedCount > 0 ? verifiedCount : "All"}</p>
-        <p class="text-sm text-slate-500">Physician-Reviewed</p>
+        <p class="text-2xl font-bold text-slate-900 dark:text-white">{publishedCount}</p>
+        <p class="text-sm text-slate-500">Published</p>
       </div>
     </div>
   </section>
@@ -102,7 +107,7 @@ const searchData = allItems.map((s) => ({
   <!-- Featured -->
   <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <h2 class="text-xl font-semibold text-slate-900 dark:text-white">Featured</h2>
-    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Top verified and recently added skills</p>
+    <p class="mt-1 text-sm text-slate-500 dark:text-slate-400">Published skills with full implementations</p>
     <div class="mt-6">
       <SkillGrid skills={featured} />
     </div>

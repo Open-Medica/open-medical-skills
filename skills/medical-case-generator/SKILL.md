@@ -1,3 +1,11 @@
+---
+name: medical-case-generator
+description: >
+  Generate realistic clinical case scenarios for medical education and
+  assessment. Customizable by specialty, complexity level, and learning
+  objectives.
+---
+
 # Clinical Case Scenario Generator
 
 Generate realistic, comprehensive clinical case scenarios for medical education, simulation-based training, and clinical reasoning practice. Each case follows a structured clinical vignette format progressing from initial presentation through history, physical examination, diagnostic workup, differential diagnosis with likelihood ranking, evidence-based management plans, and board-relevant teaching points -- suitable for problem-based learning, standardized patient encounters, and self-study.

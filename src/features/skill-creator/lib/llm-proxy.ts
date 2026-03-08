@@ -1,24 +1,13 @@
 /**
- * llm-proxy.ts — Client-side LLM API client for the skill creator.
+ * llm-proxy.ts -- Client-side LLM API client for the skill creator.
  *
  * Makes direct calls from the browser to the user's configured LLM endpoint.
  * All supported providers expose an OpenAI-compatible /v1/chat/completions API.
- *
- * Supported providers:
- * - LMStudio (localhost:1234)
- * - vLLM (localhost:8000)
- * - Ollama (localhost:11434)
- * - DeepSeek (api.deepseek.com)
- * - OpenAI (api.openai.com)
- * - Any OpenAI-compatible endpoint
  *
  * Security:
  * - API keys are stored in browser localStorage only
  * - No keys are ever sent to OMS servers
  * - CORS must be enabled on the LLM endpoint for browser-direct calls
- *   (local providers like LMStudio/Ollama typically allow this by default)
- *
- * TODO: Implement during feature development phase.
  */
 
 import type { LLMProviderConfig, LLMRequest, LLMResponse } from '../types';
@@ -62,6 +51,39 @@ export const PROVIDER_PRESETS: Record<string, Partial<LLMProviderConfig>> = {
   },
 };
 
+const STORAGE_KEY = 'oms-llm-provider';
+
+/** Save provider config to localStorage. */
+export function saveProviderConfig(config: LLMProviderConfig): void {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(config));
+  } catch {
+    // localStorage may be unavailable
+  }
+}
+
+/** Load provider config from localStorage. */
+export function loadProviderConfig(): LLMProviderConfig | null {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) return JSON.parse(raw) as LLMProviderConfig;
+  } catch {
+    // localStorage may be unavailable
+  }
+  return null;
+}
+
+/** Get a default provider configuration. */
+export function getDefaultProvider(): LLMProviderConfig {
+  return {
+    name: 'Ollama',
+    endpoint: 'http://localhost:11434/v1',
+    model: 'llama3',
+    maxTokens: 2048,
+    temperature: 0.7,
+  };
+}
+
 /**
  * Send a refinement request to the configured LLM provider.
  *
@@ -69,11 +91,51 @@ export const PROVIDER_PRESETS: Record<string, Partial<LLMProviderConfig>> = {
  * then calls the OpenAI-compatible chat completions endpoint.
  */
 export async function refineSection(request: LLMRequest): Promise<LLMResponse> {
-  // TODO: Implement OpenAI-compatible API call
-  // 1. Build messages: [system prompt, context from previous sections, user content]
-  // 2. POST to provider.endpoint + '/chat/completions'
-  // 3. Parse response and return refined content
-  throw new Error('Not implemented — placeholder for feature development');
+  const { provider, systemPrompt, userContent } = request;
+
+  const endpoint = provider.endpoint.replace(/\/+$/, '');
+  const url = `${endpoint}/chat/completions`;
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  if (provider.apiKey) {
+    headers['Authorization'] = `Bearer ${provider.apiKey}`;
+  }
+
+  const body = {
+    model: provider.model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userContent },
+    ],
+    max_tokens: provider.maxTokens,
+    temperature: provider.temperature,
+    stream: false,
+  };
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => 'Unknown error');
+    throw new Error(`LLM request failed (${res.status}): ${errText}`);
+  }
+
+  const data = await res.json();
+  const choice = data.choices?.[0];
+  if (!choice?.message?.content) {
+    throw new Error('LLM returned an empty response');
+  }
+
+  return {
+    refinedContent: choice.message.content,
+    tokensUsed: data.usage?.total_tokens ?? 0,
+    model: data.model ?? provider.model,
+  };
 }
 
 /**
@@ -81,8 +143,23 @@ export async function refineSection(request: LLMRequest): Promise<LLMResponse> {
  * Returns true if the endpoint responds, false otherwise.
  */
 export async function testConnection(provider: LLMProviderConfig): Promise<boolean> {
-  // TODO: Implement with a lightweight /v1/models call
-  throw new Error('Not implemented — placeholder for feature development');
+  try {
+    const endpoint = provider.endpoint.replace(/\/+$/, '');
+    const headers: Record<string, string> = {};
+    if (provider.apiKey) {
+      headers['Authorization'] = `Bearer ${provider.apiKey}`;
+    }
+
+    const res = await fetch(`${endpoint}/models`, {
+      method: 'GET',
+      headers,
+      signal: AbortSignal.timeout(5000),
+    });
+
+    return res.ok;
+  } catch {
+    return false;
+  }
 }
 
 /**
@@ -92,6 +169,67 @@ export async function testConnection(provider: LLMProviderConfig): Promise<boole
 export async function* streamRefineSection(
   request: LLMRequest
 ): AsyncGenerator<string, void, unknown> {
-  // TODO: Implement streaming via fetch + ReadableStream
-  throw new Error('Not implemented — placeholder for feature development');
+  const { provider, systemPrompt, userContent } = request;
+
+  const endpoint = provider.endpoint.replace(/\/+$/, '');
+  const url = `${endpoint}/chat/completions`;
+
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+  if (provider.apiKey) {
+    headers['Authorization'] = `Bearer ${provider.apiKey}`;
+  }
+
+  const body = {
+    model: provider.model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userContent },
+    ],
+    max_tokens: provider.maxTokens,
+    temperature: provider.temperature,
+    stream: true,
+  };
+
+  const res = await fetch(url, {
+    method: 'POST',
+    headers,
+    body: JSON.stringify(body),
+  });
+
+  if (!res.ok) {
+    const errText = await res.text().catch(() => 'Unknown error');
+    throw new Error(`LLM streaming request failed (${res.status}): ${errText}`);
+  }
+
+  const reader = res.body?.getReader();
+  if (!reader) throw new Error('No response body for streaming');
+
+  const decoder = new TextDecoder();
+  let buffer = '';
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split('\n');
+    buffer = lines.pop() ?? '';
+
+    for (const line of lines) {
+      const trimmed = line.trim();
+      if (!trimmed || !trimmed.startsWith('data: ')) continue;
+      const jsonStr = trimmed.slice(6);
+      if (jsonStr === '[DONE]') return;
+
+      try {
+        const parsed = JSON.parse(jsonStr);
+        const delta = parsed.choices?.[0]?.delta?.content;
+        if (delta) yield delta;
+      } catch {
+        // Skip malformed SSE lines
+      }
+    }
+  }
 }

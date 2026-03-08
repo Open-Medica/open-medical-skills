@@ -1,3 +1,11 @@
+---
+name: acls-protocol-assistant
+description: >
+  Advanced Cardiac Life Support (ACLS) protocol guide for emergency
+  resuscitation. Provides step-by-step guidance for cardiac arrest,
+  arrhythmia management, and post-cardiac arrest care.
+---
+
 # ACLS Protocol Assistant
 
 ## Overview

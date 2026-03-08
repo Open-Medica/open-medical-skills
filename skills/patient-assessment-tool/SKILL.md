@@ -1,3 +1,11 @@
+---
+name: patient-assessment-tool
+description: >
+  Comprehensive nursing assessment tool for systematic patient evaluation.
+  Covers vital signs interpretation, pain assessment, fall risk screening,
+  and activities of daily living.
+---
+
 # Nursing Patient Assessment Tool
 
 Perform comprehensive bedside patient assessments using multiple validated clinical instruments in a single workflow. This skill integrates the NEWS2 early warning score for clinical deterioration detection, the Morse Fall Scale for fall risk stratification, the Braden Scale for pressure injury risk assessment, and the PQRST framework for structured pain evaluation, each returning scored results with evidence-based intervention recommendations.

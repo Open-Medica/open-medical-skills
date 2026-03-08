@@ -1,3 +1,11 @@
+---
+name: icd10-code-lookup
+description: >
+  Search and validate ICD-10-CM diagnosis codes using NLM Clinical Tables
+  API. Supports partial matching and hierarchical browsing of code
+  categories.
+---
+
 # ICD-10 Diagnosis Code Lookup
 
 Search, validate, and browse ICD-10-CM diagnosis codes using the National Library of Medicine (NLM) Clinical Tables API. This skill enables AI agents to perform partial-match text searches against the complete ICD-10-CM code set, validate specific codes for billing accuracy, browse the hierarchical chapter-block-category structure, and retrieve code descriptions with inclusion/exclusion notes -- streamlining medical coding, claims processing, and clinical documentation workflows.

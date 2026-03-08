@@ -7,10 +7,14 @@ import SearchBar from "../../components/SearchBar.tsx";
 
 const allSkills = await getCollection("skills");
 
-// Sort by date descending (newest first)
-const sorted = [...allSkills].sort((a, b) =>
-  b.data.date_added.localeCompare(a.data.date_added)
-);
+// Sort: published first, then by date descending
+const statusOrder: Record<string, number> = { published: 0, draft: 1, "coming-soon": 2 };
+const sorted = [...allSkills].sort((a, b) => {
+  const aStatus = statusOrder[a.data.status ?? "draft"] ?? 1;
+  const bStatus = statusOrder[b.data.status ?? "draft"] ?? 1;
+  if (aStatus !== bStatus) return aStatus - bStatus;
+  return b.data.date_added.localeCompare(a.data.date_added);
+});
 
 // Category counts
 const categoryCounts: Record<string, number> = {};

@@ -16,6 +16,7 @@ safety_classification: "safe"
 specialty: ["psychiatry", "primary-care"]
 reviewer: "Pending Review"
 date_added: "2026-03-02"
+status: "published"
 verified: false
 script_language: "python"
 script_content: |

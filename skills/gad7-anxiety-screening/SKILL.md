@@ -1,3 +1,10 @@
+---
+name: gad7-anxiety-screening
+description: >
+  Generalized Anxiety Disorder 7-item (GAD-7) screening tool with automated
+  scoring. Assesses anxiety severity and guides treatment decisions.
+---
+
 # GAD-7 Anxiety Screening Tool
 
 ## Overview

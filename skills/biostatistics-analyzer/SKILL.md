@@ -1,3 +1,11 @@
+---
+name: biostatistics-analyzer
+description: >
+  Perform common biostatistical analyses for medical research including
+  survival analysis, logistic regression, ROC curves, and sample size
+  calculations.
+---
+
 # Biostatistics Analysis Tool
 
 Perform common biostatistical analyses for medical research including survival analysis (Kaplan-Meier, Cox proportional hazards), logistic and linear regression, ROC curve analysis with AUC calculation, sample size and power calculations, and diagnostic test performance metrics. The skill guides researchers through appropriate test selection, assumption checking, result interpretation, and reporting in accordance with published statistical reporting guidelines.

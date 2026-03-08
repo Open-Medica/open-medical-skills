@@ -14,6 +14,7 @@ install:
 evidence_level: "high"
 safety_classification: "safe"
 specialty: ["health-information-management", "compliance"]
-reviewer: "Verified - OMS Review Team"
+reviewer: "Pending Review"
 date_added: "2026-03-02"
-verified: true
+status: "coming-soon"
+verified: false

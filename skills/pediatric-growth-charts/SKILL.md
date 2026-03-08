@@ -1,3 +1,11 @@
+---
+name: pediatric-growth-charts
+description: >
+  Interpret pediatric growth measurements using CDC and WHO growth charts.
+  Plots height, weight, BMI, and head circumference percentiles for age and
+  gender.
+---
+
 # Pediatric Growth Chart Analyzer
 
 Interpret pediatric growth measurements using CDC and WHO growth charts for children from birth through 20 years. This skill plots height, weight, BMI, and head circumference against age- and sex-specific percentile curves, identifies abnormal growth patterns, and generates clinical recommendations for further evaluation when measurements fall outside expected ranges.

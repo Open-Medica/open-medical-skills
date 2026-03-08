@@ -1,3 +1,11 @@
+---
+name: precision-medicine-therapeutics
+description: >
+  Generate personalized treatment plans based on pharmacogenomics, variant
+  interpretation, and patient-specific data. Integrates ClinPGx and ClinVar
+  databases for evidence-based precision therapeutics.
+---
+
 # Precision Medicine Treatment Planning
 
 Generate personalized treatment plans driven by pharmacogenomics, somatic and germline variant interpretation, and patient-specific clinical data. This skill integrates the Clinical Pharmacogenetics Implementation Consortium (CPIC) guidelines, ClinVar pathogenicity annotations, and PharmGKB drug-gene relationships to translate raw genomic data into actionable therapeutic recommendations.

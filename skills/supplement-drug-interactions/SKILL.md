@@ -1,3 +1,11 @@
+---
+name: supplement-drug-interactions
+description: >
+  First supplement-drug interaction safety tool for AI agents. Evidence-based
+  supplement safety intelligence with 805 FDA FAERS adverse event signals and
+  CYP450 pathway analysis.
+---
+
 # Supplement-Drug Interaction Safety
 
 The first supplement-drug interaction safety tool purpose-built for AI agents. Provides evidence-based supplement safety intelligence covering 805 FDA FAERS adverse event signals and comprehensive CYP450 enzyme pathway analysis for herbal products, vitamins, and dietary supplements that are frequently omitted from standard drug interaction databases.

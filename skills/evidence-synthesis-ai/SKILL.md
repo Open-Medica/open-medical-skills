@@ -1,3 +1,11 @@
+---
+name: evidence-synthesis-ai
+description: >
+  Synthesizes clinical evidence from multiple sources including PubMed,
+  Cochrane, and clinical guidelines. Generates evidence summaries with
+  quality grading.
+---
+
 # Clinical Evidence Synthesis Tool
 
 Synthesize clinical evidence from multiple biomedical sources -- including PubMed, the Cochrane Library, clinical practice guidelines, and systematic review databases -- into structured, quality-graded evidence summaries. This skill enables AI agents to perform rapid evidence appraisal, generate GRADE-framework evidence tables, assess risk of bias across studies, and produce actionable clinical evidence briefs that support guideline development, clinical question answering, and evidence-based practice at the point of care.

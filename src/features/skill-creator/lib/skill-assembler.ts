@@ -1,58 +1,128 @@
 /**
- * skill-assembler.ts — Assembles completed sections into SKILL.md and content YAML.
+ * skill-assembler.ts -- Assembles completed sections into SKILL.md and content YAML.
  *
  * Takes the user's accepted section content and metadata, then generates:
- * 1. A SKILL.md file with YAML front matter (Claude Code compatible)
+ * 1. A SKILL.md file with YAML front matter
  * 2. A content YAML file matching the Zod schema in src/content.config.ts
- *
- * Output format follows the established patterns from the 49 existing skills
- * in the OMS repository.
- *
- * TODO: Implement during feature development phase.
  */
 
+import yaml from 'js-yaml';
 import type { SkillSection, SkillMetadata, SkillOutput } from '../types';
+
+/** Section ID to markdown heading mapping. */
+const SECTION_HEADINGS: Record<string, string> = {
+  title: '', // Title becomes the H1, not an H2
+  description: '', // Description goes right after the H1
+  'quick-install': '## Quick Install',
+  'what-it-does': '## What It Does',
+  'clinical-use-cases': '## Clinical Use Cases',
+  'safety-evidence': '## Safety & Evidence',
+  'example-usage': '## Example Usage',
+  'technical-details': '## Technical Details',
+  references: '## References',
+};
 
 /**
  * Generate the complete SKILL.md file from sections and metadata.
- *
- * Output structure:
- * ---
- * name: skill-name
- * description: >
- *   Multi-line description from the description section.
- * ---
- *
- * # Display Name
- * [description paragraph]
- * ## Quick Install
- * [install commands]
- * ## What It Does
- * [capability list]
- * ...
- * ---
- * *This skill is part of Open Medical Skills...*
  */
 export function assembleSkillMd(
   sections: SkillSection[],
   metadata: SkillMetadata
 ): string {
-  // TODO: Implement SKILL.md assembly
-  throw new Error('Not implemented — placeholder for feature development');
+  const parts: string[] = [];
+
+  // YAML front matter
+  const frontMatter = yaml.dump(
+    {
+      name: metadata.name,
+      description: metadata.description,
+    },
+    { lineWidth: 80, flowLevel: -1 }
+  ).trim();
+
+  parts.push(`---\n${frontMatter}\n---`);
+  parts.push('');
+
+  for (const section of sections) {
+    const content = section.content.trim();
+    if (!content) continue;
+
+    if (section.id === 'title') {
+      parts.push(`# ${content}`);
+      parts.push('');
+    } else if (section.id === 'description') {
+      parts.push(content);
+      parts.push('');
+    } else {
+      const heading = SECTION_HEADINGS[section.id] || `## ${section.customTitle || section.displayName}`;
+      // If the content already starts with the heading, don't duplicate it
+      if (content.startsWith(heading)) {
+        parts.push(content);
+      } else {
+        parts.push(heading);
+        parts.push('');
+        parts.push(content);
+      }
+      parts.push('');
+    }
+  }
+
+  // Footer
+  parts.push('---');
+  parts.push('');
+  parts.push(
+    '*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*'
+  );
+  parts.push('');
+
+  return parts.join('\n');
 }
 
 /**
  * Generate the content YAML file matching the Zod schema.
- *
- * Fields are extracted from metadata and section content.
- * Uses js-yaml for proper YAML serialization.
  */
 export function assembleContentYaml(
   sections: SkillSection[],
   metadata: SkillMetadata
 ): string {
-  // TODO: Implement content YAML assembly
-  throw new Error('Not implemented — placeholder for feature development');
+  const titleSection = sections.find((s) => s.id === 'title');
+  const descSection = sections.find((s) => s.id === 'description');
+
+  const installCmd = `npx skills add gitjfmd/open-medical-skills --skill ${metadata.name}`;
+  const gitCmd = `git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/${metadata.name} ~/.claude/skills/`;
+
+  const data: Record<string, unknown> = {
+    name: metadata.name,
+    display_name: titleSection?.content.trim() || metadata.displayName,
+    description: descSection?.content.trim().split('\n')[0] || metadata.description,
+    author: metadata.author,
+    repository:
+      metadata.repository ||
+      `https://github.com/gitjfmd/open-medical-skills/tree/main/skills/${metadata.name}`,
+    category: metadata.category,
+    tags: metadata.tags.length > 0 ? metadata.tags : [metadata.category],
+    version: metadata.version || '1.0.0',
+    license: metadata.license || 'MIT',
+    type: 'skill',
+    install: {
+      npx: installCmd,
+      git: gitCmd,
+    },
+    evidence_level: metadata.evidenceLevel,
+    safety_classification: metadata.safetyClassification,
+    specialty: metadata.specialty.length > 0 ? metadata.specialty : [metadata.category],
+    reviewer: 'Pending Review',
+    date_added: metadata.dateAdded || new Date().toISOString().split('T')[0],
+    status: 'coming-soon',
+    verified: false,
+  };
+
+  return yaml.dump(data, {
+    lineWidth: 120,
+    quotingType: '"',
+    forceQuotes: false,
+    noRefs: true,
+  });
 }
 
 /**

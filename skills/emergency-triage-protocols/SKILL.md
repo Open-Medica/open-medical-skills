@@ -1,3 +1,11 @@
+---
+name: emergency-triage-protocols
+description: >
+  AI-assisted emergency department triage tool with evidence-based protocols
+  for rapid patient assessment. Helps prioritize cases based on acuity and
+  clinical presentation.
+---
+
 # Emergency Department Triage Protocols
 
 AI-assisted emergency department triage tool with evidence-based protocols for rapid patient assessment. Helps prioritize cases based on acuity and clinical presentation.

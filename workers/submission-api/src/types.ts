@@ -8,26 +8,28 @@ export interface Env {
   ALLOWED_ORIGIN: string;
   GITHUB_CLIENT_ID: string;
   GITHUB_CLIENT_SECRET: string;
+  /** OAuth callback URL — must match the one registered in the GitHub OAuth App */
+  OAUTH_REDIRECT_URI: string;
 }
 
 /**
- * Valid medical categories (14 + "other")
+ * Valid medical categories — must match src/lib/categories.ts and src/content.config.ts
  */
 export const VALID_CATEGORIES = [
-  'clinical',
-  'diagnostic',
-  'administrative',
+  'diagnosis',
+  'treatment',
+  'lab-imaging',
+  'pharmacy',
+  'emergency',
+  'surgery',
+  'nursing',
+  'pediatrics',
+  'mental-health',
+  'public-health',
   'research',
   'education',
-  'pharmacology',
-  'radiology',
-  'pathology',
-  'surgery',
-  'mental-health',
-  'pediatrics',
-  'emergency-medicine',
-  'public-health',
-  'telemedicine',
+  'administrative',
+  'clinical-research-summarizing',
 ] as const;
 
 export type MedicalCategory = (typeof VALID_CATEGORIES)[number];

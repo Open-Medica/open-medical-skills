@@ -1,3 +1,11 @@
+---
+name: drugbank-search
+description: >
+  Access 17,430+ drugs (13,166 small molecules + 4,264 biotech drugs) with
+  high-performance SQLite backend. Search by name, therapeutic category,
+  elimination half-life, or molecular similarity.
+---
+
 # DrugBank Comprehensive Drug Database
 
 Access detailed pharmacological data for over 17,430 drug entries -- including 13,166 small-molecule drugs and 4,264 biotech/biologic products -- through a high-performance SQLite-backed local database. This skill enables AI agents to search by drug name, therapeutic category, mechanism of action, elimination half-life, molecular weight, or structural similarity, providing clinicians and pharmacists with rapid access to comprehensive drug monograph data without relying on external API rate limits.

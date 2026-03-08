@@ -1,3 +1,11 @@
+---
+name: phq9-depression-screening
+description: >
+  Validated Patient Health Questionnaire-9 (PHQ-9) for depression screening
+  and severity assessment. Automatic scoring and interpretation with suicide
+  risk flagging.
+---
+
 # PHQ-9 Depression Screening Tool
 
 ## Overview

@@ -1,3 +1,10 @@
+---
+name: medicare-drug-stats
+description: >
+  Access CMS Medicare data including physician services, prescriber data,
+  hospital utilization, and drug spending analysis via Socrata API.
+---
+
 # Medicare Drug Spending & Utilization
 
 Access comprehensive Centers for Medicare & Medicaid Services (CMS) data on drug spending, physician prescribing patterns, hospital utilization metrics, and provider payment analysis through the Socrata Open Data API. This skill enables AI agents to query real federal healthcare expenditure datasets, supporting health economics research, formulary management, prescribing pattern analysis, and healthcare policy evaluation.

@@ -1,3 +1,11 @@
+---
+name: medical-imaging-analysis
+description: >
+  Analyze medical imaging data from DICOM servers and PACS systems. Extract
+  metadata, query imaging studies by patient or modality, and process
+  diagnostic imaging reports for clinical decision support.
+---
+
 # Medical Imaging & DICOM Analysis
 
 Analyze medical imaging data from DICOM servers and Picture Archiving and Communication Systems (PACS). This skill enables AI agents to query imaging studies by patient, modality, or date range; retrieve and parse DICOM metadata for clinical context; process diagnostic imaging reports; and support radiological workflows including study comparison, modality-specific analysis, and structured reporting -- bridging the gap between imaging data systems and clinical decision support.

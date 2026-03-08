@@ -1,3 +1,11 @@
+---
+name: surgical-procedure-planner
+description: >
+  Pre-operative planning tool for surgical procedures. Assists with procedure
+  selection, anatomical considerations, equipment checklists, and patient
+  positioning protocols.
+---
+
 # Surgical Procedure Planning Assistant
 
 Pre-operative planning tool for surgical procedures. Assists with procedure selection, anatomical considerations, equipment checklists, and patient positioning protocols.

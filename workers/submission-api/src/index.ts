@@ -226,10 +226,13 @@ function generateYaml(data: SubmissionData): string {
 
   if (data.tags && data.tags.length > 0) {
     lines.push(`tags: [${data.tags.map(t => `"${yamlEscape(t)}"`).join(', ')}]`);
+  } else {
+    lines.push(`tags: []`);
   }
 
   lines.push(`version: "${data.version || '1.0.0'}"`);
   lines.push(`license: "${data.license || 'MIT'}"`);
+  lines.push(`type: "skill"`);
 
   lines.push('install:');
   const install = data.install;
@@ -242,6 +245,9 @@ function generateYaml(data: SubmissionData): string {
     lines.push(`  git: "git clone ${yamlEscape(data.repository)}"`);
   }
 
+  lines.push(`evidence_level: "moderate"`);
+  lines.push(`safety_classification: "safe"`);
+  lines.push(`specialty: []`);
   lines.push(`verified: false`);
   lines.push(`reviewer: "Pending Review"`);
   lines.push(`date_added: "${today}"`);
@@ -350,6 +356,15 @@ async function handleAuthCallback(env: Env, request: Request): Promise<Response>
   const headers = corsHeaders(env, origin);
   headers.set('Content-Type', 'application/json');
 
+  // Rate-limit auth callback to prevent abuse
+  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
+  if (!checkRateLimit(ip)) {
+    return new Response(
+      JSON.stringify({ error: 'Rate limit exceeded. Please try again later.' }),
+      { status: 429, headers },
+    );
+  }
+
   try {
     let body: unknown;
     try {
@@ -369,7 +384,16 @@ async function handleAuthCallback(env: Env, request: Request): Promise<Response>
       );
     }
 
+    // Validate code format: GitHub codes are alphanumeric, up to 20 chars
+    if (!/^[a-f0-9]{10,40}$/i.test(code)) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid authorization code format' }),
+        { status: 400, headers },
+      );
+    }
+
     // Exchange the code for an access token with GitHub
+    // Include redirect_uri for defense in depth (GitHub validates it server-side)
     const tokenResponse = await fetch('https://github.com/login/oauth/access_token', {
       method: 'POST',
       headers: {
@@ -380,6 +404,7 @@ async function handleAuthCallback(env: Env, request: Request): Promise<Response>
         client_id: env.GITHUB_CLIENT_ID,
         client_secret: env.GITHUB_CLIENT_SECRET,
         code,
+        redirect_uri: env.OAUTH_REDIRECT_URI,
       }),
     });
 

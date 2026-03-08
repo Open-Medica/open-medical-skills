@@ -1,3 +1,11 @@
+---
+name: clinical-treatment-plan-generator
+description: >
+  Generate comprehensive clinical treatment plans with SMART goal frameworks
+  and evidence-based interventions. Exports to LaTeX/PDF format for clinical
+  documentation.
+---
+
 # Clinical Treatment Plan Generator
 
 Generate comprehensive, structured clinical treatment plans using SMART goal frameworks (Specific, Measurable, Achievable, Relevant, Time-bound) with evidence-based interventions tailored to each diagnosis. The skill produces documentation-ready plans that can be exported to LaTeX/PDF format for integration into clinical records, care coordination documents, and patient handouts.

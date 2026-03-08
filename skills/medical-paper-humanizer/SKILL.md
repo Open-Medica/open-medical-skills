@@ -1,3 +1,11 @@
+---
+name: medical-paper-humanizer
+description: >
+  Removes signs of AI-generated writing from medical papers and makes them
+  sound more natural. Based on Wikipedia's AI writing guide, adapted for
+  medical literature.
+---
+
 # Medical Academic Writing Humanizer
 
 Removes identifiable markers of AI-generated prose from medical academic papers and makes them read naturally, as if written by an experienced human researcher. Based on Wikipedia's AI writing detection patterns and adapted specifically for medical and biomedical literature conventions, the skill rewrites text to eliminate formulaic phrasing, mechanical transitions, and stylistic uniformity that characterize machine-generated content while preserving scientific accuracy and appropriate academic register.

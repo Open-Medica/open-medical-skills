@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 const skills = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './content/skills' }),
+  loader: glob({ pattern: '**/*.{yaml,yml}', base: './content/skills' }),
   schema: z.object({
     name: z.string(),
     display_name: z.string(),
@@ -44,6 +44,9 @@ const skills = defineCollection({
       .enum(['safe', 'caution', 'restricted'])
       .default('safe'),
     specialty: z.array(z.string()).default([]),
+    status: z
+      .enum(['published', 'draft', 'coming-soon'])
+      .default('draft'),
     reviewer: z.string().default('Pending Review'),
     date_added: z.string(),
     verified: z.boolean().default(false),
@@ -54,7 +57,7 @@ const skills = defineCollection({
 });
 
 const plugins = defineCollection({
-  loader: glob({ pattern: '**/*.yaml', base: './content/plugins' }),
+  loader: glob({ pattern: '**/*.{yaml,yml}', base: './content/plugins' }),
   schema: z.object({
     name: z.string(),
     display_name: z.string(),
@@ -96,6 +99,9 @@ const plugins = defineCollection({
       .enum(['safe', 'caution', 'restricted'])
       .default('safe'),
     specialty: z.array(z.string()).default([]),
+    status: z
+      .enum(['published', 'draft', 'coming-soon'])
+      .default('draft'),
     reviewer: z.string().default('Pending Review'),
     date_added: z.string(),
     verified: z.boolean().default(false),

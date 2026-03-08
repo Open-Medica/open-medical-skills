@@ -1,3 +1,11 @@
+---
+name: cognitive-behavioral-therapy-tools
+description: >
+  Evidence-based cognitive behavioral therapy (CBT) tools and worksheets.
+  Includes thought records, behavioral activation, and cognitive
+  restructuring exercises.
+---
+
 # CBT Therapeutic Techniques Guide
 
 ## Overview

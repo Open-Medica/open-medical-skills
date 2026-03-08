@@ -1,3 +1,11 @@
+---
+name: medication-administration-safety
+description: >
+  Five Rights of medication administration checker for nursing. Verifies
+  right patient, drug, dose, route, and time before medication
+  administration.
+---
+
 # Medication Administration Safety Check
 
 Verify the Five Rights of medication administration before every drug is given to a patient. This skill provides a systematic checklist-based verification of right patient, right drug, right dose, right route, and right time, along with additional safety checks for allergies, drug interactions, and documentation completeness, reducing the risk of preventable medication errors at the bedside.

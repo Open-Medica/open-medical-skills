@@ -1,3 +1,11 @@
+---
+name: clinical-guideline-navigator
+description: >
+  Search and navigate clinical practice guidelines from major organizations
+  (AHA, ACC, ACP, IDSA, etc.). Provides evidence-graded recommendations for
+  common clinical scenarios.
+---
+
 # Clinical Practice Guideline Navigator
 
 Search, navigate, and apply clinical practice guidelines from major professional organizations including AHA, ACC, ACP, IDSA, ADA, ACOG, and dozens more. This skill provides evidence-graded recommendations for common clinical scenarios, translating dense guideline documents into concise, actionable decision points at the point of care.

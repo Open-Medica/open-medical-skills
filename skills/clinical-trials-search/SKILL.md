@@ -1,3 +1,10 @@
+---
+name: clinical-trials-search
+description: >
+  Access 400,000+ clinical trials from 220+ countries via ClinicalTrials.gov
+  API v2. Search by condition, intervention, sponsor, or location.
+---
+
 # ClinicalTrials.gov Database Access
 
 Search and retrieve data from over 400,000 clinical studies registered across 220+ countries via the ClinicalTrials.gov API v2. This skill enables AI agents to query the world's largest clinical trial registry by condition, intervention, sponsor, investigator, location, study phase, recruitment status, and outcome measures -- supporting evidence-based clinical decision-making, research planning, and patient recruitment workflows.

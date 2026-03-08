@@ -85,9 +85,9 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         return;
       }
 
-      // Verify state parameter to prevent CSRF
-      if (state && !verifyState(state)) {
-        showError("Invalid state parameter. Please try signing in again.");
+      // Verify state parameter to prevent CSRF — always require it
+      if (!state || !verifyState(state)) {
+        showError("Invalid or missing state parameter. Please try signing in again.");
         return;
       }
 

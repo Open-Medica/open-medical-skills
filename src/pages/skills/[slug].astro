@@ -22,6 +22,11 @@ const catStyle = CATEGORY_STYLES[data.category as keyof typeof CATEGORY_STYLES];
 const catLabel = CATEGORY_LABELS[data.category as keyof typeof CATEGORY_LABELS] ?? data.category;
 const evidenceStyle = EVIDENCE_STYLES[data.evidence_level] ?? EVIDENCE_STYLES.moderate;
 const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.safe;
+const isComingSoon = data.status === "coming-soon";
+const isDraft = data.status === "draft";
+const isIncomplete = isComingSoon || isDraft;
+const contributeUrl = `${data.repository}`;
+const createSkillUrl = `/create-skill?skill=${encodeURIComponent(data.name)}`;
 ---
 
 <BaseLayout title={data.display_name} description={data.description}>
@@ -36,6 +41,34 @@ const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.s
       </svg>
       Back to Skills
     </a>
+
+    <!-- Coming Soon / Draft Banner -->
+    {isIncomplete && (
+      <div class="mt-6 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800 dark:bg-amber-950/30">
+        <div class="flex items-start gap-3">
+          <svg class="mt-0.5 h-5 w-5 flex-shrink-0 text-amber-600 dark:text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
+          </svg>
+          <div>
+            <p class="text-sm font-semibold text-amber-800 dark:text-amber-200">
+              {isComingSoon ? "Coming Soon" : "Draft"}
+            </p>
+            <p class="mt-1 text-sm text-amber-700 dark:text-amber-300">
+              This skill is planned but not yet fully implemented. The description and metadata are in place, but the implementation code and detailed documentation are still being developed.
+            </p>
+            <a
+              href={createSkillUrl}
+              class="mt-3 inline-flex items-center gap-1.5 rounded-md bg-amber-600 px-3 py-1.5 text-sm font-medium text-white transition-colors hover:bg-amber-700 dark:bg-amber-500 dark:hover:bg-amber-600"
+            >
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+              Help Build This Skill
+            </a>
+          </div>
+        </div>
+      </div>
+    )}
 
     <!-- Header -->
     <div class="mt-6">
@@ -60,7 +93,21 @@ const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.s
           {evidenceStyle.label}
         </span>
 
-        {data.verified && (
+        <!-- Coming Soon / Draft badge in header -->
+        {isComingSoon && (
+          <span class="inline-flex items-center rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-sm font-medium text-amber-700 dark:border-amber-800 dark:bg-amber-950/40 dark:text-amber-300">
+            Coming Soon
+          </span>
+        )}
+
+        {isDraft && !isComingSoon && (
+          <span class="inline-flex items-center rounded-full border border-slate-300 bg-slate-100 px-3 py-1 text-sm font-medium text-slate-600 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-400">
+            Draft
+          </span>
+        )}
+
+        <!-- Verified badge (only for published, verified skills) -->
+        {data.verified && !isIncomplete && (
           <span class="inline-flex items-center gap-1 text-sm font-medium text-primary dark:text-primary-light">
             <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
               <path
@@ -87,16 +134,20 @@ const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.s
       <p class="mt-2 text-slate-600 leading-relaxed dark:text-slate-400">{data.description}</p>
     </div>
 
-    <!-- Agent Actions (Quick Install) -->
-    <AgentActions skillName={data.name} displayName={data.display_name} repository={data.repository} />
+    <!-- Agent Actions (Quick Install) — only show for published skills -->
+    {!isIncomplete && (
+      <AgentActions skillName={data.name} displayName={data.display_name} repository={data.repository} />
+    )}
 
-    <!-- Install Commands -->
-    <div class="mt-8">
-      <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Installation</h2>
-      <div class="mt-3">
-        <InstallCommands install={data.install} />
+    <!-- Install Commands — only show for published skills -->
+    {!isIncomplete && (
+      <div class="mt-8">
+        <h2 class="text-lg font-semibold text-slate-900 dark:text-white">Installation</h2>
+        <div class="mt-3">
+          <InstallCommands install={data.install} />
+        </div>
       </div>
-    </div>
+    )}
 
     <!-- Skill Files (script + README) -->
     {(data.script_content || data.skill_md) && (
@@ -122,6 +173,18 @@ const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.s
           <p class="mt-1 text-sm font-medium text-slate-900 dark:text-white">{data.license}</p>
         </div>
       )}
+
+      <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900">
+        <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Status</p>
+        <p class:list={[
+          "mt-1 text-sm font-medium",
+          isComingSoon ? "text-amber-600 dark:text-amber-400" :
+          isDraft ? "text-slate-600 dark:text-slate-400" :
+          "text-green-600 dark:text-green-400"
+        ]}>
+          {isComingSoon ? "Coming Soon" : isDraft ? "Draft" : "Published"}
+        </p>
+      </div>
 
       <div class="rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900">
         <p class="text-xs font-medium uppercase tracking-wider text-slate-500">Reviewer</p>
@@ -162,7 +225,7 @@ const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.s
       </div>
     )}
 
-    <!-- Repository + Report -->
+    <!-- Repository + Report / Contribute -->
     <div class="mt-8 flex flex-wrap items-center gap-4 border-t border-slate-200 pt-6 dark:border-slate-800">
       <a
         href={data.repository}
@@ -175,14 +238,27 @@ const safetyStyle = SAFETY_STYLES[data.safety_classification] ?? SAFETY_STYLES.s
         </svg>
         View on GitHub
       </a>
-      <a
-        href={`${data.repository}/issues/new?title=Issue%20with%20${encodeURIComponent(data.display_name)}`}
-        target="_blank"
-        rel="noopener noreferrer"
-        class="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
-      >
-        Report an issue
-      </a>
+
+      {isIncomplete ? (
+        <a
+          href={createSkillUrl}
+          class="inline-flex items-center gap-1.5 text-sm font-medium text-amber-600 hover:text-amber-700 dark:text-amber-400 dark:hover:text-amber-300"
+        >
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+          </svg>
+          Help build this skill
+        </a>
+      ) : (
+        <a
+          href={`${data.repository}/issues/new?title=Issue%20with%20${encodeURIComponent(data.display_name)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-300"
+        >
+          Report an issue
+        </a>
+      )}
     </div>
   </div>
 </BaseLayout>

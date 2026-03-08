@@ -1,3 +1,11 @@
+---
+name: prior-authorization-review
+description: >
+  Official Anthropic skill for insurance prior authorization review
+  workflows. Cross-references coverage requirements, clinical guidelines, and
+  patient records.
+---
+
 # Prior Authorization Review Assistant
 
 An AI-powered assistant for insurance prior authorization review workflows that cross-references payer coverage criteria, clinical practice guidelines, and patient medical records to streamline the prior authorization process. Originally developed as an official Anthropic skill, this tool helps clinicians and administrative staff build medical necessity arguments, identify required supporting documentation, and draft appeal letters when authorizations are denied.

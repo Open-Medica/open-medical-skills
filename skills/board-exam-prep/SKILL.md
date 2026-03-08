@@ -1,3 +1,11 @@
+---
+name: board-exam-prep
+description: >
+  USMLE/COMLEX board exam preparation tool with practice questions, spaced
+  repetition, and high-yield topic reviews. Tracks performance and identifies
+  weak areas.
+---
+
 # Medical Board Exam Preparation
 
 Prepare for USMLE (Steps 1, 2 CK, 3) and COMLEX (Levels 1, 2-CE) board examinations with an AI-powered study assistant that combines evidence-based spaced repetition, performance analytics, and adaptive study planning. This skill implements the SM-2 algorithm for optimized review scheduling, tracks accuracy across all USMLE disciplines and organ systems, identifies knowledge gaps, and generates personalized study plans based on time remaining and performance data.
