@@ -7,7 +7,7 @@ interface Props {
 
 const { skillName, displayName, repository } = Astro.props;
 
-const repo = "gitjfmd/oms-site";
+const repo = "gitjfmd/open-medical-skills";
 const baseCmd = `npx skills add ${repo} --skill ${skillName}`;
 
 const actions = [
@@ -74,7 +74,7 @@ const linkActions = actions.filter((a) => a.href);
     {actions.filter(a => a.primary).map((action) => (
       action.command ? (
         <button
-          class="agent-copy-btn inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-teal-700 dark:bg-primary dark:hover:bg-teal-500"
+          class="agent-copy-btn inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-cyan-700 dark:bg-primary dark:hover:bg-cyan-500"
           data-command={action.command}
           data-label={action.label}
         >

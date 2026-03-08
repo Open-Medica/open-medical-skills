@@ -2,15 +2,15 @@ name: "medical-anatomy-tutor"
 display_name: "Interactive Anatomy Learning Assistant"
 description: "Interactive anatomy education tool with 3D anatomical references, clinical correlations, and self-assessment questions. Covers all major organ systems."
 author: "Open Medical Skills Community"
-repository: "https://github.com/gitjfmd/oms-site/tree/main/skills/medical-anatomy-tutor"
+repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/medical-anatomy-tutor"
 category: "education"
 tags: ["anatomy", "medical-education", "learning"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/oms-site --skill medical-anatomy-tutor"
-  git: "git clone https://github.com/gitjfmd/oms-site.git && cp -r oms-site/skills/medical-anatomy-tutor ~/.claude/skills/"
+  npx: "npx skills add gitjfmd/open-medical-skills --skill medical-anatomy-tutor"
+  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/medical-anatomy-tutor ~/.claude/skills/"
 evidence_level: "moderate"
 safety_classification: "safe"
 specialty: ["medical-education", "anatomy"]

@@ -43,13 +43,14 @@ const searchData = allItems.map((s) => ({
 
 <BaseLayout>
   <!-- Hero -->
-  <section class="border-b border-slate-200 bg-gradient-to-b from-primary-50 to-white dark:border-slate-800 dark:from-slate-900 dark:to-slate-950">
+  <section class="border-b border-slate-800 bg-gradient-to-b from-slate-900 via-cyan-950/10 to-gray-950 dark:border-slate-800">
     <div class="mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-24 lg:px-8">
       <div class="mb-6 flex justify-center">
-        <svg class="h-16 w-16 sm:h-20 sm:w-20" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M55.25 10.75C55.25 10.75 32 4 8.75 10.75C8.75 10.75 5 32 32 60C59 32 55.25 10.75 55.25 10.75Z" fill="#0D9488"/>
-          <path d="M32 17L37.1962 27.4019L47.5981 32L37.1962 36.5981L32 47L26.8038 36.5981L16.4019 32L26.8038 27.4019L32 17Z" fill="#0A7A70"/>
-          <path d="M32 19L36.2452 27.7548L45 32L36.2452 36.2452L32 45L27.7548 36.2452L19 32L27.7548 27.7548L32 19Z" fill="white"/>
+        <svg class="h-12 sm:h-16" viewBox="0 0 360 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="heroGrad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+          <text x="8" y="38" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#FFFFFF"><tspan font-weight="300">Open Medical </tspan><tspan font-weight="700" fill="url(#heroGrad)">Skills</tspan></text>
+          <text x="8" y="58" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">by IntelMedica.ai</text>
+          <rect x="174" y="41" width="44" height="1.5" rx="0.75" fill="#EF4444" opacity="0.5"/>
         </svg>
       </div>
       <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl dark:text-white">
@@ -77,7 +78,7 @@ const searchData = allItems.map((s) => ({
   </section>
 
   <!-- Stats bar -->
-  <section class="border-b border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950">
+  <section class="border-b border-slate-800 bg-gray-950 dark:border-slate-800 dark:bg-gray-950">
     <div class="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 py-6 sm:grid-cols-4 sm:px-6 lg:px-8">
       <div class="text-center">
         <p class="text-2xl font-bold text-slate-900 dark:text-white">{totalSkills}</p>

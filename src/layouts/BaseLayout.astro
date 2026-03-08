@@ -53,13 +53,15 @@ const fullTitle = title === "Open Medical Skills" ? title : `${title} | Open Med
     <script is:inline>
       (function () {
         const stored = localStorage.getItem("theme");
-        if (stored === "dark" || (!stored && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        if (stored === "light") {
+          document.documentElement.classList.remove("dark");
+        } else {
           document.documentElement.classList.add("dark");
         }
       })();
     </script>
   </head>
-  <body class="flex min-h-screen flex-col bg-white text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+  <body class="flex min-h-screen flex-col bg-gray-950 text-slate-100 antialiased dark:bg-gray-950 dark:text-slate-100">
     <Header />
     <main class="flex-1">
       <slot />

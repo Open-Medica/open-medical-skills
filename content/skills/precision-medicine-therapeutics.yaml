@@ -2,15 +2,15 @@ name: "precision-medicine-therapeutics"
 display_name: "Precision Medicine Treatment Planning"
 description: "Generate personalized treatment plans based on pharmacogenomics, variant interpretation, and patient-specific data. Integrates ClinPGx and ClinVar databases for evidence-based precision therapeutics."
 author: "OMS Contributors"
-repository: "https://github.com/gitjfmd/oms-site/tree/main/skills/precision-medicine-therapeutics"
+repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/precision-medicine-therapeutics"
 category: "treatment"
 tags: ["precision-medicine", "pharmacogenomics", "personalized-treatment"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/oms-site --skill precision-medicine-therapeutics"
-  git: "git clone https://github.com/gitjfmd/oms-site.git && cp -r oms-site/skills/precision-medicine-therapeutics ~/.claude/skills/"
+  npx: "npx skills add gitjfmd/open-medical-skills --skill precision-medicine-therapeutics"
+  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/precision-medicine-therapeutics ~/.claude/skills/"
 evidence_level: "high"
 safety_classification: "caution"
 specialty: ["medical-genetics", "oncology", "pharmacology"]

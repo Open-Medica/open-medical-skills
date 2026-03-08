@@ -2,17 +2,17 @@
 @import "tailwindcss";
 
 @theme {
-  /* Primary palette */
-  --color-primary: #0D9488;
-  --color-primary-light: #14B8A6;
-  --color-primary-dark: #0F766E;
-  --color-primary-50: #F0FDFA;
-  --color-primary-100: #CCFBF1;
-  --color-primary-200: #99F6E4;
-  --color-primary-600: #0D9488;
-  --color-primary-700: #0F766E;
-  --color-primary-800: #115E59;
-  --color-primary-900: #134E4A;
+  /* Primary palette (cyan — IntelMedica.ai aligned) */
+  --color-primary: #06B6D4;
+  --color-primary-light: #22D3EE;
+  --color-primary-dark: #0891B2;
+  --color-primary-50: #ECFEFF;
+  --color-primary-100: #CFFAFE;
+  --color-primary-200: #A5F3FC;
+  --color-primary-600: #0891B2;
+  --color-primary-700: #0E7490;
+  --color-primary-800: #155E75;
+  --color-primary-900: #164E63;
 
   /* Medical category colors */
   --color-cat-diagnosis: #3B82F6;

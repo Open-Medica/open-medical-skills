@@ -2,7 +2,7 @@
 const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+<footer class="border-t border-slate-800 bg-gray-950 dark:border-slate-800 dark:bg-gray-950">
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <!-- Medical disclaimer -->
     <div class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-800/50 dark:bg-amber-950/30 dark:text-amber-200">
@@ -17,12 +17,11 @@ const year = new Date().getFullYear();
     <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <div class="flex items-center gap-2">
-          <svg class="h-7 w-7 shrink-0" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M55.25 10.75C55.25 10.75 32 4 8.75 10.75C8.75 10.75 5 32 32 60C59 32 55.25 10.75 55.25 10.75Z" fill="#0D9488"/>
-            <path d="M32 17L37.1962 27.4019L47.5981 32L37.1962 36.5981L32 47L26.8038 36.5981L16.4019 32L26.8038 27.4019L32 17Z" fill="#0A7A70"/>
-            <path d="M32 19L36.2452 27.7548L45 32L36.2452 36.2452L32 45L27.7548 36.2452L19 32L27.7548 27.7548L32 19Z" fill="white"/>
+          <svg class="h-7 shrink-0" viewBox="0 0 360 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="ftGrad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+            <text x="8" y="38" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#FFFFFF"><tspan font-weight="300">Open Medical </tspan><tspan font-weight="700" fill="url(#ftGrad)">Skills</tspan></text>
+            <text x="8" y="58" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">by IntelMedica.ai</text>
           </svg>
-          <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Open Medical Skills</h3>
         </div>
         <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
           Maintained by physicians, for physicians and the healthcare industry.

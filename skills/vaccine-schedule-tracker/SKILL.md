@@ -1,35 +1,55 @@
 # Immunization Schedule Tracker
 
-## Overview
+Track pediatric and adult immunization status against the CDC Advisory Committee on Immunization Practices (ACIP) recommended schedule. This skill identifies overdue vaccines, generates catch-up schedules with minimum intervals and minimum ages, screens for contraindications, and supports opportunistic immunization at every clinical encounter to reduce missed vaccination opportunities.
 
-The Immunization Schedule Tracker implements the CDC Advisory Committee on Immunization Practices (ACIP) recommended immunization schedules for pediatric and adult patients. It provides automated vaccine status assessment, overdue vaccine identification, catch-up schedule generation, and contraindication screening to support timely, complete immunization at every clinical encounter.
+## Quick Install
+```bash
+npx skills add gitjfmd/open-medical-skills --skill vaccine-schedule-tracker
+```
 
-## Clinical Context
+## What It Does
+- Generates a complete immunization status report assessing all age-appropriate vaccines simultaneously, classifying each as up-to-date, due now, overdue, not yet due, or series complete
+- Identifies overdue vaccines and provides minimum interval and minimum age guidance for catch-up immunization per ACIP general best practice guidelines
+- Screens patient conditions and allergies against known vaccine contraindications and precautions before administration (e.g., SCID for rotavirus, severe immunodeficiency for live vaccines)
+- Alerts when multiple live injectable vaccines are due and enforces the 28-day minimum spacing rule
+- Provides age-appropriate filtering so only relevant vaccines are displayed for the patient's current age
+- Calculates next recommended well-child visit age for continued immunization follow-up
 
-Immunization is one of the most effective public health interventions, preventing an estimated 4.4 million deaths worldwide each year. Despite this, immunization coverage gaps persist: approximately 25% of children in the US are not fully vaccinated by age 2. Missed opportunities to vaccinate at clinical encounters are a major contributor to under-immunization.
+## Clinical Use Cases
+- **12-Month Well-Child Visit:** A pediatrician enters a patient's date of birth and vaccination history. The tool identifies that the child is due for MMR dose 1, Varicella dose 1, Hepatitis A dose 1, Hib booster, and PCV booster, and flags that Influenza is overdue if not yet given this season. The live vaccine spacing alert notes that MMR and Varicella can be given on the same day or must be separated by 28 days
+- **Catch-Up Immunization for a New Patient:** A 4-year-old transfers into a new practice with incomplete records showing only 2 DTaP doses and 2 IPV doses. The tool generates a catch-up plan with minimum intervals, showing the child needs DTaP dose 3 (minimum 28 days after dose 2), DTaP dose 4 (minimum 6 months after dose 3), plus all missing vaccines
+- **Pre-Travel Immunization Review:** A family planning international travel brings their 8-month-old for evaluation. The tool notes that while MMR is not routinely recommended until 12 months, a dose can be given as early as 6 months for international travel (with notation that this early dose does not count toward the routine series)
+- **Contraindication Screening Before Immunization:** Before administering rotavirus vaccine to an infant, the nurse runs a contraindication check. The tool screens the patient's history of intussusception and flags it as a contraindication, recommending the vaccine NOT be administered
 
-This tool helps clinicians identify which vaccines a patient is due for at each visit, enabling opportunistic immunization and reducing missed opportunities. The ACIP schedule is updated annually, and this tool reflects the recommended schedule structure.
+## Safety & Evidence
+- **Safety Classification:** Safe -- The tool supports immunization decision-making but does not replace clinical judgment. All vaccines should be administered per current ACIP guidelines, and schedules are updated annually
+- **Evidence Level:** High -- Based on CDC ACIP Recommended Immunization Schedules for Children/Adolescents (2026) and Adults (2026), and Kroger A, et al. "General Best Practice Guidelines for Immunization" (ACIP, Updated 2023). Coverage statistics from Whitney CG, et al. (MMWR 2014;63(16):352-355)
 
-## Features
+## Example Usage
 
-- **Complete Immunization Report:** Assess all age-appropriate vaccines simultaneously, identifying which are up-to-date, due now, overdue, or not yet due
-- **Individual Vaccine Status:** Check status for any specific vaccine against the patient's age and dose history
-- **Contraindication Screening:** Screens patient conditions against known vaccine contraindications and precautions before administration
-- **Catch-Up Scheduling:** Identifies overdue vaccines and provides minimum interval and minimum age guidance for catch-up immunization
-- **Live Vaccine Spacing:** Alerts when multiple live injectable vaccines are due, ensuring appropriate 28-day spacing
-- **Age-Appropriate Filtering:** Only displays vaccines applicable to the patient's current age
+**Full immunization report for a 12-month-old:**
+```
+Generate immunization report for patient born 2025-03-03 with the following vaccination history: HepB on 2025-03-03, 2025-04-03, 2025-09-03; RV on 2025-05-03, 2025-07-03, 2025-09-03; DTaP on 2025-05-03, 2025-07-03, 2025-09-03; Hib on 2025-05-03, 2025-07-03, 2025-09-03; PCV on 2025-05-03, 2025-07-03, 2025-09-03; IPV on 2025-05-03, 2025-07-03, 2025-09-03
+```
+Returns a comprehensive report showing HepB series complete, RV series complete, DTaP dose 4 due at 15 months, Hib booster due now, PCV booster due now, IPV dose 4 due at 48 months, MMR dose 1 due now, Varicella dose 1 due now, HepA dose 1 due now, and Influenza due annually starting at 6 months.
 
-## Vaccines Covered (Pediatric)
+**Contraindication screening:**
+```
+Screen contraindications for MMR vaccine in a patient with severe immunodeficiency (HIV with CD4 < 15%)
+```
+Returns: CONTRAINDICATION IDENTIFIED. Do NOT administer. The tool flags severe immunodeficiency as a known MMR contraindication and recommends consulting immunization guidelines.
 
-Hepatitis B (HepB), Rotavirus (RV), DTaP, Hib, PCV15/PCV20, IPV, MMR, Varicella, Hepatitis A, and Influenza. Each vaccine includes full series schedule, minimum ages, minimum intervals, contraindications, and clinical notes.
-
-## Usage
-
-Provide the patient's date of birth and vaccination history. The tracker returns a comprehensive status report suitable for clinical documentation and patient/parent education.
+## Technical Details
+- **Category:** Public Health
+- **Author:** Open Medical Skills Community
+- **License:** MIT
+- **Version:** 1.0.0
+- **Script Language:** Python
+- **Specialties:** Public Health, Family Medicine, Pediatrics
+- **Vaccines Covered:** HepB, Rotavirus (RV5/RV1), DTaP, Hib, PCV15/PCV20, IPV, MMR, Varicella, HepA, Influenza (IIV/LAIV)
 
 ## References
-
-- CDC. "Recommended Immunization Schedule for Children and Adolescents Aged 18 Years or Younger." ACIP, 2026.
+- CDC. "Recommended Child and Adolescent Immunization Schedule for Ages 18 Years or Younger." ACIP, 2026.
 - CDC. "Recommended Adult Immunization Schedule for Ages 19 Years or Older." ACIP, 2026.
 - Kroger A, et al. "General Best Practice Guidelines for Immunization." ACIP, Updated 2023.
-- Whitney CG, et al. "Benefits from Immunization During the Vaccines for Children Program Era." *MMWR*. 2014;63(16):352-355.
+- Whitney CG, et al. "Benefits from Immunization During the Vaccines for Children Program Era -- United States, 1994-2013." *MMWR*. 2014;63(16):352-355.
