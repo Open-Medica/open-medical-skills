@@ -1,15 +1,16 @@
 {
   "mcpServers": {
     "kubernetes": {
+      "type": "stdio",
       "command": "npx",
       "args": ["-y", "mcp-server-kubernetes"],
       "env": {
-        "KUBECONFIG": "/home/jfmd/.kube/config"
+        "KUBECONFIG": "$HOME/.kube/config"
       }
     },
     "oms-postgres": {
       "type": "url",
-      "url": "http://100.120.120.20:30500/mcp"
+      "url": "http://YOUR_MCP_TOOLBOX_HOST:YOUR_PORT/mcp"
     }
   }
 }
