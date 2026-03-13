@@ -79,7 +79,7 @@ function buildQueryUrl(params: SearchParams): string {
   if (params.query.trim()) {
     const q = encodeURIComponent(params.query.trim());
     searchParts.push(
-      `(product_description:"${q}"+openfda.brand_name:"${q}"+openfda.generic_name:"${q}")`
+      `(product_description:"${q}"+OR+openfda.brand_name:"${q}"+OR+openfda.generic_name:"${q}")`
     );
   }
 

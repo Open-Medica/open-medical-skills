@@ -18,7 +18,7 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - name: Type check
-        run: pnpm exec astro check 2>/dev/null || true
+        run: pnpm exec astro check
       - name: Build
         run: pnpm build
 
@@ -33,5 +33,6 @@ jobs:
             exit 1
           fi
           if grep -rn 'password\s*=\s*["\x27][^"\x27]*["\x27]' --include='*.ts' --include='*.toml' --exclude-dir=node_modules --exclude-dir=.git .; then
-            echo "::warning::Found potential hardcoded passwords"
+            echo "::error::Found potential hardcoded passwords in source files"
+            exit 1
           fi
