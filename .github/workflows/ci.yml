@@ -1,0 +1,38 @@
+name: CI
+on:
+  push:
+    branches: [dev, 'feat/**', 'fix/**']
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  type-check-build:
+    name: "Type Check & Build"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Type check
+        run: pnpm exec astro check
+      - name: Build
+        run: pnpm build
+
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for leaked secrets
+        run: |
+          if grep -rn '100\.\(88\|120\)\.' --include='*.ts' --include='*.tsx' --include='*.astro' --include='*.toml' --include='*.json' --exclude-dir=node_modules --exclude-dir=.git .; then
+            echo "::error::Found potential internal IP addresses in source files"
+            exit 1
+          fi
+          if grep -rn 'password\s*=\s*["\x27][^"\x27]*["\x27]' --include='*.ts' --include='*.toml' --exclude-dir=node_modules --exclude-dir=.git .; then
+            echo "::error::Found potential hardcoded passwords in source files"
+            exit 1
+          fi
