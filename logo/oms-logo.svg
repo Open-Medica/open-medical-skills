@@ -1,0 +1,17 @@
+<svg width="400" height="200" viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="200" fill="white"/>
+  <text x="50" y="100" font-family="Arial, sans-serif" font-size="70" font-weight="bold" fill="#0D9488">OMS</text>
+  <text x="50" y="130" font-family="Arial, sans-serif" font-size="20" fill="#333333">Open Medical Skills</text>
+
+  <!-- Subtle Medical Imagery (cross) -->
+  <rect x="280" y="75" width="40" height="10" rx="2" fill="#0D9488"/>
+  <rect x="295" y="60" width="10" height="40" rx="2" fill="#0D9488"/>
+
+  <!-- Tech/AI elements (connected dots/circuit nodes) -->
+  <circle cx="320" cy="50" r="5" fill="#333333"/>
+  <circle cx="350" cy="70" r="5" fill="#333333"/>
+  <circle cx="330" cy="90" r="5" fill="#333333"/>
+  <line x1="320" y1="50" x2="350" y2="70" stroke="#333333" stroke-width="2"/>
+  <line x1="350" y1="70" x2="330" y2="90" stroke="#333333" stroke-width="2"/>
+  <line x1="330" y1="90" x2="320" y2="50" stroke="#333333" stroke-width="2"/>
+</svg>

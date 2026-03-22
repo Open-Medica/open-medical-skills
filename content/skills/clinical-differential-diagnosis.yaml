@@ -1,0 +1,20 @@
+name: "clinical-differential-diagnosis"
+display_name: "Clinical Differential Diagnosis Assistant"
+description: "AI-powered clinical decision support tool that helps generate comprehensive differential diagnoses based on patient symptoms, lab results, and medical history. Integrates evidence-based clinical reasoning and medical literature."
+author: "OMS Contributors"
+repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/clinical-differential-diagnosis"
+category: "diagnosis"
+tags: ["differential-diagnosis", "clinical-decision-support", "symptom-analysis"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  npx: "npx skills add gitjfmd/open-medical-skills --skill clinical-differential-diagnosis"
+  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/clinical-differential-diagnosis ~/.claude/skills/"
+evidence_level: "moderate"
+safety_classification: "caution"
+specialty: ["internal-medicine", "family-medicine", "emergency-medicine"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+status: "coming-soon"
+verified: false

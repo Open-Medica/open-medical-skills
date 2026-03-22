@@ -1,0 +1,27 @@
+name: "medikode-medical-coding-platform"
+display_name: "Medikode AI Medical Coding Platform"
+description: "AI-driven medical coding platform for CPT/ICD-10 validation, quality assurance, EOB parsing, and RAF score calculation. Five integrated tools providing code validation against clinical documentation, coding QA with gap identification, structured EOB data extraction, RAF/HCC scoring, and composite workflow validation. Requires API key from Medikode."
+author: "Medikode (raelango)"
+repository: "https://github.com/raelango/medikode-mcp-server"
+category: "administrative"
+tags: ["mcp-plugin", "medical-coding", "cpt", "icd-10", "raf-score", "hcc", "billing"]
+version: "1.2.9"
+license: "ISC"
+type: "plugin"
+install:
+  npx: "npx @medikode/mcp-server"
+  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/medikode-medical-coding-platform ~/.claude/plugins/"
+evidence_level: "moderate"
+safety_classification: "safe"
+specialty: ["medical-coding", "health-information-management", "revenue-cycle"]
+tools:
+  - "Code Validation (CPT/ICD-10 against documentation)"
+  - "Quality Assurance (coding QA, gap identification)"
+  - "EOB Parsing (Explanation of Benefits structured data)"
+  - "RAF Score Calculation (HCC capture from encounters)"
+  - "Composite Workflow (validates chart coding + RAF in one step)"
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+verified: false
+plugin_type: "mcp-server"
+requires_api_key: true

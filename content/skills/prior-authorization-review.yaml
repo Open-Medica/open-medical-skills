@@ -1,0 +1,20 @@
+name: "prior-authorization-review"
+display_name: "Prior Authorization Review Assistant"
+description: "Official Anthropic skill for insurance prior authorization review workflows. Cross-references coverage requirements, clinical guidelines, and patient records."
+author: "Anthropic"
+repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/prior-authorization-review"
+category: "administrative"
+tags: ["prior-auth", "insurance", "utilization-review"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  npx: "npx skills add gitjfmd/open-medical-skills --skill prior-authorization-review"
+  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/prior-authorization-review ~/.claude/skills/"
+evidence_level: "moderate"
+safety_classification: "safe"
+specialty: ["utilization-management", "insurance"]
+reviewer: "Pending Review"
+date_added: "2026-03-02"
+status: "coming-soon"
+verified: false
