@@ -78,11 +78,11 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Community Standards
 
-- [ ] **COM-01**: Public repo has LICENSE (MIT)
-- [ ] **COM-02**: Public repo has DISCLAIMER.md (medical content disclaimer)
-- [ ] **COM-03**: Public repo has issue templates (submit-skill, submit-plugin)
-- [ ] **COM-04**: Public repo has PR templates (skill-submission, dev-to-main)
-- [ ] **COM-05**: Public repo `.gitignore` configured (node_modules, .env, dist, .internal/, CLAUDE.local.md)
+- [x] **COM-01**: Public repo has LICENSE (MIT)
+- [x] **COM-02**: Public repo has DISCLAIMER.md (medical content disclaimer)
+- [x] **COM-03**: Public repo has issue templates (submit-skill, submit-plugin)
+- [x] **COM-04**: Public repo has PR templates (skill-submission, dev-to-main)
+- [x] **COM-05**: Public repo `.gitignore` configured (node_modules, .env, dist, .internal/, CLAUDE.local.md)
 
 ### Cross-Repo Auth
 
@@ -176,11 +176,11 @@ Which phases cover which requirements. Updated during roadmap creation.
 | DOC-06 | Phase 9: Documentation | Pending |
 | DOC-07 | Phase 9: Documentation | Pending |
 | DOC-08 | Phase 9: Documentation | Pending |
-| COM-01 | Phase 2: Community Standards | Pending |
-| COM-02 | Phase 2: Community Standards | Pending |
-| COM-03 | Phase 2: Community Standards | Pending |
-| COM-04 | Phase 2: Community Standards | Pending |
-| COM-05 | Phase 2: Community Standards | Pending |
+| COM-01 | Phase 2: Community Standards | Complete |
+| COM-02 | Phase 2: Community Standards | Complete |
+| COM-03 | Phase 2: Community Standards | Complete |
+| COM-04 | Phase 2: Community Standards | Complete |
+| COM-05 | Phase 2: Community Standards | Complete |
 | AUTH-01 | Phase 4: Cross-Repo Authentication | Pending |
 | AUTH-02 | Phase 4: Cross-Repo Authentication | Pending |
 | AUTH-03 | Phase 4: Cross-Repo Authentication | Pending |

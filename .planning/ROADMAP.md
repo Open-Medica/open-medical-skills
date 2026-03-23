@@ -47,7 +47,7 @@ Plans:
   3. PR templates for skill-submission and dev-to-main are present and render correctly
 **Plans:** 1 plan
 Plans:
-- [ ] 02-01-PLAN.md — Fix PR template references, add dev-to-main template, create .gitignore, push to public repo
+- [x] 02-01-PLAN.md — Fix PR template references, add dev-to-main template, create .gitignore, push to public repo
 
 ### Phase 3: Content Sync via Submodule
 **Goal**: The private repo consumes public content through a git submodule and builds successfully with zero missing pages
