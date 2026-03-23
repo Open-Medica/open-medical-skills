@@ -1,0 +1,59 @@
+# Dependencies
+node_modules/
+.pnp/
+.pnp.js
+
+# Build output
+dist/
+.astro/
+out/
+build/
+
+# Environment
+.env
+.env.local
+.env.production
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Development-only (GSD workflow artifacts)
+.planning/
+
+# Private infrastructure (safety net against accidental commits)
+.internal/
+.agents/
+AGENTS/
+.claude/
+CLAUDE.local.md
+AGENTS.md
+GEMINI.md
+instructions.md
+.mcp.json
+GUARDRAILS.md
+refs/
+data/
+wrangler.local.toml
+
+# Handoff (session-specific)
+HANDOFF.md
+
+# Temp build artifacts
+_astro-temp/
+
+# Research docs
+SKILLS-RESEARCH.md
