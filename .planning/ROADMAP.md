@@ -35,7 +35,7 @@ Decimal phases appear between their surrounding integers in numeric order.
   3. The repo has a `dev` branch created from `main`
 **Plans:** 1 plan
 Plans:
-- [ ] 01-01-PLAN.md — Complete public repo with content, CLI, logo, scripts, docs, LICENSE fix, and dev branch
+- [x] 01-01-PLAN.md — Complete public repo with content, CLI, logo, scripts, docs, LICENSE fix, and dev branch
 
 ### Phase 2: Community Standards
 **Goal**: The public repo meets GitHub community standards and is ready for external contributors

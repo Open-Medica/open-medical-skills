@@ -9,10 +9,10 @@ Requirements for initial release. Each maps to roadmap phases.
 
 ### Repository Setup
 
-- [ ] **REPO-01**: Public repo `Open-Medica/open-medical-skills` created with MIT license
-- [ ] **REPO-02**: Public repo contains content YAML (skills + plugins), skill/plugin source dirs, CLI, docs, logo, scripts
+- [x] **REPO-01**: Public repo `Open-Medica/open-medical-skills` created with MIT license
+- [x] **REPO-02**: Public repo contains content YAML (skills + plugins), skill/plugin source dirs, CLI, docs, logo, scripts
 - [ ] **REPO-03**: Private repo `gitjfmd/oms-site` contains Astro source, React components, CF Workers, deployment config
-- [ ] **REPO-04**: Public repo has `dev` branch created from `main`
+- [x] **REPO-04**: Public repo has `dev` branch created from `main`
 - [ ] **REPO-05**: Private repo has `dev` branch with submodule configured
 - [ ] **REPO-06**: Legacy `vercel` remote removed from private repo
 - [ ] **REPO-07**: `scripts/sync-to-public.sh` retired (replaced by submodule + CI)
@@ -128,10 +128,10 @@ Which phases cover which requirements. Updated during roadmap creation.
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| REPO-01 | Phase 1: Public Repository Creation | Pending |
-| REPO-02 | Phase 1: Public Repository Creation | Pending |
+| REPO-01 | Phase 1: Public Repository Creation | Complete |
+| REPO-02 | Phase 1: Public Repository Creation | Complete |
 | REPO-03 | Phase 3: Content Sync via Submodule | Pending |
-| REPO-04 | Phase 1: Public Repository Creation | Pending |
+| REPO-04 | Phase 1: Public Repository Creation | Complete |
 | REPO-05 | Phase 3: Content Sync via Submodule | Pending |
 | REPO-06 | Phase 10: Private Repo Cleanup | Pending |
 | REPO-07 | Phase 10: Private Repo Cleanup | Pending |
