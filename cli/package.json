@@ -1,7 +1,7 @@
 {
-  "name": "@openmedicalskills/cli",
-  "version": "1.0.0",
-  "description": "CLI for Open Medical Skills — install physician-reviewed AI agent skills",
+  "name": "openmedicalskills-cli",
+  "version": "2.0.1",
+  "description": "CLI for Open Medical Skills — physician-reviewed AI agent skills (research tool)",
   "type": "module",
   "bin": {
     "oms": "./bin/oms.js"
@@ -31,7 +31,7 @@
   "homepage": "https://openmedicalskills.org",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gitjfmd/oms-site"
+    "url": "https://github.com/Open-Medica/open-medical-skills"
   },
   "dependencies": {
     "commander": "^13.1.0",

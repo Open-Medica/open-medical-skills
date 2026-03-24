@@ -1,11 +1,14 @@
 import { readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { dirname, join } from 'node:path';
+import { searchSkills as apiSearch, inspectSkill as apiInspect, isApiAvailable } from './api-client.js';
+import { getCachedResults, setCachedResults } from './config.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 let _skillsCache = null;
+let _apiAvailable = null;
 
 export function loadSkillsIndex() {
   if (_skillsCache) return _skillsCache;
@@ -19,7 +22,7 @@ export function loadSkillsIndex() {
     const isFileNotFound = err instanceof Error && 'code' in err && err.code === 'ENOENT';
     if (isFileNotFound) {
       console.error(
-        'Skills index not found. Run "npm run generate-index" or "node scripts/generate-cli-index.js" first.'
+        'Skills index not found. Run "npm run generate-index" first.'
       );
     } else {
       const errorMessage = err instanceof Error ? err.message : String(err);
@@ -29,6 +32,50 @@ export function loadSkillsIndex() {
   }
 }
 
+async function checkApiAvailable() {
+  if (_apiAvailable !== null) return _apiAvailable;
+  _apiAvailable = await isApiAvailable();
+  return _apiAvailable;
+}
+
+export async function findSkillSmart(query) {
+  // Try cache first
+  const cacheKey = `find_${query}`;
+  const cached = getCachedResults(cacheKey);
+  if (cached) return cached;
+
+  // Try API
+  if (await checkApiAvailable()) {
+    try {
+      const result = await apiSearch(query, { limit: 20 });
+      if (result.results && result.results.length > 0) {
+        setCachedResults(cacheKey, result.results);
+        return result.results;
+      }
+    } catch {
+      // Fall through to local
+    }
+  }
+
+  // Fallback to local
+  return searchSkillsLocal(query);
+}
+
+export async function inspectSkillSmart(name) {
+  if (await checkApiAvailable()) {
+    try {
+      const result = await apiInspect(name);
+      if (result.results && result.results.length > 0) {
+        return result.results[0];
+      }
+    } catch {
+      // Fall through to local
+    }
+  }
+
+  return findSkill(name);
+}
+
 export function findSkill(name) {
   const skills = loadSkillsIndex();
   return skills.find(
@@ -36,7 +83,7 @@ export function findSkill(name) {
   );
 }
 
-export function searchSkills(query) {
+export function searchSkillsLocal(query) {
   const skills = loadSkillsIndex();
   const q = query.toLowerCase();
 
@@ -66,4 +113,8 @@ export function getCategories() {
     cats[s.category]++;
   }
   return cats;
+}
+
+export function listAllSkills() {
+  return loadSkillsIndex();
 }
