@@ -2,176 +2,71 @@
 
 import { Command } from 'commander';
 import chalk from 'chalk';
-import { execSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
 import { printBanner, printBannerCompact } from '../lib/banner.js';
 import {
   formatSkillRow,
   formatSkillDetail,
   formatCategory,
-  formatEvidence,
-  formatSafety,
 } from '../lib/format.js';
 import {
-  loadSkillsIndex,
+  findSkillSmart,
+  inspectSkillSmart,
   findSkill,
-  searchSkills,
+  loadSkillsIndex,
   filterByCategory,
-  getCategories,
+  listAllSkills,
 } from '../lib/skills.js';
+import { validateSkill, relateSkill } from '../lib/api-client.js';
+import { installSkill, printInstallResults, getAvailableTargets } from '../lib/installer.js';
+import { printDisclaimer } from '../lib/disclaimer.js';
+import { getConfig } from '../lib/config.js';
 
-const REPO = 'gitjfmd/open-medical-skills';
-const DEFAULT_AGENT = 'claude-code';
 const MAX_DESCRIPTION_WIDTH = 72;
 
 const program = new Command();
 
 program
   .name('oms')
-  .description('Open Medical Skills CLI — install physician-reviewed AI agent skills')
-  .version('1.0.0')
+  .description('Open Medical Skills CLI \u2014 physician-reviewed AI agent skills (research tool)')
+  .version('2.0.0')
   .hook('preAction', () => {});
 
 // ──────────────────────────────────────────────────────────────────
-// oms install <skill-name>
+// oms find <query>
 // ──────────────────────────────────────────────────────────────────
 program
-  .command('install <skill-name>')
-  .description('Install a physician-reviewed medical AI skill')
-  .option('-a, --agent <agent>', 'Target agent (claude-code, cursor, windsurf, *)', DEFAULT_AGENT)
-  .option('--dry-run', 'Show the install command without executing it')
-  .action((skillName, opts) => {
-    printBannerCompact();
-
-    const skill = findSkill(skillName);
-    if (!skill) {
-      console.error(chalk.red(`  Error: Skill "${skillName}" not found.`));
-      console.log(chalk.gray(`  Run ${chalk.white('oms list')} to see available skills.\n`));
-      process.exit(1);
-    }
-
-    // Safety warning for restricted skills
-    if (skill.safety_classification === 'restricted') {
-      console.log(
-        chalk.red.bold('  WARNING: ') +
-          chalk.red('This skill has a RESTRICTED safety classification.')
-      );
-      console.log(
-        chalk.red('  It should only be used under direct physician supervision.\n')
-      );
-    } else if (skill.safety_classification === 'caution') {
-      console.log(
-        chalk.yellow.bold('  NOTICE: ') +
-          chalk.yellow('This skill has a CAUTION safety classification.')
-      );
-      console.log(
-        chalk.yellow('  Review outputs carefully before clinical application.\n')
-      );
-    }
-
-    const agent = opts.agent === '*' ? "'*'" : opts.agent;
-    const cmd = `npx skills add ${REPO} --skill ${skill.name} -a ${agent}`;
-
-    console.log(`  ${chalk.gray('Skill:')}   ${chalk.bold.white(skill.display_name)}`);
-    console.log(`  ${chalk.gray('Agent:')}   ${chalk.white(opts.agent)}`);
-    console.log(`  ${chalk.gray('Command:')} ${chalk.hex('#0D9488')(cmd)}`);
-    console.log('');
-
-    if (opts.dryRun) {
-      console.log(chalk.gray('  (dry run — command not executed)\n'));
-      return;
-    }
-
-    console.log(chalk.gray('  Installing...\n'));
-
-    try {
-      execSync(cmd, { stdio: 'inherit' });
-      console.log('');
-      console.log(chalk.green.bold('  Installed successfully.'));
-      console.log(
-        chalk.gray(`  Skill "${skill.name}" is now available in ${opts.agent}.\n`)
-      );
-    } catch (err) {
-      console.error('');
-      console.error(chalk.red('  Installation failed.'));
-      console.error(
-        chalk.gray('  You can try manually: ') + chalk.white(cmd) + '\n'
-      );
-      process.exit(1);
-    }
-  });
-
-// ──────────────────────────────────────────────────────────────────
-// oms list
-// ──────────────────────────────────────────────────────────────────
-program
-  .command('list')
-  .description('List all available OMS skills')
+  .command('find <query>')
+  .description('Search skills by semantic query (API-backed with local fallback)')
   .option('-c, --category <category>', 'Filter by medical category')
+  .option('-l, --limit <n>', 'Max results', '20')
   .option('--json', 'Output as JSON')
-  .action((opts) => {
+  .action(async (query, opts) => {
     printBannerCompact();
 
-    let skills;
+    let results;
+
     if (opts.category) {
-      skills = filterByCategory(opts.category);
-      if (skills.length === 0) {
-        console.error(
-          chalk.red(`  No skills found in category "${opts.category}".`)
-        );
-        console.log(
-          chalk.gray(`  Run ${chalk.white('oms categories')} to see valid categories.\n`)
-        );
+      // Category filter — local only
+      results = filterByCategory(opts.category);
+      if (results.length === 0) {
+        console.error(chalk.red(`  No skills found in category "${opts.category}".`));
         process.exit(1);
       }
-      console.log(
-        chalk.gray(`  Category: `) + formatCategory(opts.category) + '\n'
+      // Further filter by query within category
+      const q = query.toLowerCase();
+      results = results.filter(s =>
+        s.name.toLowerCase().includes(q) ||
+        s.display_name.toLowerCase().includes(q) ||
+        s.description.toLowerCase().includes(q)
       );
     } else {
-      skills = loadSkillsIndex();
+      results = await findSkillSmart(query);
     }
 
-    if (opts.json) {
-      console.log(JSON.stringify(skills, null, 2));
-      return;
-    }
-
-    console.log(
-      chalk.gray(`  ${skills.length} skill${skills.length !== 1 ? 's' : ''} available\n`)
-    );
-
-    for (let i = 0; i < skills.length; i++) {
-      console.log(`  ${formatSkillRow(skills[i], i)}`);
-      console.log(`       ${chalk.gray(truncateText(skills[i].description, MAX_DESCRIPTION_WIDTH))}`);
-    }
-
-    console.log('');
-    console.log(
-      chalk.gray(`  Use ${chalk.white('oms info <skill-name>')} for details.`)
-    );
-    console.log(
-      chalk.gray(
-        `  Use ${chalk.white('oms install <skill-name>')} to install.\n`
-      )
-    );
-  });
-
-// ──────────────────────────────────────────────────────────────────
-// oms search <query>
-// ──────────────────────────────────────────────────────────────────
-program
-  .command('search <query>')
-  .description('Search skills by name, description, category, or tag')
-  .option('--json', 'Output as JSON')
-  .action((query, opts) => {
-    printBannerCompact();
-
-    const results = searchSkills(query);
-
-    if (results.length === 0) {
+    if (!results || results.length === 0) {
       console.log(chalk.yellow(`  No skills matched "${query}".`));
-      console.log(
-        chalk.gray(`  Try a broader search or run ${chalk.white('oms list')}.\n`)
-      );
+      console.log(chalk.gray(`  Try a broader search.\n`));
       return;
     }
 
@@ -181,36 +76,94 @@ program
     }
 
     console.log(
-      chalk.gray(
-        `  ${results.length} result${results.length !== 1 ? 's' : ''} for "${chalk.white(query)}"\n`
-      )
+      chalk.gray(`  ${results.length} result${results.length !== 1 ? 's' : ''} for "${chalk.white(query)}"\n`)
     );
 
-    for (let i = 0; i < results.length; i++) {
-      console.log(`  ${formatSkillRow(results[i], i)}`);
-      console.log(`       ${chalk.gray(truncateText(results[i].description, MAX_DESCRIPTION_WIDTH))}`);
+    const limit = parseInt(opts.limit, 10);
+    const displayed = results.slice(0, limit);
+
+    for (let i = 0; i < displayed.length; i++) {
+      const s = displayed[i];
+      if (s.score !== undefined) {
+        console.log(`  ${chalk.gray(`${String(i + 1).padStart(3)}.`)} ${chalk.bold.white(s.name)}  ${formatCategory(s.category || '')}  ${chalk.dim(`(${(s.score * 100).toFixed(0)}%)`)}`);
+      } else {
+        console.log(`  ${formatSkillRow(s, i)}`);
+      }
+      const desc = s.description || '';
+      console.log(`       ${chalk.gray(truncateText(desc, MAX_DESCRIPTION_WIDTH))}`);
+    }
+
+    if (results.length > limit) {
+      console.log(chalk.gray(`\n  ... and ${results.length - limit} more. Use --limit to see more.`));
     }
 
     console.log('');
-    console.log(
-      chalk.gray(`  Use ${chalk.white('oms info <skill-name>')} for details.\n`)
-    );
+    console.log(chalk.gray(`  Use ${chalk.white('oms inspect <skill-name>')} for details.`));
+    console.log(chalk.gray(`  Use ${chalk.white('oms install <skill-name>')} to install.\n`));
+    printDisclaimer();
   });
 
 // ──────────────────────────────────────────────────────────────────
-// oms info <skill-name>
+// oms list
 // ──────────────────────────────────────────────────────────────────
 program
-  .command('info <skill-name>')
-  .description('Show detailed information about a skill')
+  .command('list')
+  .description('List all available skills')
+  .option('-c, --category <category>', 'Filter by medical category')
+  .option('-l, --limit <n>', 'Max results', '50')
   .option('--json', 'Output as JSON')
-  .action((skillName, opts) => {
+  .action(async (opts) => {
     printBannerCompact();
 
-    const skill = findSkill(skillName);
+    let skills = listAllSkills();
+
+    if (opts.category) {
+      skills = skills.filter(s => s.category === opts.category);
+      if (skills.length === 0) {
+        console.log(chalk.yellow(`  No skills in category "${opts.category}".`));
+        return;
+      }
+    }
+
+    if (opts.json) {
+      console.log(JSON.stringify(skills, null, 2));
+      return;
+    }
+
+    console.log(chalk.gray(`  ${skills.length} skill${skills.length !== 1 ? 's' : ''} available\n`));
+
+    const limit = parseInt(opts.limit, 10);
+    const displayed = skills.slice(0, limit);
+
+    for (let i = 0; i < displayed.length; i++) {
+      const s = displayed[i];
+      console.log(`  ${chalk.gray(`${String(i + 1).padStart(3)}.`)} ${chalk.bold.white(s.name)}  ${formatCategory(s.category || '')}`);
+    }
+
+    if (skills.length > limit) {
+      console.log(chalk.gray(`\n  ... and ${skills.length - limit} more. Use --limit to see more.`));
+    }
+
+    console.log('');
+    console.log(chalk.gray(`  Use ${chalk.white('oms find <query>')} to search.`));
+    console.log(chalk.gray(`  Use ${chalk.white('oms inspect <skill-name>')} for details.\n`));
+    printDisclaimer();
+  });
+
+// ──────────────────────────────────────────────────────────────────
+// oms inspect <skill-name>
+// ──────────────────────────────────────────────────────────────────
+program
+  .command('inspect <skill-name>')
+  .description('Show detailed information about a skill')
+  .option('--json', 'Output as JSON')
+  .action(async (skillName, opts) => {
+    printBannerCompact();
+
+    const skill = await inspectSkillSmart(skillName);
     if (!skill) {
       console.error(chalk.red(`  Error: Skill "${skillName}" not found.`));
-      console.log(chalk.gray(`  Run ${chalk.white('oms search <query>')} to find skills.\n`));
+      console.log(chalk.gray(`  Run ${chalk.white('oms find <query>')} to search.\n`));
       process.exit(1);
     }
 
@@ -220,43 +173,203 @@ program
     }
 
     console.log(formatSkillDetail(skill));
+    printDisclaimer();
   });
 
 // ──────────────────────────────────────────────────────────────────
-// oms categories
+// oms install <skill-name>
 // ──────────────────────────────────────────────────────────────────
 program
-  .command('categories')
-  .description('List all medical skill categories')
-  .action(() => {
+  .command('install <skill-name>')
+  .description('Install a skill to an IDE/agent')
+  .option('-a, --agent <agent>', 'Target: claude-code, cursor, windsurf, manus, local, *', 'claude-code')
+  .option('-g, --global', 'Install to global directory (where supported)')
+  .option('--dry-run', 'Show what would be installed without doing it')
+  .action(async (skillName, opts) => {
     printBannerCompact();
 
-    const cats = getCategories();
-    const sorted = Object.entries(cats).sort((a, b) => b[1] - a[1]);
-
-    console.log(chalk.gray(`  ${sorted.length} categories\n`));
-
-    const maxLen = Math.max(...sorted.map(([c]) => c.length));
-
-    for (const [category, count] of sorted) {
-      const padded = category.padEnd(maxLen + 2);
-      const bar = chalk.hex('#0D9488')('\u2588'.repeat(count));
-      console.log(`  ${formatCategory(padded)} ${bar} ${chalk.gray(count)}`);
+    // Find the skill locally first
+    const skill = findSkill(skillName);
+    if (!skill) {
+      console.error(chalk.red(`  Error: Skill "${skillName}" not found.`));
+      console.log(chalk.gray(`  Run ${chalk.white('oms find <query>')} to search.\n`));
+      process.exit(1);
     }
 
+    // Safety warnings
+    if (skill.safety_classification === 'restricted') {
+      console.log(
+        chalk.red.bold('  WARNING: ') +
+        chalk.red('This skill has a RESTRICTED safety classification.')
+      );
+      console.log(
+        chalk.red('  It should only be used under direct physician supervision.\n')
+      );
+    } else if (skill.safety_classification === 'caution') {
+      console.log(
+        chalk.yellow.bold('  NOTICE: ') +
+        chalk.yellow('This skill has a CAUTION safety classification.')
+      );
+      console.log(
+        chalk.yellow('  Review outputs carefully before clinical application.\n')
+      );
+    }
+
+    const agent = opts.agent;
+    const validTargets = [...getAvailableTargets(), '*'];
+    if (!validTargets.includes(agent)) {
+      console.error(chalk.red(`  Invalid agent "${agent}". Valid: ${validTargets.join(', ')}`));
+      process.exit(1);
+    }
+
+    console.log(`  ${chalk.gray('Skill:')}  ${chalk.bold.white(skill.display_name)}`);
+    console.log(`  ${chalk.gray('Agent:')}  ${chalk.white(agent === '*' ? 'all targets' : agent)}`);
     console.log('');
-    console.log(
-      chalk.gray(
-        `  Use ${chalk.white('oms list --category <name>')} to filter.\n`
-      )
-    );
+
+    if (opts.dryRun) {
+      console.log(chalk.gray('  (dry run \u2014 no files written)\n'));
+      return;
+    }
+
+    // Try to load SKILL.md content from skills directory
+    let skillContent;
+    try {
+      const { fileURLToPath } = await import('node:url');
+      const { dirname, join } = await import('node:path');
+      const __filename = fileURLToPath(import.meta.url);
+      const __dirname = dirname(__filename);
+      const skillMdPath = join(__dirname, '..', '..', 'skills', skillName, 'SKILL.md');
+      skillContent = readFileSync(skillMdPath, 'utf-8');
+    } catch {
+      // Fallback: generate basic content from YAML data
+      skillContent = [
+        '---',
+        `name: ${skill.name}`,
+        `description: ${skill.description}`,
+        `metadata:`,
+        `  author: ${skill.author}`,
+        `  version: ${skill.version || '1.0.0'}`,
+        `  medical_category: ${skill.category}`,
+        `  evidence_level: ${skill.evidence_level || 'moderate'}`,
+        `  safety: ${skill.safety_classification || 'safe'}`,
+        '---',
+        '',
+        `# ${skill.display_name}`,
+        '',
+        skill.description,
+        '',
+        '> This is a research and learning tool. Not a substitute for professional medical judgment.',
+        '',
+      ].join('\n');
+    }
+
+    console.log(chalk.gray('  Installing...\n'));
+    const results = await installSkill(skillName, skillContent, agent, { global: opts.global });
+    printInstallResults(results);
+  });
+
+// ──────────────────────────────────────────────────────────────────
+// oms validate <skill-name>
+// ──────────────────────────────────────────────────────────────────
+program
+  .command('validate <skill-name>')
+  .description('Check skill health (repo access, YAML schema)')
+  .option('--json', 'Output as JSON')
+  .action(async (skillName, opts) => {
+    printBannerCompact();
+
+    try {
+      const result = await validateSkill(skillName);
+
+      if (opts.json) {
+        console.log(JSON.stringify(result, null, 2));
+        return;
+      }
+
+      console.log(`  ${chalk.bold.white('Validation: ')} ${chalk.white(skillName)}\n`);
+
+      if (result.valid) {
+        console.log(`  ${chalk.green('\u2713')} YAML schema valid`);
+      } else {
+        console.log(`  ${chalk.red('\u2717')} YAML schema invalid`);
+        if (result.errors) {
+          for (const err of result.errors) {
+            console.log(`    ${chalk.red('\u2192')} ${err}`);
+          }
+        }
+      }
+
+      if (result.repo_accessible !== undefined) {
+        console.log(
+          result.repo_accessible
+            ? `  ${chalk.green('\u2713')} Repository accessible`
+            : `  ${chalk.red('\u2717')} Repository not accessible`
+        );
+      }
+
+      console.log('');
+    } catch (err) {
+      console.error(chalk.red(`  Error: Could not validate "${skillName}".`));
+      console.error(chalk.gray(`  ${err.message}`));
+      console.log(chalk.gray('\n  The validation API may be unavailable. Try again later.\n'));
+      process.exit(1);
+    }
+
+    printDisclaimer();
+  });
+
+// ──────────────────────────────────────────────────────────────────
+// oms relate <skill-name>
+// ──────────────────────────────────────────────────────────────────
+program
+  .command('relate <skill-name>')
+  .description('Find related skills via graph traversal')
+  .option('--json', 'Output as JSON')
+  .action(async (skillName, opts) => {
+    printBannerCompact();
+
+    try {
+      const result = await relateSkill(skillName);
+
+      if (opts.json) {
+        console.log(JSON.stringify(result, null, 2));
+        return;
+      }
+
+      if (!result.related || result.related.length === 0) {
+        console.log(chalk.yellow(`  No related skills found for "${skillName}".\n`));
+        return;
+      }
+
+      console.log(`  ${chalk.bold.white('Related to:')} ${chalk.hex('#0D9488')(skillName)}\n`);
+
+      for (let i = 0; i < result.related.length; i++) {
+        const r = result.related[i];
+        const score = r.score !== undefined ? chalk.dim(` (${(r.score * 100).toFixed(0)}%)`) : '';
+        console.log(`  ${chalk.gray(`${String(i + 1).padStart(3)}.`)} ${chalk.bold.white(r.name)}  ${formatCategory(r.category || '')}${score}`);
+        if (r.description) {
+          console.log(`       ${chalk.gray(truncateText(r.description, MAX_DESCRIPTION_WIDTH))}`);
+        }
+      }
+
+      if (result.categories && result.categories.length > 0) {
+        console.log(`\n  ${chalk.gray('Categories:')} ${result.categories.map(c => formatCategory(c)).join(', ')}`);
+      }
+
+      console.log('');
+    } catch (err) {
+      console.error(chalk.red(`  Error: Could not find related skills for "${skillName}".`));
+      console.error(chalk.gray(`  ${err.message}\n`));
+      process.exit(1);
+    }
+
+    printDisclaimer();
   });
 
 // ──────────────────────────────────────────────────────────────────
 // Helpers
 // ──────────────────────────────────────────────────────────────────
 
-/** Truncate a string to maxLength, appending ellipsis if needed. */
 function truncateText(text, maxLength) {
   if (!text) return '';
   if (text.length <= maxLength) return text;
@@ -273,4 +386,5 @@ if (!process.argv.slice(2).length) {
   printBanner();
   program.outputHelp();
   console.log('');
+  printDisclaimer();
 }
