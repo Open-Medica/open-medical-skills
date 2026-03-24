@@ -58,7 +58,9 @@ Plans:
   2. `pnpm build` completes successfully and post-build validation confirms all 49 skill pages and 5 plugin pages exist in output
   3. `pnpm dev` serves all skill and plugin pages correctly from submodule content
   4. Private repo `dev` branch has the submodule configured and builds cleanly
-**Plans**: TBD
+**Plans:** 1 plan
+Plans:
+- [ ] 03-01-PLAN.md — Add content submodule, update paths, create validation script, build and verify, merge to dev
 
 ### Phase 4: Cross-Repo Authentication
 **Goal**: Both repos have the credentials needed for cross-repo dispatch, deployment, and submission API access
@@ -141,8 +143,8 @@ Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
 | 1. Public Repository Creation | 1/1 | Complete | 2026-03-22 |
-| 2. Community Standards | 0/1 | Planned | - |
-| 3. Content Sync via Submodule | 0/? | Not started | - |
+| 2. Community Standards | 1/1 | Complete | - |
+| 3. Content Sync via Submodule | 0/1 | Planned | - |
 | 4. Cross-Repo Authentication | 0/? | Not started | - |
 | 5. Public Repo CI/CD | 0/? | Not started | - |
 | 6. Private Repo CI/CD | 0/? | Not started | - |
