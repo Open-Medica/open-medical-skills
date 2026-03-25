@@ -1,4 +1,6 @@
 ---
+import { GITHUB_REPO_URL } from "../lib/constants";
+
 const year = new Date().getFullYear();
 ---
 
@@ -46,7 +48,7 @@ const year = new Date().getFullYear();
           </li>
           <li>
             <a
-              href="https://github.com/gitjfmd/open-medical-skills"
+              href={GITHUB_REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
               class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light"

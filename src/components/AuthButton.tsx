@@ -6,6 +6,7 @@ import {
   logout,
   type GitHubUser,
 } from "../lib/auth";
+import { GITHUB_REPO_URL } from "../lib/constants";
 
 /**
  * AuthButton — React island for GitHub OAuth sign-in/sign-out.
@@ -146,7 +147,7 @@ export default function AuthButton() {
           {/* Menu items */}
           <div className="py-1">
             <a
-              href={`https://github.com/gitjfmd/open-medical-skills/pulls?q=is%3Apr+author%3A${user.login}`}
+              href={`${GITHUB_REPO_URL}/pulls?q=is%3Apr+author%3A${user.login}`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-3 px-4 py-2.5 text-sm text-slate-700 transition-colors hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800"

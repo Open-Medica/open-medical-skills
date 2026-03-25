@@ -8,6 +8,7 @@
 
 import yaml from 'js-yaml';
 import type { SkillSection, SkillMetadata, SkillOutput } from '../types';
+import { GITHUB_REPO_FULL, GITHUB_REPO_URL } from '../../../lib/constants';
 
 /** Section ID to markdown heading mapping. */
 const SECTION_HEADINGS: Record<string, string> = {
@@ -71,7 +72,7 @@ export function assembleSkillMd(
   parts.push('---');
   parts.push('');
   parts.push(
-    '*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*'
+    `*This skill is part of [Open Medical Skills](${GITHUB_REPO_URL}), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*`
   );
   parts.push('');
 
@@ -88,8 +89,8 @@ export function assembleContentYaml(
   const titleSection = sections.find((s) => s.id === 'title');
   const descSection = sections.find((s) => s.id === 'description');
 
-  const installCmd = `npx skills add gitjfmd/open-medical-skills --skill ${metadata.name}`;
-  const gitCmd = `git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/${metadata.name} ~/.claude/skills/`;
+  const installCmd = `npx skills add ${GITHUB_REPO_FULL} --skill ${metadata.name}`;
+  const gitCmd = `git clone ${GITHUB_REPO_URL}.git && cp -r open-medical-skills/skills/${metadata.name} ~/.claude/skills/`;
 
   const data: Record<string, unknown> = {
     name: metadata.name,
@@ -98,7 +99,7 @@ export function assembleContentYaml(
     author: metadata.author,
     repository:
       metadata.repository ||
-      `https://github.com/gitjfmd/open-medical-skills/tree/main/skills/${metadata.name}`,
+      `${GITHUB_REPO_URL}/tree/main/skills/${metadata.name}`,
     category: metadata.category,
     tags: metadata.tags.length > 0 ? metadata.tags : [metadata.category],
     version: metadata.version || '1.0.0',
