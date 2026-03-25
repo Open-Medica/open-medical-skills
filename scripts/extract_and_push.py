@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Extract skill implementation scripts and documentation from YAML files
-and push them to the public GitHub repo gitjfmd/open-medical-skills
+and push them to the public GitHub repo Open-Medica/open-medical-skills
 as a SINGLE commit using the GitHub Git Data API.
 
 For each YAML file in content/skills/:
@@ -20,7 +20,7 @@ import base64
 import sys
 
 YAML_DIR = "/home/jfmd/.jfmd/projects/open-medical-skills/content/skills"
-REPO = "gitjfmd/open-medical-skills"
+REPO = "Open-Medica/open-medical-skills"
 BRANCH = "main"
 COMMIT_MESSAGE = "Add skill implementation scripts and instructions for all skills\n\nExtracted script_content and skill_md from YAML definitions.\nRenamed script.py -> skill.py for consistency.\nAdded instructions.md documentation for skills with detailed descriptions."
 
