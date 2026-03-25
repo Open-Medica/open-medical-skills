@@ -11,21 +11,21 @@ Requirements for initial release. Each maps to roadmap phases.
 
 - [x] **REPO-01**: Public repo `Open-Medica/open-medical-skills` created with MIT license
 - [x] **REPO-02**: Public repo contains content YAML (skills + plugins), skill/plugin source dirs, CLI, docs, logo, scripts
-- [ ] **REPO-03**: Private repo `gitjfmd/oms-site` contains Astro source, React components, CF Workers, deployment config
+- [x] **REPO-03**: Private repo `gitjfmd/oms-site` contains Astro source, React components, CF Workers, deployment config
 - [x] **REPO-04**: Public repo has `dev` branch created from `main`
-- [ ] **REPO-05**: Private repo has `dev` branch with submodule configured
+- [x] **REPO-05**: Private repo has `dev` branch with submodule configured
 - [ ] **REPO-06**: Legacy `vercel` remote removed from private repo
 - [ ] **REPO-07**: `scripts/sync-to-public.sh` retired (replaced by submodule + CI)
 
 ### Content Sync
 
-- [ ] **SYNC-01**: Private repo has public repo as git submodule at `content-repo/`
-- [ ] **SYNC-02**: `content.config.ts` glob base paths updated to `./content-repo/content/skills` and `./content-repo/content/plugins`
-- [ ] **SYNC-03**: `pnpm build` succeeds in private repo with content from submodule (zero missing pages)
-- [ ] **SYNC-04**: `pnpm dev` serves all pages correctly with submodule content
+- [x] **SYNC-01**: Private repo has public repo as git submodule at `content-repo/`
+- [x] **SYNC-02**: `content.config.ts` glob base paths updated to `./content-repo/content/skills` and `./content-repo/content/plugins`
+- [x] **SYNC-03**: `pnpm build` succeeds in private repo with content from submodule (zero missing pages)
+- [x] **SYNC-04**: `pnpm dev` serves all pages correctly with submodule content
 - [ ] **SYNC-05**: `repository_dispatch` triggers from public repo on push to main
 - [ ] **SYNC-06**: Private repo `update-content.yml` workflow receives dispatch and updates submodule pointer
-- [ ] **SYNC-07**: Post-build validation counts output HTML files to catch silent empty collections
+- [x] **SYNC-07**: Post-build validation counts output HTML files to catch silent empty collections
 
 ### CI/CD — Public Repo
 
@@ -130,18 +130,18 @@ Which phases cover which requirements. Updated during roadmap creation.
 |-------------|-------|--------|
 | REPO-01 | Phase 1: Public Repository Creation | Complete |
 | REPO-02 | Phase 1: Public Repository Creation | Complete |
-| REPO-03 | Phase 3: Content Sync via Submodule | Pending |
+| REPO-03 | Phase 3: Content Sync via Submodule | Complete |
 | REPO-04 | Phase 1: Public Repository Creation | Complete |
-| REPO-05 | Phase 3: Content Sync via Submodule | Pending |
+| REPO-05 | Phase 3: Content Sync via Submodule | Complete |
 | REPO-06 | Phase 10: Private Repo Cleanup | Pending |
 | REPO-07 | Phase 10: Private Repo Cleanup | Pending |
-| SYNC-01 | Phase 3: Content Sync via Submodule | Pending |
-| SYNC-02 | Phase 3: Content Sync via Submodule | Pending |
-| SYNC-03 | Phase 3: Content Sync via Submodule | Pending |
-| SYNC-04 | Phase 3: Content Sync via Submodule | Pending |
+| SYNC-01 | Phase 3: Content Sync via Submodule | Complete |
+| SYNC-02 | Phase 3: Content Sync via Submodule | Complete |
+| SYNC-03 | Phase 3: Content Sync via Submodule | Complete |
+| SYNC-04 | Phase 3: Content Sync via Submodule | Complete |
 | SYNC-05 | Phase 5: Public Repo CI/CD | Pending |
 | SYNC-06 | Phase 6: Private Repo CI/CD | Pending |
-| SYNC-07 | Phase 3: Content Sync via Submodule | Pending |
+| SYNC-07 | Phase 3: Content Sync via Submodule | Complete |
 | PCI-01 | Phase 5: Public Repo CI/CD | Pending |
 | PCI-02 | Phase 5: Public Repo CI/CD | Pending |
 | PCI-03 | Phase 5: Public Repo CI/CD | Pending |

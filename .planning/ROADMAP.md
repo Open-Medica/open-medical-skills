@@ -60,7 +60,7 @@ Plans:
   4. Private repo `dev` branch has the submodule configured and builds cleanly
 **Plans:** 1 plan
 Plans:
-- [ ] 03-01-PLAN.md — Add content submodule, update paths, create validation script, build and verify, merge to dev
+- [x] 03-01-PLAN.md — Add content submodule, update paths, create validation script, build and verify, merge to dev
 
 ### Phase 4: Cross-Repo Authentication
 **Goal**: Both repos have the credentials needed for cross-repo dispatch, deployment, and submission API access
