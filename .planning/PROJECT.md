@@ -38,8 +38,9 @@ The content catalog (skills, plugins, CLI) must be publicly accessible and contr
 - [x] **REPO-01**: Split monorepo into public content repo (`Open-Medica/open-medical-skills`) and private website repo (`gitjfmd/oms-site`) — Validated in Phase 1
 - [x] **REPO-02**: Public repo contains: content YAML, skill/plugin source, CLI, docs, issue/PR templates, submission workflows — Validated in Phase 1
 - [x] **COM-01–05**: Public repo has LICENSE (MIT), DISCLAIMER.md, issue templates, PR templates, .gitignore — Validated in Phase 2
-- [ ] **REPO-03**: Private repo contains: Astro site source, React components, CF Workers, deployment config
-- [ ] **SYNC-01**: Private repo consumes public content via git submodule at `content-repo/`
+- [x] **REPO-03**: Private repo contains Astro source, React components, CF Workers, deployment config — Validated in Phase 3
+- [x] **SYNC-01**: Private repo consumes public content via git submodule at `content-repo/` — Validated in Phase 3
+- [x] **SYNC-02–04, SYNC-07, REPO-05**: Submodule builds (49 skills, 5 plugins), dev server works, dev branch configured — Validated in Phase 3
 - [ ] **SYNC-02**: Auto-update submodule on public repo push to main (repository_dispatch + CI workflow)
 - [ ] **CI-01**: Public repo CI: YAML validation, schema check, auto-label, physician review flagging on PR to dev
 - [ ] **CI-02**: Public repo compliance gate on PR to main (medical disclaimers, safety, CDS claims, license, physician-review-approved label)
@@ -112,4 +113,4 @@ This document evolves at phase transitions and milestone boundaries.
 4. Update Context with current state
 
 ---
-*Last updated: 2026-03-23 after Phase 2 completion*
+*Last updated: 2026-03-25 after Phase 3 completion*
