@@ -1,8 +1,8 @@
-# Roadmap: OMS Repository Split & CI/CD Infrastructure
+# Roadmap: OpenMedica Platform Launch
 
 ## Overview
 
-This roadmap takes Open Medical Skills from a single monorepo to a two-repo architecture (public content + private site) with full CI/CD pipelines, branch protection, cross-repo sync, and community-ready documentation. The work flows from repository creation through content migration, build verification, CI pipelines, branch protection, submission pipeline updates, and finally documentation and community standards. Each phase delivers a coherent, independently verifiable capability.
+This roadmap takes Open Medical Skills from a monorepo to a two-repo architecture (public content + private site), rebrands to "OpenMedica", sets up two-tier CI/CD (heavy dev PR testing, minimal main PR with auto-deploy), branch protection, and community documentation. Phases 1-3 established the repo split and submodule sync. Phases 4-8 rebrand, configure CI/CD, and finalize for launch.
 
 ## Phases
 
@@ -15,13 +15,15 @@ Decimal phases appear between their surrounding integers in numeric order.
 - [ ] **Phase 1: Public Repository Creation** - Create the Open-Medica/open-medical-skills repo with content, CLI, and scripts
 - [ ] **Phase 2: Community Standards** - License, disclaimer, issue/PR templates, .gitignore for the public repo
 - [ ] **Phase 3: Content Sync via Submodule** - Wire private repo to consume public content through git submodule with verified builds
-- [ ] **Phase 4: Cross-Repo Authentication** - Set up PATs and secrets for dispatch, deploy, and submission API access
-- [ ] **Phase 5: Public Repo CI/CD** - Validation, compliance, auto-labeling, and dispatch workflows on the public repo
-- [ ] **Phase 6: Private Repo CI/CD** - Type-check, build, security scan, deploy, and content update receiver workflows
-- [ ] **Phase 7: Branch Protection** - Rulesets on main and dev for both repos, branch deletion blocks
-- [ ] **Phase 8: Submission Pipeline** - Update submission API and workflows to target public repo
-- [ ] **Phase 9: Documentation** - README, CLAUDE.md, CONTRIBUTING, SECURITY, CODEOWNERS for both repos
-- [ ] **Phase 10: Private Repo Cleanup** - Retire legacy sync script, remove stale remotes, verify final state
+- [ ] **Phase 4: Fix Distribution URLs** - Fix all repo URLs across 5 distribution channels, create constants.ts, regenerate CLI index
+- [ ] **Phase 5: Automate Index Sync** - CI auto-regenerates skills-index.json and SQL seed on content changes
+- [ ] **Phase 6: Deploy REST API** - Seed D1 database, deploy API worker, configure custom domain
+- [ ] **Phase 7: Make MCP Server Work** - Replace 7 stub tools with real D1 queries, deploy MCP worker
+- [ ] **Phase 8: Rebrand to OpenMedica** - Display text, base path, logo, package names across 200+ files
+- [ ] **Phase 9: Private Repo Setup** - Rename gitjfmd/oms-site to openmedica-site, verify submodule
+- [ ] **Phase 10: CI/CD Pipeline** - Two-tier CI (heavy dev, light main), auto-deploy, preview deploys
+- [ ] **Phase 11: Branch Protection** - Hard enforcement on main and dev for both repos
+- [ ] **Phase 12: Documentation** - README, CONTRIBUTING, SECURITY, CODEOWNERS, CLAUDE.md updates
 
 ## Phase Details
 
@@ -62,77 +64,81 @@ Plans:
 Plans:
 - [x] 03-01-PLAN.md — Add content submodule, update paths, create validation script, build and verify, merge to dev
 
-### Phase 4: Cross-Repo Authentication
-**Goal**: Both repos have the credentials needed for cross-repo dispatch, deployment, and submission API access
-**Depends on**: Phase 1, Phase 3
-**Requirements**: AUTH-01, AUTH-02, AUTH-03, AUTH-04
+### Phase 4: Fix Distribution URLs
+**Goal**: Every distribution channel (website, CLI, npx, API, MCP) points to `Open-Medica/open-medical-skills`
+**Depends on**: Phase 3
+**Requirements**: SUB-01, SUB-02
 **Success Criteria** (what must be TRUE):
-  1. Fine-grained PAT with `contents:write` on private repo exists and is stored as `SITE_REPO_DISPATCH_TOKEN` secret in the public repo
-  2. Private repo has `CF_API_TOKEN` and `CF_ACCOUNT_ID` secrets configured for Cloudflare deployment
-  3. Submission API Worker has a PAT/token with write access to `Open-Medica/open-medical-skills` for creating PRs
+  1. `grep -r 'gitjfmd/oms-site' content/ skills/ plugins/ cli/` returns zero matches
+  2. `grep -r 'gitjfmd/open-medical-skills' content/ skills/ plugins/ cli/ src/` returns zero matches
+  3. `oms inspect acls-protocol-assistant` shows `Open-Medica/open-medical-skills` in repository URL
+  4. `npx skills add Open-Medica/open-medical-skills --skill acls-protocol-assistant -a claude-code` resolves the skill
 **Plans**: TBD
 
-### Phase 5: Public Repo CI/CD
-**Goal**: Every PR to the public repo is validated for YAML correctness, duplicates, compliance, and physician review before merge
-**Depends on**: Phase 1, Phase 2, Phase 4
-**Requirements**: PCI-01, PCI-02, PCI-03, PCI-04, PCI-05, PCI-06, PCI-07, PCI-08
+### Phase 5: Automate Index Sync
+**Goal**: CLI index and D1 seed auto-regenerate on content changes via CI
+**Depends on**: Phase 4
 **Success Criteria** (what must be TRUE):
-  1. A PR to `dev` with a malformed skill YAML fails CI (schema validation, name format, missing fields)
-  2. A PR to `dev` with a duplicate skill name fails CI and a PR with a valid new skill passes with auto-labels applied and physician review checklist comment posted
-  3. A PR to `main` from a non-dev branch is blocked by the branch guard workflow
-  4. A PR to `main` missing medical disclaimers, safety classification, or physician-review-approved label fails the compliance gate
-  5. Pushing to `main` fires a `repository_dispatch` event to the private repo (verified by workflow run appearing)
+  1. GitHub Action `sync-index.yml` runs on push to main/dev when content changes
+  2. CI fails if committed `skills-index.json` is stale vs. generated version
 **Plans**: TBD
 
-### Phase 6: Private Repo CI/CD
-**Goal**: The private repo validates code quality on PRs, auto-deploys on merge to main, and auto-updates content when the public repo changes
-**Depends on**: Phase 3, Phase 4
-**Requirements**: SCI-01, SCI-02, SCI-03, SCI-04, SCI-05, SCI-06, SCI-07, SCI-08
+### Phase 6: Deploy REST API
+**Goal**: REST API serves real skill data from D1 database
+**Depends on**: Phase 5
 **Success Criteria** (what must be TRUE):
-  1. A PR to `dev` runs `astro check`, `pnpm build` (with `submodules: recursive`), and security scan -- failing any blocks merge
-  2. Pushing to `dev` triggers a preview deploy to Cloudflare Pages
-  3. Pushing to `main` triggers production deploy to Cloudflare Pages via `wrangler pages deploy`
-  4. The `update-content.yml` receiver workflow is committed to `main` before the first dispatch, and receiving a `repository_dispatch` event updates the submodule pointer and triggers a rebuild
-  5. A PR to `main` from a non-dev branch is blocked by the branch guard
+  1. `curl api.openmedica.us/api/skills/acls-protocol-assistant` returns real skill data
+  2. D1 database has all 49 skills populated
 **Plans**: TBD
 
-### Phase 7: Branch Protection
-**Goal**: Both repos enforce the dev-to-main branch model with appropriate approval requirements and no force pushes
-**Depends on**: Phase 5, Phase 6
-**Requirements**: BP-01, BP-02, BP-03, BP-04, BP-05
+### Phase 7: Make MCP Server Work
+**Goal**: All 7 MCP tools return real data from D1 instead of stubs
+**Depends on**: Phase 6
 **Success Criteria** (what must be TRUE):
-  1. Direct push to `main` is rejected in both repos (PR required, 1 approval needed)
-  2. Direct push to `dev` is rejected in both repos (PR required, status checks must pass, 0 approvals)
-  3. Force push to `main` and `dev` is blocked in both repos, and branch deletion of `main` and `dev` is blocked
+  1. MCP `inspect_skill` tool returns real data for any skill name
+  2. MCP `list_skills` returns all 49 skills
 **Plans**: TBD
 
-### Phase 8: Submission Pipeline
-**Goal**: Skill/plugin submissions (web form, issue, direct PR) all target the public repo and flow through the validated pipeline
-**Depends on**: Phase 5, Phase 7
-**Requirements**: SUB-01, SUB-02, SUB-03, SUB-04, SUB-05
+### Phase 8: Rebrand to OpenMedica
+**Goal**: Every user-visible reference says "OpenMedica", base path is `/skills`, logos updated
+**Depends on**: Phase 4
 **Success Criteria** (what must be TRUE):
-  1. Submission API Worker `wrangler.toml` has `GITHUB_OWNER = "Open-Medica"` and web form submissions create PRs to the public repo `dev` branch
-  2. Issue-to-PR workflow creates PRs to the public repo `dev` branch when a skill/plugin submission issue is opened
-  3. End-to-end test passes: submit a skill via issue template, PR appears on public repo `dev`, CI validates it, and physician review is flagged
+  1. `grep -r 'Open Medical Skills' src/` returns zero matches in user-facing text
+  2. `astro.config.mjs` has `base: '/skills'`
+  3. `pnpm build` passes and all pages render at `/skills/` prefix
 **Plans**: TBD
 
-### Phase 9: Documentation
-**Goal**: Both repos have complete, accurate documentation for contributors, developers, and AI agents
-**Depends on**: Phase 5, Phase 6, Phase 8
-**Requirements**: DOC-01, DOC-02, DOC-03, DOC-04, DOC-05, DOC-06, DOC-07, DOC-08
+### Phase 9: Private Repo Setup
+**Goal**: Private website repo is at gitjfmd/openmedica-site and builds cleanly
+**Depends on**: Phase 8
 **Success Criteria** (what must be TRUE):
-  1. Public repo has a comprehensive README.md (mission, CLI install, submission guide, categories, badges, license) and CONTRIBUTING.md at root
-  2. Public repo has CLAUDE.md (project overview, content schema, directory structure without infra details), SECURITY.md (vulnerability reporting), and CODEOWNERS (physician review team)
-  3. Private repo has CLAUDE.md (tech stack, dev setup, deploy, content sync), CLAUDE.local.md (orchestration, agents, infra), and README.md (internal dev docs)
+  1. `gh repo view gitjfmd/openmedica-site --json visibility` returns `PRIVATE`
+  2. `pnpm build` passes in private repo with submodule content
 **Plans**: TBD
 
-### Phase 10: Private Repo Cleanup
-**Goal**: Legacy sync mechanisms are retired and the private repo is clean of stale artifacts
-**Depends on**: Phase 3, Phase 8
-**Requirements**: REPO-06, REPO-07
+### Phase 10: CI/CD Pipeline
+**Goal**: Two-tier CI with heavy dev testing and minimal main with auto-deploy
+**Depends on**: Phase 9
 **Success Criteria** (what must be TRUE):
-  1. `scripts/sync-to-public.sh` is deleted and the legacy `vercel` remote is removed
-  2. `pnpm build` still succeeds after cleanup (no broken references to removed files)
+  1. Dev PR CI runs 5 jobs: vuln-scan, code-integrity, content-validation, functional-tests, prompt-injection
+  2. Main PR CI runs 3 jobs: branch-guard, build-check, compliance-gate
+  3. Merge to main triggers auto-deploy to CF Pages
+**Plans**: TBD
+
+### Phase 11: Branch Protection
+**Goal**: Hard enforcement on main and dev for both repos
+**Depends on**: Phase 10
+**Success Criteria** (what must be TRUE):
+  1. Direct push to main rejected in both repos
+  2. Force push blocked on main and dev in both repos
+**Plans**: TBD
+
+### Phase 12: Documentation
+**Goal**: Both repos have complete, accurate docs for contributors and AI agents
+**Depends on**: All phases
+**Success Criteria** (what must be TRUE):
+  1. Public repo has README.md, CONTRIBUTING.md, SECURITY.md, CODEOWNERS
+  2. Private repo has CLAUDE.md, README.md reflecting OpenMedica brand
 **Plans**: TBD
 
 ## Progress
