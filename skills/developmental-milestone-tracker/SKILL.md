@@ -11,7 +11,7 @@ Track and assess pediatric developmental milestones from birth to 5 years across
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill developmental-milestone-tracker
+npx skills add Open-Medica/open-medical-skills --skill developmental-milestone-tracker
 ```
 
 ## What It Does

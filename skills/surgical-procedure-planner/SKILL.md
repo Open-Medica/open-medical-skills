@@ -44,20 +44,20 @@ MIT
 
 ## Repository
 
-https://github.com/gitjfmd/open-medical-skills/tree/main/skills/surgical-procedure-planner
+https://github.com/Open-Medica/open-medical-skills/tree/main/skills/surgical-procedure-planner
 
 ## Installation
 
 **npx:**
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill surgical-procedure-planner
+npx skills add Open-Medica/open-medical-skills --skill surgical-procedure-planner
 ```
 
 **git:**
 ```bash
-git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/surgical-procedure-planner ~/.claude/skills/
+git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/skills/surgical-procedure-planner ~/.claude/skills/
 ```
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

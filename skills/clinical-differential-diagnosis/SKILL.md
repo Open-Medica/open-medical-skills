@@ -14,7 +14,7 @@ An AI-powered clinical decision support tool that generates comprehensive, ranke
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill clinical-differential-diagnosis
+npx skills add Open-Medica/open-medical-skills --skill clinical-differential-diagnosis
 ```
 
 ## What It Does
@@ -78,4 +78,4 @@ Generate differential diagnosis.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

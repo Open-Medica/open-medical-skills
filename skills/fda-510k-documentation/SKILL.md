@@ -13,7 +13,7 @@ Automate the generation of FDA-required documentation for Software as a Medical 
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill fda-510k-documentation
+npx skills add Open-Medica/open-medical-skills --skill fda-510k-documentation
 ```
 
 ## What It Does
@@ -79,4 +79,4 @@ Software requirements:
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

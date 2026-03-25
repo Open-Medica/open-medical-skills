@@ -13,7 +13,7 @@ Track cumulative radiation exposure from medical imaging procedures across a pat
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill radiation-exposure-tracker
+npx skills add Open-Medica/open-medical-skills --skill radiation-exposure-tracker
 ```
 
 ## What It Does
@@ -89,4 +89,4 @@ Patient: 55-year-old female, BMI 28
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

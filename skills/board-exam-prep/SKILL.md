@@ -12,7 +12,7 @@ Prepare for USMLE (Steps 1, 2 CK, 3) and COMLEX (Levels 1, 2-CE) board examinati
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill board-exam-prep
+npx skills add Open-Medica/open-medical-skills --skill board-exam-prep
 ```
 
 ## What It Does

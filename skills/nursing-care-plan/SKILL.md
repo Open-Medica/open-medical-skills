@@ -12,7 +12,7 @@ Generate evidence-based nursing care plans using the NANDA-I, NOC, NIC (NNN) lin
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill nursing-care-plan
+npx skills add Open-Medica/open-medical-skills --skill nursing-care-plan
 ```
 
 ## What It Does

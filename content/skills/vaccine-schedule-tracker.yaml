@@ -2,15 +2,15 @@ name: "vaccine-schedule-tracker"
 display_name: "Immunization Schedule Tracker"
 description: "CDC/WHO immunization schedule tracker for pediatric and adult vaccinations. Identifies overdue vaccines and generates catch-up schedules."
 author: "Open Medical Skills Community"
-repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/vaccine-schedule-tracker"
+repository: "https://github.com/Open-Medica/open-medical-skills/tree/main/skills/vaccine-schedule-tracker"
 category: "public-health"
 tags: ["immunization", "vaccines", "preventive-care"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill vaccine-schedule-tracker"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/vaccine-schedule-tracker ~/.claude/skills/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill vaccine-schedule-tracker"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/skills/vaccine-schedule-tracker ~/.claude/skills/"
 evidence_level: "high"
 safety_classification: "safe"
 specialty: ["public-health", "family-medicine", "pediatrics"]

@@ -2,15 +2,15 @@ name: "surgical-safety-checklist"
 display_name: "WHO Surgical Safety Checklist"
 description: "Digital implementation of the WHO Surgical Safety Checklist for pre-operative, intra-operative, and post-operative verification. Reduces surgical complications and improves team communication."
 author: "Open Medical Skills Community"
-repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/surgical-safety-checklist"
+repository: "https://github.com/Open-Medica/open-medical-skills/tree/main/skills/surgical-safety-checklist"
 category: "surgery"
 tags: ["surgical-safety", "who-checklist", "patient-safety"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill surgical-safety-checklist"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/surgical-safety-checklist ~/.claude/skills/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill surgical-safety-checklist"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/skills/surgical-safety-checklist ~/.claude/skills/"
 evidence_level: "high"
 safety_classification: "safe"
 specialty: ["surgery", "anesthesiology"]

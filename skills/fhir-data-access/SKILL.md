@@ -13,7 +13,7 @@ Connect to FHIR-compliant (Fast Healthcare Interoperability Resources) electroni
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill fhir-data-access
+npx skills add Open-Medica/open-medical-skills --skill fhir-data-access
 ```
 
 ## What It Does
@@ -96,4 +96,4 @@ FHIR Server: https://fhir.hospital.org/api/v4
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

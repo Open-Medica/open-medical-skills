@@ -13,7 +13,7 @@ Search, validate, and browse ICD-10-CM diagnosis codes using the National Librar
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill icd10-code-lookup
+npx skills add Open-Medica/open-medical-skills --skill icd10-code-lookup
 ```
 
 ## What It Does
@@ -76,4 +76,4 @@ notes.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

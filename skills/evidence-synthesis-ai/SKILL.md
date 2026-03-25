@@ -13,7 +13,7 @@ Synthesize clinical evidence from multiple biomedical sources -- including PubMe
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill evidence-synthesis-ai
+npx skills add Open-Medica/open-medical-skills --skill evidence-synthesis-ai
 ```
 
 ## What It Does
@@ -84,4 +84,4 @@ and summarize the key methodological strengths and limitations.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

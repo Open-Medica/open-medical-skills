@@ -13,7 +13,7 @@ Search over 36 million biomedical citations from PubMed and PubMed Central using
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill pubmed-literature-search
+npx skills add Open-Medica/open-medical-skills --skill pubmed-literature-search
 ```
 
 ## What It Does
@@ -71,4 +71,4 @@ where available. Sort by most recent first.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

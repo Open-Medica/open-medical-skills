@@ -12,7 +12,7 @@ Access comprehensive Centers for Medicare & Medicaid Services (CMS) data on drug
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill medicare-drug-stats
+npx skills add Open-Medica/open-medical-skills --skill medicare-drug-stats
 ```
 
 ## What It Does
@@ -74,4 +74,4 @@ opioid prescribing rate. Compare to the national average.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
