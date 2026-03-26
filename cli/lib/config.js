@@ -7,7 +7,7 @@ const CONFIG_FILE = join(CONFIG_DIR, 'config.json');
 const CACHE_DIR = join(CONFIG_DIR, 'cache');
 
 const DEFAULTS = {
-  apiUrl: 'https://api.openmedicalskills.org',
+  apiUrl: 'https://api.openmedica.us',
   defaultAgent: 'claude-code',
   offlineMode: false,
 };

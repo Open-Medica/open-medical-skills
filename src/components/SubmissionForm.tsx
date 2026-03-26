@@ -3,7 +3,7 @@ import { CATEGORIES, CATEGORY_LABELS } from "../lib/categories";
 import { getUser, isLoggedIn, type GitHubUser } from "../lib/auth";
 
 const API_BASE_URL =
-  import.meta.env.PUBLIC_API_BASE_URL || "https://api.openmedicalskills.org";
+  import.meta.env.PUBLIC_API_BASE_URL || "https://api.openmedica.us";
 
 export default function SubmissionForm() {
   const [submitted, setSubmitted] = useState(false);
