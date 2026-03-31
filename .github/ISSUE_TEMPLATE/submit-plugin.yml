@@ -98,34 +98,22 @@ body:
       label: "Medical Category *"
       description: "Select the primary category for this plugin."
       options:
-        - clinical
-        - diagnostic
-        - administrative
+        - diagnosis
+        - treatment
+        - lab-imaging
+        - pharmacy
+        - emergency
+        - surgery
+        - nursing
+        - pediatrics
+        - mental-health
+        - public-health
         - research
         - education
-        - pharmacology
-        - radiology
-        - pathology
-        - surgery
-        - mental-health
-        - pediatrics
-        - emergency-medicine
-        - public-health
-        - telemedicine
-        - ehr-integration
-        - workflow-automation
-        - other
+        - administrative
+        - clinical-research-summarizing
     validations:
       required: true
-
-  - type: input
-    id: category-other
-    attributes:
-      label: "Other Category (if 'other' selected above)"
-      description: "Specify the category if you selected 'other'."
-      placeholder: "e.g., rehabilitation"
-    validations:
-      required: false
 
   - type: dropdown
     id: subcategories
@@ -134,22 +122,20 @@ body:
       description: "Select any additional categories that apply."
       multiple: true
       options:
-        - clinical
-        - diagnostic
-        - administrative
+        - diagnosis
+        - treatment
+        - lab-imaging
+        - pharmacy
+        - emergency
+        - surgery
+        - nursing
+        - pediatrics
+        - mental-health
+        - public-health
         - research
         - education
-        - pharmacology
-        - radiology
-        - pathology
-        - surgery
-        - mental-health
-        - pediatrics
-        - emergency-medicine
-        - public-health
-        - telemedicine
-        - ehr-integration
-        - workflow-automation
+        - administrative
+        - clinical-research-summarizing
     validations:
       required: false
 

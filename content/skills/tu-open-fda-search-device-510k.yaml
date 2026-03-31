@@ -1,0 +1,21 @@
+name: "tu-open-fda-search-device-510k"
+display_name: "OpenFDA search device 510k"
+description: "Search the FDA 510(k) premarket notification database via openFDA. Contains clearances for medical devices through the 510(k) pathway (substantial equivalence). Returns device names, applicant companies, decision dates, advisory committee classifications, and FDA decision types. Useful for medical device research, competitive landscape analysis, and understanding regulatory pathways for specific device categories."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda"
+  - "fda"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

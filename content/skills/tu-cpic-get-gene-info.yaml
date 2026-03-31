@@ -1,0 +1,21 @@
+name: "tu-cpic-get-gene-info"
+display_name: "CPIC get gene info"
+description: "Get pharmacogenomics information for a gene from the Clinical Pharmacogenomics Implementation Consortium (CPIC) database. Returns gene coordinates, sequence IDs, and cross-references to PharmGKB, HGNC, NCBI, and Ensembl. Use this to find which genes are pharmacogenomically relevant. Example genes: CYP2D6, CYP2C19, CYP2C9, SLCO1B1, TPMT, DPYD, UGT1A1, VKORC1, G6PD."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

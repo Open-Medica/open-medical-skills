@@ -1,0 +1,21 @@
+name: "tu-open-fda-search-drug-labels"
+display_name: "OpenFDA search drug labels"
+description: "Search the FDA drug label (SPL - Structured Product Labeling) database via openFDA. Contains approved prescription and OTC drug labels including indications, warnings, dosage, adverse reactions, contraindications, and pharmacology sections. Use Lucene query syntax: 'openfda.brand_name:aspirin', 'openfda.generic_name:ibuprofen', 'openfda.manufacturer_name:pfizer'. Returns label text sections and openFDA cross-references (brand name, generic name, substance name, product type)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda"
+  - "fda"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

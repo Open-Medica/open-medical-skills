@@ -1,0 +1,21 @@
+name: "tu-gnomad-get-region"
+display_name: "gnomad get region"
+description: "Get basic regional information from gnomAD by genomic interval. Returns genes overlapping the region and a list of `variant_id` values in the region for the selected dataset. Use those IDs with `gnomad_get_variant`. Keep regions small to avoid large payloads."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

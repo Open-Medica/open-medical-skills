@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-icd-mapping"
+display_name: "Orphanet get icd mapping"
+description: "Get cross-references between Orphanet ORPHA codes and other medical coding systems (ICD-10, ICD-11, OMIM, SNOMED-CT). Essential for mapping rare disease codes across clinical and research nomenclatures. Returns mapping relationships and validation status."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

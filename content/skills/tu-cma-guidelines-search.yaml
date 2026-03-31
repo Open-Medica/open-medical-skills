@@ -1,0 +1,21 @@
+name: "tu-cma-guidelines-search"
+display_name: "CMA Guidelines Search"
+description: "Search Canadian Medical Association (CMA) Infobase guidelines. Contains over 1200 evidence-based clinical practice guidelines developed or endorsed by Canadian healthcare organizations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

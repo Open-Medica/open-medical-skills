@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-classification"
+display_name: "Orphanet get classification"
+description: "Get disease classification hierarchy from Orphanet. Returns parent and child disease categories showing where a disease fits in the rare disease taxonomy. Useful for understanding disease relationships."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

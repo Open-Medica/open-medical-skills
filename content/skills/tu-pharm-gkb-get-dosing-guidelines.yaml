@@ -1,0 +1,21 @@
+name: "tu-pharm-gkb-get-dosing-guidelines"
+display_name: "PharmGKB get dosing guidelines"
+description: "Get pharmacogenetic dosing guidelines (CPIC/DPWG) from PharmGKB by guideline_id. IMPORTANT: use the 'clinpgxid' field from CPIC_list_guidelines (e.g., 'PA166251454'), NOT the 'pharmgkbid' field — old-format pharmgkbid values (e.g., 'PA166104996') return HTTP 404. The test example PA166251465 is for the warfarin guideline."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmgkb"
+  - "pharmacogenomics"
+  - "drug-gene-interactions"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

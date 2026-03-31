@@ -1,0 +1,21 @@
+name: "tu-synergx-db-list-datasets"
+display_name: "SYNERGxDB list datasets"
+description: "List all drug combination screening datasets integrated in SYNERGxDB. Returns dataset names, number of drugs, cell lines, and publication references. Key datasets: NCI-ALMANAC (101 drugs, 60 cell lines), MERCK (38 drugs, 39 cell lines), STANFORD, YALE-PDAC, YALE-TNBC, MIT-MELANOMA, CLOUD, ASTRAZENECA."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "synergxdb"
+  - "drug-combinations"
+  - "synergy-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

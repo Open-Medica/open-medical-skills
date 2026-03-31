@@ -1,0 +1,11 @@
+<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title>Open Medical Skills</title>
+<defs>
+  <linearGradient id="oGrad" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#22D3EE"/>
+    <stop offset="100%" stop-color="#0891B2"/>
+  </linearGradient>
+</defs>
+<text x="32" y="42" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="800" fill="url(#oGrad)" text-anchor="middle" letter-spacing="-2">OMS</text>
+<rect x="12" y="50" width="40" height="1.5" rx="0.75" fill="#EF4444" opacity="0.7"/>
+</svg>

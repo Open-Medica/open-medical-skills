@@ -1,0 +1,21 @@
+name: "tu-gnomad-get-variant"
+display_name: "gnomad get variant"
+description: "Get basic variant metadata from gnomAD by `variant_id` (format like '19-44908822-C-T'). Use `gnomad_search_variants` to discover valid `variant_id` values from an rsID query. `dataset` is required by gnomAD and defaults to `gnomad_r3`."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

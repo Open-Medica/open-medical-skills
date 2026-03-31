@@ -1,0 +1,21 @@
+name: "tu-medline-plus-search-topics-by-keyword"
+display_name: "MedlinePlus search topics by keyword"
+description: "Search for relevant information in MedlinePlus Web Service by keyword across health topics or other sub-libraries (such as drugs, genetics, etc.)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "medlineplus"
+  - "patient-education"
+  - "health-information"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

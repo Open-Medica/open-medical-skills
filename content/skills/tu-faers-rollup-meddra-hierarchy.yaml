@@ -1,0 +1,22 @@
+name: "tu-faers-rollup-meddra-hierarchy"
+display_name: "FAERS rollup meddra hierarchy"
+description: "Aggregate adverse events by MedDRA hierarchy (Preferred Term level). Returns top 50 PTs with counts. Note: Full HLT/SOC hierarchy requires MedDRA license. Use for adverse event profile overview."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "faers-analytics"
+  - "fda"
+  - "adverse-events"
+  - "safety-surveillance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

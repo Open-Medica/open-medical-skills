@@ -1,0 +1,21 @@
+name: "tu-pub-chem-search-assays-by-target-gene"
+display_name: "PubChem search assays by target gene"
+description: "Search bioassays by target gene symbol. Returns AIDs of assays that screen against the specified gene. Example: USP2 returns assays targeting USP2 protease."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

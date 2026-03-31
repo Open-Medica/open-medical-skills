@@ -1,0 +1,21 @@
+name: "tu-odphp-itemlist"
+display_name: "odphp itemlist"
+description: "This tools browses and returns available topics and categories and it is helpful to help narrow a broad request (e.g., “show me all topics”). For full topic content, `odphp_topicsearch` tool is helpful."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "odphp"
+  - "preventive-health"
+  - "health-objectives"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

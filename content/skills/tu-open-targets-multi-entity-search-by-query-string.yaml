@@ -1,0 +1,25 @@
+name: "tu-open-targets-multi-entity-search-by-query-string"
+display_name: "OpenTargets multi entity search by query string"
+description: "Perform a multi-entity search based on a query string, filtering by entity names and pagination settings."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "search-and-mapping-functions"
+  - "multientitysearch"
+  - "pagination"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

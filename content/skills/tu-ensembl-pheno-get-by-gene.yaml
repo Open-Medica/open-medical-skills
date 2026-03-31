@@ -1,0 +1,21 @@
+name: "tu-ensembl-pheno-get-by-gene"
+display_name: "EnsemblPheno get by gene"
+description: "Get phenotype associations for a gene from the Ensembl REST API. Returns diseases, traits, and clinical conditions linked to the gene, aggregated from multiple sources including Cancer Gene Census, OMIM, ClinVar, NHGRI-EBI GWAS catalog, and Orphanet. Each entry includes the phenotype description, data source, genomic location, and ontology accessions (EFO, HP, Orphanet). Example: BRCA1 returns 162 phenotype associations across multiple cancer types and other conditions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ensembl-phenotype"
+  - "phenotype-associations"
+  - "genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

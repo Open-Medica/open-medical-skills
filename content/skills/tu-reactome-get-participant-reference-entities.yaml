@@ -1,0 +1,21 @@
+name: "tu-reactome-get-participant-reference-entities"
+display_name: "Reactome get participant reference entities"
+description: "Get reference entities for participants of a reaction or event. Returns list of reference entities (UniProt proteins, ChEBI chemicals, etc.) associated with the participants, including database identifiers and names."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

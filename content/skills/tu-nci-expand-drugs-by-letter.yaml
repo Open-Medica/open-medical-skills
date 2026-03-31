@@ -1,0 +1,20 @@
+name: "tu-nci-expand-drugs-by-letter"
+display_name: "NCI expand drugs by letter"
+description: "Browse the NCI Drug Dictionary by first letter. Returns all cancer drugs and drug aliases starting with the specified letter. Each result includes the drug name, preferred name, type (DrugTerm or DrugAlias), and a pretty URL name for detailed lookups. Useful for discovering cancer drugs alphabetically or finding all drugs starting with a specific letter. Use NCI_get_drug_by_name with the prettyUrlName to get full details."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

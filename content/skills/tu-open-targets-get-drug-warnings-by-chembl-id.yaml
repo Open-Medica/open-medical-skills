@@ -1,0 +1,27 @@
+name: "tu-open-targets-get-drug-warnings-by-chembl-id"
+display_name: "OpenTargets get drug warnings by chemblId"
+description: "Retrieve warnings for a specific drug using ChEMBL ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "adverseevents"
+  - "safetyliability"
+  - "graphql"
+  - "warnings"
+  - "safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -2,15 +2,15 @@ name: "patient-assessment-tool"
 display_name: "Nursing Patient Assessment Tool"
 description: "Comprehensive nursing assessment tool for systematic patient evaluation. Covers vital signs interpretation, pain assessment, fall risk screening, and activities of daily living."
 author: "Open Medical Skills Community"
-repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/patient-assessment-tool"
+repository: "https://github.com/Open-Medica/open-medical-skills/tree/main/skills/patient-assessment-tool"
 category: "nursing"
 tags: ["nursing-assessment", "patient-evaluation", "vital-signs"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill patient-assessment-tool"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/patient-assessment-tool ~/.claude/skills/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill patient-assessment-tool"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/skills/patient-assessment-tool ~/.claude/skills/"
 evidence_level: "moderate"
 safety_classification: "safe"
 specialty: ["nursing"]

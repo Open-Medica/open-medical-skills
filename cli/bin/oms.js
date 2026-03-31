@@ -15,6 +15,7 @@ import {
   findSkill,
   loadSkillsIndex,
   filterByCategory,
+  listAllSkills,
 } from '../lib/skills.js';
 import { validateSkill, relateSkill } from '../lib/api-client.js';
 import { installSkill, printInstallResults, getAvailableTargets } from '../lib/installer.js';
@@ -99,6 +100,53 @@ program
     console.log('');
     console.log(chalk.gray(`  Use ${chalk.white('oms inspect <skill-name>')} for details.`));
     console.log(chalk.gray(`  Use ${chalk.white('oms install <skill-name>')} to install.\n`));
+    printDisclaimer();
+  });
+
+// ──────────────────────────────────────────────────────────────────
+// oms list
+// ──────────────────────────────────────────────────────────────────
+program
+  .command('list')
+  .description('List all available skills')
+  .option('-c, --category <category>', 'Filter by medical category')
+  .option('-l, --limit <n>', 'Max results', '50')
+  .option('--json', 'Output as JSON')
+  .action(async (opts) => {
+    printBannerCompact();
+
+    let skills = listAllSkills();
+
+    if (opts.category) {
+      skills = skills.filter(s => s.category === opts.category);
+      if (skills.length === 0) {
+        console.log(chalk.yellow(`  No skills in category "${opts.category}".`));
+        return;
+      }
+    }
+
+    if (opts.json) {
+      console.log(JSON.stringify(skills, null, 2));
+      return;
+    }
+
+    console.log(chalk.gray(`  ${skills.length} skill${skills.length !== 1 ? 's' : ''} available\n`));
+
+    const limit = parseInt(opts.limit, 10);
+    const displayed = skills.slice(0, limit);
+
+    for (let i = 0; i < displayed.length; i++) {
+      const s = displayed[i];
+      console.log(`  ${chalk.gray(`${String(i + 1).padStart(3)}.`)} ${chalk.bold.white(s.name)}  ${formatCategory(s.category || '')}`);
+    }
+
+    if (skills.length > limit) {
+      console.log(chalk.gray(`\n  ... and ${skills.length - limit} more. Use --limit to see more.`));
+    }
+
+    console.log('');
+    console.log(chalk.gray(`  Use ${chalk.white('oms find <query>')} to search.`));
+    console.log(chalk.gray(`  Use ${chalk.white('oms inspect <skill-name>')} for details.\n`));
     printDisclaimer();
   });
 

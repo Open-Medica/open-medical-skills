@@ -1,0 +1,21 @@
+name: "tu-nccn-search-guidelines"
+display_name: "NCCN search guidelines"
+description: "Search NCCN (National Comprehensive Cancer Network) guidelines and publications via PubMed. Searches the JNCCN (Journal of the NCCN) and other NCCN publications for clinical practice guidelines, evidence blocks, and discussion papers on cancer treatment. Useful for finding specific NCCN treatment recommendations and updates."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,22 @@
+name: "tu-faers-stratify-by-demographics"
+display_name: "FAERS stratify by demographics"
+description: "Stratify adverse event reports by demographics (sex, age group, country). Returns counts and percentages by demographic group. Example: ibuprofen + GI bleeding stratified by sex → Female: 60%, Male: 40%. Use for subpopulation risk assessment."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "faers-analytics"
+  - "fda"
+  - "adverse-events"
+  - "safety-surveillance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

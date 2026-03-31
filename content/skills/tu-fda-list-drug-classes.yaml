@@ -1,0 +1,22 @@
+name: "tu-fda-list-drug-classes"
+display_name: "FDA list drug classes"
+description: "List FDA pharmacological drug classes (Established Pharmacologic Class, EPC) and the number of drug products in each class. Classes include designations like 'Selective Serotonin Reuptake Inhibitor [EPC]', 'Beta-Adrenergic Blocker [EPC]', 'HMG-CoA Reductase Inhibitor [EPC]' (statins), 'ACE Inhibitor [EPC]', etc. Use this to discover drug class names for filtering or understanding drug categorization."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda-labels"
+  - "fda"
+  - "drug-labels"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

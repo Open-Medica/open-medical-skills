@@ -1,0 +1,26 @@
+name: "tu-extract-clinical-trial-adverse-events"
+display_name: "extract clinical trial adverse events"
+description: "Extracts detailed adverse event results from clinicaltrials.gov, using their NCT IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "clinical-research-summarizing"
+tags:
+  - "tooluniverse"
+  - "clinical-trials"
+  - "trial-search"
+  - "clinical-research"
+  - "clinicaltrials.gov"
+  - "clinical-trial"
+  - "study"
+  - "adverse-event"
+  - "safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

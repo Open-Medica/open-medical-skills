@@ -1,0 +1,21 @@
+name: "tu-pub-chem-tox-get-toxicity-summary"
+display_name: "PubChemTox get toxicity summary"
+description: "Get a comprehensive toxicity data summary for a chemical compound from PubChem. Returns an overview of all available toxicity data sections and subsections, including previews of each data type. This acts as a table of contents for all toxicological data available in PubChem for a compound. Sections include: Toxicological Information (EPA IRIS, hepatotoxicity, carcinogen classification, exposure routes, target organs, LD50 values, human/non-human toxicity excerpts), and Ecological Information..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem-tox"
+  - "toxicology"
+  - "chemical-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

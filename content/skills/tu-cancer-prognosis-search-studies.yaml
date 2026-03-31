@@ -1,0 +1,22 @@
+name: "tu-cancer-prognosis-search-studies"
+display_name: "CancerPrognosis search studies"
+description: "Search cBioPortal for cancer genomics studies by keyword. Find studies by cancer type, institution, or data type. Returns study IDs that can be used with other CancerPrognosis tools. Covers 400+ studies including all TCGA projects, AACR GENIE, MSK-IMPACT, and institutional cohorts."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "cancer-prognosis"
+  - "oncology"
+  - "prognosis"
+  - "survival"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

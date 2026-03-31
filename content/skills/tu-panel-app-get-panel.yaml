@@ -1,0 +1,21 @@
+name: "tu-panel-app-get-panel"
+display_name: "PanelApp get panel"
+description: "Get the full gene list and details for a specific Genomics England PanelApp gene panel by panel ID. Returns all genes in the panel with their confidence levels (3=green/diagnostic, 2=amber/borderline, 1=red/limited), mode of inheritance, mode of pathogenicity, penetrance, phenotypes, publications, and evidence sources. This is the definitive resource for which genes are included in clinical genetic testing panels used by the NHS. Use PanelApp_search_panels to find panel IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "panelapp"
+  - "gene-panels"
+  - "genomic-testing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

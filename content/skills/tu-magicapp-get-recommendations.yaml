@@ -1,0 +1,20 @@
+name: "tu-magicapp-get-recommendations"
+display_name: "MAGICapp get recommendations"
+description: "Get all clinical recommendations from a specific MAGICapp guideline. Returns GRADE-rated recommendations with strength levels (STRONG, WEAK, PRACTICE, NO_STRENGTH), recommendation text (HTML), supporting remarks, rationale, and key information including evidence quality assessments. This is the core tool for accessing evidence-based clinical recommendations from living guidelines hosted on MAGICapp. Use MAGICapp_list_guidelines first to find guideline IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

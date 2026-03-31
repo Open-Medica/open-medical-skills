@@ -1,0 +1,21 @@
+name: "tu-c-bio-portal-get-gene-info"
+display_name: "cBioPortal get gene info"
+description: "Get detailed information about a specific gene by Entrez Gene ID. Returns gene symbol, aliases, type, and chromosome location."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cbioportal"
+  - "cancer-genomics"
+  - "tumor-profiling"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-drug-synergy-calculate-loewe"
+display_name: "DrugSynergy calculate loewe"
+description: "Calculate Loewe Additivity synergy score for a drug combination. The Loewe model is the most widely used reference model for drug interaction: d_a/D_a(E) + d_b/D_b(E) = 1 at additivity. If sum < 1, the combination is synergistic (needs less drug than expected); if > 1, it is antagonistic. Requires single-agent dose-response data for each drug (to fit Hill curves) plus the combination doses and observed effect. Based on Loewe & Muischnek (1926). Use for: rigorous synergy quantification with do..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-synergy"
+  - "drug-combinations"
+  - "synergy-scoring"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

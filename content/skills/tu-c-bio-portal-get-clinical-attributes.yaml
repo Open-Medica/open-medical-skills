@@ -1,0 +1,21 @@
+name: "tu-c-bio-portal-get-clinical-attributes"
+display_name: "cBioPortal get clinical attributes"
+description: "Get available clinical attributes for a cancer study. Returns attribute IDs, names, and data types. Use to know what clinical data can be queried (e.g., stage, grade, survival)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cbioportal"
+  - "cancer-genomics"
+  - "tumor-profiling"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-clin-gen-search-dosage-sensitivity"
+display_name: "ClinGen search dosage sensitivity"
+description: "Search ClinGen dosage sensitivity curations by gene symbol. Returns haploinsufficiency (HI) and triplosensitivity (TS) scores (0-3 scale). Score 3 = Sufficient evidence for dosage pathogenicity. Critical for CNV interpretation. Example: MECP2 has HI score of 3."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,27 @@
+name: "tu-open-targets-drug-pharmacogenomics-data"
+display_name: "OpenTargets drug pharmacogenomics data"
+description: "Retrieve pharmacogenomics data for a specific drug, including evidence levels and genotype annotations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "pharmacogenomics"
+  - "evidence"
+  - "genotype"
+  - "pagination"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

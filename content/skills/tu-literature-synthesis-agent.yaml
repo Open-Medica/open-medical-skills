@@ -1,0 +1,21 @@
+name: "tu-literature-synthesis-agent"
+display_name: "LiteratureSynthesisAgent"
+description: "AI agent that synthesizes literature findings and provides evidence-based insights"
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "drug-discovery-agents"
+  - "drug-discovery"
+  - "ai-agents"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

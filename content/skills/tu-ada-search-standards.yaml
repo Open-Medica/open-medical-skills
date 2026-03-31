@@ -1,0 +1,21 @@
+name: "tu-ada-search-standards"
+display_name: "ADA search standards"
+description: "Search ADA (American Diabetes Association) guidelines and publications by topic using PubMed. Searches publications with ADA as corporate author, returning titles, abstracts, PMIDs, and PMC links. Useful for finding ADA recommendations on specific diabetes-related topics such as glycemic targets, insulin therapy, GLP-1 receptor agonists, SGLT2 inhibitors, gestational diabetes, diabetic kidney disease, or diabetes technology."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

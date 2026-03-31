@@ -1,0 +1,23 @@
+name: "tu-gdc-get-gene-expression"
+display_name: "GDC get gene expression"
+description: "Query RNA-Seq gene expression files from GDC/TCGA projects. Returns file metadata for expression quantification data. Use to find expression data for downstream analysis."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gdc"
+  - "genomic-data-commons"
+  - "cancer-data"
+  - "expression"
+  - "rna-seq"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

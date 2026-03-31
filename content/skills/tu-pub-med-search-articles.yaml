@@ -1,0 +1,21 @@
+name: "tu-pub-med-search-articles"
+display_name: "PubMed search articles"
+description: "Search PubMed biomedical literature database using NCBI E-utilities (esearch + esummary). Returns articles with PMID, title, authors, journal, publication year, DOI, article type, and PubMed URL. Automatically fetches rich metadata for each article. Use this to discover medical/life sciences literature, find articles by topic, or search for publications by author or journal. Rate limiting is automatically handled (3 req/sec without API key, 10 req/sec with key set via NCBI_API_KEY environment..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "pubmed"
+  - "literature-search"
+  - "biomedical-research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

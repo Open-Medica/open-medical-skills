@@ -1,0 +1,21 @@
+name: "tu-nhanes-get-dataset-info"
+display_name: "nhanes get dataset info"
+description: "Get information about NHANES (National Health and Nutrition Examination Survey) datasets. NHANES data is typically available as downloadable files (SAS, XPT formats) from the CDC website. This tool provides information about available datasets, years, and download links. Note: Actual data retrieval may require downloading and converting files."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "nhanes"
+  - "epidemiology"
+  - "population-health"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

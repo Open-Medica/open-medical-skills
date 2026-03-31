@@ -1,0 +1,25 @@
+name: "tu-open-targets-get-drug-blackbox-status-by-chembl-id"
+display_name: "OpenTargets get drug blackbox status by chembl ID"
+description: "Find withdrawn and black-box warning statuses for a specific drug by chemblId."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "safetywarnings"
+  - "withdrawal"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

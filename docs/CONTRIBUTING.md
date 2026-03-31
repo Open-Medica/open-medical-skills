@@ -10,7 +10,7 @@ This is the preferred path for developers comfortable with Git workflows.
 
 #### Step-by-step
 
-1. **Fork** the [open-medical-skills](https://github.com/gitjfmd/open-medical-skills) repository.
+1. **Fork** the [open-medical-skills](https://github.com/Open-Medica/open-medical-skills) repository.
 
 2. **Create a branch** from `dev`:
    ```bash
@@ -154,8 +154,8 @@ Every SKILL.md must include a disclaimer stating that the tool is for research a
 
 ## Questions?
 
-- Open a [GitHub Discussion](https://github.com/gitjfmd/open-medical-skills/discussions) for general questions
-- Open a [GitHub Issue](https://github.com/gitjfmd/open-medical-skills/issues) for bugs or feature requests
+- Open a [GitHub Discussion](https://github.com/Open-Medica/open-medical-skills/discussions) for general questions
+- Open a [GitHub Issue](https://github.com/Open-Medica/open-medical-skills/issues) for bugs or feature requests
 - Contact: dev@intelmedica.ai
 
 ---

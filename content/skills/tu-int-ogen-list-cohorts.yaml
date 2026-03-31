@@ -1,0 +1,23 @@
+name: "tu-int-ogen-list-cohorts"
+display_name: "IntOGen list cohorts"
+description: "List available cancer cohorts from IntOGen with sample counts and tumor types. Returns cohort IDs, names, data sources (TCGA, ICGC, Hartwig, etc.), sample counts, tumor type (Primary/Metastasis), and age group (Adult/Pediatric). Optionally filter by cancer type. IntOGen includes 271 cohorts from major genomic studies. Example: cancer_type='BRCA' returns 14 breast cancer cohorts from TCGA, Hartwig, ICGC, and others."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "intogen"
+  - "cancer-driver-genes"
+  - "mutational-analysis"
+  - "cancer"
+  - "cohorts"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

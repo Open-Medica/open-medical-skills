@@ -1,0 +1,21 @@
+name: "tu-reactome-get-participants"
+display_name: "Reactome get participants"
+description: "Get all participants (physical entities) of a reaction or event. Returns list of physical entities (proteins, complexes, small molecules) participating in the event, including their reference entities."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-cpic-get-gene-drug-pairs"
+display_name: "CPIC get gene drug pairs"
+description: "Get all gene-drug pairs for a pharmacogene from CPIC. Shows which drugs are affected by variants in a specific gene, with CPIC evidence level and PharmGKB clinical annotation level. Evidence levels: A (strongest) to D (weakest). Useful for understanding the clinical significance of a pharmacogene."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

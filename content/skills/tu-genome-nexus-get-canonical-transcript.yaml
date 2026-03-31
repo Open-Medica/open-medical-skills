@@ -1,0 +1,21 @@
+name: "tu-genome-nexus-get-canonical-transcript"
+display_name: "GenomeNexus get canonical transcript"
+description: "Get the canonical transcript for a gene from Genome Nexus (MSK). Returns the Ensembl transcript ID, protein ID, protein length, RefSeq mRNA ID, CCDS ID, HUGO symbol, and Pfam protein domain annotations. Useful for determining the standard transcript to use for variant annotation, and for getting a quick overview of protein domain architecture. Input is a HUGO gene symbol (e.g., 'TP53', 'BRAF', 'BRCA1')."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "genome-nexus"
+  - "variant-annotation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

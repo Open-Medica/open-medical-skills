@@ -1,0 +1,21 @@
+name: "tu-me-sh-search-descriptors"
+display_name: "MeSH search descriptors"
+description: "Search MeSH (Medical Subject Headings) descriptors by label. MeSH is NLM's controlled vocabulary for indexing biomedical literature in PubMed. Descriptors are the main headings in MeSH that represent biomedical concepts including diseases, drugs, anatomy, organisms, and procedures. Supports exact and contains matching. Example: searching 'Neoplasms' with exact match returns descriptor D009369."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "mesh"
+  - "medical-subject-headings"
+  - "indexing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

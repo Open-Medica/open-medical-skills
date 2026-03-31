@@ -1,0 +1,21 @@
+name: "tu-sign-search-guidelines"
+display_name: "SIGN search guidelines"
+description: "Search SIGN (Scottish Intercollegiate Guidelines Network) clinical guidelines by keyword. Fetches the complete SIGN guidelines table (84 evidence-based guidelines) and filters by keyword match in title or clinical topic. Returns guideline number, title, topic, publication year, and URL."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

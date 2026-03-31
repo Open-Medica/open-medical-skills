@@ -1,0 +1,254 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const allSkills = await getCollection("skills");
+const allPlugins = await getCollection("plugins");
+const publishedCount = [...allSkills, ...allPlugins].filter((s) => s.data.status === "published").length;
+const totalCount = allSkills.length + allPlugins.length;
+---
+
+<BaseLayout title="OpenMedica — Open-Source Medical AI Research Tools">
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-900 via-cyan-950/20 to-gray-950">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(6,182,212,0.12),transparent)]"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 sm:py-32 lg:px-8">
+      <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-cyan-800/40 bg-cyan-950/30 px-4 py-1.5 text-xs font-medium text-cyan-300">
+        <span class="h-1.5 w-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+        Open Source &middot; Physician-Reviewed &middot; Evidence-Informed
+      </div>
+
+      <h1 class="text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
+        Open<span class="bg-gradient-to-r from-cyan-400 to-teal-400 bg-clip-text text-transparent">Medica</span>
+      </h1>
+
+      <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400 sm:text-xl">
+        Open-source medical AI research tools built by physicians, for physicians and the healthcare industry.
+      </p>
+
+      <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/open-medical-skills"
+          class="rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 px-8 py-3.5 text-sm font-semibold text-white shadow-lg shadow-cyan-500/25 transition-all hover:shadow-cyan-500/40 hover:brightness-110"
+        >
+          Explore Skills
+        </a>
+        <a
+          href="/about"
+          class="rounded-lg border border-slate-700 bg-slate-800/50 px-8 py-3.5 text-sm font-semibold text-slate-300 transition-colors hover:border-slate-600 hover:bg-slate-800 hover:text-white"
+        >
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="border-b border-slate-800 bg-gray-950">
+    <div class="mx-auto grid max-w-5xl grid-cols-2 gap-6 px-4 py-10 sm:grid-cols-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <p class="text-3xl font-bold text-white">{allSkills.length}</p>
+        <p class="mt-1 text-sm text-slate-500">Medical Skills</p>
+      </div>
+      <div class="text-center">
+        <p class="text-3xl font-bold text-white">{allPlugins.length}</p>
+        <p class="mt-1 text-sm text-slate-500">Plugins</p>
+      </div>
+      <div class="text-center">
+        <p class="text-3xl font-bold text-white">{publishedCount}</p>
+        <p class="mt-1 text-sm text-slate-500">Published</p>
+      </div>
+      <div class="text-center">
+        <p class="text-3xl font-bold text-white">14</p>
+        <p class="mt-1 text-sm text-slate-500">Specialties</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h2 class="text-2xl font-bold text-white sm:text-3xl">Projects</h2>
+      <p class="mt-2 text-slate-400">Tools and platforms for medical AI research</p>
+    </div>
+
+    <div class="mt-10 grid gap-6 sm:grid-cols-2">
+      <!-- Open Medical Skills -->
+      <a href="/open-medical-skills" class="group rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-cyan-700/50 hover:bg-slate-900">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-cyan-500/10 text-cyan-400">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white group-hover:text-cyan-400 transition-colors">Open Medical Skills</h3>
+            <p class="text-xs text-slate-500">Skill Catalog</p>
+          </div>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed text-slate-400">
+          {totalCount} physician-curated AI skills and plugins across 14 medical specialties. Browse, search, and install.
+        </p>
+        <div class="mt-4 flex items-center gap-1.5 text-xs font-medium text-cyan-400">
+          Browse catalog
+          <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path d="M9 5l7 7-7 7" />
+          </svg>
+        </div>
+      </a>
+
+      <!-- PA Doc Generator -->
+      <a href="/pa-doc-generator" class="group rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-rose-700/50 hover:bg-slate-900">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-rose-500/10 text-rose-400">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white group-hover:text-rose-400 transition-colors">PA Doc Generator</h3>
+            <p class="text-xs text-slate-500">Prior Authorization</p>
+          </div>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed text-slate-400">
+          Open-source, AI-assisted prior authorization package generator. Clinical staff pick a template (imaging, surgery, DME, medication, therapy), fill smart forms, and AI generates a medical necessity justification letter backed by clinical guidelines. Complete PA submissions in 5-10 minutes instead of 30-60. 82% of PA denials are overturned on appeal, but only 11% are appealed &mdash; better initial submissions directly improve patient access to care.
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <span class="inline-flex items-center gap-1 rounded-full border border-emerald-800/50 bg-emerald-950/30 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
+            <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+            Open Source
+          </span>
+          <span class="text-xs font-medium text-rose-400/70">In development</span>
+        </div>
+        <div class="mt-3 flex items-center gap-1.5 text-xs font-medium text-rose-400">
+          Learn more
+          <svg class="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M9 5l7 7-7 7" /></svg>
+        </div>
+      </a>
+
+      <!-- OpenMedica CLI -->
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 opacity-75">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-violet-500/10 text-violet-400">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white group-hover:text-violet-400 transition-colors">OpenMedica CLI</h3>
+            <p class="text-xs text-slate-500">Command Line Tool</p>
+          </div>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed text-slate-400">
+          Search, discover, and install medical AI skills directly from your terminal. Works with Claude Code, Cursor, VS Code, and any agent that supports skills.
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <span class="inline-flex items-center gap-1 rounded-full border border-emerald-800/50 bg-emerald-950/30 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
+            <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+            Open Source
+          </span>
+          <span class="text-xs font-medium text-violet-400/70">Coming soon</span>
+        </div>
+      </div>
+
+      <!-- OpenMedica API -->
+      <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 opacity-75">
+        <div class="flex items-center gap-3">
+          <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-amber-500/10 text-amber-400">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-semibold text-white group-hover:text-amber-400 transition-colors">OpenMedica API</h3>
+            <p class="text-xs text-slate-500">REST &amp; MCP</p>
+          </div>
+        </div>
+        <p class="mt-3 text-sm leading-relaxed text-slate-400">
+          Programmatic access to the skill catalog via REST API and Model Context Protocol (MCP) for AI agent integration.
+        </p>
+        <div class="mt-4 flex items-center gap-3">
+          <span class="inline-flex items-center gap-1 rounded-full border border-emerald-800/50 bg-emerald-950/30 px-2 py-0.5 text-[10px] font-medium text-emerald-400">
+            <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+            Open Source
+          </span>
+          <span class="text-xs font-medium text-amber-400/70">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- More -->
+  <section class="border-t border-slate-800 bg-slate-950/50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- AI Benchmarks -->
+        <a href="https://jfmd.dev/ai-benchmarks" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-emerald-700/50 hover:bg-slate-900">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/10 text-emerald-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white group-hover:text-emerald-400 transition-colors">AI Benchmarks</h3>
+              <p class="text-xs text-slate-500">jfmd.dev</p>
+            </div>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Independent AI model benchmarks and comparisons for medical and general-purpose tasks.
+          </p>
+        </a>
+
+        <!-- Blog -->
+        <a href="https://intelmedica.ai/blog" target="_blank" rel="noopener noreferrer" class="group rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-rose-700/50 hover:bg-slate-900">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-rose-500/10 text-rose-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white group-hover:text-rose-400 transition-colors">Blog</h3>
+              <p class="text-xs text-slate-500">IntelMedica.ai</p>
+            </div>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Articles on medical AI research, open-source tools, and healthcare technology.
+          </p>
+        </a>
+
+        <!-- FDA Tools -->
+        <a href="/fda-tools" class="group rounded-xl border border-slate-800 bg-slate-900/50 p-6 transition-all hover:border-orange-700/50 hover:bg-slate-900">
+          <div class="flex items-center gap-3">
+            <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-orange-500/10 text-orange-400">
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold text-white group-hover:text-orange-400 transition-colors">FDA Tools</h3>
+              <p class="text-xs text-slate-500">Drug Safety</p>
+            </div>
+          </div>
+          <p class="mt-3 text-sm leading-relaxed text-slate-400">
+            Track drug shortages, enforcement actions, and FDA safety alerts in real time.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="border-t border-slate-800">
+    <div class="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 lg:px-8">
+      <p class="text-sm font-medium uppercase tracking-wider text-cyan-400">Our Mission</p>
+      <p class="mt-4 text-xl leading-relaxed text-slate-300">
+        Build the trusted open-source hub for medical AI research tools worldwide &mdash; physician-reviewed, evidence-informed, and safety-first.
+      </p>
+      <p class="mt-6 text-sm text-slate-500">
+        A project by <a href="https://intelmedica.ai" target="_blank" rel="noopener noreferrer" class="font-medium text-primary hover:text-primary-light">IntelMedica.ai</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

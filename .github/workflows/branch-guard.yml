@@ -1,0 +1,31 @@
+name: Branch Guard
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  check-source-branch:
+    runs-on: ubuntu-latest
+    name: Verify PR comes from dev
+    steps:
+      - name: Check source branch
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const headBranch = context.payload.pull_request.head.ref;
+            if (headBranch !== 'dev') {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: '## Branch Guard\n\nPRs to `main` must come from the `dev` branch.\n\nPlease merge your changes into `dev` first, then create a PR from `dev` to `main`.\n\nSee [CONTRIBUTING.md](../docs/CONTRIBUTING.md) for the branch workflow.',
+              });
+              core.setFailed(`PR source branch is "${headBranch}", expected "dev". PRs to main must come from dev.`);
+            } else {
+              console.log('Branch guard passed: PR is from dev branch.');
+            }

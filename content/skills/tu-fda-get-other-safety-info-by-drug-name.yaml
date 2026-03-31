@@ -1,0 +1,25 @@
+name: "tu-fda-get-other-safety-info-by-drug-name"
+display_name: "FDA get other safety info by drug name"
+description: "Retrieve safety information that may not be specified in other fields based on the provided drug name."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "other-safety-information"
+  - "safetyinformation"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-gtex-get-single-tissue-eqtls"
+display_name: "GTEx get single tissue eqtls"
+description: "Get significant single-tissue eQTL associations. Returns precomputed gene-variant associations with p-values, effect sizes (NES), and genomic positions. Query by gene ID, variant ID, tissue, or combination. Results show which genetic variants affect gene expression in specific tissues. Use for: finding eQTLs for candidate genes, looking up variant effects, tissue-specific regulatory analysis, GWAS follow-up. Must provide at least one filter: gencode_id, variant_id, or tissue_site_detail_id."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

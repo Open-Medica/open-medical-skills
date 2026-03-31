@@ -1,0 +1,21 @@
+name: "tu-pub-chem-get-assay-targets"
+display_name: "PubChem get assay targets"
+description: "Get protein/gene targets for a bioassay. Returns GI numbers, protein names, gene IDs, and gene symbols. Critical for understanding what molecular targets an assay screens against."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

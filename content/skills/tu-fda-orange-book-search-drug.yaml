@@ -1,0 +1,22 @@
+name: "tu-fda-orange-book-search-drug"
+display_name: "FDA OrangeBook search drug"
+description: "Search FDA Drugs@FDA database by brand name, generic name, or application number. Returns approval status, products, and basic regulatory info. Example: brand_name='ADVIL' finds all Advil products with NDA numbers."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "fda-orange-book"
+  - "fda"
+  - "generic-drugs"
+  - "patents"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

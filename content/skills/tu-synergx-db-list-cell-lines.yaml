@@ -1,0 +1,21 @@
+name: "tu-synergx-db-list-cell-lines"
+display_name: "SYNERGxDB list cell lines"
+description: "List all cancer cell lines in the SYNERGxDB database. Returns cell line names, tissue types, disease annotations, Cellosaurus IDs, and demographic data. Contains 151 cancer cell lines. Tissue types include blood, breast, lung, colon, CNS, ovary, prostate, kidney, skin."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "synergxdb"
+  - "drug-combinations"
+  - "synergy-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

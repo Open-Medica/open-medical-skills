@@ -1,0 +1,21 @@
+name: "tu-openalex-search-authors"
+display_name: "openalex search authors"
+description: "Search OpenAlex authors via the /authors endpoint. Use this to discover Author IDs (A...) and then fetch details with openalex_get_author."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "openalex"
+  - "scholarly-data"
+  - "bibliometrics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

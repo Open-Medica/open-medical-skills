@@ -1,0 +1,21 @@
+name: "tu-cdc-data-search-datasets"
+display_name: "cdc data search datasets"
+description: "Search for datasets on Data.CDC.gov (CDC's Socrata-based open data portal). Returns a list of available datasets matching search criteria. Use this to discover datasets before querying data."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "cdc"
+  - "epidemiology"
+  - "public-health-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

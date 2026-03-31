@@ -1,0 +1,21 @@
+name: "tu-europe-pmc-get-citations"
+display_name: "EuropePMC get citations"
+description: "Get citations for an article from Europe PMC. Citations are articles that cite the specified article. Requires a source (e.g., 'MED' for PubMed, 'PMC' for PMC) and article ID. Use EuropePMC_search_articles to find article IDs first."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "europepmc"
+  - "literature-search"
+  - "open-access"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

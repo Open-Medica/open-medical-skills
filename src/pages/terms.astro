@@ -1,0 +1,640 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Terms of Use"
+  description="Terms of Use for OpenMedica — understand your rights and responsibilities when using the OpenMedica platform, Open Medical Skills catalog, CLI, and API."
+>
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+      Terms of Use
+    </h1>
+
+    <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">
+      Last updated: March 27, 2026
+    </p>
+
+    <div class="mt-8 space-y-8 text-slate-600 dark:text-slate-400 leading-7">
+
+      <!-- Introduction -->
+      <section>
+        <p>
+          Welcome to <strong>OpenMedica</strong>, a project of <strong>IntelMedica.ai</strong>. OpenMedica encompasses the
+          <strong>Open Medical Skills</strong> catalog, the <strong>OpenMedica CLI</strong>, the <strong>OpenMedica API</strong>,
+          and related services hosted at <strong>openmedica.us</strong>. By accessing or using any of these services, you agree
+          to be bound by these Terms of Use. If you do not agree with any part of these terms, please do not use the platform.
+        </p>
+      </section>
+
+      <!-- 1. Acceptance of Terms -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">1. Acceptance of Terms</h2>
+        <p class="mt-4">
+          By accessing, browsing, or using the OpenMedica platform — including the Open Medical Skills catalog website,
+          the OpenMedica CLI, the OpenMedica API, and any associated services — you acknowledge that you have read,
+          understood, and agree to be bound by these Terms of Use, as well as our
+          <a href="/privacy" class="text-primary hover:underline">Privacy Policy</a>.
+          These terms apply to all visitors, users, contributors, API consumers, CLI users, and anyone who accesses the
+          platform or its services.
+        </p>
+      </section>
+
+      <!-- 2. Description of Service -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">2. Description of Service</h2>
+        <p class="mt-4">
+          <strong>OpenMedica</strong> is a platform operated by IntelMedica.ai that provides a suite of medical AI research
+          tools and services. The platform includes:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>
+            <strong>Open Medical Skills</strong> — a curated directory and catalog of medical AI agent skills and plugins,
+            with physician review, classification, searchable listings, and installation instructions
+          </li>
+          <li>
+            <strong>OpenMedica CLI</strong> — a command-line interface tool for discovering, searching, and installing
+            medical AI skills from the catalog
+          </li>
+          <li>
+            <strong>OpenMedica API</strong> — a programmatic interface for searching, validating, and retrieving skill
+            and plugin metadata from the catalog
+          </li>
+          <li>
+            <strong>PA Doc Generator</strong> — a prior authorization document generation tool for clinical documentation
+            workflows (research tool, not a clinical decision support system)
+          </li>
+          <li>A submission pipeline for contributors to add new skills and plugins via web form or GitHub</li>
+        </ul>
+        <p class="mt-4">
+          <strong>We are a directory and research tools platform.</strong> We do not develop, host, maintain, or operate the
+          third-party skills and plugins listed in the catalog. Each listed tool is created and maintained by independent
+          third-party developers, researchers, or organizations. We do not control their code, behavior, accuracy, or
+          availability.
+        </p>
+        <p class="mt-4">
+          <strong>All tools on this platform are research tools.</strong> No tool on OpenMedica is classified as a medical
+          device, clinical decision support system (CDS), or Software as a Medical Device (SaMD) under FDA regulations
+          unless explicitly stated otherwise by the tool's author. This is a deliberate regulatory boundary.
+        </p>
+      </section>
+
+      <!-- 3. Medical Disclaimer -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">3. Medical Disclaimer (Critical — Read Carefully)</h2>
+        <div class="mt-4 rounded-lg border-2 border-red-200 bg-red-50 p-5 dark:border-red-800/50 dark:bg-red-950/30">
+          <p class="font-semibold text-red-900 dark:text-red-200">IMPORTANT MEDICAL DISCLAIMER</p>
+          <div class="mt-3 space-y-3 text-sm text-red-800 dark:text-red-300">
+            <p>
+              <strong>Open Medical Skills is NOT medical advice.</strong> We are a directory of software tools. We do not
+              provide medical advice, diagnosis, or treatment. The skills listed here are:
+            </p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li><strong>Not FDA-cleared medical devices</strong> (unless explicitly stated by the skill author)</li>
+              <li><strong>Not replacements for clinical judgment</strong></li>
+              <li><strong>Not substitutes for physician training or expertise</strong></li>
+              <li><strong>Not substitutes for the physician-patient relationship</strong></li>
+              <li><strong>Not validated for use in direct patient care</strong> unless independently verified by you</li>
+              <li><strong>Not guaranteed to produce accurate, complete, or safe outputs</strong></li>
+            </ul>
+            <p>
+              <strong>Healthcare professionals</strong>: You are solely responsible for evaluating the clinical appropriateness,
+              safety, and accuracy of any tool before using it in patient care, research, or clinical workflows. Physician
+              review of a listing is a curation effort — it is <strong>not a guarantee of safety, efficacy, or fitness for
+              any particular clinical purpose.</strong>
+            </p>
+            <p>
+              <strong>Always independently verify medical information and consult appropriate clinical guidelines, specialists,
+              and literature before making clinical decisions.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. No Responsibility for Skill Usage -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">4. No Responsibility for Skill Usage or Deployment</h2>
+        <div class="mt-4 rounded-lg border-2 border-amber-200 bg-amber-50 p-5 dark:border-amber-800/50 dark:bg-amber-950/30">
+          <p class="font-semibold text-amber-900 dark:text-amber-200">CRITICAL: READ BEFORE INSTALLING ANY SKILL</p>
+          <div class="mt-3 space-y-3 text-sm text-amber-800 dark:text-amber-300">
+            <p>
+              IntelMedica.ai and Open Medical Skills <strong>accept no responsibility whatsoever</strong> for:
+            </p>
+            <ul class="list-disc pl-6 space-y-1">
+              <li>The <strong>use of any skill or plugin</strong> listed on this directory in any context — clinical, research, commercial, educational, or personal</li>
+              <li>The <strong>deployment of any skill in production systems</strong>, applications, workflows, or environments</li>
+              <li>The <strong>integration of any skill into patient care</strong>, treatment decisions, diagnostic processes, or clinical workflows</li>
+              <li>The <strong>output, accuracy, or reliability</strong> of any skill when used in any project or application</li>
+              <li>Any <strong>harm, injury, adverse outcome, misdiagnosis, treatment error, or patient safety event</strong> that may result from using any listed tool</li>
+              <li>Any <strong>data loss, data breach, security incident, or privacy violation</strong> caused by any listed skill</li>
+              <li>Any <strong>regulatory non-compliance, legal liability, or professional consequences</strong> arising from the use of any listed tool</li>
+              <li>Any <strong>financial loss, business interruption, or operational disruption</strong> resulting from skill usage</li>
+            </ul>
+            <p class="font-medium">
+              You use every skill and plugin listed on this directory <strong>entirely at your own risk</strong>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. Responsible AI Use -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">5. Responsible and Ethical AI Use</h2>
+        <p class="mt-4">
+          We strongly recommend that all users of skills listed in this directory adhere to the principles of
+          <strong>responsible AI use</strong>. Specifically, we recommend that you:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            <strong>Follow ethical guidelines for responsible AI use</strong> as published by professional organizations
+            (AMA, WHO, IEEE, NIST AI RMF, EU AI Act, etc.)
+          </li>
+          <li>
+            <strong>Protect Protected Health Information (PHI)</strong> — ensure any tool that handles patient data
+            complies with HIPAA, HITECH, and your organization's information security policies
+          </li>
+          <li>
+            <strong>Comply with all applicable laws and regulations</strong> at the federal, state, local, and
+            institutional level — including but not limited to HIPAA, FDA regulations, state medical practice acts,
+            data protection laws (GDPR, CCPA/CPRA), and professional licensing requirements
+          </li>
+          <li>
+            <strong>Follow your organization's policies</strong> — workplace policies, clinical governance frameworks,
+            institutional review board (IRB) requirements, credentialing committee guidelines, and IT security policies
+          </li>
+          <li>
+            <strong>Maintain human oversight</strong> — AI tools should augment, not replace, clinical decision-making.
+            A qualified healthcare professional should always review and validate AI-generated outputs before acting on them
+          </li>
+          <li>
+            <strong>Document AI use</strong> — maintain appropriate records of AI tool usage in clinical and research
+            contexts as required by your institution and applicable regulations
+          </li>
+          <li>
+            <strong>Report issues</strong> — if you discover a safety concern, inaccuracy, or vulnerability in any
+            listed skill, report it to the skill author and to us via GitHub
+          </li>
+        </ul>
+      </section>
+
+      <!-- 6. No Warranty -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">6. No Warranty</h2>
+        <p class="mt-4">
+          Open Medical Skills is provided <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> without warranties
+          of any kind, either express or implied, including but not limited to:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Warranties of merchantability or fitness for a particular purpose</li>
+          <li>Warranties that the information is accurate, complete, current, or reliable</li>
+          <li>Warranties that the site will be uninterrupted, error-free, or secure</li>
+          <li>Warranties regarding the safety, efficacy, accuracy, or appropriateness of listed skills</li>
+          <li>Warranties that listed skills will function as described, produce correct results, or be free of bugs, vulnerabilities, or malicious code</li>
+          <li>Warranties that physician review is comprehensive, infallible, or applicable to your specific use case</li>
+        </ul>
+        <p class="mt-4">
+          <strong>Third-party skills</strong>: Each skill or plugin is developed and maintained by independent third parties.
+          IntelMedica.ai does not control, endorse, guarantee, or certify the quality, safety, accuracy, or functionality of any listed tool.
+          Listing on this directory does not constitute an endorsement, recommendation, or certification.
+        </p>
+      </section>
+
+      <!-- 7. Limitation of Liability -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">7. Limitation of Liability</h2>
+        <p class="mt-4">
+          To the <strong>fullest extent permitted by applicable law</strong>, IntelMedica.ai, its founders, officers,
+          directors, employees, contractors, agents, physician reviewers, contributors, and affiliates
+          <strong>SHALL NOT BE LIABLE</strong> for any:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Direct, indirect, incidental, special, consequential, exemplary, or punitive damages</li>
+          <li>Loss of profits, revenue, data, goodwill, or business opportunities</li>
+          <li>Patient harm, medical errors, misdiagnosis, treatment complications, or adverse clinical outcomes</li>
+          <li>Damages arising from the use, misuse, inability to use, or reliance on any skill or plugin listed on this site</li>
+          <li>Damages arising from the installation, deployment, or integration of any listed tool into any system, application, or workflow</li>
+          <li>Damages arising from inaccurate, incomplete, outdated, or misleading information in any listing</li>
+          <li>Damages arising from security vulnerabilities, data breaches, or privacy violations in any listed tool</li>
+          <li>Damages arising from regulatory non-compliance, legal actions, or professional sanctions related to skill usage</li>
+          <li>Personal injury, wrongful death, or property damage</li>
+        </ul>
+        <p class="mt-4">
+          This limitation applies <strong>whether or not we have been advised of the possibility of such damages</strong>,
+          and regardless of the legal theory (contract, tort, negligence, strict liability, product liability, or otherwise).
+        </p>
+        <p class="mt-4">
+          <strong>In no event shall IntelMedica.ai's total aggregate liability exceed the amount you paid to use this
+          service, which is zero dollars ($0.00) as this is a free service.</strong>
+        </p>
+        <p class="mt-4 text-sm text-slate-500">
+          Some jurisdictions do not allow the exclusion or limitation of certain warranties or liabilities. In such
+          jurisdictions, our liability will be limited to the maximum extent permitted by law.
+        </p>
+      </section>
+
+      <!-- 8. Indemnification -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">8. Indemnification</h2>
+        <p class="mt-4">
+          You agree to indemnify, defend, and hold harmless IntelMedica.ai, its founders, officers, employees, contractors,
+          physician reviewers, and affiliates from and against any and all claims, damages, losses, liabilities, costs, and
+          expenses (including reasonable attorneys' fees) arising from or related to:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Your use of any skill or plugin listed on this directory</li>
+          <li>Your deployment of any listed tool in any environment (clinical, production, research, or otherwise)</li>
+          <li>Your violation of these Terms of Use</li>
+          <li>Your violation of any applicable law, regulation, or professional standard</li>
+          <li>Any claim by a third party arising from your use of a listed skill</li>
+        </ul>
+      </section>
+
+      <!-- 9. User Responsibilities -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">9. User Responsibilities</h2>
+        <p class="mt-4">
+          By using the OpenMedica platform, you agree to:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            <strong>Independently verify all tools</strong> before deploying them in clinical, research, or production
+            environments. Do not rely solely on our physician review or any information on this site.
+          </li>
+          <li>
+            <strong>Conduct your own due diligence</strong> — review source code, check for known vulnerabilities,
+            validate outputs, and assess fitness for your specific use case.
+          </li>
+          <li>
+            <strong>Comply with all applicable laws</strong> — including but not limited to HIPAA, GDPR, CCPA/CPRA,
+            FDA regulations, state medical practice acts, and local healthcare regulations.
+          </li>
+          <li>
+            <strong>Follow workplace and institutional policies</strong> — including IT security policies, clinical
+            governance frameworks, credentialing requirements, and institutional review board (IRB) protocols.
+          </li>
+          <li>
+            <strong>Review each skill's license, privacy policy, and documentation</strong> before installation.
+          </li>
+          <li>
+            <strong>Use skills only within your scope of training and licensure.</strong> Do not use tools for purposes
+            beyond your clinical expertise or professional competency.
+          </li>
+          <li>
+            <strong>Use the CLI and API responsibly</strong> — do not abuse rate limits, attempt to circumvent access
+            controls, or use automated tools to overload our services.
+          </li>
+          <li>
+            <strong>Not misuse the platform</strong> — e.g., no spamming, scraping, malicious submissions, reverse
+            engineering of APIs, or attempts to compromise security.
+          </li>
+          <li>
+            <strong>Accept full responsibility</strong> for any consequences arising from your use of listed tools,
+            the CLI, or the API.
+          </li>
+        </ul>
+      </section>
+
+      <!-- 10. Submission Terms -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">10. Submission and Contribution Terms</h2>
+        <p class="mt-4">
+          If you submit a skill, plugin, or other contribution to Open Medical Skills (via GitHub pull request, the web
+          submission form, the OpenMedica API, or otherwise), you agree that:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            <strong>Your submission becomes part of the open-source project.</strong> Submissions are publicly visible
+            and will be licensed under the project's open-source license.
+          </li>
+          <li>
+            <strong>You have the right to submit the content.</strong> You represent that you own or have permission
+            to share the content you submit.
+          </li>
+          <li>
+            <strong>Submissions are processed through our infrastructure.</strong> Web form submissions are processed
+            by our Cloudflare Workers-based submission API, which validates your submission, sanitizes input, generates
+            properly formatted content files, and creates a GitHub pull request on your behalf. By submitting, you
+            consent to this automated processing.
+          </li>
+          <li>
+            <strong>Physician review is discretionary.</strong> We reserve the right to accept, reject, or remove any
+            submission at our sole discretion, without explanation.
+          </li>
+          <li>
+            <strong>You retain ownership of your work.</strong> Submitting a skill to the directory does not transfer
+            ownership of the underlying code or intellectual property to IntelMedica.ai.
+          </li>
+          <li>
+            <strong>You are responsible for your submission's accuracy.</strong> IntelMedica.ai is not liable for
+            inaccurate, misleading, or harmful content in user submissions.
+          </li>
+          <li>
+            <strong>Rate limits apply.</strong> Submission endpoints are rate-limited to prevent abuse. Attempting to
+            circumvent rate limits may result in temporary or permanent restriction of your access.
+          </li>
+        </ul>
+      </section>
+
+      <!-- 11. Intellectual Property -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">11. Intellectual Property</h2>
+        <p class="mt-4">
+          The <strong>OpenMedica platform</strong> — including the Open Medical Skills directory, website design, layout,
+          documentation, OpenMedica CLI, OpenMedica API, and review process — is owned by IntelMedica.ai. Portions of the
+          platform are open source and governed by their respective licenses.
+        </p>
+        <p class="mt-4">
+          Each <strong>listed skill or plugin</strong> is owned by its respective author and is subject to its own license.
+          We do not claim ownership of third-party skills.
+        </p>
+        <p class="mt-4">
+          The <strong>IntelMedica.ai name, OpenMedica name, Open Medical Skills name, and associated branding</strong> are
+          proprietary to IntelMedica.ai and may not be used without express written permission.
+        </p>
+      </section>
+
+      <!-- 12. Physician Review Disclaimer -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">12. Physician Review Is Best-Effort</h2>
+        <p class="mt-4">
+          Skills listed on Open Medical Skills may be reviewed by physician maintainers to assess clinical appropriateness,
+          safety classification, and evidence level. However:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li><strong>Physician review is not a guarantee.</strong> It does not certify safety, efficacy, or regulatory compliance.</li>
+          <li><strong>Review is subjective.</strong> Different physicians may have different clinical opinions.</li>
+          <li><strong>Skills change over time.</strong> A tool may be updated by its author after review. We do not guarantee ongoing monitoring of all listed tools.</li>
+          <li><strong>No liability for review errors.</strong> Physician reviewers are not liable for errors, omissions, or changes to skills post-review.</li>
+          <li><strong>Review scope is limited.</strong> Physician review covers general clinical appropriateness — it does not include code audit, security review, penetration testing, or regulatory assessment.</li>
+        </ul>
+      </section>
+
+      <!-- 13. Assumption of Risk -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">13. Assumption of Risk</h2>
+        <p class="mt-4">
+          By using this directory and any tools discovered through it, you expressly acknowledge and agree that:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            You <strong>assume all risk</strong> associated with the use, deployment, and integration of any listed skill or plugin
+          </li>
+          <li>
+            AI tools are <strong>inherently probabilistic</strong> and may produce incorrect, incomplete, biased, or harmful outputs
+          </li>
+          <li>
+            Medical AI tools carry <strong>additional risk</strong> due to the life-and-safety implications of healthcare
+          </li>
+          <li>
+            You are <strong>solely responsible</strong> for validating that any tool meets your requirements for accuracy,
+            safety, security, regulatory compliance, and fitness for purpose
+          </li>
+          <li>
+            IntelMedica.ai <strong>has no control over</strong> third-party skills and cannot guarantee their continued
+            availability, accuracy, security, or compliance
+          </li>
+        </ul>
+      </section>
+
+      <!-- 14. Analytics and Tracking -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">14. Analytics and Tracking</h2>
+        <p class="mt-4">
+          OpenMedica uses the following analytics and tracking services to understand how the platform is used, improve our
+          services, and maintain site performance. We are committed to privacy-respecting analytics.
+        </p>
+
+        <h3 class="mt-6 text-lg font-semibold text-slate-900 dark:text-white">14.1. Cloudflare Web Analytics</h3>
+        <p class="mt-2">
+          We use <strong>Cloudflare Web Analytics</strong>, a privacy-focused analytics service provided by Cloudflare, Inc.
+          Cloudflare Web Analytics does not use cookies, does not collect personally identifiable information (PII), and does
+          not track individual users across sites. It collects aggregate metrics such as page views, visits, referrers, and
+          browser/device types. Data is processed by Cloudflare as part of their edge network infrastructure.
+        </p>
+
+        <h3 class="mt-6 text-lg font-semibold text-slate-900 dark:text-white">14.2. Umami Analytics</h3>
+        <p class="mt-2">
+          We use <strong>Umami</strong>, an open-source, self-hosted web analytics platform. Umami is hosted on our own
+          infrastructure — no data is sent to third-party analytics providers. Umami is cookieless and GDPR-compliant by
+          design. It collects anonymous, aggregate usage data including page views, referrers, browser types, device types,
+          and geographic regions (country-level only). Umami does not collect IP addresses, does not use cookies, does not
+          use fingerprinting, and does not track users across sessions or sites. No personally identifiable information is
+          collected or stored.
+        </p>
+
+        <h3 class="mt-6 text-lg font-semibold text-slate-900 dark:text-white">14.3. Mautic Marketing Platform</h3>
+        <p class="mt-2">
+          We use <strong>Mautic</strong>, an open-source, self-hosted marketing automation platform. Mautic is hosted on
+          our own infrastructure. Mautic may use tracking pixels and cookies to track page visits, email opens, and link
+          clicks for users who have opted in to marketing communications. This tracking is used to personalize email content,
+          segment audiences, and measure campaign effectiveness. Mautic tracking only applies to users who have voluntarily
+          provided their contact information through our opt-in forms. If you have not opted in to marketing communications,
+          Mautic does not track your activity.
+        </p>
+        <p class="mt-2">
+          You may opt out of Mautic tracking at any time by unsubscribing from marketing emails (via the unsubscribe link
+          in every email) or by contacting us directly. See Section 15 (Marketing Communications) for full details on your
+          opt-in and opt-out rights.
+        </p>
+      </section>
+
+      <!-- 15. Marketing Communications -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">15. Marketing Communications</h2>
+        <p class="mt-4">
+          IntelMedica.ai uses <strong>Mautic</strong>, a self-hosted open-source marketing automation platform, to manage
+          email communications, newsletters, product updates, and community announcements related to the OpenMedica platform.
+        </p>
+
+        <h3 class="mt-6 text-lg font-semibold text-slate-900 dark:text-white">15.1. Opt-In Requirement</h3>
+        <p class="mt-2">
+          We only send marketing communications to users who have <strong>explicitly opted in</strong> by providing their
+          email address through one of our subscription forms, event registrations, or other clearly identified opt-in
+          mechanisms. We do not purchase email lists, scrape email addresses, or add users to marketing lists without
+          their affirmative consent.
+        </p>
+
+        <h3 class="mt-6 text-lg font-semibold text-slate-900 dark:text-white">15.2. What We Send</h3>
+        <p class="mt-2">
+          Marketing communications may include:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>New skill and plugin announcements</li>
+          <li>Platform updates and feature releases (OpenMedica CLI, API, catalog)</li>
+          <li>Community newsletters and medical AI research highlights</li>
+          <li>Event invitations and contributor spotlights</li>
+          <li>Security advisories and important platform notices</li>
+        </ul>
+
+        <h3 class="mt-6 text-lg font-semibold text-slate-900 dark:text-white">15.3. Your Rights</h3>
+        <p class="mt-2">
+          You have the right to:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li><strong>Unsubscribe at any time</strong> using the unsubscribe link included in every marketing email</li>
+          <li><strong>Request deletion of your contact information</strong> from our Mautic instance by emailing
+            <a href="mailto:privacy@intelmedica.ai" class="text-primary hover:underline">privacy@intelmedica.ai</a></li>
+          <li><strong>Request a copy of the data we hold about you</strong> in our marketing platform</li>
+          <li><strong>Opt out of tracking</strong> associated with marketing emails (tracking pixels, link tracking)</li>
+        </ul>
+        <p class="mt-2">
+          We process unsubscribe requests promptly. Because Mautic is self-hosted on our own infrastructure, your marketing
+          data is not shared with third-party marketing platforms or advertising networks.
+        </p>
+      </section>
+
+      <!-- 16. Cloudflare Services -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">16. Cloudflare Services and Edge Infrastructure</h2>
+        <p class="mt-4">
+          The OpenMedica platform is hosted and delivered through <strong>Cloudflare</strong> infrastructure:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            <strong>Cloudflare Pages</strong> — The Open Medical Skills catalog website is hosted as a static site on
+            Cloudflare Pages, a global content delivery network (CDN). Cloudflare Pages serves content from edge locations
+            worldwide to provide fast load times. As part of this service, Cloudflare may process your IP address, request
+            headers, and other connection metadata for the purposes of content delivery, DDoS protection, and security.
+          </li>
+          <li>
+            <strong>Cloudflare Workers</strong> — Our submission API, search API, and authentication services run on
+            Cloudflare Workers, a serverless edge computing platform. When you submit a skill, perform a search, or
+            authenticate via GitHub OAuth, your request is processed by Cloudflare Workers at the edge location nearest
+            to you. Request data (including form inputs, search queries, and authentication tokens) is processed in memory
+            and is not persistently stored on Cloudflare's infrastructure beyond what is necessary to complete the request.
+          </li>
+          <li>
+            <strong>Cloudflare Security Features</strong> — Cloudflare provides DDoS protection, Web Application Firewall
+            (WAF), bot management, and TLS encryption for all traffic to and from the OpenMedica platform. These security
+            features may process your IP address, request patterns, and connection metadata to identify and block malicious
+            traffic. This processing is governed by
+            <a href="https://www.cloudflare.com/privacypolicy/" class="text-primary hover:underline" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a>.
+          </li>
+        </ul>
+        <p class="mt-4">
+          By using the OpenMedica platform, you acknowledge that your requests are routed through Cloudflare's global
+          network and are subject to Cloudflare's standard data processing practices as described in their privacy policy.
+        </p>
+      </section>
+
+      <!-- 17. GitHub Integration and Authentication -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">17. GitHub Integration and Authentication</h2>
+        <p class="mt-4">
+          The OpenMedica platform integrates with <strong>GitHub</strong> for code hosting, skill submissions, and user
+          authentication:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            <strong>GitHub OAuth</strong> — You may optionally authenticate using your GitHub account to submit skills
+            via the web form. When you authenticate, we request limited permissions to verify your identity and create
+            pull requests on your behalf. We receive your GitHub username, email address (if publicly available), and
+            a temporary access token. We do not request access to your private repositories, and we do not store your
+            GitHub password.
+          </li>
+          <li>
+            <strong>Submissions via GitHub</strong> — Skills submitted through the web form result in the creation of a
+            pull request on the Open Medical Skills GitHub repository. Your GitHub username will be publicly visible as
+            the author of the pull request. Submitted content (skill metadata, descriptions, and repository URLs) will
+            be publicly visible in the pull request and, if accepted, in the catalog.
+          </li>
+          <li>
+            <strong>Open Source Repository</strong> — The Open Medical Skills catalog content is hosted on GitHub as an
+            open-source repository. Contributions, issues, and discussions are governed by GitHub's
+            <a href="https://docs.github.com/en/site-policy/github-terms/github-terms-of-service" class="text-primary hover:underline" target="_blank" rel="noopener">Terms of Service</a>
+            in addition to these Terms of Use.
+          </li>
+        </ul>
+      </section>
+
+      <!-- 18. Termination and Removal -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">18. Termination and Removal of Listings</h2>
+        <p class="mt-4">
+          We reserve the right to:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Remove any skill or plugin from the directory at any time, for any reason</li>
+          <li>Terminate or restrict access to the platform, CLI, or API for users who violate these terms</li>
+          <li>Revoke API keys or CLI access for abusive or unauthorized use</li>
+          <li>Modify, suspend, or discontinue the platform or any part of it without notice</li>
+        </ul>
+      </section>
+
+      <!-- 19. Governing Law -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">19. Governing Law and Dispute Resolution</h2>
+        <p class="mt-4">
+          These Terms of Use shall be governed by and construed in accordance with the laws of the United States.
+          Any disputes arising from these terms or your use of the site shall first be attempted to be resolved through
+          good-faith negotiation. If negotiation fails, disputes shall be resolved through binding arbitration in
+          accordance with the rules of the American Arbitration Association.
+        </p>
+        <p class="mt-4">
+          <strong>Class Action Waiver</strong>: You agree to resolve disputes individually and waive any right to
+          participate in a class action lawsuit or class-wide arbitration against IntelMedica.ai.
+        </p>
+      </section>
+
+      <!-- 20. Changes to Terms -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">20. Changes to These Terms</h2>
+        <p class="mt-4">
+          We may update these Terms of Use from time to time to reflect changes in our practices, legal requirements, or
+          the scope of our services. Changes will be posted on this page with a new "Last updated" date.
+        </p>
+        <p class="mt-4">
+          <strong>Changes are effective immediately upon posting.</strong> Your continued use of the platform after changes
+          are posted constitutes acceptance of the updated terms. If you do not agree with the new terms, you must stop
+          using the platform.
+        </p>
+      </section>
+
+      <!-- 21. Severability -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">21. Severability</h2>
+        <p class="mt-4">
+          If any provision of these Terms of Use is found to be invalid or unenforceable by a court of competent jurisdiction,
+          the remaining provisions shall remain in full force and effect. The invalid provision shall be modified to the
+          minimum extent necessary to make it valid and enforceable.
+        </p>
+      </section>
+
+      <!-- 22. Entire Agreement -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">22. Entire Agreement</h2>
+        <p class="mt-4">
+          These Terms of Use, together with our <a href="/privacy" class="text-primary hover:underline">Privacy Policy</a>,
+          constitute the entire agreement between you and IntelMedica.ai regarding your use of the OpenMedica platform,
+          including the Open Medical Skills catalog, OpenMedica CLI, and OpenMedica API.
+          They supersede any prior agreements or understandings.
+        </p>
+      </section>
+
+      <!-- 23. Contact -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">23. Contact Information</h2>
+        <p class="mt-4">
+          If you have questions about these Terms of Use, please contact:
+        </p>
+        <div class="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/50">
+          <p class="font-medium text-slate-900 dark:text-white">IntelMedica.ai</p>
+          <p class="mt-1 text-sm">Email: <a href="mailto:legal@intelmedica.ai" class="text-primary hover:underline">legal@intelmedica.ai</a></p>
+          <p class="mt-1 text-sm">Privacy: <a href="mailto:privacy@intelmedica.ai" class="text-primary hover:underline">privacy@intelmedica.ai</a></p>
+          <p class="mt-1 text-sm">Website: <a href="https://openmedica.us" class="text-primary hover:underline" target="_blank" rel="noopener">openmedica.us</a></p>
+          <p class="mt-1 text-sm">GitHub: <a href="https://github.com/Open-Medica" class="text-primary hover:underline" target="_blank" rel="noopener">Open-Medica</a></p>
+        </div>
+      </section>
+
+      <!-- Footer Note -->
+      <section class="mt-12 border-t border-slate-200 pt-8 dark:border-slate-800">
+        <p class="text-sm text-slate-500 dark:text-slate-500">
+          <strong>OpenMedica</strong> is a project of <strong>IntelMedica.ai</strong>, founded by a physician.
+          Our mission is to build open-source medical AI research tools that help physicians, researchers, and the
+          healthcare industry discover, share, and use AI-powered skills safely and transparently. Use responsibly.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,22 @@
+name: "tu-cancer-prognosis-get-study-summary"
+display_name: "CancerPrognosis get study summary"
+description: "Get summary information for a cancer study including available molecular profiles (mutations, expression, CNV), survival-related clinical attributes, and sample counts. Useful for determining what data is available before querying expression or survival data. Lists all 33 supported TCGA cancer type abbreviations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "cancer-prognosis"
+  - "oncology"
+  - "prognosis"
+  - "survival"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

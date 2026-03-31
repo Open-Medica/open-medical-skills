@@ -1,0 +1,21 @@
+name: "tu-dose-response-compare-potency"
+display_name: "DoseResponse compare potency"
+description: "Quantify relative potency between two compounds by independently fitting Hill sigmoidal curves to each concentration-response dataset and computing the EC50 fold-shift (compound B EC50 / compound A EC50). Reports EC50, Hill exponent, and plateau Emax per compound, the potency fold-ratio, and which compound is more potent. Applications include lead optimisation, matched-pair structure-activity analysis, and selectivity profiling."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dose-response"
+  - "pharmacology"
+  - "dose-response-curves"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

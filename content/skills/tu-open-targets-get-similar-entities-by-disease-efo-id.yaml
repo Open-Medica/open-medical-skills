@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-similar-entities-by-disease-efo-id"
+display_name: "OpenTargets get similar entities by disease efoId"
+description: "Retrieve similar entities for a given disease efoId using a model trained with PubMed."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "disease"
+  - "similarity"
+  - "model"
+  - "entities"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

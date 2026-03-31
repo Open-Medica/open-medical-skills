@@ -1,0 +1,21 @@
+name: "tu-pub-chem-get-cid-by-compound-name"
+display_name: "PubChem get CID by compound name"
+description: "Search PubChem by compound name to get CID(s). This is the PRIMARY tool for looking up a drug or chemical by name (e.g., 'cytarabine', 'aspirin', 'metformin', 'venetoclax') to obtain PubChem Compound IDs. Use the returned CID with other PubChem tools for properties, patents, etc. Only works with chemical/drug names, not disease names."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

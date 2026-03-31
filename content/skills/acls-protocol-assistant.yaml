@@ -2,15 +2,15 @@ name: "acls-protocol-assistant"
 display_name: "ACLS Protocol Assistant"
 description: "Advanced Cardiac Life Support (ACLS) protocol guide for emergency resuscitation. Provides step-by-step guidance for cardiac arrest, arrhythmia management, and post-cardiac arrest care."
 author: "Open Medical Skills Community"
-repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/acls-protocol-assistant"
+repository: "https://github.com/Open-Medica/open-medical-skills/tree/main/skills/acls-protocol-assistant"
 category: "emergency"
 tags: ["acls", "resuscitation", "cardiac-arrest", "emergency-protocols"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill acls-protocol-assistant"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/acls-protocol-assistant ~/.claude/skills/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill acls-protocol-assistant"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/skills/acls-protocol-assistant ~/.claude/skills/"
 evidence_level: "high"
 safety_classification: "caution"
 specialty: ["emergency-medicine", "critical-care"]

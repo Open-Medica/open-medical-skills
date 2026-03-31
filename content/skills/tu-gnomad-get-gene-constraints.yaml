@@ -1,0 +1,21 @@
+name: "tu-gnomad-get-gene-constraints"
+display_name: "gnomad get gene constraints"
+description: "Get gene constraint metrics from gnomAD for a gene symbol (GRCh38). Returns constraint fields under `exac_constraint` and `gnomad_constraint` (e.g., pLI, oe_lof/oe_mis/oe_syn, exp/obs counts)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

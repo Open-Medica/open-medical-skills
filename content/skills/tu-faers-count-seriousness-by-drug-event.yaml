@@ -1,0 +1,22 @@
+name: "tu-faers-count-seriousness-by-drug-event"
+display_name: "FAERS count seriousness by drug event"
+description: "Count the number of adverse event reports classified as serious or non-serious. Only medicinalproduct is required; all other filters (patientsex, patientagegroup, occurcountry) are optional. Use filters sparingly to avoid overly restrictive searches. In results, term Serious means: \"The adverse event resulted in death, a life threatening condition, hospitalization, disability, congenital anomaly, or other serious condition\", term Non-serious means \"The adverse event did not result in any o..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

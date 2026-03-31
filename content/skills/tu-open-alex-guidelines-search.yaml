@@ -1,0 +1,21 @@
+name: "tu-open-alex-guidelines-search"
+display_name: "OpenAlex Guidelines Search"
+description: "Search for clinical practice guidelines using OpenAlex scholarly database. Provides access to a comprehensive collection of guidelines from various sources worldwide, with citation metrics and institutional affiliations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,48 +1,41 @@
+---
+name: cognitive-behavioral-therapy-tools
+description: >
+  Evidence-based cognitive behavioral therapy (CBT) tools and worksheets.
+  Includes thought records, behavioral activation, and cognitive
+  restructuring exercises.
+---
+
 # CBT Therapeutic Techniques Guide
 
-Evidence-based cognitive behavioral therapy (CBT) tools and worksheets. Includes thought records, behavioral activation, and cognitive restructuring exercises.
+## Overview
 
-## Quick Install
+The CBT Therapeutic Techniques Guide provides structured, evidence-based cognitive behavioral therapy tools for clinicians and patients. Rooted in Aaron Beck's cognitive model and David Burns' cognitive distortion taxonomy, this skill implements core CBT interventions including thought records, cognitive restructuring, behavioral activation planning, and cognitive distortion identification.
 
-```bash
-npx skills add gitjfmd/open-medical-skills --skill cognitive-behavioral-therapy-tools
-```
+## Clinical Context
 
-## What It Does
+Cognitive Behavioral Therapy is one of the most extensively researched psychotherapeutic modalities, with strong evidence for the treatment of major depressive disorder, generalized anxiety disorder, panic disorder, social anxiety, PTSD, OCD, insomnia, and chronic pain (Hofmann et al., 2012). CBT works by identifying and modifying maladaptive thought patterns and behaviors that maintain psychological distress.
 
-- Evidence-based cognitive behavioral therapy (CBT) tools and worksheets. Includes thought records, behavioral activation, and cognitive restructuring exercises.
+This skill serves as a structured adjunct to therapy, providing standardized worksheets and psychoeducational content that clinicians can use during sessions or assign as homework.
 
-## Clinical Use Cases
+## Tools Included
 
-- Validated screening instrument administration
-- Symptom severity tracking over time
-- Treatment response monitoring
+- **Thought Record:** Implements the standard 7-column CBT thought record for identifying automatic thoughts, examining evidence, and generating balanced alternative thoughts.
+- **Cognitive Distortion Identifier:** Analyzes automatic thoughts and flags potential cognitive distortions from Burns' taxonomy (14 distortion types), with challenge questions for each.
+- **Behavioral Activation Planner:** Generates graded activity schedules for patients with depression, incorporating mastery and pleasure activities with mood monitoring.
+- **Distortion Reference Guide:** Complete reference of all cognitive distortions with definitions, clinical examples, and Socratic challenge questions.
 
-## Safety & Evidence
+## Usage
 
-- **Safety Classification:** Safe — This skill provides informational support and does not directly influence clinical decisions.
-- **Evidence Level:** High — Based on systematic reviews, randomized controlled trials, or authoritative clinical guidelines.
+Clinicians can use these tools during therapy sessions to structure cognitive restructuring exercises, or assign them as between-session homework. The distortion identifier can serve as a teaching tool for patients learning to recognize their own thinking patterns.
 
-## Example Usage
+## Safety Considerations
 
-```
-Prompt: "Administer PHQ-9 screening and interpret the score of 14."
-```
-
-## Technical Details
-
-- **Category:** mental-health
-- **Version:** 1.0.0
-- **Author:** Open Medical Skills Community
-- **License:** MIT
-- **Tags:** cbt, psychotherapy, mental-health, therapy
+This tool does not constitute psychotherapy and does not replace the therapeutic relationship with a licensed mental health professional. Patients experiencing suicidal ideation should be directed to emergency services or crisis resources immediately.
 
 ## References
 
-- DSM-5 Diagnostic Criteria
-- APA Practice Guidelines
-- PHQ/GAD Validated Instruments
-
----
-
-*Part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills) — physician-curated AI skills for healthcare.*
+- Beck AT. *Cognitive Therapy and the Emotional Disorders*. Penguin Books, 1976.
+- Burns DD. *Feeling Good: The New Mood Therapy*. William Morrow, 1980.
+- Hofmann SG, et al. "The Efficacy of CBT: A Review of Meta-Analyses." *Cogn Ther Res*. 2012;36(5):427-440.
+- Cuijpers P, et al. "A Meta-Analysis of CBT for Adult Depression." *J Consult Clin Psychol*. 2013;81(3):456-467.

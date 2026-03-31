@@ -1,48 +1,38 @@
+---
+name: trauma-management-protocols
+description: >
+  Advanced Trauma Life Support (ATLS) protocol assistant for initial
+  assessment and management of trauma patients. Covers primary/secondary
+  surveys and critical interventions.
+---
+
 # Trauma Management Protocols (ATLS)
 
-Advanced Trauma Life Support (ATLS) protocol assistant for initial assessment and management of trauma patients. Covers primary/secondary surveys and critical interventions.
+## Overview
 
-## Quick Install
+The Trauma Management Protocols skill implements the Advanced Trauma Life Support (ATLS) systematic approach to trauma assessment and management. Based on the ACS Committee on Trauma's ATLS 10th Edition guidelines, it provides structured guidance through the ABCDE primary survey, hemorrhage classification, GCS calculation, and critical intervention decision-making.
 
-```bash
-npx skills add gitjfmd/open-medical-skills --skill trauma-management-protocols
-```
+## Clinical Context
 
-## What It Does
+Trauma is the leading cause of death in persons aged 1-44 years. The ATLS framework, developed by the American College of Surgeons, provides a standardized, reproducible approach to the initial assessment and management of trauma patients that prioritizes life-threatening injuries. The systematic ABCDE approach ensures that the most immediately lethal conditions are identified and treated first.
 
-- Advanced Trauma Life Support (ATLS) protocol assistant for initial assessment and management of trauma patients. Covers primary/secondary surveys and critical interventions.
+This tool serves as a cognitive aid during the high-stress, time-critical environment of trauma resuscitation, helping clinicians maintain the systematic approach even under pressure.
 
-## Clinical Use Cases
+## Features
 
-- Rapid triage of incoming emergency patients
-- Protocol-guided resuscitation management
-- Time-critical clinical decision support
+- **ABCDE Primary Survey:** Complete assessment and intervention guide for each component (Airway, Breathing, Circulation, Disability, Exposure) with red flags and critical actions
+- **Hemorrhage Classification:** Automated classification of hemorrhagic shock (Classes I-IV) based on vital signs, with corresponding fluid resuscitation and blood product guidance
+- **GCS Calculator:** Glasgow Coma Scale scoring with severity interpretation and management recommendations including intubation criteria
+- **Massive Transfusion Protocol Guidance:** MTP activation criteria and 1:1:1 ratio-based resuscitation
+- **Red Flag Alerts:** Critical findings requiring immediate intervention (tension pneumothorax, cardiac tamponade, hemorrhagic shock, uncal herniation)
 
-## Safety & Evidence
+## Safety Classification: CAUTION
 
-- **Safety Classification:** Caution — This skill assists with clinical decisions. Always verify outputs against current guidelines and clinical judgment.
-- **Evidence Level:** High — Based on systematic reviews, randomized controlled trials, or authoritative clinical guidelines.
-
-## Example Usage
-
-```
-Prompt: "Patient presents with chest pain, diaphoresis, and shortness of breath. Run ACLS assessment."
-```
-
-## Technical Details
-
-- **Category:** emergency
-- **Version:** 1.0.0
-- **Author:** Open Medical Skills Community
-- **License:** MIT
-- **Tags:** trauma, atls, emergency-surgery, critical-care
+Trauma management is a time-critical, life-threatening clinical scenario. This tool provides decision support and does not replace ATLS certification, hands-on training, or the clinical judgment of qualified trauma surgeons and emergency physicians.
 
 ## References
 
-- American Heart Association (AHA) Guidelines
-- Advanced Cardiac Life Support (ACLS) Protocols
-- Advanced Trauma Life Support (ATLS) Standards
-
----
-
-*Part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills) — physician-curated AI skills for healthcare.*
+- ACS Committee on Trauma. *ATLS Student Course Manual*. 10th Ed. American College of Surgeons, 2018.
+- Cannon JW. "Hemorrhagic Shock." *N Engl J Med*. 2018;378(4):370-379.
+- CRASH-2 Collaborators. "Effects of TXA on Death, Vascular Events, and Blood Transfusion in Trauma Patients." *Lancet*. 2010;376:23-32.
+- Galvagno SM, et al. "Prehospital and Trauma Critical Care." *Crit Care Med*. 2019.

@@ -1,0 +1,24 @@
+name: "tu-open-targets-get-target-enabling-packages-by-ensembl-id"
+display_name: "OpenTargets get target enabling packages by ensemblID"
+description: "Retrieve the Target Enabling Packages (TEP) associated with a specific target ensemblID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target-information"
+  - "graphql"
+  - "target"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

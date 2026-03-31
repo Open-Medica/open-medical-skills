@@ -1,0 +1,21 @@
+name: "tu-tcia-get-modality-values"
+display_name: "TCIA get modality values"
+description: "Get the imaging modalities available in a specific TCIA collection or across all collections. Returns modality codes such as CT, MR, PT (PET), CR, DX, US (ultrasound), NM."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "tcia"
+  - "cancer-imaging"
+  - "radiology-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

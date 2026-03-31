@@ -1,0 +1,21 @@
+name: "tu-tcia-list-collections"
+display_name: "TCIA list collections"
+description: "List all publicly available imaging collections in The Cancer Imaging Archive (TCIA). TCIA is a large archive of medical images of cancer available for public download. Returns collection names for use with other TCIA tools."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "tcia"
+  - "cancer-imaging"
+  - "radiology-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

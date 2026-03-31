@@ -1,0 +1,21 @@
+name: "tu-drug-synergy-calculate-ci"
+display_name: "DrugSynergy calculate ci"
+description: "Calculate Chou-Talalay Combination Index (CI) for drug synergy quantification. CI is derived from the Median Effect Equation: fa/fu = (D/Dm)^m. CI < 1 indicates synergy, CI = 1 is additive, CI > 1 is antagonism. Also computes the Dose Reduction Index (DRI) showing how much each drug dose can be reduced in combination. Supports both mutually exclusive (drugs with similar mechanisms) and mutually non-exclusive (drugs with different mechanisms) assumptions. Based on Chou & Talalay (1984). Use fo..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-synergy"
+  - "drug-combinations"
+  - "synergy-scoring"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

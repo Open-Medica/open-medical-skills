@@ -1,0 +1,27 @@
+name: "tu-loinc-get-answer-list"
+display_name: "LOINC get answer list"
+description: "Search LOINC answer-type codes matching a LOINC code or search term. Returns LOINC codes classified as answer-type items (categorical/coded result values used in clinical assessments). Use to find standardized answer codes for clinical observations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "lab-imaging"
+tags:
+  - "tooluniverse"
+  - "loinc"
+  - "laboratory"
+  - "test-codes"
+  - "interoperability"
+  - "answer-list"
+  - "coded-values"
+  - "permissible-values"
+  - "clinical"
+  - "standardization"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,24 @@
+name: "tu-gwas-get-variants-for-trait"
+display_name: "gwas get variants for trait"
+description: "Search the GWAS Catalog for all genetic variants (SNPs) linked to a specific disease or trait. Accepts free-text disease/trait names (e.g., 'diabetes', 'breast cancer'), EFO ontology IDs, or EFO trait labels. Returns variant details including rsIDs, p-values, mapped genes, and genomic locations. This is the best tool for finding all GWAS variants for a disease when you do NOT already have a specific variant ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gwas"
+  - "genome-wide-association"
+  - "genetic-variants"
+  - "variants"
+  - "trait"
+  - "genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

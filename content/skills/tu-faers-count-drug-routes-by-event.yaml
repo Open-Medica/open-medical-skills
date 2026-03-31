@@ -1,0 +1,22 @@
+name: "tu-faers-count-drug-routes-by-event"
+display_name: "FAERS count drug routes by event"
+description: "Count the most common routes of administration for drugs involved in adverse event reports. Only medicinalproduct is required; serious filter is optional. Use filters sparingly to avoid overly restrictive searches. Data source: FDA Adverse Event Reporting System (FAERS)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

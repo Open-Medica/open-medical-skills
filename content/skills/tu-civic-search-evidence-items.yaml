@@ -1,0 +1,21 @@
+name: "tu-civic-search-evidence-items"
+display_name: "civic search evidence items"
+description: "Search for evidence items in CIViC database. Evidence items are curated statements linking variants or molecular profiles to clinical outcomes, therapies, or disease states. Returns evidence with disease, therapies, significance, direction, and citation. Filter by therapy name (e.g., 'imatinib'), disease name (e.g., 'leukemia'), or molecular profile name (e.g., 'BRAF V600E')."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

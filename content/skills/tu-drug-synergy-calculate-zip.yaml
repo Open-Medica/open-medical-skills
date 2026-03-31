@@ -1,0 +1,21 @@
+name: "tu-drug-synergy-calculate-zip"
+display_name: "DrugSynergy calculate zip"
+description: "Calculate ZIP (Zero Interaction Potency) delta synergy score from a full dose-response matrix. Fits Hill curves to marginal dose-response data for each drug and calculates expected additivity. Returns delta matrix where positive values indicate synergy. Based on Yadav et al. (2015). IMPORTANT: Each drug must have ≥3 non-zero dose points with measurable inhibition for Hill curve fitting to succeed. A 3×3 matrix with non-zero doses_a and doses_b (no zero-dose rows/columns) is the minimum; 4×4 o..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-synergy"
+  - "drug-combinations"
+  - "synergy-scoring"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

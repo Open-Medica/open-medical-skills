@@ -1,0 +1,21 @@
+name: "tu-ada-list-standards-sections"
+display_name: "ADA list standards sections"
+description: "List all sections/chapters of the current ADA Standards of Medical Care in Diabetes. The ADA publishes the Standards of Care annually in Diabetes Care as a free supplement. Each section covers a specific clinical topic (e.g., glycemic goals, pharmacologic treatment, cardiovascular risk management, diabetes technology). Returns section titles, numbers, PMIDs, and PMC links. Use year parameter to access specific editions (default: 2026)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

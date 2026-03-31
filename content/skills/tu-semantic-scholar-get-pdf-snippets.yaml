@@ -1,0 +1,21 @@
+name: "tu-semantic-scholar-get-pdf-snippets"
+display_name: "SemanticScholar get pdf snippets"
+description: "Fetch a paper's open-access PDF from Semantic Scholar and return bounded text snippets around provided terms. Uses markitdown to convert PDF to markdown. Useful when key details (methods, experimental parameters) are in the full text rather than abstract."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "semantic-scholar"
+  - "ai-literature"
+  - "citation-graph"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

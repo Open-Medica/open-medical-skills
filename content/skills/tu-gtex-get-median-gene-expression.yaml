@@ -1,0 +1,21 @@
+name: "tu-gtex-get-median-gene-expression"
+display_name: "GTEx get median gene expression"
+description: "Get median gene expression levels across GTEx tissues. Returns median expression in TPM (Transcripts Per Million) for one or more genes across 54 tissue sites. Filter by specific tissues or get expression across all tissues. Based on Adult GTEx V11 (January 2026). Use for: tissue-specific expression profiling, identifying highly expressed genes, comparing expression patterns across tissues. Example: Get brain vs liver expression for TP53 gene."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []
