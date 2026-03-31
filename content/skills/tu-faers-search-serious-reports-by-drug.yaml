@@ -1,0 +1,22 @@
+name: "tu-faers-search-serious-reports-by-drug"
+display_name: "FAERS search serious reports by drug"
+description: "Search and retrieve detailed reports of serious adverse events for a specific drug. Returns individual case reports with patient information, adverse event details, drug information, and report metadata. Only medicinalproduct is required; all other parameters (limit, skip, seriousnessdeath, seriousnesshospitalization, seriousnesslifethreatening, seriousnessdisabling, patientsex, patientagegroup) are optional. Data source: FDA Adverse Event Reporting System (FAERS)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event-detail"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

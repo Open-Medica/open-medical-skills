@@ -1,0 +1,23 @@
+name: "tu-kegg-get-gene-info"
+display_name: "kegg get gene info"
+description: "Get detailed gene information from KEGG by gene ID. Returns gene data including sequence, function, and pathway associations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "kegg"
+  - "biological-pathways"
+  - "metabolic-networks"
+  - "gene"
+  - "information"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

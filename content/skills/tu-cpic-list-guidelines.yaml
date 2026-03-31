@@ -1,0 +1,21 @@
+name: "tu-cpic-list-guidelines"
+display_name: "CPIC list guidelines"
+description: "List all CPIC pharmacogenomic guidelines. Returns ~29 evidence-based guidelines (count may vary as guidelines are added/updated) for using pharmacogenomic test results to optimize drug therapy. Each guideline covers one or more gene-drug pairs with specific dosing recommendations based on genotype/phenotype. Includes guideline ID, name, URL, associated genes, and PharmGKB IDs. Use the returned guideline ID with CPIC_get_recommendations to retrieve specific dosing recommendations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

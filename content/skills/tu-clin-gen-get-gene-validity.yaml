@@ -1,0 +1,21 @@
+name: "tu-clin-gen-get-gene-validity"
+display_name: "ClinGen get gene validity"
+description: "Get all ClinGen gene-disease validity curations. Returns comprehensive list of gene-disease relationships with classifications (Definitive, Strong, Moderate, Limited). Useful for batch analysis or exploring curated genes. Optional gene filter available."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-pub-med-get-links"
+display_name: "PubMed get links"
+description: "Get external links (LinkOut) for a specific PubMed article by its PMID using elink. Returns URLs to full-text providers, supplementary data, related resources, clinical trials, and other external content. Use this to access full-text articles, find supplementary materials, or discover related datasets and resources. Essential for accessing paywalled content via institutional subscriptions or finding open-access versions. Find PMIDs using PubMed_search_articles."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "pubmed"
+  - "literature-search"
+  - "biomedical-research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

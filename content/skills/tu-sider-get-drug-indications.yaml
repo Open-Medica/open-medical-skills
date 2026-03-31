@@ -1,0 +1,21 @@
+name: "tu-sider-get-drug-indications"
+display_name: "SIDER get drug indications"
+description: "Get the therapeutic indications for a drug from SIDER. Indications are medical conditions that a drug is approved to treat, extracted from the indications and usage sections of drug labels. Returns MedDRA-coded conditions with descriptions. Provide either a drug name or SIDER drug ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "sider"
+  - "side-effects"
+  - "drug-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

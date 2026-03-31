@@ -1,0 +1,21 @@
+name: "tu-gnomad-get-transcript"
+display_name: "gnomad get transcript"
+description: "Get basic transcript metadata from gnomAD by Ensembl transcript ID (e.g., ENST...). The response includes the linked `gene` object (gene ID + symbol). Use `gnomad_get_gene` to find a gene's `canonical_transcript_id`."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

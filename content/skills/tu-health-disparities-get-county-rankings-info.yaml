@@ -1,0 +1,21 @@
+name: "tu-health-disparities-get-county-rankings-info"
+display_name: "health disparities get county rankings info"
+description: "Get information about County Health Rankings data. County Health Rankings provides county-level health data. This tool provides information about available datasets and access methods. Note: Data may be available as downloadable files or through their website."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "health-disparities"
+  - "health-equity"
+  - "population-health"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-open-fda-search-drug-enforcement"
+display_name: "OpenFDA search drug enforcement"
+description: "Search the FDA drug enforcement (recall) database via openFDA. Contains drug recalls, withdrawals, and field corrections submitted to the FDA. Use Lucene query syntax: 'classification:\"Class I\"' (most serious, may cause death), 'recalling_firm:pfizer', 'status:Ongoing'. Returns recall details including reason, product description, distribution pattern, classification, firm, and dates. Use count parameter for frequency analysis (e.g., count='classification' to see recall counts by class)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda"
+  - "fda"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

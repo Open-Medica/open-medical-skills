@@ -1,0 +1,21 @@
+name: "tu-clin-gen-get-actionability-pediatric"
+display_name: "ClinGen get actionability pediatric"
+description: "Get ClinGen clinical actionability curations for pediatric context. Returns genes with actionable findings in children, intervention recommendations, and evidence scores. Pediatric curations may differ from adult context due to age-specific interventions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

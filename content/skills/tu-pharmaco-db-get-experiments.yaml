@@ -1,0 +1,21 @@
+name: "tu-pharmaco-db-get-experiments"
+display_name: "PharmacoDB get experiments"
+description: "Get drug sensitivity experiments from PharmacoDB with dose-response curves and pharmacological profiles. Returns experiment data including raw dose-response measurements and fitted parameters (IC50, EC50, AAC, Hill slope, Einf, DSS1/2/3). Filter by compound name, cell line name, and/or dataset. Integrates data from CCLE, CTRPv2, FIMM, GDSC1, GDSC2, GRAY, NCI60, PRISM, UHNBreast, and gCSI. Essential for comparing drug sensitivity across cell lines and datasets. Example: get Paclitaxel dose-res..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmacodb"
+  - "pharmacogenomics"
+  - "drug-response"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

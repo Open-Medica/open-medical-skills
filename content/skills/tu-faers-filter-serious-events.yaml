@@ -1,0 +1,22 @@
+name: "tu-faers-filter-serious-events"
+display_name: "FAERS filter serious events"
+description: "Filter for serious adverse events (death, hospitalization, disability, life-threatening). Returns top reactions meeting seriousness criteria. Example: fulvestrant serious events → Death: 150 cases, Hospitalization: 500 cases. Use for risk-benefit assessment."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "faers-analytics"
+  - "fda"
+  - "adverse-events"
+  - "safety-surveillance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

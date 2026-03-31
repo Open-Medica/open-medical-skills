@@ -1,0 +1,21 @@
+name: "tu-mondo-get-disease-phenotypes"
+display_name: "Mondo get disease phenotypes"
+description: "Get HPO (Human Phenotype Ontology) phenotypes associated with a Mondo disease. Returns the phenotype IDs (HP:xxxxxxx), names, and the specific disease subtype contributing each phenotype. Data comes from OMIM, Orphanet, and clinical annotations. Use this to understand clinical presentations and symptoms of a disease. First find the Mondo ID using Mondo_search_disease, then query phenotypes here."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "mondo"
+  - "disease-ontology"
+  - "rare-disease"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

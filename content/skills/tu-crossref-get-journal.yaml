@@ -1,0 +1,21 @@
+name: "tu-crossref-get-journal"
+display_name: "Crossref get journal"
+description: "Get metadata for a specific journal by its ISSN (International Standard Serial Number). Returns journal details including title, publisher, ISSN variants (print/electronic), coverage dates, and publication frequency. Use this to verify journal information, assess journal credibility for submissions, check publisher details, or validate ISSNs. Find ISSNs from publication metadata or journal databases (format: ####-####)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "crossref"
+  - "doi-metadata"
+  - "scholarly-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

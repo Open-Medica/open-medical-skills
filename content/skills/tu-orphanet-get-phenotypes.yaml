@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-phenotypes"
+display_name: "Orphanet get phenotypes"
+description: "Get HPO (Human Phenotype Ontology) phenotypes associated with a rare disease from Orphanet. Returns HPO terms with their frequency (Very frequent, Frequent, Occasional, Very rare, Excluded) and whether they are diagnostic criteria. Essential for phenotype-driven rare disease diagnosis."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

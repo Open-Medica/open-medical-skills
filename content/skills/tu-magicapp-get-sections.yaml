@@ -1,0 +1,20 @@
+name: "tu-magicapp-get-sections"
+display_name: "MAGICapp get sections"
+description: "Get all sections (chapters) of a specific MAGICapp clinical guideline. Returns the structural organization of the guideline including section headings, text content, section types, and hierarchical ordering. Use this to understand the guideline's structure and find specific clinical topics within a guideline. Sections contain the narrative text while recommendations are accessed separately via MAGICapp_get_recommendations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

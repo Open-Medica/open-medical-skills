@@ -1,0 +1,20 @@
+name: "tu-keyword-extractor-agent"
+display_name: "KeywordExtractorAgent"
+description: "AI agent that extracts and refines search keywords for research plans"
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "literature-search"
+  - "biomedical-research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

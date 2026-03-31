@@ -1,0 +1,21 @@
+name: "tu-semantic-scholar-search-papers"
+display_name: "SemanticScholar search papers"
+description: "Search for papers on Semantic Scholar including abstracts. This tool queries the Semantic Scholar API using natural language keywords and returns papers with details such as title, abstract, publication year, journal (venue), and URL. Rate limits: 1 req/sec without API key, 100 req/sec with SEMANTIC_SCHOLAR_API_KEY environment variable set."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "semantic-scholar"
+  - "ai-literature"
+  - "citation-graph"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

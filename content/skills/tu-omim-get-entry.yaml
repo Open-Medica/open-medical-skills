@@ -1,0 +1,21 @@
+name: "tu-omim-get-entry"
+display_name: "OMIM get entry"
+description: "Get detailed OMIM entry by MIM number. Returns comprehensive information including text description, clinical features, inheritance, molecular genetics, and references. MIM numbers are 6-digit identifiers (e.g., 164730 for BRAF gene). Requires OMIM_API_KEY."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "omim"
+  - "genetic-disorders"
+  - "mendelian-inheritance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,27 @@
+name: "tu-rx-norm-get-drug-names"
+display_name: "RxNorm get drug names"
+description: "Get RXCUI (RxNorm Concept Unique Identifier) and all associated names (generic names, brand names, synonyms, etc.) for a drug by its name. This tool uses the RxNorm API from the U.S. National Library of Medicine (NLM) to standardize drug names."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "rxnorm"
+  - "medication-nomenclature"
+  - "drug-terminology"
+  - "drug"
+  - "medication"
+  - "pharmaceutical"
+  - "nlm"
+  - "standardization"
+  - "rxcui"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

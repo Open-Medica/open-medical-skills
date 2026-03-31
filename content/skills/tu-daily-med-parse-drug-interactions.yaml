@@ -1,0 +1,21 @@
+name: "tu-daily-med-parse-drug-interactions"
+display_name: "DailyMed parse drug interactions"
+description: "Parse drug interactions section from SPL XML into structured format. Returns CYP substrates/inhibitors/inducers, P-gp interactions, and specific drug-drug interactions. Example: avoid with strong CYP3A4 inhibitors."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dailymed"
+  - "drug-information"
+  - "medication-labels"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

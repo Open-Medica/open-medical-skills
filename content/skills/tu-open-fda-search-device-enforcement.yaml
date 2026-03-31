@@ -1,0 +1,21 @@
+name: "tu-open-fda-search-device-enforcement"
+display_name: "OpenFDA search device enforcement"
+description: "Search the FDA medical device enforcement (recall) database via openFDA. Contains medical device recalls, corrections, and removals. Use Lucene query syntax: 'classification:\"Class I\"' (most serious), 'status:Ongoing', 'recalling_firm:\"Medtronic\"'. Returns recall details including product description, reason for recall, and distribution pattern. Medical devices include implants, diagnostic equipment, surgical tools, and consumer medical devices."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda"
+  - "fda"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,22 @@
+name: "tu-faers-analyze-temporal-trends"
+display_name: "FAERS analyze temporal trends"
+description: "Analyze temporal trends in adverse event reporting by year. Returns yearly counts and trend direction (increasing/decreasing/stable). Example: ibuprofen GI bleeding reports 2015-2025 → +25% increase. Use for signal evolution monitoring."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "faers-analytics"
+  - "fda"
+  - "adverse-events"
+  - "safety-surveillance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

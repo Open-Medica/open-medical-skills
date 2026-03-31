@@ -1,0 +1,21 @@
+name: "tu-aha-list-guidelines"
+display_name: "AHA list guidelines"
+description: "List recent American Heart Association (AHA) clinical practice guidelines. Returns AHA-authored guidelines and scientific statements published in Circulation and other AHA journals, sorted by date. Covers cardiovascular guidelines on topics including hypertension, heart failure, cardiac arrest, stroke, arrhythmias, and prevention."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

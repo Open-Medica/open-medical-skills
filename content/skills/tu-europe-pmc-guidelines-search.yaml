@@ -1,0 +1,21 @@
+name: "tu-europe-pmc-guidelines-search"
+display_name: "EuropePMC Guidelines Search"
+description: "Search Europe PMC for clinical guidelines and evidence-based recommendations. Europe PMC provides free access to a comprehensive archive of life sciences literature, including clinical practice guidelines from international sources."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

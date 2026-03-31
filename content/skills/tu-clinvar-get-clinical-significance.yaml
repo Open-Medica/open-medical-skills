@@ -1,0 +1,23 @@
+name: "tu-clinvar-get-clinical-significance"
+display_name: "clinvar get clinical significance"
+description: "Get clinical significance information for a variant from ClinVar. Returns pathogenicity classification and clinical interpretations."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clinvar"
+  - "genetic-variants"
+  - "pathogenicity"
+  - "clinical"
+  - "significance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

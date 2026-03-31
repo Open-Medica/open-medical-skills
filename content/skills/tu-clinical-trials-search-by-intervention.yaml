@@ -1,0 +1,25 @@
+name: "tu-clinical-trials-search-by-intervention"
+display_name: "ClinicalTrials search by intervention"
+description: "Search ClinicalTrials.gov for all clinical trials testing a specific drug, biologic, device, or other intervention. Returns trial IDs, titles, phases, status, and conditions being studied. Ideal for finding all trials for a given drug (e.g., 'nivolumab') across all disease indications."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "clinical-research-summarizing"
+tags:
+  - "tooluniverse"
+  - "clinical-trials"
+  - "trial-search"
+  - "clinical-research"
+  - "clinicaltrials.gov"
+  - "clinical-trial"
+  - "intervention"
+  - "drug-development"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

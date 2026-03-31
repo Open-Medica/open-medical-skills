@@ -1,0 +1,21 @@
+name: "tu-gtex-get-dataset-info"
+display_name: "GTEx get dataset info"
+description: "Get GTEx dataset metadata and version information. Returns dataset details including GENCODE version, genome build (GRCh38/hg38), dbSNP build, sample counts, tissue counts, and release information. Shows Adult GTEx V11 details (January 2026) by default. Use for: understanding data versions, checking sample sizes, verifying genome builds, documentation. Check this first to understand what data is available."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

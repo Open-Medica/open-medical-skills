@@ -1,0 +1,25 @@
+name: "tu-fda-get-drug-label-info-by-field-value"
+display_name: "FDA get drug label info by field value"
+description: "Retrieve FDA drug label information by searching a specific FDA drug label field for a given value (field:value). This is a generic field-based lookup. Use `return_fields` to choose which sections/fields to return, or pass \"ALL\" to return full label records. Note: for `openfda.generic_name`, values are typically uppercase (e.g., \"ASPIRIN\").  Allowed fields (use these for both `field` and `return_fields`): abuse, accessories, active_ingredient, adverse_reactions, alarms, animal_pharmacolog..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "search"
+  - "fieldvalue"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

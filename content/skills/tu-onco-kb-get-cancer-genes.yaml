@@ -1,0 +1,22 @@
+name: "tu-onco-kb-get-cancer-genes"
+display_name: "OncoKB get cancer genes"
+description: "Get list of all cancer genes curated in OncoKB. Returns genes classified as oncogenes and/or tumor suppressors. Useful for checking if a gene is a known cancer driver. Requires ONCOKB_API_TOKEN env var."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "oncokb"
+  - "oncology"
+  - "precision-medicine"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

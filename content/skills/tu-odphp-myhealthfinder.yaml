@@ -1,0 +1,21 @@
+name: "tu-odphp-myhealthfinder"
+display_name: "odphp myhealthfinder"
+description: "This tool provides personalized preventive-care recommendations and it is helpful for different ages, sexes, pregnancy status, gives age/sex/pregnancy. It retrieves metadata, plain-language sections, and dataset links to the full article (AccessibleVersion links). If the user wants the full text of a recommendation, the `odphp_outlink_fetch` tool is helpful."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "odphp"
+  - "preventive-health"
+  - "health-objectives"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

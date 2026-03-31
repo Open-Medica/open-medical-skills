@@ -1,0 +1,24 @@
+name: "tu-fda-get-drug-names-by-residue-warning"
+display_name: "FDA get drug names by residue warning"
+description: "Retrieve drug names based on the presence of residue warnings."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "residuewarning"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

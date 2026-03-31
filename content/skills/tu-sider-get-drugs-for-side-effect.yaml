@@ -1,0 +1,21 @@
+name: "tu-sider-get-drugs-for-side-effect"
+display_name: "SIDER get drugs for side effect"
+description: "Find all drugs associated with a specific side effect in SIDER. Returns drugs known to cause the given adverse reaction, with frequency information when available (e.g., '7%', '5% - 18%', 'postmarketing', 'common'). Provide either a MedDRA code (e.g., C0018681 for headache) or a side effect name (will auto-search). Useful for drug safety comparisons and adverse event analysis."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "sider"
+  - "side-effects"
+  - "drug-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-dis-ge-net-get-gda"
+display_name: "DisGeNET get gda"
+description: "Get gene-disease associations with filtering. Filter by data source (CURATED, LITERATURE, ANIMAL_MODELS) and minimum score. Returns comprehensive GDA data with evidence levels. Requires DISGENET_API_KEY."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "disgenet"
+  - "gene-disease-associations"
+  - "genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

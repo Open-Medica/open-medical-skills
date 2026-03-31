@@ -1,0 +1,21 @@
+name: "tu-sider-get-drug-side-effects"
+display_name: "SIDER get drug side effects"
+description: "Get the list of known side effects for a drug from SIDER, including frequency data when available. Side effects are extracted from drug labels and include MedDRA codes, frequency percentages from clinical trials (e.g., '21% - 57.5%'), and placebo comparison rates. Provide either a drug name (will auto-search) or a SIDER drug ID from SIDER_search_drug. Returns adverse reactions recorded in official drug labels."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "sider"
+  - "side-effects"
+  - "drug-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

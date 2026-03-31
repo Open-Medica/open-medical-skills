@@ -1,0 +1,21 @@
+name: "tu-pharmaco-db-get-cell-line"
+display_name: "PharmacoDB get cell line"
+description: "Get detailed information about a cancer cell line from PharmacoDB, including tissue of origin, disease annotations, dataset-specific synonyms, and accession IDs. Look up by cell line name or PharmacoDB cell ID. PharmacoDB harmonizes cell line identifiers across 10 pharmacogenomics datasets. Example: get details for MCF-7 breast cancer or A549 lung cancer cell line."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmacodb"
+  - "pharmacogenomics"
+  - "drug-response"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

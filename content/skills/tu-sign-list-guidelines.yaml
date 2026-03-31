@@ -1,0 +1,21 @@
+name: "tu-sign-list-guidelines"
+display_name: "SIGN list guidelines"
+description: "List all SIGN (Scottish Intercollegiate Guidelines Network) clinical guidelines, optionally filtered by clinical topic/specialty. Returns up to `limit` guidelines from the full SIGN table covering cardiovascular, oncology, mental health, and other specialties."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

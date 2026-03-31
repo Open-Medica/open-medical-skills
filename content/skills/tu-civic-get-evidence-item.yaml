@@ -1,0 +1,21 @@
+name: "tu-civic-get-evidence-item"
+display_name: "civic get evidence item"
+description: "Get detailed information about a specific evidence item in CIViC database by evidence ID. Evidence items link molecular profiles or variants to clinical outcomes, therapies, or disease states with curated literature support. Returns evidence description, level (A-E), type (PREDICTIVE, DIAGNOSTIC, PROGNOSTIC), significance, direction, status, disease, therapies, molecular profile, and citation."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

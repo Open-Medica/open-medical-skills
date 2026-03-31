@@ -1,0 +1,21 @@
+name: "tu-panel-app-search-genes"
+display_name: "PanelApp search genes"
+description: "Search for a gene across all Genomics England PanelApp panels to find which clinical testing panels include it. Returns all panels containing the gene, along with the confidence level, mode of inheritance, and associated phenotypes for each panel. This is invaluable for understanding the clinical significance of a gene - if it appears in multiple high-confidence panels, it has strong clinical evidence. Use gene symbols (e.g., 'TP53', 'BRCA1')."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "panelapp"
+  - "gene-panels"
+  - "genomic-testing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-genome-nexus-annotate-mutation"
+display_name: "GenomeNexus annotate mutation"
+description: "Annotate a cancer mutation using Genome Nexus (MSK) by specifying chromosome, start, end, reference allele, and variant allele separately. This is an alternative to the HGVS-based annotation for when you have genomic coordinates directly (GRCh37/hg19). Returns the same comprehensive annotation as GenomeNexus_annotate_variant including VEP consequences, SIFT, PolyPhen, AlphaMissense scores, cancer hotspots, and mutation assessor. Example: chr=7, start=140453136, end=140453136, ref=A, alt=T for..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "genome-nexus"
+  - "variant-annotation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

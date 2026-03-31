@@ -1,0 +1,21 @@
+name: "tu-gnomad-search-variants"
+display_name: "gnomad search variants"
+description: "Search for variants in gnomAD by free-text query (commonly an rsID like 'rs7412'). Returns matching `variant_id` strings. Note: gnomAD's `variant_search` response only exposes `variant_id`. Use the returned `variant_id` with `gnomad_get_variant`."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

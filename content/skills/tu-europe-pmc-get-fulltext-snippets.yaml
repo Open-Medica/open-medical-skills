@@ -1,0 +1,21 @@
+name: "tu-europe-pmc-get-fulltext-snippets"
+display_name: "EuropePMC get fulltext snippets"
+description: "Fetch an article's full text (best-effort) and return bounded text snippets around provided terms. Uses deterministic fallbacks: Europe PMC fullTextXML → NCBI PMC OAI (JATS) → NCBI efetch (XML) → PMC HTML. Returns a machine-readable retrieval_trace so callers can see exactly what succeeded/failed."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "europepmc"
+  - "literature-search"
+  - "open-access"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

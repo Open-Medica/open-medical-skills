@@ -1,0 +1,21 @@
+name: "tu-health-disparities-get-svi-info"
+display_name: "health disparities get svi info"
+description: "Get information about CDC Social Vulnerability Index (SVI) data. SVI data is typically available as downloadable CSV files from the CDC ATSDR website. This tool provides information about available SVI datasets and download links. Note: Actual data retrieval may require downloading CSV files."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "health-disparities"
+  - "health-equity"
+  - "population-health"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

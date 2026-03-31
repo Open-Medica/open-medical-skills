@@ -1,0 +1,21 @@
+name: "tu-hpo-search-terms"
+display_name: "HPO search terms"
+description: "Search for Human Phenotype Ontology (HPO) terms by keyword. HPO contains over 18,000 standardized phenotype terms used in clinical genetics and rare disease research. Returns matching terms with definitions, synonym counts, and descendant counts. Useful for finding the correct HPO ID for a clinical phenotype before querying disease or gene associations. Example: searching 'seizure' returns terms like 'Bilateral tonic-clonic seizure' (HP:0007334), 'Generalized-onset seizure' (HP:0002197), 'Foc..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "hpo"
+  - "phenotype"
+  - "rare-disease"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

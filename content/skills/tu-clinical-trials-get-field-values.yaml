@@ -1,0 +1,24 @@
+name: "tu-clinical-trials-get-field-values"
+display_name: "ClinicalTrials get field values"
+description: "Get value distribution for a specific field across ClinicalTrials.gov studies. Returns all unique values with study counts. Use to see what status, phase, or study type options exist. Example: 'Phase' field returns counts for PHASE1, PHASE2, PHASE3, etc."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "clinical-research-summarizing"
+tags:
+  - "tooluniverse"
+  - "clinical-trials"
+  - "trial-search"
+  - "clinical-research"
+  - "clinicaltrials.gov"
+  - "clinical-trial"
+  - "statistics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

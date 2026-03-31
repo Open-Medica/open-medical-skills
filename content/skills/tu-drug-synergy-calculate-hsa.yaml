@@ -1,0 +1,21 @@
+name: "tu-drug-synergy-calculate-hsa"
+display_name: "DrugSynergy calculate hsa"
+description: "Calculate Highest Single Agent (HSA) synergy score for drug combinations across dose points. HSA expected = max(E_a, E_b) at each dose. Synergy = observed - HSA expected. Requires matching arrays of effects for drug A, drug B, and the combination. Use for: multi-dose combination matrices, identifying synergistic dose ranges."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-synergy"
+  - "drug-combinations"
+  - "synergy-scoring"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

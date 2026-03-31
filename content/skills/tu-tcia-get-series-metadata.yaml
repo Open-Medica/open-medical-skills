@@ -1,0 +1,21 @@
+name: "tu-tcia-get-series-metadata"
+display_name: "TCIA get series metadata"
+description: "Get detailed DICOM metadata for a specific imaging series in TCIA by its Series Instance UID. Returns equipment information, acquisition parameters, and series attributes."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "tcia"
+  - "cancer-imaging"
+  - "radiology-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

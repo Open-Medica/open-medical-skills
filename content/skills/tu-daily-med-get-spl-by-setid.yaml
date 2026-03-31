@@ -1,0 +1,21 @@
+name: "tu-daily-med-get-spl-by-setid"
+display_name: "DailyMed get spl by setid"
+description: "Get complete label corresponding to SPL Set ID, returns content in XML or JSON format."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dailymed"
+  - "drug-information"
+  - "medication-labels"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

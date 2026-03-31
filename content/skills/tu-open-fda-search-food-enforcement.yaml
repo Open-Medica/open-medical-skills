@@ -1,0 +1,21 @@
+name: "tu-open-fda-search-food-enforcement"
+display_name: "OpenFDA search food enforcement"
+description: "Search the FDA food enforcement (recall) database via openFDA. Contains food recalls, market withdrawals, and safety alerts. Use Lucene query syntax: 'classification:\"Class I\"' (most serious), 'status:Ongoing', 'recalling_firm:\"Company Name\"'. Returns recall details including product description, reason for recall, distribution pattern, and classification. Useful for food safety research, supply chain analysis, and identifying contamination patterns."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda"
+  - "fda"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

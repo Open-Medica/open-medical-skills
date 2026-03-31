@@ -1,0 +1,21 @@
+name: "tu-sider-search-side-effect"
+display_name: "SIDER search side effect"
+description: "Search for a side effect by name in SIDER. Returns matching side effects with their MedDRA codes (UMLS CUIs). Use this to find the correct MedDRA code for a side effect before querying SIDER_get_drugs_for_side_effect. SIDER uses MedDRA (Medical Dictionary for Regulatory Activities) terminology for standardized adverse event reporting."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "sider"
+  - "side-effects"
+  - "drug-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-ch-embl-get-compound-record"
+display_name: "ChEMBL get compound record"
+description: "Get compound record information by ChEMBL compound record ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "chembl"
+  - "bioactivity-data"
+  - "drug-discovery"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

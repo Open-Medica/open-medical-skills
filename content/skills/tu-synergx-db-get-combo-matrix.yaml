@@ -1,0 +1,21 @@
+name: "tu-synergx-db-get-combo-matrix"
+display_name: "SYNERGxDB get combo matrix"
+description: "Get the dose-response matrix data for a specific drug combination experiment in SYNERGxDB. Returns concentration pairs and raw viability plus synergy matrices (Bliss, Loewe, HSA, ZIP). The combo_id and source_id can be obtained from SYNERGxDB_search_combos results."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "synergxdb"
+  - "drug-combinations"
+  - "synergy-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

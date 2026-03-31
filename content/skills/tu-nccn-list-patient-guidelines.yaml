@@ -1,0 +1,21 @@
+name: "tu-nccn-list-patient-guidelines"
+display_name: "NCCN list patient guidelines"
+description: "List all NCCN (National Comprehensive Cancer Network) Guidelines for Patients available on nccn.org. These are free, publicly accessible cancer treatment guides organized by cancer type, detection/prevention, supportive care, and specific populations. Returns cancer type names, URLs, and category. Over 70 cancer types are covered including breast, lung, colon, prostate, melanoma, leukemias, and lymphomas."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-cpic-get-recommendations"
+display_name: "CPIC get recommendations"
+description: "Get drug dosing recommendations from a specific CPIC pharmacogenomic guideline. Returns clinically actionable recommendations that link genotype/phenotype to drug prescribing actions. Each recommendation includes the classification strength (Strong, Moderate, Optional, No recommendation), the drug recommendation text, allele status context, and clinical implications. Use CPIC_list_guidelines first to obtain valid guideline IDs. Key guideline IDs: 100421 (HLA-B/abacavir), 100416 (CYP2D6,OPRM1,..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

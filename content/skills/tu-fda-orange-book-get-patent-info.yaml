@@ -1,0 +1,22 @@
+name: "tu-fda-orange-book-get-patent-info"
+display_name: "FDA OrangeBook get patent info"
+description: "Get patent information for approved drugs. Note: Full patent details (numbers, expiration dates) require Orange Book data files download. Returns guidance on accessing complete patent data. Use for regulatory exclusivity planning."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "fda-orange-book"
+  - "fda"
+  - "generic-drugs"
+  - "patents"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

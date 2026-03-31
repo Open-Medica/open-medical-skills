@@ -32,7 +32,7 @@ oms list --json
 ## Installation
 
 ```bash
-npm install -g openmedicalskills-cli --prefix ~/.npm-global
+npm install -g @openmedica/cli --prefix ~/.npm-global
 ```
 
 Add to your shell config (`~/.bashrc`, `~/.zshrc`):
@@ -198,5 +198,6 @@ MIT
 
 ## Links
 
-- [Open Medical Skills](https://openmedicalskills.org)
-- [GitHub](https://github.com/Open-Medica/open-medical-skills)
+- [OpenMedica](https://openmedica.us)
+- [Open Medical Skills](https://openmedica.us/open-medical-skills)
+- [GitHub](https://github.com/Open-Medica/om-cli)

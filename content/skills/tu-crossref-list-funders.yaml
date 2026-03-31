@@ -1,0 +1,21 @@
+name: "tu-crossref-list-funders"
+display_name: "Crossref list funders"
+description: "Search and list research funding organizations in the Crossref database. Returns funder details including funder ID, name, location, DOI count, and alternative names. Use this to discover funder identifiers for filtering publications by funding source, or to explore research funding patterns. Essential for grant analysis, funding compliance, or finding publications funded by specific organizations (e.g., NIH, NSF, ERC)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "crossref"
+  - "doi-metadata"
+  - "scholarly-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

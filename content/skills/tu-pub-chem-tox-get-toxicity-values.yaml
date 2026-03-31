@@ -1,0 +1,21 @@
+name: "tu-pub-chem-tox-get-toxicity-values"
+display_name: "PubChemTox get toxicity values"
+description: "Get non-human toxicity values (LD50, LC50, etc.) for a chemical compound from PubChem. Returns lethal dose/concentration data from animal studies, typically including LD50 (dose lethal to 50% of test animals) values for different species and routes of exposure. Data sourced from HSDB (Hazardous Substances Data Bank) and other toxicological databases. For example, aspirin (CID 2244) has LD50 values of 1800 mg/kg (rabbit, oral) and 1500 mg/kg (rat, oral). Arsenic (CID 5359596) has much lower LD..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem-tox"
+  - "toxicology"
+  - "chemical-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

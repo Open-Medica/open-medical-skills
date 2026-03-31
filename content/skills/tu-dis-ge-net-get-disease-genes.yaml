@@ -1,0 +1,21 @@
+name: "tu-dis-ge-net-get-disease-genes"
+display_name: "DisGeNET get disease genes"
+description: "Get all genes associated with a disease from DisGeNET. Returns ranked gene list with association scores and evidence counts. Filter by minimum score to get high-confidence associations. Useful for disease gene prioritization."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "disgenet"
+  - "gene-disease-associations"
+  - "genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

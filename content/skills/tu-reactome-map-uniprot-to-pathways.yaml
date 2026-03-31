@@ -1,0 +1,21 @@
+name: "tu-reactome-map-uniprot-to-pathways"
+display_name: "Reactome map uniprot to pathways"
+description: "Map a UniProt protein identifier to Reactome pathways. Returns all pathways that contain this protein."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

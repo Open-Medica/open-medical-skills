@@ -1,0 +1,21 @@
+name: "tu-clin-gen-get-actionability-adult"
+display_name: "ClinGen get actionability adult"
+description: "Get ClinGen clinical actionability curations for adult context. Returns genes with actionable findings, intervention scores, and outcome scores. Actionability scores help prioritize which incidental findings to return. Example: BRCA1/2 have high actionability for cancer screening."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

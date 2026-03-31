@@ -1,0 +1,22 @@
+name: "tu-admetai-predict-clearance-distribution"
+display_name: "ADMETAI predict clearance distribution"
+description: "Predicts clearance and distribution endpoints (Clearance_Hepatocyte_AZ, Clearance_Microsome_AZ, Half_Life_Obach, VDss_Lombardo, PPBR_AZ) for a given list of molecules in SMILES format."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "admetai"
+  - "admet"
+  - "drug-properties"
+  - "ai-prediction"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

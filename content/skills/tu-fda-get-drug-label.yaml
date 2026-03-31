@@ -1,0 +1,22 @@
+name: "tu-fda-get-drug-label"
+display_name: "FDA get drug label"
+description: "Get the complete FDA-approved prescribing information for a specific drug by name. Returns all clinical sections of the official drug label: indications, dosing regimens, contraindications, black box warnings, drug interactions, use in specific populations (pregnancy, pediatrics, renal/hepatic impairment), pharmacokinetics, mechanism of action, and adverse reactions. This is the authoritative source for FDA-approved drug clinical information in the US."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda-labels"
+  - "fda"
+  - "drug-labels"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

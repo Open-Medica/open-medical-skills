@@ -1,0 +1,21 @@
+name: "tu-synergx-db-list-drugs"
+display_name: "SYNERGxDB list drugs"
+description: "List drugs in the SYNERGxDB database with their identifiers. Returns drug names, IDs, PubChem CIDs, DrugBank IDs, SMILES, InChIKey, and associated datasets. Contains 1977 unique compounds. Use 'query' or 'name' to filter by drug name (e.g., 'imatinib'). Use drug IDs from this list in SYNERGxDB_search_combos queries."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "synergxdb"
+  - "drug-combinations"
+  - "synergy-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

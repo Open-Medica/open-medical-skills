@@ -1,0 +1,25 @@
+name: "tu-open-targets-get-gwas-study"
+display_name: "OpenTargets get gwas study"
+description: "Get detailed metadata for a GWAS study from Open Targets Platform, including trait information, sample sizes, publication details, disease mappings, cohorts, LD population structure, and availability of summary statistics. Use GCST accession IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget-genetics"
+  - "genetic-associations"
+  - "drug-discovery"
+  - "gwas"
+  - "study"
+  - "genetics"
+  - "open-targets"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

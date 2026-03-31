@@ -1,0 +1,22 @@
+name: "tu-faers-calculate-disproportionality"
+display_name: "FAERS calculate disproportionality"
+description: "Calculate statistical disproportionality measures (ROR, PRR, IC) with 95% CI for drug-event pairs. Returns signal strength classification. Example: drug='ibuprofen', event='hepatotoxicity' → ROR=2.3 [1.8-2.9]. Use for pharmacovigilance signal detection."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "faers-analytics"
+  - "fda"
+  - "adverse-events"
+  - "safety-surveillance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

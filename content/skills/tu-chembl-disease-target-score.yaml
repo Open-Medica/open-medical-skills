@@ -1,0 +1,21 @@
+name: "tu-chembl-disease-target-score"
+display_name: "chembl disease target score"
+description: "Extract disease-target association scores specifically from ChEMBL database. ChEMBL provides bioactivity data for drug-target interactions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "disease-target-score"
+  - "target-disease-evidence"
+  - "drug-discovery"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

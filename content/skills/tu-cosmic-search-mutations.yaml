@@ -1,0 +1,21 @@
+name: "tu-cosmic-search-mutations"
+display_name: "COSMIC search mutations"
+description: "Search COSMIC database for somatic mutations in cancer. COSMIC is the world's largest expert-curated database of somatic mutations in human cancer. Search by gene name, mutation ID, or mutation description. Returns mutation IDs, gene names, CDS changes, and amino acid changes. No authentication required."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cosmic"
+  - "somatic-mutations"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

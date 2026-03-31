@@ -1,0 +1,23 @@
+name: "tu-gwas-get-study-by-id"
+display_name: "gwas get study by id"
+description: "Get a specific GWAS study by its unique identifier."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gwas"
+  - "genome-wide-association"
+  - "genetic-variants"
+  - "study"
+  - "lookup"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

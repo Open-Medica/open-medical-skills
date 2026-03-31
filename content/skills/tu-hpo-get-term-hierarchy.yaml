@@ -1,0 +1,21 @@
+name: "tu-hpo-get-term-hierarchy"
+display_name: "HPO get term hierarchy"
+description: "Get the parent or child terms of an HPO phenotype term in the ontology hierarchy. HPO is organized as a directed acyclic graph (DAG) where more specific phenotypes are children of broader terms. Use direction='children' to find more specific sub-phenotypes, or direction='parents' to find broader categories. Example: children of HP:0001250 (Seizure) include 'Bilateral tonic-clonic seizure', 'Focal-onset seizure', 'Febrile seizure', and others. Parents include 'Abnormal nervous system physiology'."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "hpo"
+  - "phenotype"
+  - "rare-disease"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

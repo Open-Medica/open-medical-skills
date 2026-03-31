@@ -1,0 +1,21 @@
+name: "tu-drug-props-pains-filter"
+display_name: "DrugProps pains filter"
+description: "Screen a compound for PAINS (Pan-Assay Interference Compounds), Brenk undesirable substructures, and NIH alerts using RDKit FilterCatalog. PAINS compounds produce false positives in biochemical assays due to non-specific activity mechanisms (rhodanines, quinones, catechols, etc.). Brenk filter flags reactive/toxic groups (Michael acceptors, epoxides, nitroaromatics, etc.). Returns match details and remediation recommendations. Essential quality filter before committing to high-throughput scre..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-properties"
+  - "molecular-properties"
+  - "cheminformatics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

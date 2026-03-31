@@ -1,0 +1,23 @@
+name: "tu-kegg-find-genes"
+display_name: "kegg find genes"
+description: "Find genes in KEGG database by keyword. Can search across all organisms or within a specific organism."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "kegg"
+  - "biological-pathways"
+  - "metabolic-networks"
+  - "gene"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

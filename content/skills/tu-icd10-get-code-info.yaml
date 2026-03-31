@@ -1,0 +1,21 @@
+name: "tu-icd10-get-code-info"
+display_name: "ICD10 get code info"
+description: "Get detailed information about a specific ICD-10-CM code including full description, chapter, and category. ICD-10-CM codes are alphanumeric (e.g., E11.9 for Type 2 diabetes mellitus without complications). This tool provides the official code details from the 2026 ICD-10-CM release. No API key required (uses NLM Clinical Tables)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "icd"
+  - "medical-coding"
+  - "classification"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

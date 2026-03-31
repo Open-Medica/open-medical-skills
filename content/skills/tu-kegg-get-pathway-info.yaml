@@ -1,0 +1,23 @@
+name: "tu-kegg-get-pathway-info"
+display_name: "kegg get pathway info"
+description: "Get detailed pathway information from KEGG by pathway ID. Returns pathway data including genes, compounds, and reactions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "kegg"
+  - "biological-pathways"
+  - "metabolic-networks"
+  - "pathway"
+  - "information"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

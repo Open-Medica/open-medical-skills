@@ -1,0 +1,21 @@
+name: "tu-odphp-topicsearch"
+display_name: "odphp topicsearch"
+description: "Find specific health topics and get their full content. Use when the user mentions a keyword (e.g., “folic acid”, “blood pressure”) or when you already have topic/category IDs from `odphp_itemlist`. Returns detailed topic pages (Title, Sections, RelatedItems) and an AccessibleVersion link. Next: to quote or summarize the actual page text, pass the AccessibleVersion (or RelatedItems URLs) to `odphp_outlink_fetch`."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "odphp"
+  - "preventive-health"
+  - "health-objectives"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

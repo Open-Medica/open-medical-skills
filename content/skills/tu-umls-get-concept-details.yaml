@@ -1,0 +1,21 @@
+name: "tu-umls-get-concept-details"
+display_name: "umls get concept details"
+description: "Get detailed information about a UMLS concept by its CUI (Concept Unique Identifier). Returns concept details, atoms, definitions, relations, and mappings to other terminologies. Requires free UMLS API key (register at https://uts.nlm.nih.gov/uts/). Set UMLS_API_KEY environment variable."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "umls"
+  - "terminology"
+  - "medical-ontology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

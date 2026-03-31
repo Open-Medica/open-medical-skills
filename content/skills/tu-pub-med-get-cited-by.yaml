@@ -1,0 +1,21 @@
+name: "tu-pub-med-get-cited-by"
+display_name: "PubMed get cited by"
+description: "Get a list of PubMed articles that cite a specific PMID using elink. Returns PMIDs of articles that have cited the input article in their reference list. Use this to track citation impact, find more recent work building on a paper, or explore how research has been applied. Essential for literature reviews, impact analysis, and staying current with research developments. Find PMIDs using PubMed_search_articles."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "pubmed"
+  - "literature-search"
+  - "biomedical-research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

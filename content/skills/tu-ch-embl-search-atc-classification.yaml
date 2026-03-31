@@ -1,0 +1,21 @@
+name: "tu-ch-embl-search-atc-classification"
+display_name: "ChEMBL search atc classification"
+description: "Search ATC (Anatomical Therapeutic Chemical) classifications for drugs. To find a drug ID, use ChEMBL_search_drugs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "chembl"
+  - "bioactivity-data"
+  - "drug-discovery"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

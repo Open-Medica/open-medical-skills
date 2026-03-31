@@ -1,0 +1,21 @@
+name: "tu-pub-med-guidelines-search"
+display_name: "PubMed Guidelines Search"
+description: "Search PubMed for peer-reviewed clinical practice guidelines using NCBI E-utilities. Filters results specifically for guideline and practice guideline publication types. Provides access to high-quality, evidence-based clinical guidelines from medical journals worldwide."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

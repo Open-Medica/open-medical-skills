@@ -1,0 +1,23 @@
+name: "tu-dep-map-get-cell-line"
+display_name: "DepMap get cell line"
+description: "Get detailed metadata for a specific cancer cell line. Returns tissue, cancer type, MSI status, ploidy, mutational burden. Use model_id (e.g., 'SIDM00001') or model_name (e.g., 'A549')."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "depmap"
+  - "cancer-dependencies"
+  - "functional-genomics"
+  - "cell-line"
+  - "metadata"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

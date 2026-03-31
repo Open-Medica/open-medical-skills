@@ -1,0 +1,24 @@
+name: "tu-fda-get-drug-name-by-dosage-info"
+display_name: "FDA get drug name by dosage info"
+description: "Retrieve the drug name based on dosage and administration information."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "dosageandadministration"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

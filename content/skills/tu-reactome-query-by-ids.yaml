@@ -1,0 +1,21 @@
+name: "tu-reactome-query-by-ids"
+display_name: "Reactome query by ids"
+description: "Query Reactome by providing a list of Reactome stable identifiers (R-HSA-*). Returns detailed information about pathways, reactions, or other entities. Note: This endpoint requires Reactome stable IDs, not external IDs (UniProt, ChEBI). Use mapping endpoints first to convert external IDs to Reactome IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-ctd-get-gene-chemicals"
+display_name: "CTD get gene chemicals"
+description: "Get curated gene-chemical interactions from CTD. Given a gene symbol, returns chemicals that interact with the gene product, with PubMed evidence. Example: 'TP53' returns over 2000 chemical interactions including drugs, environmental toxicants."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ctd"
+  - "chemical-gene-disease"
+  - "toxicogenomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []
