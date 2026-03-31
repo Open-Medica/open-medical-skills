@@ -57,3 +57,8 @@ _astro-temp/
 
 # Research docs
 SKILLS-RESEARCH.md
+
+# ML model weights (stored on SMB: /mnt/smb/Black_Storage/home-lab/local-ai/ai-models/oms-models/)
+oms-models/models/
+*.safetensors
+*.gguf
