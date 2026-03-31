@@ -1,0 +1,22 @@
+name: "tu-fda-search-drug-labels"
+display_name: "FDA search drug labels"
+description: "Search FDA-approved drug labels (prescribing information) by drug name or medical indication. Drug labels contain official clinical guidance: indications, dosing regimens, contraindications, black box warnings, drug interactions, and adverse reactions. Use drug_name for drug-specific lookups (e.g., 'metformin', 'warfarin') or indication for condition-based searches (e.g., 'hypertension', 'type 2 diabetes'). Returns a list of matching drug labels with key clinical sections."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda-labels"
+  - "fda"
+  - "drug-labels"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

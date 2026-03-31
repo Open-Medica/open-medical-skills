@@ -1,0 +1,21 @@
+name: "tu-pub-chem-get-assays-for-compound-active"
+display_name: "PubChem get assays for compound active"
+description: "Get AIDs of assays where a compound is ACTIVE. Returns list of bioassay IDs where the compound showed activity. Use to understand a compound's target profile."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

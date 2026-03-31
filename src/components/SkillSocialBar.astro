@@ -1,4 +1,6 @@
 ---
+import { GITHUB_REPO_URL } from "../lib/constants";
+
 interface Props {
   skillSlug: string;
   skillName: string;
@@ -32,7 +34,7 @@ const { skillSlug, skillName } = Astro.props;
 
   <!-- Fork Button -->
   <a
-    href="https://github.com/gitjfmd/oms-site/fork"
+    href={`${GITHUB_REPO_URL}/fork`}
     target="_blank"
     rel="noopener noreferrer"
     class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:border-primary-light dark:hover:text-primary-light"
@@ -49,7 +51,7 @@ const { skillSlug, skillName } = Astro.props;
 
   <!-- Hugging Face Button -->
   <a
-    href="https://huggingface.co/jfmdai"
+    href="https://huggingface.co/OpenMedica"
     target="_blank"
     rel="noopener noreferrer"
     class="inline-flex items-center gap-1.5 rounded-md border border-slate-200 bg-white px-3 py-1.5 text-sm font-medium text-slate-600 transition-colors hover:border-primary hover:text-primary dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400 dark:hover:border-primary-light dark:hover:text-primary-light"

@@ -1,0 +1,24 @@
+name: "tu-open-targets-get-approved-indications-by-drug-chembl-id"
+display_name: "OpenTargets get approved indications by drug chemblId"
+description: "Retrieve detailed information about multiple drugs using a list of ChEMBL IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "drug-information"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

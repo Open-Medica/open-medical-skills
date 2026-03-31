@@ -1,0 +1,22 @@
+name: "tu-fda-orange-book-get-approval-history"
+display_name: "FDA OrangeBook get approval history"
+description: "Get complete approval history for a drug application including original approval date, supplements, and review documents. Returns submission timeline and links to approval letters/labels. Example: NDA020402 shows all Advil approval actions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "fda-orange-book"
+  - "fda"
+  - "generic-drugs"
+  - "patents"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

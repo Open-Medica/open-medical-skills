@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-variant-credible-sets"
+display_name: "OpenTargets get variant credible sets"
+description: "Get GWAS credible sets (fine-mapped loci) associated with a genetic variant from Open Targets. Returns studies where this variant appears in a fine-mapped credible set, with locus-to-gene (L2G) predictions, p-values, effect sizes, and the fine-mapping method used. Essential for understanding which GWAS signals a variant is part of and which genes it likely affects."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget-genetics"
+  - "genetic-associations"
+  - "drug-discovery"
+  - "gwas"
+  - "fine-mapping"
+  - "credible-set"
+  - "variant"
+  - "open-targets"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

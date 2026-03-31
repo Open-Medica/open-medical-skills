@@ -1,0 +1,25 @@
+name: "tu-clinical-trials-search-studies"
+display_name: "ClinicalTrials search studies"
+description: "Search ClinicalTrials.gov for clinical trial studies by condition, intervention, sponsor, or other criteria. Returns NCT IDs, titles, status, phase, enrollment, and key trial metadata. Example: search for 'breast cancer' trials with 'pembrolizumab' that are RECRUITING in Phase 3."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "clinical-research-summarizing"
+tags:
+  - "tooluniverse"
+  - "clinical-trials"
+  - "trial-search"
+  - "clinical-research"
+  - "clinicaltrials.gov"
+  - "clinical-trial"
+  - "intervention"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

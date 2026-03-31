@@ -1,0 +1,25 @@
+name: "tu-clinical-trials-search-by-sponsor"
+display_name: "ClinicalTrials search by sponsor"
+description: "Search ClinicalTrials.gov for clinical trials by sponsor or lead organization. Returns trials funded by pharmaceutical companies, academic institutions, or government agencies. Example: find all Phase 3 trials sponsored by 'National Cancer Institute' for cancer conditions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "clinical-research-summarizing"
+tags:
+  - "tooluniverse"
+  - "clinical-trials"
+  - "trial-search"
+  - "clinical-research"
+  - "clinicaltrials.gov"
+  - "clinical-trial"
+  - "sponsor"
+  - "drug-development"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

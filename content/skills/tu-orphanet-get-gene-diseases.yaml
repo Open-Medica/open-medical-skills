@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-gene-diseases"
+display_name: "Orphanet get gene diseases"
+description: "Get rare diseases associated with a gene from Orphanet. Accepts gene symbols (e.g., 'FBN1', 'BRCA1', 'HTT') or gene name keywords (e.g., 'fibrillin', 'huntingtin', 'dystrophin'). Gene symbols are auto-resolved to full names. Returns disease ORPHA codes, gene symbols, association types, and genomic locus information."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

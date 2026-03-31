@@ -1,0 +1,21 @@
+name: "tu-nca-calculate-bioavailability"
+display_name: "NCA calculate bioavailability"
+description: "Calculate absolute oral bioavailability (F) from paired IV and PO pharmacokinetic study AUC values and doses. Formula: F = (AUC_PO × Dose_IV) / (AUC_IV × Dose_PO). Classifies result as High (≥80%), Moderate (30–80%), Low (10–30%), or Very Low (<10%) with clinical interpretation. F > 20% is typically considered acceptable for small molecule oral drugs. F ≥ 80% required for bioequivalence. Use after NCA_compute_parameters to calculate AUC from raw time-concentration data for both IV and PO arms."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "nca"
+  - "pharmacokinetics"
+  - "non-compartmental-analysis"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,14 +1,15 @@
 {
-  "name": "open-medical-skills",
+  "name": "openmedica-skills",
   "version": "1.0.0",
-  "description": "A curated marketplace of medical AI skills and plugins, compiled and maintained by physicians.",
+  "description": "OpenMedica — open-source medical AI research tools, curated by physicians for healthcare professionals.",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "generate-cli-index": "node scripts/generate-cli-index.js"
+    "generate-cli-index": "node scripts/generate-cli-index.js",
+    "generate-sql-seed": "node scripts/generate-sql-seed.js"
   },
   "keywords": [
     "medical",

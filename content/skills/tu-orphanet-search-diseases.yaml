@@ -1,0 +1,21 @@
+name: "tu-orphanet-search-diseases"
+display_name: "Orphanet search diseases"
+description: "Search Orphanet for rare diseases by keyword. Orphanet is the reference portal for rare diseases and orphan drugs. Returns disease names, ORPHA codes, and synonyms. No authentication required. Supports multiple languages (en, fr, de, es, it, pt, pl, nl)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

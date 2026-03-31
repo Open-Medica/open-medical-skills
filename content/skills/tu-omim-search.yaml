@@ -1,0 +1,21 @@
+name: "tu-omim-search"
+display_name: "OMIM search"
+description: "Search OMIM database for Mendelian diseases and genes. OMIM is the authoritative source for human genetic disorders. Search by gene name, disease name, or phenotype keywords. Returns MIM numbers, titles, and entry types. Requires OMIM_API_KEY env var (register at omim.org/api)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "omim"
+  - "genetic-disorders"
+  - "mendelian-inheritance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-civic-search-assertions"
+display_name: "civic search assertions"
+description: "Search for assertions in CIViC database. Assertions are higher-level clinical interpretations that integrate multiple evidence items into formal statements about clinical actionability. Returns a list of assertions with descriptions and associated molecular profiles or variants. Filter by therapy (e.g., 'ponatinib'), disease (e.g., 'leukemia'), or variant name."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -12,7 +12,7 @@ Search and retrieve data from over 400,000 clinical studies registered across 22
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill clinical-trials-search
+npx skills add Open-Medica/open-medical-skills --skill clinical-trials-search
 ```
 
 ## What It Does
@@ -74,4 +74,4 @@ statistical results, and serious adverse event rates.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

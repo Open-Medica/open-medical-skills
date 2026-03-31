@@ -1,0 +1,21 @@
+name: "tu-nhanes-search-datasets"
+display_name: "nhanes search datasets"
+description: "Search for NHANES datasets by keyword. Returns information about matching datasets including download links. Note: NHANES data files are typically in SAS/XPT format and may require conversion tools."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "nhanes"
+  - "epidemiology"
+  - "population-health"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

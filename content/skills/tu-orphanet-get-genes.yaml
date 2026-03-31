@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-genes"
+display_name: "Orphanet get genes"
+description: "Get genes associated with a rare disease from Orphanet. Returns gene symbols, names, and association types (causative, modifier, susceptibility). Essential for rare disease genetic diagnosis."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

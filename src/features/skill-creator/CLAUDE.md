@@ -122,7 +122,7 @@ description: >
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills)...*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills)...*
 ```
 
 **2. Content YAML** (`content/skills/skill-name.yaml`):

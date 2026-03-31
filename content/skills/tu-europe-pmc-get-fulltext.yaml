@@ -1,0 +1,21 @@
+name: "tu-europe-pmc-get-fulltext"
+display_name: "EuropePMC get fulltext"
+description: "Fetch a PMC article's full text with deterministic fallbacks: Europe PMC fullTextXML → NCBI PMC OAI (JATS) → NCBI efetch (XML) → PMC HTML. Designed for machine consumption: returns structured provenance (source/format/content_type) and a retrieval_trace of every attempt."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "europepmc"
+  - "literature-search"
+  - "open-access"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

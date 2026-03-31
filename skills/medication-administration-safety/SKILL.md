@@ -12,7 +12,7 @@ Verify the Five Rights of medication administration before every drug is given t
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill medication-administration-safety
+npx skills add Open-Medica/open-medical-skills --skill medication-administration-safety
 ```
 
 ## What It Does

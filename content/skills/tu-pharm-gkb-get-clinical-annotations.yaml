@@ -1,0 +1,21 @@
+name: "tu-pharm-gkb-get-clinical-annotations"
+display_name: "PharmGKB get clinical annotations"
+description: "Get clinical annotations showing gene-drug-phenotype relationships. Returns variant-level clinical significance data. Always provide a specific 'annotation_id' — filtering by gene_id is unreliable and may return empty results."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmgkb"
+  - "pharmacogenomics"
+  - "drug-gene-interactions"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

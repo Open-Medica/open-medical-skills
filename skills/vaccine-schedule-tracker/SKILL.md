@@ -11,7 +11,7 @@ Track pediatric and adult immunization status against the CDC Advisory Committee
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill vaccine-schedule-tracker
+npx skills add Open-Medica/open-medical-skills --skill vaccine-schedule-tracker
 ```
 
 ## What It Does

@@ -82,6 +82,7 @@ jobs:
   # ──────────────────────────────────────────────────
   deploy:
     needs: build
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     name: Deploy to Cloudflare Pages
 
@@ -94,6 +95,14 @@ jobs:
         with:
           name: dist
           path: dist/
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
 
       - name: Deploy to Cloudflare Pages
         id: deploy

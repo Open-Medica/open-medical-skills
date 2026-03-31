@@ -1,0 +1,21 @@
+name: "tu-civic-get-variant"
+display_name: "civic get variant"
+description: "Get detailed information about a specific variant in CIViC database by variant ID. Variants represent specific genetic alterations (SNVs, indels, structural variants, etc.) with clinical significance in cancer. Returns variant name, coordinates, gene association, and related information."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

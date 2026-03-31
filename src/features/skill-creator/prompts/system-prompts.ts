@@ -102,7 +102,7 @@ Generate the Quick Install section showing how to install or add this skill. Thi
 ### Requirements
 - **Primary method**: npx install command in a bash code block.
 - **Format**: Start with \`## Quick Install\` heading, then a fenced code block.
-- **Command pattern**: \`npx skills add gitjfmd/open-medical-skills --skill <skill-name>\`
+- **Command pattern**: \`npx skills add Open-Medica/open-medical-skills --skill <skill-name>\`
 - **Skill name**: Use the kebab-case version of the skill title (e.g., "Drug Interaction Safety Checker" becomes "drug-interaction-checker").
 - **Optional**: Add alternative install methods (wget, git clone) if the user provides them.
 
@@ -111,7 +111,7 @@ Generate the Quick Install section showing how to install or add this skill. Thi
 ## Quick Install
 
 \\\`\\\`\\\`bash
-npx skills add gitjfmd/open-medical-skills --skill <skill-name>
+npx skills add Open-Medica/open-medical-skills --skill <skill-name>
 \\\`\\\`\\\`
 \`\`\`
 
@@ -356,7 +356,7 @@ Return the complete section including the ## heading, followed by a horizontal r
 \`\`\`markdown
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
 \`\`\``,
 
   /**

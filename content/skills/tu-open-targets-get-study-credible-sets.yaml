@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-study-credible-sets"
+display_name: "OpenTargets get study credible sets"
+description: "Get all credible sets (fine-mapped GWAS loci) for a specific GWAS study from Open Targets. Returns the lead variants, fine-mapping details, p-values, effect sizes, and locus-to-gene (L2G) predictions for each locus in the study. Use this to explore all significant loci discovered in a GWAS."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget-genetics"
+  - "genetic-associations"
+  - "drug-discovery"
+  - "gwas"
+  - "study"
+  - "credible-set"
+  - "loci"
+  - "open-targets"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

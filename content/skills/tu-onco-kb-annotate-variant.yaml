@@ -1,0 +1,22 @@
+name: "tu-onco-kb-annotate-variant"
+display_name: "OncoKB annotate variant"
+description: "Annotate a cancer variant for oncogenic potential and treatment implications using OncoKB. Returns evidence level, oncogenicity, mutation effect, and FDA-approved therapies. Requires ONCOKB_API_TOKEN env var (demo mode available for BRAF, TP53, ROS1). Example: BRAF V600E in melanoma."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "oncokb"
+  - "oncology"
+  - "precision-medicine"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

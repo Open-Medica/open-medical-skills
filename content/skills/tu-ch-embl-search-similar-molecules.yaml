@@ -1,0 +1,21 @@
+name: "tu-ch-embl-search-similar-molecules"
+display_name: "ChEMBL search similar molecules"
+description: "Search for molecules similar to a given SMILES, chembl_id, or compound or drug name, using the ChEMBL Web Services. Note: This tool is designed for small molecule compounds only. Biologics (antibodies, proteins, oligonucleotides, etc.) do not have SMILES structures and cannot be used for similarity search. For biologics similarity search, use BLAST_protein_search (requires amino acid sequence) or UniProt_search. For small molecules, use PubChem_search_compounds_by_similarity (requires SMILES ..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "chembl"
+  - "bioactivity-data"
+  - "drug-discovery"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,4 +1,4 @@
-name = "oms-search-api"
+name = "openmedica-search-api"
 main = "src/index.ts"
 compatibility_date = "2025-04-01"
 
@@ -16,7 +16,7 @@ ALLOWED_ORIGIN = "http://localhost:4321"
 vars = { ALLOWED_ORIGIN = "https://openmedica.us" }
 
 # In production, these route through Cloudflare Tunnel:
-# QDRANT_URL → qdrant.oms.internal (tunnel ingress)
-# SURREALDB_URL → surrealdb.oms.internal (tunnel ingress)
-# SUPABASE_URL → supabase.oms.internal (tunnel ingress)
-# OLLAMA_URL → ollama.oms.internal (tunnel ingress)
+# QDRANT_URL → your-tunnel.example.com (tunnel ingress)
+# SURREALDB_URL → your-tunnel.example.com (tunnel ingress)
+# SUPABASE_URL → your-tunnel.example.com (tunnel ingress)
+# OLLAMA_URL → your-tunnel.example.com (tunnel ingress)

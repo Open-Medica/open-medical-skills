@@ -1,0 +1,25 @@
+name: "tu-open-targets-get-target-tractability-by-ensembl-id"
+display_name: "OpenTargets get target tractability by ensemblID"
+description: "Retrieve tractability assessments, including modality and values, for a specific target ensembl ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target"
+  - "tractability"
+  - "target-information"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

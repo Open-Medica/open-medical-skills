@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-evidence-by-datasource"
+display_name: "OpenTargets get evidence by datasource"
+description: "Get target-disease evidence from Open Targets filtered by configurable data sources. Unlike OpenTargets_target_disease_evidence (intogen-only), this tool accepts any datasourceIds. Valid sources include: ot_genetics_portal, eva, eva_somatic, gene_burden, genomics_england, intogen, cancer_gene_census, chembl, crispr, europepmc, expression_atlas, gene2phenotype, orphanet, uniprot_literature, uniprot_variants, clingen, phewas_catalog, reactome, progeny, slapenrich, sysbio. Returns evidence rows ..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target"
+  - "disease"
+  - "evidence"
+  - "association"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

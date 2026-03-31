@@ -1,0 +1,21 @@
+name: "tu-drug-props-calculate-qed"
+display_name: "DrugProps calculate qed"
+description: "Calculate Quantitative Estimate of Drug-likeness (QED) score for a compound using the Bickerton et al. (2012) method. QED integrates 8 molecular descriptors (MW, AlogP, HBA, HBD, PSA, rotatable bonds, aromatic rings, structural alerts) into a single score from 0 (non-drug-like) to 1 (most drug-like). Median QED of approved oral drugs is ~0.49. High QED (≥0.67) = drug-like; Medium (0.34–0.67) = borderline; Low (<0.34) = non-drug-like. Use after DrugProps_lipinski_filter for a more nuanced drug..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-properties"
+  - "molecular-properties"
+  - "cheminformatics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

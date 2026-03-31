@@ -73,32 +73,22 @@ body:
       label: "Medical Category *"
       description: "Select the primary category for this skill."
       options:
-        - clinical
-        - diagnostic
-        - administrative
+        - diagnosis
+        - treatment
+        - lab-imaging
+        - pharmacy
+        - emergency
+        - surgery
+        - nursing
+        - pediatrics
+        - mental-health
+        - public-health
         - research
         - education
-        - pharmacology
-        - radiology
-        - pathology
-        - surgery
-        - mental-health
-        - pediatrics
-        - emergency-medicine
-        - public-health
-        - telemedicine
-        - other
+        - administrative
+        - clinical-research-summarizing
     validations:
       required: true
-
-  - type: input
-    id: category-other
-    attributes:
-      label: "Other Category (if 'other' selected above)"
-      description: "Specify the category if you selected 'other'."
-      placeholder: "e.g., rehabilitation"
-    validations:
-      required: false
 
   - type: input
     id: repository

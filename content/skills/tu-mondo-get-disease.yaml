@@ -1,0 +1,21 @@
+name: "tu-mondo-get-disease"
+display_name: "Mondo get disease"
+description: "Get detailed information about a disease from the Mondo Disease Ontology by its MONDO ID. Returns the disease name, description, synonyms, cross-references (OMIM, Orphanet, DOID, MeSH, ICD-10, NCIT, UMLS, SNOMED-CT), hierarchy (parent diseases), subtypes count, causal genes, inheritance pattern, and association counts (phenotypes, correlated genes, etc.). Essential for understanding disease classification and finding equivalent IDs across ontologies."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "mondo"
+  - "disease-ontology"
+  - "rare-disease"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

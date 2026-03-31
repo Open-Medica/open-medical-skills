@@ -9,8 +9,8 @@ version: "1.0.0"
 license: "MIT"
 type: "plugin"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill holy-bio-research-suite"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/holy-bio-research-suite ~/.claude/plugins/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill holy-bio-research-suite"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/plugins/holy-bio-research-suite ~/.claude/plugins/"
 evidence_level: "high"
 safety_classification: "safe"
 specialty: ["bioinformatics", "genomics", "pharmacology"]

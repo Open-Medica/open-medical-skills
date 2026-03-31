@@ -1,0 +1,21 @@
+name: "tu-med-rxiv-get-preprint"
+display_name: "MedRxiv get preprint"
+description: "Get full metadata for a specific medRxiv preprint by its DOI. Returns comprehensive metadata including title, authors, abstract, publication date, version, category, and URLs. Response time: <1 second. Use when you have a medRxiv DOI (format: 10.1101/YYYY.MM.DD.XXXXXXX). To SEARCH for medRxiv preprints by keywords, use EuropePMC_search_articles with 'SRC:PPR' filter (fast, relevance-ranked), or web_search with 'site:medrxiv.org'. medRxiv API does not support text search."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "medrxiv"
+  - "preprints"
+  - "clinical-research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -13,7 +13,7 @@ Extract, inspect, and anonymize metadata from DICOM (Digital Imaging and Communi
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill dicom-metadata-extractor
+npx skills add Open-Medica/open-medical-skills --skill dicom-metadata-extractor
 ```
 
 ## What It Does
@@ -77,4 +77,4 @@ files to /data/trial/site_003_anon/.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

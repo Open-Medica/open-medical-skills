@@ -1,0 +1,21 @@
+name: "tu-genome-nexus-annotate-variant"
+display_name: "GenomeNexus annotate variant"
+description: "Annotate a genomic variant using Genome Nexus (Memorial Sloan Kettering), which aggregates variant annotations from multiple sources including VEP, SIFT, PolyPhen-2, AlphaMissense, cancer hotspots, and mutation assessor. Input is a GRCh37/hg19 HGVS genomic notation (e.g., '7:g.140453136A>T' for BRAF V600E, '17:g.7577120C>T' for TP53 R273H). Returns the most severe consequence, transcript consequences with pathogenicity scores (SIFT, PolyPhen, AlphaMissense), cancer hotspot information, and an..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "genome-nexus"
+  - "variant-annotation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-ctd-get-gene-diseases"
+display_name: "CTD get gene diseases"
+description: "Get curated gene-disease associations from CTD. Given a gene symbol, returns diseases associated with the gene, including direct evidence and disease categories. Example: 'TP53' returns associations with various cancers and other diseases."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ctd"
+  - "chemical-gene-disease"
+  - "toxicogenomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

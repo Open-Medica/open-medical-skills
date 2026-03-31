@@ -1,0 +1,21 @@
+name: "tu-pharmaco-db-get-compound"
+display_name: "PharmacoDB get compound"
+description: "Get detailed information about a compound/drug from PharmacoDB, including chemical annotations (SMILES, InChIKey, PubChem CID, ChEMBL ID, FDA approval status), the datasets it has been profiled in, and its known molecular targets with associated genes. Look up by compound name or PharmacoDB compound ID. Useful for characterizing drug properties and identifying which pharmacogenomics datasets include a specific compound. Example: get details for Paclitaxel, Erlotinib, or Lapatinib."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmacodb"
+  - "pharmacogenomics"
+  - "drug-response"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

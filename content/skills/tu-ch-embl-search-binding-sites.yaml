@@ -1,0 +1,21 @@
+name: "tu-ch-embl-search-binding-sites"
+display_name: "ChEMBL search binding sites"
+description: "Search binding sites by target, site name, or other criteria."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "chembl"
+  - "bioactivity-data"
+  - "drug-discovery"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

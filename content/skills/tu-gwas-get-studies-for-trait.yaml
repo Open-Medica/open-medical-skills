@@ -1,0 +1,24 @@
+name: "tu-gwas-get-studies-for-trait"
+display_name: "gwas get studies for trait"
+description: "Get studies for a specific trait with optional filters for cohort, GxE interactions, and summary statistics."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gwas"
+  - "genome-wide-association"
+  - "genetic-variants"
+  - "studies"
+  - "trait"
+  - "research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

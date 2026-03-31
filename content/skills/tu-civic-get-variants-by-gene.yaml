@@ -1,0 +1,21 @@
+name: "tu-civic-get-variants-by-gene"
+display_name: "civic get variants by gene"
+description: "Get all variants associated with a specific gene in CIViC database. Returns variant information including names, coordinates, and associated evidence. Use gene_name or gene_symbol (e.g., 'EGFR', 'BRAF') for convenience, or gene_id if already known. Uses cursor-based pagination to return up to 500 variants per call."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

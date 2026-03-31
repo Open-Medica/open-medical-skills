@@ -1,0 +1,21 @@
+name: "tu-pub-chem-tox-get-ghs-classification"
+display_name: "PubChemTox get ghs classification"
+description: "Get GHS (Globally Harmonized System) hazard classification for a chemical compound from PubChem. Returns hazard pictograms, signal words (Danger/Warning), GHS hazard statements (e.g., H301 'Toxic if swallowed'), and precautionary statements. GHS is the UN system for identifying hazardous chemicals. Can look up by PubChem CID or compound name. For example, arsenic (CID 5359596) has pictograms for Acute Toxic and Environmental Hazard with signal word 'Danger', while aspirin (CID 2244) has signa..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem-tox"
+  - "toxicology"
+  - "chemical-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

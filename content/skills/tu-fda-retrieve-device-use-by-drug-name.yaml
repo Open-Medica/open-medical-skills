@@ -1,0 +1,25 @@
+name: "tu-fda-retrieve-device-use-by-drug-name"
+display_name: "FDA retrieve device use by drug name"
+description: "Retrieve the intended use of the device based on the drug name."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "intended-use-of-the-device"
+  - "devicediagram"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

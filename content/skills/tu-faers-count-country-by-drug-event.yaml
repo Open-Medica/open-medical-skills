@@ -1,0 +1,22 @@
+name: "tu-faers-count-country-by-drug-event"
+display_name: "FAERS count country by drug event"
+description: "Count the number of adverse event reports per country of occurrence. Only medicinalproduct is required; all other filters (patientsex, patientagegroup, serious) are optional. Use filters sparingly to avoid overly restrictive searches. Data source: FDA Adverse Event Reporting System (FAERS)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

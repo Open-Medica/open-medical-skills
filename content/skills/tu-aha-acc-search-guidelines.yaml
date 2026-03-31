@@ -1,0 +1,21 @@
+name: "tu-aha-acc-search-guidelines"
+display_name: "AHA ACC search guidelines"
+description: "Search AHA (American Heart Association) and ACC (American College of Cardiology) clinical practice guidelines by topic via PubMed. Covers guidelines published in Circulation, JACC, and other AHA/ACC journals. Useful for finding recommendations on hypertension, heart failure, atrial fibrillation, coronary artery disease, valvular heart disease, lipid management, cardiac arrest, and other cardiovascular conditions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

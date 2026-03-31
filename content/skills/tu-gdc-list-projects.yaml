@@ -1,0 +1,23 @@
+name: "tu-gdc-list-projects"
+display_name: "GDC list projects"
+description: "List GDC projects (TCGA, TARGET, etc.) with case/file counts. Use to discover available cancer cohorts and their data volume. Filter by program (TCGA, TARGET, CGCI, etc.)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gdc"
+  - "genomic-data-commons"
+  - "cancer-data"
+  - "projects"
+  - "tcga"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

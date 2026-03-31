@@ -1,0 +1,21 @@
+name: "tu-clin-gen-get-dosage-sensitivity"
+display_name: "ClinGen get dosage sensitivity"
+description: "Get all ClinGen dosage sensitivity curations. Returns haploinsufficiency and triplosensitivity scores for curated genes. Set include_regions=true to also get recurrent CNV regions. Scores: 0=No evidence, 1=Little, 2=Emerging, 3=Sufficient evidence."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

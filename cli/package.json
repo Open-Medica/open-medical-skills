@@ -1,9 +1,11 @@
 {
-  "name": "@openmedicalskills/cli",
-  "version": "1.0.0",
-  "description": "CLI for Open Medical Skills — install physician-reviewed AI agent skills",
+  "name": "@openmedica/cli",
+  "version": "2.1.0",
+  "description": "OpenMedica CLI — search, discover, and install physician-reviewed medical AI skills (research tool)",
   "type": "module",
   "bin": {
+    "openmedica": "./bin/oms.js",
+    "om": "./bin/oms.js",
     "oms": "./bin/oms.js"
   },
   "files": [
@@ -28,10 +30,10 @@
   ],
   "author": "IntelMedica.ai",
   "license": "MIT",
-  "homepage": "https://openmedicalskills.org",
+  "homepage": "https://openmedica.us",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gitjfmd/oms-site"
+    "url": "https://github.com/Open-Medica/om-cli"
   },
   "dependencies": {
     "commander": "^13.1.0",

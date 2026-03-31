@@ -1,0 +1,27 @@
+name: "tu-loinc-search-tests"
+display_name: "LOINC search tests"
+description: "Search LOINC (Logical Observation Identifiers Names and Codes) lab tests and clinical observations by name or keywords. Returns standardized codes for laboratory tests, vital signs, and clinical measurements. Essential for standardizing lab test names across healthcare systems and research studies."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "lab-imaging"
+tags:
+  - "tooluniverse"
+  - "loinc"
+  - "laboratory"
+  - "test-codes"
+  - "interoperability"
+  - "clinical"
+  - "observation"
+  - "lab-test"
+  - "standardization"
+  - "medical-code"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

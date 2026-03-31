@@ -65,7 +65,7 @@ curl -X POST http://localhost:8787/api/submit \
 
 **Success (201):**
 ```json
-{ "success": true, "pr_url": "https://github.com/gitjfmd/open-medical-skills/pull/42" }
+{ "success": true, "pr_url": "https://github.com/Open-Medica/open-medical-skills/pull/42" }
 ```
 
 **Validation error (400):**
@@ -81,9 +81,9 @@ curl -X POST http://localhost:8787/api/submit \
 ## Environment
 
 Set in `wrangler.toml`:
-- `GITHUB_OWNER` - GitHub user/org (default: "gitjfmd")
+- `GITHUB_OWNER` - GitHub user/org (default: "Open-Medica")
 - `GITHUB_REPO` - Repository name (default: "open-medical-skills")
-- `ALLOWED_ORIGIN` - CORS origin (default: "https://oms.jfmd.win")
+- `ALLOWED_ORIGIN` - CORS origin (default: "https://your-domain.com")
 
 Set via `wrangler secret put`:
 - `GITHUB_TOKEN` - GitHub fine-grained access token

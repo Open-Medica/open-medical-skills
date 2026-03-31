@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-disease"
+display_name: "Orphanet get disease"
+description: "Get detailed information about a rare disease by ORPHA code. Returns disease name, definition, synonyms, and classification. ORPHA codes are unique Orphanet identifiers (e.g., 558 for Marfan syndrome). No authentication required."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

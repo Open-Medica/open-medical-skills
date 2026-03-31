@@ -1,0 +1,20 @@
+name: "tu-nci-get-drug-by-name"
+display_name: "NCI get drug by name"
+description: "Get detailed information about a cancer drug from the NCI Drug Dictionary by its pretty-url-name (slug). Returns comprehensive drug information including definition, aliases (brand names, chemical names, code names, CAS registry numbers), NCI concept ID, and links to drug information summaries. The pretty-url-name is a lowercase hyphenated slug (e.g., 'pembrolizumab', 'tamoxifen-citrate', 'nivolumab'). You can find drug names from NCIDrugDict_search results (prettyUrlName field)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

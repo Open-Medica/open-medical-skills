@@ -2,15 +2,15 @@ name: "board-exam-prep"
 display_name: "Medical Board Exam Preparation"
 description: "USMLE/COMLEX board exam preparation tool with practice questions, spaced repetition, and high-yield topic reviews. Tracks performance and identifies weak areas."
 author: "Open Medical Skills Community"
-repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/board-exam-prep"
+repository: "https://github.com/Open-Medica/open-medical-skills/tree/main/skills/board-exam-prep"
 category: "education"
 tags: ["usmle", "board-exams", "medical-education", "test-prep"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill board-exam-prep"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/board-exam-prep ~/.claude/skills/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill board-exam-prep"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/skills/board-exam-prep ~/.claude/skills/"
 evidence_level: "moderate"
 safety_classification: "safe"
 specialty: ["medical-education"]

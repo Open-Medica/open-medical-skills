@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-natural-history"
+display_name: "Orphanet get natural history"
+description: "Get natural history data for a rare disease from Orphanet. Returns average age of onset and type of inheritance. Useful for understanding disease progression patterns and genetic counseling."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

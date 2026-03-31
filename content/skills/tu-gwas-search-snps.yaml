@@ -1,0 +1,24 @@
+name: "tu-gwas-search-snps"
+display_name: "gwas search snps"
+description: "Search the GWAS Catalog for single nucleotide polymorphisms (SNPs) by rs ID (e.g., 'rs7903146') or mapped gene name (e.g., 'TCF7L2'). Returns SNP details including chromosomal location, mapped genes, and functional class. Use this to look up specific variants or find all GWAS-catalogued SNPs for a gene."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gwas"
+  - "genome-wide-association"
+  - "genetic-variants"
+  - "snp"
+  - "variant"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

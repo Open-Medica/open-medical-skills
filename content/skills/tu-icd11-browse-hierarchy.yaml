@@ -1,0 +1,21 @@
+name: "tu-icd11-browse-hierarchy"
+display_name: "ICD11 browse hierarchy"
+description: "Navigate the ICD-11 disease classification hierarchy by retrieving child entities of a parent category. ICD-11 organizes diseases in a hierarchical tree structure (chapters → categories → subcategories). This tool returns all child entities under a specified parent, showing the disease classification taxonomy. Useful for exploring disease categories and understanding relationships. Requires ICD_CLIENT_ID and ICD_CLIENT_SECRET."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "icd"
+  - "medical-coding"
+  - "classification"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

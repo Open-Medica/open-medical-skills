@@ -13,7 +13,7 @@ Automatically extract, organize, and interpret biochemical and hematological lab
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill lab-result-interpreter
+npx skills add Open-Medica/open-medical-skills --skill lab-result-interpreter
 ```
 
 ## What It Does
@@ -82,4 +82,4 @@ Identify the type of anemia and suggest further workup.
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

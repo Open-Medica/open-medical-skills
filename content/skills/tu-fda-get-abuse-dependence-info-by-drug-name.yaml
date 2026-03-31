@@ -1,0 +1,25 @@
+name: "tu-fda-get-abuse-dependence-info-by-drug-name"
+display_name: "FDA get abuse dependence info by drug name"
+description: "Get information about drug abuse and dependence based on the drug name, specifically information on whether the drug is a controlled substances, the types of possible abuse, and adverse reactions relevant to those abuse types."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "drug-abuse-and-dependence"
+  - "drugabuseanddependence"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

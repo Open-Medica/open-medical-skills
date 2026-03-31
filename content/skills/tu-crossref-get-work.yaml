@@ -1,0 +1,21 @@
+name: "tu-crossref-get-work"
+display_name: "Crossref get work"
+description: "Get complete metadata for a specific scholarly work by its DOI (Digital Object Identifier). Returns comprehensive bibliographic information including title, abstract, full author list with affiliations and ORCIDs, journal details, publication dates, volume/issue/pages, references, citations, license, funding information, and related identifiers. Essential for verifying citations, extracting complete metadata, or building reference managers. DOIs can be found using Crossref_search_works (forma..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "crossref"
+  - "doi-metadata"
+  - "scholarly-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-dis-ge-net-get-vda"
+display_name: "DisGeNET get vda"
+description: "Get variant-disease associations from DisGeNET. Query by rsID or gene symbol to find disease-associated variants. Returns variant IDs, diseases, and evidence scores. Useful for pharmacogenomics and variant interpretation."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "disgenet"
+  - "gene-disease-associations"
+  - "genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

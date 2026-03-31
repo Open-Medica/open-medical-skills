@@ -1,0 +1,24 @@
+name: "tu-gwas-search-associations"
+display_name: "gwas search associations"
+description: "Search the GWAS Catalog for genome-wide association study results by keyword. Accepts free-text disease/trait names (e.g., 'melanoma', 'diabetes', 'breast cancer'), SNP rs IDs, EFO ontology IDs, or study accession IDs. This is the primary tool for discovering GWAS associations when you do NOT already have a specific association ID. Returns SNPs, p-values, odds ratios, mapped genes, and study metadata with pagination support."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gwas"
+  - "genome-wide-association"
+  - "genetic-variants"
+  - "association"
+  - "genetics"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

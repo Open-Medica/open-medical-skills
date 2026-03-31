@@ -1,0 +1,21 @@
+name: "tu-g2p-get-record"
+display_name: "G2P get record"
+description: "Get detailed Gene2Phenotype (G2P) record for a specific gene-disease association by its stable ID. Returns comprehensive clinical genetics information including locus details (gene symbol, genomic coordinates, cross-references), genotype/inheritance pattern, variant consequences (with Sequence Ontology terms), molecular mechanism with evidence, disease details with ontology terms, confidence level, and supporting publications. Use G2P_search first to find stable IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "gene2phenotype"
+  - "genotype-phenotype"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

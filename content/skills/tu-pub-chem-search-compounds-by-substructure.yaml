@@ -1,0 +1,21 @@
+name: "tu-pub-chem-search-compounds-by-substructure"
+display_name: "PubChem search compounds by substructure"
+description: "Search for CIDs in PubChem that contain the given substructure (SMILES). Returns up to max_results CIDs (default 10)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,4 +1,6 @@
 ---
+import { GITHUB_REPO_FULL, GITHUB_REPO_URL, MANUS_IMPORT_BASE } from "../lib/constants";
+
 interface Props {
   skillName: string;
   displayName: string;
@@ -7,7 +9,7 @@ interface Props {
 
 const { skillName, displayName, repository } = Astro.props;
 
-const repo = "gitjfmd/open-medical-skills";
+const repo = GITHUB_REPO_FULL;
 const baseCmd = `npx skills add ${repo} --skill ${skillName}`;
 
 const actions = [
@@ -21,7 +23,7 @@ const actions = [
   {
     id: "manus",
     label: "Run in Manus",
-    href: `https://manus.im/import-skills?githubUrl=${encodeURIComponent(repository)}&utm_source=oms`,
+    href: `${MANUS_IMPORT_BASE}?githubUrl=${encodeURIComponent(GITHUB_REPO_URL)}&utm_source=oms`,
     primary: true,
     icon: "external",
   },

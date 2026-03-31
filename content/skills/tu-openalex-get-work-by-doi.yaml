@@ -1,0 +1,21 @@
+name: "tu-openalex-get-work-by-doi"
+display_name: "openalex get work by doi"
+description: "Get a single OpenAlex work (paper) by DOI. Provide a DOI string like \"10.65215/2q58a426\" (you can also pass a DOI URL like \"https://doi.org/10.65215/2q58a426\")."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "openalex"
+  - "scholarly-data"
+  - "bibliometrics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

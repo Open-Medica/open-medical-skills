@@ -1,0 +1,21 @@
+name: "tu-reactome-get-entity-compartment"
+display_name: "Reactome get entity compartment"
+description: "Get compartment information for an entity. Returns TSV-formatted compartment data parsed into structured JSON. The API returns tab-separated values (ID, name, type) which are automatically converted to JSON format."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

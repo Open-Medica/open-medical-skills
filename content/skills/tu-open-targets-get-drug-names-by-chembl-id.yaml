@@ -1,0 +1,27 @@
+name: "tu-open-targets-get-drug-names-by-chembl-id"
+display_name: "OpenTargets get drug names by chemblId"
+description: "Get drug generic name and brand names (trade names) based on ChEMBL ID. Returns the drug name (typically generic name), trade names (brand names), and synonyms."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "drug-information"
+  - "name"
+  - "generic-name"
+  - "brand-name"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

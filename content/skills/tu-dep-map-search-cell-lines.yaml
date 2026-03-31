@@ -1,0 +1,23 @@
+name: "tu-dep-map-search-cell-lines"
+display_name: "DepMap search cell lines"
+description: "Search cancer cell lines by name. Returns matching cell lines with IDs and cancer types. Use for finding cell models by common names (A549, HeLa, MCF7, etc.)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "depmap"
+  - "cancer-dependencies"
+  - "functional-genomics"
+  - "search"
+  - "cell-lines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

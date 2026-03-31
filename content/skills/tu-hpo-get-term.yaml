@@ -1,0 +1,21 @@
+name: "tu-hpo-get-term"
+display_name: "HPO get term"
+description: "Get detailed information about a Human Phenotype Ontology (HPO) term by its ID. HPO provides standardized descriptions of phenotypic abnormalities in human disease with over 18,000 terms. Returns the term name, definition, synonyms, cross-references to UMLS/SNOMED, descendant count, and translations. Example: HP:0001250 (Seizure) returns definition, 346 descendants, synonyms including 'Epileptic seizure' and 'Epilepsy', and cross-references to UMLS and SNOMED-CT."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "hpo"
+  - "phenotype"
+  - "rare-disease"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

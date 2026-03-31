@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap");
-@import "tailwindcss";
+@import "tailwindcss" source(none);
+
+/* Explicitly include only source code directories — excludes binary PNGs, data/, .planning/ */
+@source "../";
+@source "../../public";
+@source "../../content";
 
 @theme {
   /* Primary palette (cyan — IntelMedica.ai aligned) */

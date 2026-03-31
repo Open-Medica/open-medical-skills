@@ -1,0 +1,24 @@
+name: "tu-open-targets-get-gene-ontology-terms-by-go-id"
+display_name: "OpenTargets get gene ontology terms by goID"
+description: "Retrieve Gene Ontology terms based on a list of GO IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "geneontology"
+  - "data-retrieval-and-aggregation"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

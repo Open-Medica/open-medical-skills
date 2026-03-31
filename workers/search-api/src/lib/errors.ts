@@ -21,5 +21,6 @@ export function corsHeaders(origin: string): Record<string, string> {
     'Access-Control-Allow-Methods': 'GET, OPTIONS',
     'Access-Control-Allow-Headers': 'Content-Type',
     'Access-Control-Max-Age': '86400',
+    'X-OMS-Disclaimer': 'Research and learning tool. Not clinical decision support.',
   };
 }

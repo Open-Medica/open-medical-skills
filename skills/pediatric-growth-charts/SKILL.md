@@ -12,7 +12,7 @@ Interpret pediatric growth measurements using CDC and WHO growth charts for chil
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill pediatric-growth-charts
+npx skills add Open-Medica/open-medical-skills --skill pediatric-growth-charts
 ```
 
 ## What It Does

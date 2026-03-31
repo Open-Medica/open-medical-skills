@@ -1,0 +1,24 @@
+name: "tu-open-targets-get-chemical-probes-by-target-ensembl-id"
+display_name: "OpenTargets get chemical probes by target ensemblID"
+description: "Retrieve chemical probes associated with a specific target using its ensemblID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug-information"
+  - "chemicalprobe"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

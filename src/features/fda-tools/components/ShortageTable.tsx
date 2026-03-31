@@ -2,7 +2,7 @@
  * ShortageTable — Sortable results table with pagination and expandable detail rows.
  */
 
-import { useState, useCallback } from 'react';
+import { Fragment, useState, useCallback } from 'react';
 import type { DrugShortage, SearchParams } from '../lib/fda-types';
 import { formatFdaDate } from '../lib/fda-api';
 import ShortageDetail from './ShortageDetail';
@@ -148,9 +148,8 @@ export default function ShortageTable({
               <SkeletonRows />
             ) : (
               data.map((item) => (
-                <>
+                <Fragment key={item.id}>
                   <tr
-                    key={item.id}
                     onClick={() => toggleExpand(item.id)}
                     className={`cursor-pointer border-b border-slate-100 transition-colors hover:bg-slate-50 dark:border-slate-800 dark:hover:bg-slate-800/40 ${
                       expandedId === item.id ? 'bg-slate-50 dark:bg-slate-800/30' : ''
@@ -205,7 +204,7 @@ export default function ShortageTable({
                       </td>
                     </tr>
                   )}
-                </>
+                </Fragment>
               ))
             )}
           </tbody>

@@ -1,0 +1,25 @@
+name: "tu-open-targets-get-target-constraint-info-by-ensembl-id"
+display_name: "OpenTargets get target constraint info by ensemblID"
+description: "Retrieve genetic constraint information for a specific target ensemblID, including expected and observed values, and scores."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target"
+  - "constraint"
+  - "data-retrieval-and-aggregation"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

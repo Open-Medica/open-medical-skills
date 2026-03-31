@@ -1,0 +1,23 @@
+name: "tu-gdc-get-ssm-by-gene"
+display_name: "GDC get ssm by gene"
+description: "Get somatic mutations (SSMs) for a gene across TCGA/GDC projects. Returns mutation type, genomic coordinates, and amino acid changes. Essential for pan-cancer mutation analysis."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gdc"
+  - "genomic-data-commons"
+  - "cancer-data"
+  - "ssm"
+  - "mutations"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

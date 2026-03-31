@@ -1,0 +1,23 @@
+name: "tu-gtex-get-expression-summary"
+display_name: "GTEx get expression summary"
+description: "Summarize tissue-specific expression (e.g., median TPM) for a gene across GTEx tissues. Accepts gene symbols (TP53, BRCA1) or Ensembl IDs. Use to profile baseline expression patterns for targets/biomarkers."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex"
+  - "gene-expression"
+  - "tissue-specific"
+  - "expression"
+  - "summary"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

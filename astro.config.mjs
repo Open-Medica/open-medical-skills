@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://openmedica.us',
-  base: '/open-medical-skills',
+  base: '/',
   output: 'static',
   integrations: [
     react(),

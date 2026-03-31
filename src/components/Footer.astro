@@ -1,4 +1,6 @@
 ---
+import { GITHUB_REPO_URL } from "../lib/constants";
+
 const year = new Date().getFullYear();
 ---
 
@@ -20,14 +22,14 @@ const year = new Date().getFullYear();
           <svg class="h-7 shrink-0" viewBox="0 0 360 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <defs><linearGradient id="ftGrad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
             <text x="8" y="38" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#FFFFFF"><tspan font-weight="300">Open Medical </tspan><tspan font-weight="700" fill="url(#ftGrad)">Skills</tspan></text>
-            <text x="8" y="58" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">by IntelMedica.ai</text>
+            <text x="8" y="58" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8"><tspan font-weight="400">An </tspan><tspan font-weight="600" fill="url(#ftGrad)">OpenMedica</tspan><tspan font-weight="400"> Project</tspan></text>
           </svg>
         </div>
         <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
-          Maintained by physicians, for physicians and the healthcare industry.
+          Physician-curated AI skills for healthcare professionals.
         </p>
         <p class="mt-1 text-xs text-slate-500 dark:text-slate-500">
-          A project by <a href="https://intelmedica.ai" target="_blank" rel="noopener noreferrer" class="font-medium text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary">IntelMedica.ai</a>
+          An <a href="https://openmedica.us" class="font-semibold text-cyan-400 hover:text-cyan-300">OpenMedica</a> project by <a href="https://intelmedica.ai" target="_blank" rel="noopener noreferrer" class="font-medium text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary">IntelMedica.ai</a>
         </p>
       </div>
 
@@ -46,7 +48,7 @@ const year = new Date().getFullYear();
           </li>
           <li>
             <a
-              href="https://github.com/gitjfmd/open-medical-skills"
+              href={GITHUB_REPO_URL}
               target="_blank"
               rel="noopener noreferrer"
               class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light"
@@ -56,7 +58,7 @@ const year = new Date().getFullYear();
           </li>
           <li>
             <a
-              href="https://huggingface.co/jfmdai"
+              href="https://huggingface.co/OpenMedica"
               target="_blank"
               rel="noopener noreferrer"
               class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light"
@@ -103,7 +105,7 @@ const year = new Date().getFullYear();
         <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Creator</h3>
         <ul class="mt-2 space-y-2 text-sm">
           <li>
-            <a href="https://jfmd.us" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+            <a href="https://jfmd.dev" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
               JFMD
             </a>
           </li>
@@ -180,7 +182,7 @@ const year = new Date().getFullYear();
 
     <!-- Copyright -->
     <div class="mt-8 border-t border-slate-200 pt-6 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-500">
-      <p>&copy; {year} Open Medical Skills. A project by <strong class="font-semibold text-slate-700 dark:text-slate-300">IntelMedica.ai</strong>.</p>
+      <p>&copy; {year} Open Medical Skills — An <strong class="font-semibold text-cyan-400">OpenMedica</strong> Project by <strong class="font-semibold text-slate-700 dark:text-slate-300">IntelMedica.ai</strong></p>
       <p class="mt-1">Open source and physician-maintained.</p>
     </div>
   </div>

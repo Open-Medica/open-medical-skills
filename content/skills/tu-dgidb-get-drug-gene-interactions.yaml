@@ -1,0 +1,21 @@
+name: "tu-dgidb-get-drug-gene-interactions"
+display_name: "DGIdb get drug gene interactions"
+description: "Get drug-gene interactions for a list of genes from DGIdb. Returns drugs targeting each gene, interaction types, and evidence sources."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "dgidb"
+  - "drug-gene-interactions"
+  - "druggable-targets"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

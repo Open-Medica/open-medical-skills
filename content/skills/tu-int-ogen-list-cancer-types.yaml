@@ -1,0 +1,23 @@
+name: "tu-int-ogen-list-cancer-types"
+display_name: "IntOGen list cancer types"
+description: "List all 87 cancer types available in IntOGen with their codes and full names. Returns cancer type identifiers (e.g., BRCA, LUAD, COADREAD, AML, SKCM) that can be used with IntOGen_get_drivers and IntOGen_list_cohorts. IntOGen covers 87 cancer types spanning solid tumors, hematological malignancies, and pediatric cancers."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "intogen"
+  - "cancer-driver-genes"
+  - "mutational-analysis"
+  - "cancer"
+  - "cancer-types"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

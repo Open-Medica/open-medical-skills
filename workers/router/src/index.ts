@@ -2,14 +2,14 @@
  * OpenMedica Router - Cloudflare Worker
  *
  * Runs on openmedica.us and routes requests to the appropriate backend:
- * - /open-medical-skills/* -> CF Pages (OMS static site)
+ * - /skills/*              -> CF Pages (OMS static site)
  * - /api/search/*          -> Search API worker
  * - /api/submit/*          -> Submission API worker
  * - Everything else        -> pass through (existing openmedica.us content)
  */
 
 interface Env {
-  PAGES_URL: string;          // CF Pages URL for OMS (e.g., open-medical-skills.pages.dev)
+  PAGES_URL: string;          // CF Pages URL for OMS (e.g., openmedica.pages.dev)
   SEARCH_API_URL?: string;    // Search API worker URL (optional, for service binding later)
   SUBMISSION_API_URL?: string; // Submission API worker URL
 }
@@ -19,10 +19,10 @@ export default {
     const url = new URL(request.url);
     const pathname = url.pathname;
 
-    // Route /open-medical-skills/* to CF Pages
-    if (pathname === '/open-medical-skills' || pathname.startsWith('/open-medical-skills/')) {
+    // Route /skills/* to CF Pages
+    if (pathname === '/skills' || pathname.startsWith('/skills/')) {
       // Strip the prefix for the Pages fetch
-      const pagesPath = pathname.replace('/open-medical-skills', '') || '/';
+      const pagesPath = pathname.replace('/skills', '') || '/';
       const pagesUrl = new URL(pagesPath + url.search, env.PAGES_URL);
 
       // Forward the request to CF Pages

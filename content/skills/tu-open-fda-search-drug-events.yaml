@@ -1,0 +1,21 @@
+name: "tu-open-fda-search-drug-events"
+display_name: "OpenFDA search drug events"
+description: "Search the FDA Adverse Event Reporting System (FAERS) database via openFDA for drug safety reports. Contains 20+ million adverse event reports submitted to the FDA. Use Lucene syntax: 'patient.drug.medicinalproduct:aspirin', 'patient.reaction.reactionmeddrapt:headache'. Returns serious adverse events with outcomes (hospitalization, death), suspect drugs, and reported reactions using MedDRA terminology."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda"
+  - "fda"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

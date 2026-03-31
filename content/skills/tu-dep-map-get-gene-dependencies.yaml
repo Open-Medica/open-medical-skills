@@ -1,0 +1,23 @@
+name: "tu-dep-map-get-gene-dependencies"
+display_name: "DepMap get gene dependencies"
+description: "Get gene dependency information from CRISPR knockout screens. Returns gene IDs and annotations. Negative gene effect scores indicate essentiality (cell death upon knockout)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "depmap"
+  - "cancer-dependencies"
+  - "functional-genomics"
+  - "crispr"
+  - "dependencies"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

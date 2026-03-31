@@ -1,0 +1,251 @@
+name: Compliance Gate
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  compliance-checks:
+    if: github.event.pull_request.head.ref == 'dev'
+    runs-on: ubuntu-latest
+    name: Medical Compliance Checks
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check disclaimers in new SKILL.md files
+        run: |
+          ERRORS=""
+          # Get new/modified SKILL.md files in this PR
+          SKILL_FILES=$(git diff --name-only --diff-filter=ACMR origin/main...HEAD -- '*.md' | grep -i 'SKILL.md' || true)
+
+          for file in $SKILL_FILES; do
+            if [ -f "$file" ]; then
+              if ! grep -qi "not a substitute for professional medical judgment\|not medical advice\|research and learning\|not clinical decision support" "$file"; then
+                ERRORS="${ERRORS}\n- **${file}**: Missing medical disclaimer"
+              fi
+            fi
+          done
+
+          if [ -n "$ERRORS" ]; then
+            echo "DISCLAIMER_ERRORS<<EOF" >> $GITHUB_ENV
+            echo -e "$ERRORS" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "HAS_DISCLAIMER_ERRORS=true" >> $GITHUB_ENV
+          else
+            echo "HAS_DISCLAIMER_ERRORS=false" >> $GITHUB_ENV
+          fi
+
+      - name: Check safety classifications
+        run: |
+          ERRORS=""
+          # Check for restricted skills without physician-review label
+          YAML_FILES=$(git diff --name-only --diff-filter=ACMR origin/main...HEAD -- 'content/skills/*.yaml' 'content/skills/*.yml' || true)
+
+          for file in $YAML_FILES; do
+            if [ -f "$file" ]; then
+              SAFETY=$(grep "^safety_classification:" "$file" | sed 's/^safety_classification:\s*//' | tr -d '"' | tr -d "'" | xargs)
+              if [ "$SAFETY" = "restricted" ]; then
+                ERRORS="${ERRORS}\n- **${file}**: Has RESTRICTED safety classification — requires physician-review label"
+              fi
+            fi
+          done
+
+          if [ -n "$ERRORS" ]; then
+            echo "SAFETY_ERRORS<<EOF" >> $GITHUB_ENV
+            echo -e "$ERRORS" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "HAS_SAFETY_ERRORS=true" >> $GITHUB_ENV
+          else
+            echo "HAS_SAFETY_ERRORS=false" >> $GITHUB_ENV
+          fi
+
+      - name: Scan for CDS claims
+        run: |
+          ERRORS=""
+          # Scan new content for prohibited CDS/FDA claims
+          CHANGED_FILES=$(git diff --name-only --diff-filter=ACMR origin/main...HEAD -- 'content/**' 'skills/**' 'plugins/**' || true)
+
+          for file in $CHANGED_FILES; do
+            if [ -f "$file" ]; then
+              if grep -qiE "clinical decision support|FDA.cleared|FDA.approved|FDA.certified|medically certified|clinically validated" "$file"; then
+                MATCH=$(grep -niE "clinical decision support|FDA.cleared|FDA.approved|FDA.certified|medically certified|clinically validated" "$file" | head -3)
+                ERRORS="${ERRORS}\n- **${file}**: Contains prohibited CDS/FDA claims:\n\`\`\`\n${MATCH}\n\`\`\`"
+              fi
+            fi
+          done
+
+          if [ -n "$ERRORS" ]; then
+            echo "CDS_ERRORS<<EOF" >> $GITHUB_ENV
+            echo -e "$ERRORS" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "HAS_CDS_ERRORS=true" >> $GITHUB_ENV
+          else
+            echo "HAS_CDS_ERRORS=false" >> $GITHUB_ENV
+          fi
+
+      - name: Check license compatibility
+        run: |
+          WARNINGS=""
+          YAML_FILES=$(git diff --name-only --diff-filter=ACMR origin/main...HEAD -- 'content/skills/*.yaml' 'content/skills/*.yml' 'content/plugins/*.yaml' 'content/plugins/*.yml' || true)
+
+          for file in $YAML_FILES; do
+            if [ -f "$file" ]; then
+              LICENSE=$(grep "^license:" "$file" | sed 's/^license:\s*//' | tr -d '"' | tr -d "'" | xargs)
+              case "$LICENSE" in
+                MIT|Apache-2.0|BSD-3-Clause|BSD-2-Clause) ;; # Auto-approved
+                GPL-3.0|AGPL-3.0|LGPL-3.0)
+                  WARNINGS="${WARNINGS}\n- **${file}**: Uses ${LICENSE} — requires manual license review"
+                  ;;
+                *)
+                  if [ -n "$LICENSE" ]; then
+                    WARNINGS="${WARNINGS}\n- **${file}**: Uses non-standard license '${LICENSE}' — requires manual review"
+                  fi
+                  ;;
+              esac
+            fi
+          done
+
+          if [ -n "$WARNINGS" ]; then
+            echo "LICENSE_WARNINGS<<EOF" >> $GITHUB_ENV
+            echo -e "$WARNINGS" >> $GITHUB_ENV
+            echo "EOF" >> $GITHUB_ENV
+            echo "HAS_LICENSE_WARNINGS=true" >> $GITHUB_ENV
+          else
+            echo "HAS_LICENSE_WARNINGS=false" >> $GITHUB_ENV
+          fi
+
+      - name: Import integrity check
+        run: |
+          echo "Checking for suspicious imports..."
+          FOUND=0
+          # Check for eval/Function constructor
+          if grep -rEn '\beval\s*\(' --include='*.ts' --include='*.js' --include='*.astro' src/ workers/ 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::eval() usage detected"
+            FOUND=1
+          fi
+          if grep -rEn '\bnew\s+Function\s*\(' --include='*.ts' --include='*.js' --include='*.astro' src/ workers/ 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::Function constructor detected"
+            FOUND=1
+          fi
+          # Check for document.write
+          if grep -rEn 'document\.write\s*\(' --include='*.ts' --include='*.js' --include='*.astro' src/ 2>/dev/null | grep -v node_modules; then
+            echo "::error::document.write() detected"
+            FOUND=1
+          fi
+          # Check for suspicious external script sources
+          if grep -rEn 'src\s*=\s*["\x27]https?://(?!fonts\.googleapis|cdn\.jsdelivr|unpkg)' --include='*.astro' --include='*.html' src/ 2>/dev/null | grep -v node_modules; then
+            echo "::warning::External script source detected — verify legitimacy"
+          fi
+          if [ $FOUND -eq 1 ]; then
+            echo "::error::Import integrity check failed"
+            exit 1
+          fi
+          echo "Import integrity check passed"
+
+      - name: Check physician review label
+        id: check-label
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labels = context.payload.pull_request.labels.map(l => l.name);
+            const hasPhysicianApproval = labels.includes('physician-review-approved');
+            core.exportVariable('HAS_PHYSICIAN_APPROVAL', hasPhysicianApproval.toString());
+
+      - name: Post compliance report
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const hasDisclaimerErrors = process.env.HAS_DISCLAIMER_ERRORS === 'true';
+            const hasSafetyErrors = process.env.HAS_SAFETY_ERRORS === 'true';
+            const hasCdsErrors = process.env.HAS_CDS_ERRORS === 'true';
+            const hasLicenseWarnings = process.env.HAS_LICENSE_WARNINGS === 'true';
+            const hasPhysicianApproval = process.env.HAS_PHYSICIAN_APPROVAL === 'true';
+
+            let body = '## Compliance Gate Report\n\n';
+            let hasBlockers = false;
+
+            // Disclaimer check
+            if (hasDisclaimerErrors) {
+              body += '### Medical Disclaimers\n';
+              body += process.env.DISCLAIMER_ERRORS + '\n\n';
+              hasBlockers = true;
+            } else {
+              body += '- Medical disclaimers: Passed\n';
+            }
+
+            // Safety check
+            if (hasSafetyErrors) {
+              body += '### Safety Classification Issues\n';
+              body += process.env.SAFETY_ERRORS + '\n\n';
+              hasBlockers = true;
+            } else {
+              body += '- Safety classifications: Passed\n';
+            }
+
+            // CDS claims
+            if (hasCdsErrors) {
+              body += '### Prohibited CDS/FDA Claims Found\n';
+              body += process.env.CDS_ERRORS + '\n\n';
+              hasBlockers = true;
+            } else {
+              body += '- No CDS/FDA claims: Passed\n';
+            }
+
+            // License warnings
+            if (hasLicenseWarnings) {
+              body += '### License Review Required\n';
+              body += process.env.LICENSE_WARNINGS + '\n\n';
+            } else {
+              body += '- License compatibility: Passed\n';
+            }
+
+            // Physician approval
+            body += '\n### Physician Review\n';
+            if (hasPhysicianApproval) {
+              body += '- `physician-review-approved` label: Present\n';
+            } else {
+              body += '- `physician-review-approved` label: **Missing** — required before merge\n';
+              hasBlockers = true;
+            }
+
+            body += '\n---\n';
+            body += '*OMS is a research and learning tool, not clinical decision support.*\n';
+
+            // Post or update comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+
+            const botComment = comments.find(c =>
+              c.user.type === 'Bot' && c.body.includes('Compliance Gate Report')
+            );
+
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body,
+              });
+            }
+
+            if (hasBlockers) {
+              core.setFailed('Compliance gate failed. See PR comment for details.');
+            }

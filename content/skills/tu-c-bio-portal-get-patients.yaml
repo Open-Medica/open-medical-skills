@@ -1,0 +1,21 @@
+name: "tu-c-bio-portal-get-patients"
+display_name: "cBioPortal get patients"
+description: "Get all patients in a cancer study"
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cbioportal"
+  - "cancer-genomics"
+  - "tumor-profiling"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

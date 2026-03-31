@@ -1,10 +1,10 @@
-name = "oms-submission-api"
+name = "openmedica-submission-api"
 main = "src/index.ts"
 compatibility_date = "2025-01-01"
 compatibility_flags = ["nodejs_compat"]
 
 [vars]
-GITHUB_OWNER = "gitjfmd"
+GITHUB_OWNER = "Open-Medica"
 GITHUB_REPO = "open-medical-skills"
 ALLOWED_ORIGIN = "http://localhost:4321"
 OAUTH_REDIRECT_URI = "http://localhost:4321/auth/callback"

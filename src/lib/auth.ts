@@ -26,12 +26,12 @@ const GITHUB_CLIENT_ID = import.meta.env.PUBLIC_GITHUB_CLIENT_ID || "GITHUB_CLIE
 /**
  * Base URL of the Cloudflare Worker API that handles token exchange.
  */
-const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL || "https://api.openmedicalskills.org";
+const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL || "https://api.openmedica.us";
 
 /**
  * OAuth callback URL — must match the one registered in the GitHub OAuth App.
  */
-const REDIRECT_URI = import.meta.env.PUBLIC_OAUTH_REDIRECT_URI || "https://openmedicalskills.org/auth/callback";
+const REDIRECT_URI = import.meta.env.PUBLIC_OAUTH_REDIRECT_URI || "https://openmedica.us/auth/callback";
 
 // ---------------------------------------------------------------------------
 // localStorage keys

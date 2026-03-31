@@ -1,0 +1,23 @@
+name: "tu-clinvar-search-variants"
+display_name: "clinvar search variants"
+description: "Search for variants in ClinVar database by gene name, condition, or variant ID. Returns variant identifiers and basic information. At least one of gene, condition, or variant_id must be provided."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clinvar"
+  - "genetic-variants"
+  - "pathogenicity"
+  - "variants"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

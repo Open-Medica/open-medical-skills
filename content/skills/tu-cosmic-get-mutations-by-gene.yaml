@@ -1,0 +1,21 @@
+name: "tu-cosmic-get-mutations-by-gene"
+display_name: "COSMIC get mutations by gene"
+description: "Get all somatic mutations for a specific gene from COSMIC database. Returns comprehensive mutation data for a gene symbol including CDS changes, amino acid changes, cancer types, and genomic positions. Useful for exploring the mutational landscape of cancer genes like BRAF, TP53, EGFR, KRAS, etc."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cosmic"
+  - "somatic-mutations"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -13,7 +13,7 @@ Real-time drug-drug interaction detection with five-level severity classificatio
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill drug-interaction-checker
+npx skills add Open-Medica/open-medical-skills --skill drug-interaction-checker
 ```
 
 ## What It Does
@@ -73,4 +73,4 @@ Screen the following regimen for interactions:
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*

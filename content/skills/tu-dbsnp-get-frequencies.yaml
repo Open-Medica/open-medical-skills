@@ -1,0 +1,23 @@
+name: "tu-dbsnp-get-frequencies"
+display_name: "dbsnp get frequencies"
+description: "Get allele frequencies for a variant from dbSNP. Returns population-specific allele frequency data."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "dbsnp"
+  - "snp-database"
+  - "genetic-variation"
+  - "frequency"
+  - "population"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

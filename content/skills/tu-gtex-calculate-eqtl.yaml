@@ -1,0 +1,21 @@
+name: "tu-gtex-calculate-eqtl"
+display_name: "GTEx calculate eqtl"
+description: "Calculate custom eQTL for any gene-variant pair in any tissue. Dynamically calculates gene-variant association statistics including p-value, normalized effect size (NES), t-statistic, and genotype data. Works for both significant and non-significant associations. Returns detailed statistics even if association not in precomputed results. Use for: testing specific hypotheses, custom variant-gene pairs, dynamic eQTL analysis, validating findings. Requires all three: gencode_id, variant_id, and ..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -12,7 +12,7 @@ Calculate weight-based and body-surface-area-based drug doses for pediatric pati
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill pediatric-drug-dosing
+npx skills add Open-Medica/open-medical-skills --skill pediatric-drug-dosing
 ```
 
 ## What It Does

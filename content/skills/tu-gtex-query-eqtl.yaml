@@ -1,0 +1,23 @@
+name: "tu-gtex-query-eqtl"
+display_name: "GTEx query eqtl"
+description: "Query GTEx single-tissue eQTL associations for a gene. Accepts gene symbols (TP53, BRCA1) or Ensembl IDs. Use to identify regulatory variants (variantId, pValue, slope) relevant to expression regulation."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex"
+  - "gene-expression"
+  - "tissue-specific"
+  - "eqtl"
+  - "association"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

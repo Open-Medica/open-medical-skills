@@ -12,7 +12,7 @@ Perform comprehensive bedside patient assessments using multiple validated clini
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill patient-assessment-tool
+npx skills add Open-Medica/open-medical-skills --skill patient-assessment-tool
 ```
 
 ## What It Does

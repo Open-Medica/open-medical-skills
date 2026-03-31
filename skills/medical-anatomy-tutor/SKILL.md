@@ -12,7 +12,7 @@ Study human anatomy interactively with structured anatomical references organize
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill medical-anatomy-tutor
+npx skills add Open-Medica/open-medical-skills --skill medical-anatomy-tutor
 ```
 
 ## What It Does

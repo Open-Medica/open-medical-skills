@@ -12,7 +12,7 @@ Generate realistic, comprehensive clinical case scenarios for medical education,
 
 ## Quick Install
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill medical-case-generator
+npx skills add Open-Medica/open-medical-skills --skill medical-case-generator
 ```
 
 ## What It Does

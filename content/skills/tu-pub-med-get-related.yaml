@@ -1,0 +1,21 @@
+name: "tu-pub-med-get-related"
+display_name: "PubMed get related"
+description: "Get related PubMed articles for a specific PMID using elink. Returns a list of computationally similar articles based on title, abstract, and MeSH terms. Use this to discover additional relevant literature, find similar studies, or explore a research topic more comprehensively. The algorithm identifies articles with similar content, methodology, or subject matter. Find PMIDs using PubMed_search_articles."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "pubmed"
+  - "literature-search"
+  - "biomedical-research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

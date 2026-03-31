@@ -1,0 +1,23 @@
+name: "tu-int-ogen-get-drivers"
+display_name: "IntOGen get drivers"
+description: "Get cancer driver genes for a specific cancer type from IntOGen. Returns genes identified as drivers by computational methods (dNdScv, OncodriveFML, OncodriveCLUSTL, HotMAPS, smRegions, CBaSE, MutPanning) applied to somatic mutation data from thousands of tumors. Each result includes the gene symbol, number of mutations and mutated samples across cohorts. Use IntOGen_list_cancer_types to see available cancer type codes. Example: cancer_type='BRCA' returns 118 driver genes for breast cancer in..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "intogen"
+  - "cancer-driver-genes"
+  - "mutational-analysis"
+  - "cancer"
+  - "driver-genes"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

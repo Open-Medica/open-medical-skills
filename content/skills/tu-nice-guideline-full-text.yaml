@@ -1,0 +1,21 @@
+name: "tu-nice-guideline-full-text"
+display_name: "NICE Guideline Full Text"
+description: "Fetch complete full text content from a NICE clinical guideline page. Takes a NICE guideline URL and extracts all sections, recommendations, and complete guideline text. Use this after finding a guideline with NICE_Clinical_Guidelines_Search to get the full content."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

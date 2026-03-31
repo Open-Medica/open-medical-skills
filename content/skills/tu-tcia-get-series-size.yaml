@@ -1,0 +1,21 @@
+name: "tu-tcia-get-series-size"
+display_name: "TCIA get series size"
+description: "Get the total file size and image count for a specific imaging series in The Cancer Imaging Archive (TCIA). Returns total size in bytes and number of DICOM objects. Use this to estimate download sizes before retrieving imaging data. Obtain SeriesInstanceUID from TCIA_get_series results."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "tcia"
+  - "cancer-imaging"
+  - "radiology-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

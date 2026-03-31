@@ -1,0 +1,23 @@
+name: "tu-clinvar-get-variant-details"
+display_name: "clinvar get variant details"
+description: "Get variant summary information from ClinVar by variant ID. Returns accession, title, genes, clinical significance, review status, chromosome location, and variation name. For the same variant, this provides a different field view than clinvar_get_clinical_significance."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clinvar"
+  - "genetic-variants"
+  - "pathogenicity"
+  - "variant"
+  - "details"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-daily-med-parse-clinical-pharmacology"
+display_name: "DailyMed parse clinical pharmacology"
+description: "Parse clinical pharmacology section from SPL XML. Returns PK parameters (Cmax, Tmax, t1/2, AUC), PD effects, metabolism pathways, and elimination. Example: absorption, distribution, metabolism tables."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dailymed"
+  - "drug-information"
+  - "medication-labels"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

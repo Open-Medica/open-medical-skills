@@ -1,0 +1,22 @@
+name: "tu-cancer-prognosis-get-survival-data"
+display_name: "CancerPrognosis get survival data"
+description: "Retrieve patient-level overall survival (OS) and disease-free survival (DFS) data from a TCGA or cBioPortal cancer study. Returns per-patient survival times, event status, and age. Data can be directly used with Survival_kaplan_meier or Survival_log_rank_test tools for custom survival analyses. Supports 33 TCGA cancer types (BRCA, LUAD, COAD, GBM, etc.) and 400+ cBioPortal studies."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "cancer-prognosis"
+  - "oncology"
+  - "prognosis"
+  - "survival"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

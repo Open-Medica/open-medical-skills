@@ -1,0 +1,21 @@
+name: "tu-openalex-get-work"
+display_name: "openalex get work"
+description: "Get a single OpenAlex work (paper) by OpenAlex Work ID (W...). You can pass either the short ID (e.g., \"W2626778328\") or the full URL (e.g., \"https://openalex.org/W2626778328\")."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "openalex"
+  - "scholarly-data"
+  - "bibliometrics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

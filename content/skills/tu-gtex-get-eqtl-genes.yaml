@@ -1,0 +1,21 @@
+name: "tu-gtex-get-eqtl-genes"
+display_name: "GTEx get eqtl genes"
+description: "Get eQTL genes (eGenes) with significant cis-eQTLs. Returns genes with at least one significant expression quantitative trait locus (eQTL) in specified tissues. Includes allelic fold change, p-values, q-values (FDR < 0.05), and effect sizes. Filter by tissue or get all eGenes. Use for: identifying genes with genetic regulation, finding tissue-specific eQTLs, studying regulatory variants, genetic association studies. Essential for understanding genetic control of gene expression."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

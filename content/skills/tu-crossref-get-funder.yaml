@@ -1,0 +1,21 @@
+name: "tu-crossref-get-funder"
+display_name: "Crossref get funder"
+description: "Get detailed metadata for a specific research funder by its Crossref funder ID. Returns comprehensive funder information including official name, alternative names, location, hierarchy (parent organizations), DOI count, and URI. Use this to understand funder details, verify funder identifiers, or explore funding relationships. Find funder IDs using Crossref_list_funders (format: numeric ID like '100000001' for NSF, '100000002' for NIH)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "crossref"
+  - "doi-metadata"
+  - "scholarly-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

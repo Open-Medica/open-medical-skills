@@ -9,6 +9,8 @@
  *   GET /api/search/graph?tool=<id>              → Graph traversal
  *   GET /api/search/structured?category=&domain= → Structured filters
  *   GET /api/search/suggest?q=<prefix>           → Autocomplete
+ *   GET /api/validate?skill=<name>               → Skill validation
+ *   GET /api/dedup?q=<description>&threshold=0.85 → Semantic dedup
  */
 
 import type { Env } from './lib/types';
@@ -17,6 +19,8 @@ import { handleSemanticSearch } from './handlers/semantic';
 import { handleGraphSearch } from './handlers/graph';
 import { handleStructuredSearch } from './handlers/structured';
 import { handleSuggest } from './handlers/suggest';
+import { handleValidate } from './handlers/validate';
+import { handleDedup } from './handlers/dedup';
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
@@ -84,6 +88,27 @@ export default {
         if (!q) return jsonError('Missing query parameter "q"', 400);
         const suggestions = await handleSuggest(q, env);
         return new Response(JSON.stringify({ suggestions }), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+
+      // GET /api/validate?skill=<name>
+      if (url.pathname === '/api/validate') {
+        const skill = url.searchParams.get('skill');
+        if (!skill) return jsonError('Missing query parameter "skill"', 400);
+        const result = await handleValidate(skill, env);
+        return new Response(JSON.stringify(result), {
+          headers: { ...headers, 'Content-Type': 'application/json' },
+        });
+      }
+
+      // GET /api/dedup?q=<description>&threshold=0.85
+      if (url.pathname === '/api/dedup') {
+        const q = url.searchParams.get('q');
+        if (!q) return jsonError('Missing query parameter "q"', 400);
+        const threshold = parseFloat(url.searchParams.get('threshold') || '0.85');
+        const result = await handleDedup(q, threshold, env);
+        return new Response(JSON.stringify(result), {
           headers: { ...headers, 'Content-Type': 'application/json' },
         });
       }

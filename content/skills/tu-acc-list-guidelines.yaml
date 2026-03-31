@@ -1,0 +1,21 @@
+name: "tu-acc-list-guidelines"
+display_name: "ACC list guidelines"
+description: "List recent American College of Cardiology (ACC) clinical practice guidelines. Returns ACC-authored guidelines published in JACC and other ACC journals, sorted by date. ACC guidelines cover coronary revascularization, valvular heart disease, chest pain evaluation, cardiac catheterization, and cardiovascular risk assessment."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

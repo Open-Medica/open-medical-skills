@@ -1,0 +1,21 @@
+name: "tu-reactome-list-top-pathways"
+display_name: "Reactome list top pathways"
+description: "List top-level pathways for a specific species. Returns pathways that have no parent pathways, including their metadata and basic information."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

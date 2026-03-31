@@ -13,7 +13,7 @@ Access the AlphaFold Protein Structure Database and Protein Data Bank (PDB) for 
 ## Quick Install
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill protein-structure-analysis
+npx skills add Open-Medica/open-medical-skills --skill protein-structure-analysis
 ```
 
 ## What It Does
@@ -89,4 +89,4 @@ Retrieve and analyze the structure of human ACE2 receptor:
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
