@@ -2,7 +2,7 @@ name: Validate Submission
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - "content/skills/**"
       - "content/plugins/**"
@@ -598,7 +598,7 @@ jobs:
               repo: context.repo.repo,
               title: `[${type.charAt(0).toUpperCase() + type.slice(1)} Submission] ${name}`,
               head: branch,
-              base: 'main',
+              base: 'dev',
               body: [
                 `## ${type.charAt(0).toUpperCase() + type.slice(1)} Submission: ${name}`,
                 '',
