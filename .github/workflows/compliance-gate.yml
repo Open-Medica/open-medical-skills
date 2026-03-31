@@ -122,6 +122,34 @@ jobs:
             echo "HAS_LICENSE_WARNINGS=false" >> $GITHUB_ENV
           fi
 
+      - name: Import integrity check
+        run: |
+          echo "Checking for suspicious imports..."
+          FOUND=0
+          # Check for eval/Function constructor
+          if grep -rEn '\beval\s*\(' --include='*.ts' --include='*.js' --include='*.astro' src/ workers/ 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::eval() usage detected"
+            FOUND=1
+          fi
+          if grep -rEn '\bnew\s+Function\s*\(' --include='*.ts' --include='*.js' --include='*.astro' src/ workers/ 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::Function constructor detected"
+            FOUND=1
+          fi
+          # Check for document.write
+          if grep -rEn 'document\.write\s*\(' --include='*.ts' --include='*.js' --include='*.astro' src/ 2>/dev/null | grep -v node_modules; then
+            echo "::error::document.write() detected"
+            FOUND=1
+          fi
+          # Check for suspicious external script sources
+          if grep -rEn 'src\s*=\s*["\x27]https?://(?!fonts\.googleapis|cdn\.jsdelivr|unpkg)' --include='*.astro' --include='*.html' src/ 2>/dev/null | grep -v node_modules; then
+            echo "::warning::External script source detected — verify legitimacy"
+          fi
+          if [ $FOUND -eq 1 ]; then
+            echo "::error::Import integrity check failed"
+            exit 1
+          fi
+          echo "Import integrity check passed"
+
       - name: Check physician review label
         id: check-label
         uses: actions/github-script@v7
