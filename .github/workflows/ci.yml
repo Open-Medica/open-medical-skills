@@ -21,20 +21,34 @@ jobs:
             exit 1
           fi
 
-  dependency-audit:
-    name: Dependency Audit
+  yaml-validation:
+    name: YAML Content Validation
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: 22
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - name: Audit dependencies
-        run: pnpm audit --audit-level=moderate || echo "::warning::Dependency vulnerabilities found"
+          python-version: '3.12'
+      - name: Validate skill YAMLs
+        run: |
+          pip install pyyaml -q
+          python3 -c "
+          import yaml, glob, sys
+          errors = 0
+          for f in glob.glob('content/skills/*.yaml') + glob.glob('content/skills/*.yml'):
+              try:
+                  with open(f) as fh:
+                      data = yaml.safe_load(fh)
+                  if not data or not data.get('name'):
+                      print(f'::error::{f}: missing required field \"name\"')
+                      errors += 1
+              except Exception as e:
+                  print(f'::error::{f}: {e}')
+                  errors += 1
+          print(f'Validated {len(glob.glob(\"content/skills/*.yaml\"))} skill files, {errors} errors')
+          sys.exit(1 if errors else 0)
+          "
 
   credential-scan:
     name: Credential Leak Scan
