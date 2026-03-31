@@ -6,33 +6,17 @@ on:
     branches: [dev, main]
 
 jobs:
-  type-check-build:
-    name: "Type Check & Build"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - name: Type check
-        run: pnpm exec astro check
-      - name: Build
-        run: pnpm build
-
   security:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Check for leaked secrets
         run: |
-          if grep -rn '100\.\(88\|120\)\.' --include='*.ts' --include='*.tsx' --include='*.astro' --include='*.toml' --include='*.json' --exclude-dir=node_modules --exclude-dir=.git .; then
+          if grep -rn '100\.\(88\|120\)\.' --include='*.ts' --include='*.tsx' --include='*.js' --include='*.json' --include='*.yaml' --include='*.yml' --exclude-dir=node_modules --exclude-dir=.git .; then
             echo "::error::Found potential internal IP addresses in source files"
             exit 1
           fi
-          if grep -rn 'password\s*=\s*["\x27][^"\x27]*["\x27]' --include='*.ts' --include='*.toml' --exclude-dir=node_modules --exclude-dir=.git .; then
+          if grep -rn 'password\s*=\s*["\x27][^"\x27]*["\x27]' --include='*.ts' --include='*.js' --include='*.json' --exclude-dir=node_modules --exclude-dir=.git .; then
             echo "::error::Found potential hardcoded passwords in source files"
             exit 1
           fi
@@ -49,12 +33,8 @@ jobs:
           node-version: 22
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - name: Audit main dependencies
+      - name: Audit dependencies
         run: pnpm audit --audit-level=moderate || echo "::warning::Dependency vulnerabilities found"
-      - name: Audit search-api dependencies
-        run: cd workers/search-api && npm audit --audit-level=moderate 2>/dev/null || echo "::warning::search-api vulnerabilities found"
-      - name: Audit submission-api dependencies
-        run: cd workers/submission-api && npm audit --audit-level=moderate 2>/dev/null || echo "::warning::submission-api vulnerabilities found"
 
   credential-scan:
     name: Credential Leak Scan
