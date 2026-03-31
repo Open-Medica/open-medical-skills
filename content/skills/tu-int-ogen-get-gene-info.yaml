@@ -1,0 +1,23 @@
+name: "tu-int-ogen-get-gene-info"
+display_name: "IntOGen get gene info"
+description: "Get driver gene classification for a specific gene across all cancer types from IntOGen. Returns the list of cancer types where the gene is identified as a cancer driver, along with the detection methods used (dNdScv, OncodriveFML, OncodriveCLUSTL, HotMAPS, smRegions, CBaSE, MutPanning) and mutation statistics. Example: gene='TP53' is a driver in 74 cancer types; gene='KRAS' is a driver in 22 cancer types."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "intogen"
+  - "cancer-driver-genes"
+  - "mutational-analysis"
+  - "cancer"
+  - "gene-analysis"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

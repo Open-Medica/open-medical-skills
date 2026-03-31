@@ -1,0 +1,119 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SkillGrid from "../../components/SkillGrid.astro";
+import CategoryFilter from "../../components/CategoryFilter.tsx";
+import SearchBar from "../../components/SearchBar.tsx";
+
+const allSkills = await getCollection("skills");
+
+// Sort: published first, then by date descending
+const statusOrder: Record<string, number> = { published: 0, draft: 1, "coming-soon": 2 };
+const sorted = [...allSkills].sort((a, b) => {
+  const aStatus = statusOrder[a.data.status ?? "draft"] ?? 1;
+  const bStatus = statusOrder[b.data.status ?? "draft"] ?? 1;
+  if (aStatus !== bStatus) return aStatus - bStatus;
+  return b.data.date_added.localeCompare(a.data.date_added);
+});
+
+// Category counts
+const categoryCounts: Record<string, number> = {};
+for (const skill of allSkills) {
+  categoryCounts[skill.data.category] = (categoryCounts[skill.data.category] ?? 0) + 1;
+}
+
+// Search data
+const searchData = allSkills.map((s) => ({
+  id: s.id,
+  display_name: s.data.display_name,
+  description: s.data.description,
+  category: s.data.category,
+  tags: s.data.tags,
+  type: "skill",
+}));
+---
+
+<BaseLayout title="Skills" description="Browse physician-curated AI skills for healthcare professionals.">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-1">
+      <h1 class="text-2xl font-bold text-slate-900 dark:text-white">Skills</h1>
+      <p class="text-sm text-slate-500 dark:text-slate-400">
+        {allSkills.length} standalone AI agent skills for healthcare
+      </p>
+    </div>
+
+    <!-- Search + Filter -->
+    <div class="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center">
+      <SearchBar client:load skills={searchData} />
+    </div>
+    <div class="mt-4">
+      <CategoryFilter client:load counts={categoryCounts} total={allSkills.length} />
+    </div>
+
+    <!-- Grid -->
+    <div class="mt-6" id="skills-grid">
+      <SkillGrid skills={sorted} emptyMessage="No skills found matching your criteria." />
+    </div>
+  </div>
+
+  <!-- Client-side filtering -->
+  <script>
+    function applyFilters() {
+      const params = new URLSearchParams(window.location.search);
+      const category = params.get("category") || "all";
+      const grid = document.getElementById("skills-grid");
+      if (!grid) return;
+      const cards = grid.querySelectorAll<HTMLElement>("a[href]");
+
+      const categoryLabels: Record<string, string> = {
+        diagnosis: "diagnosis",
+        treatment: "treatment",
+        "lab & imaging": "lab-imaging",
+        pharmacy: "pharmacy",
+        emergency: "emergency",
+        surgery: "surgery",
+        nursing: "nursing",
+        pediatrics: "pediatrics",
+        "mental health": "mental-health",
+        "public health": "public-health",
+        research: "research",
+        education: "education",
+        administrative: "administrative",
+        "clinical research": "clinical-research-summarizing",
+      };
+
+      cards.forEach((card) => {
+        const badge = card.querySelector("span[class*='rounded-full']");
+        const cardCategory = badge?.textContent?.trim().toLowerCase() ?? "";
+        let show = true;
+        if (category !== "all") {
+          const matchedSlug = categoryLabels[cardCategory];
+          show = matchedSlug === category;
+        }
+        card.style.display = show ? "" : "none";
+      });
+    }
+
+    window.addEventListener("category-change", () => {
+      setTimeout(applyFilters, 0);
+    });
+
+    window.addEventListener("search-change", ((e: CustomEvent) => {
+      const { query, matchedIds } = e.detail;
+      const grid = document.getElementById("skills-grid");
+      if (!grid) return;
+      const cards = grid.querySelectorAll<HTMLAnchorElement>("a[href]");
+
+      if (!query) {
+        applyFilters();
+        return;
+      }
+
+      cards.forEach((card) => {
+        const href = card.getAttribute("href") ?? "";
+        const slug = href.split("/").pop() ?? "";
+        card.style.display = matchedIds.includes(slug) ? "" : "none";
+      });
+    }) as EventListener);
+  </script>
+</BaseLayout>

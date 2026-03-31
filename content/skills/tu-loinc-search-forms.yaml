@@ -1,0 +1,27 @@
+name: "tu-loinc-search-forms"
+display_name: "LOINC search forms"
+description: "Search LOINC clinical forms and survey instruments such as standardized questionnaires and assessment tools. Examples include PHQ-9 (depression), GAD-7 (anxiety), MMSE (cognitive), pain scales, and other validated clinical assessment instruments. Returns LOINC codes for complete forms that can be used in electronic health records."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "lab-imaging"
+tags:
+  - "tooluniverse"
+  - "loinc"
+  - "laboratory"
+  - "test-codes"
+  - "interoperability"
+  - "clinical-forms"
+  - "surveys"
+  - "questionnaires"
+  - "assessment"
+  - "screening"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

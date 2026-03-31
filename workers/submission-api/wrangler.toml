@@ -1,0 +1,18 @@
+name = "openmedica-submission-api"
+main = "src/index.ts"
+compatibility_date = "2025-01-01"
+compatibility_flags = ["nodejs_compat"]
+
+[vars]
+GITHUB_OWNER = "Open-Medica"
+GITHUB_REPO = "open-medical-skills"
+ALLOWED_ORIGIN = "http://localhost:4321"
+OAUTH_REDIRECT_URI = "http://localhost:4321/auth/callback"
+
+# Secrets (set via `wrangler secret put <NAME>`):
+# GITHUB_TOKEN        - fine-grained PAT with contents:write and pull_requests:write
+# GITHUB_CLIENT_ID    - GitHub OAuth App client ID (for user authentication)
+# GITHUB_CLIENT_SECRET - GitHub OAuth App client secret (for token exchange)
+
+[env.production]
+vars = { ALLOWED_ORIGIN = "https://openmedica.us" }

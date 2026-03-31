@@ -1,0 +1,21 @@
+name: "tu-ada-get-standards-section"
+display_name: "ADA get standards section"
+description: "Fetch detailed content from a specific ADA Standards of Care section by PMID. Retrieves the abstract and, when available via PubMed Central (PMC), a full-text snippet. Use ADA_list_standards_sections first to get PMIDs for each section. All ADA Standards sections are freely available in PMC. Returns title, abstract, full text snippet, and links."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

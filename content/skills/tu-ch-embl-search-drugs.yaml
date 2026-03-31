@@ -1,0 +1,21 @@
+name: "tu-ch-embl-search-drugs"
+display_name: "ChEMBL search drugs"
+description: "Search drugs by name, approval status, or other criteria. Use the `query` parameter to search by drug name (e.g., {\"query\": \"sotorasib\"}). Use `max_phase` to filter by development phase."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "chembl"
+  - "bioactivity-data"
+  - "drug-discovery"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

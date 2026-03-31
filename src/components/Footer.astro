@@ -1,0 +1,189 @@
+---
+import { GITHUB_REPO_URL } from "../lib/constants";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="border-t border-slate-800 bg-gray-950 dark:border-slate-800 dark:bg-gray-950">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <!-- Medical disclaimer -->
+    <div class="mb-8 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-800 dark:border-amber-800/50 dark:bg-amber-950/30 dark:text-amber-200">
+      <p class="font-medium">Medical Disclaimer</p>
+      <p class="mt-1">
+        Skills listed here are tools to assist healthcare professionals. They do not replace clinical
+        judgment, medical training, or the physician-patient relationship.
+      </p>
+    </div>
+
+    <!-- Footer links -->
+    <div class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6">
+      <div>
+        <div class="flex items-center gap-2">
+          <svg class="h-7 shrink-0" viewBox="0 0 360 72" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <defs><linearGradient id="ftGrad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#22D3EE"/><stop offset="100%" stop-color="#06B6D4"/></linearGradient></defs>
+            <text x="8" y="38" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#FFFFFF"><tspan font-weight="300">Open Medical </tspan><tspan font-weight="700" fill="url(#ftGrad)">Skills</tspan></text>
+            <text x="8" y="58" font-family="Inter, system-ui, sans-serif" font-size="12" fill="#94A3B8"><tspan font-weight="400">An </tspan><tspan font-weight="600" fill="url(#ftGrad)">OpenMedica</tspan><tspan font-weight="400"> Project</tspan></text>
+          </svg>
+        </div>
+        <p class="mt-2 text-sm text-slate-600 dark:text-slate-400">
+          Physician-curated AI skills for healthcare professionals.
+        </p>
+        <p class="mt-1 text-xs text-slate-500 dark:text-slate-500">
+          An <a href="https://openmedica.us" class="font-semibold text-cyan-400 hover:text-cyan-300">OpenMedica</a> project by <a href="https://intelmedica.ai" target="_blank" rel="noopener noreferrer" class="font-medium text-primary hover:text-primary-dark dark:text-primary-light dark:hover:text-primary">IntelMedica.ai</a>
+        </p>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Links</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li>
+            <a href="/about" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="/submit" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              Submit a Skill
+            </a>
+          </li>
+          <li>
+            <a
+              href={GITHUB_REPO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://huggingface.co/OpenMedica"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light"
+            >
+              Hugging Face
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-slate-900 dark:text-white">IntelMedica.ai</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li>
+            <a href="https://github.com/IntelMedica" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://huggingface.co/intelmedica" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              Hugging Face
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Community</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li>
+            <a href="/skills" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              Browse Skills
+            </a>
+          </li>
+          <li>
+            <a href="/plugins" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              Browse Plugins
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Creator</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li>
+            <a href="https://jfmd.dev" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              JFMD
+            </a>
+          </li>
+          <li>
+            <a href="https://linkedin.com/in/jfmdid" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/jfmdid" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              X / Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/gitjfmd" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="https://huggingface.co/jfmdai" target="_blank" rel="noopener noreferrer" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              Hugging Face
+            </a>
+          </li>
+          <li>
+            <a href="mailto:dev@jfmd.us" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              dev@jfmd.us
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="text-sm font-semibold text-slate-900 dark:text-white">Legal</h3>
+        <ul class="mt-2 space-y-2 text-sm">
+          <li>
+            <a href="/privacy" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="/terms" class="text-slate-600 hover:text-primary dark:text-slate-400 dark:hover:text-primary-light">
+              Terms of Use
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Sponsor / Support -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
+      <a
+        href="https://github.com/sponsors/gitjfmd"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-primary hover:text-primary"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+        </svg>
+        Sponsor on GitHub
+      </a>
+      <a
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800 px-4 py-2 text-sm font-medium text-slate-300 transition-colors hover:border-amber-400 hover:text-amber-400"
+      >
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M7 22h10a1 1 0 001-1v-3H6v3a1 1 0 001 1zM18 4H6a1 1 0 00-1 1v12h14V5a1 1 0 00-1-1zm-5 10H8v-1h5v1zm3-3H8V9.5h8V11zm0-3H8V7h8v1.5zM20 2H4a2 2 0 00-2 2v16a2 2 0 002 2h16a2 2 0 002-2V4a2 2 0 00-2-2z" />
+        </svg>
+        Buy Me a Coffee
+      </a>
+    </div>
+
+    <!-- Copyright -->
+    <div class="mt-8 border-t border-slate-200 pt-6 text-center text-sm text-slate-500 dark:border-slate-800 dark:text-slate-500">
+      <p>&copy; {year} Open Medical Skills — An <strong class="font-semibold text-cyan-400">OpenMedica</strong> Project by <strong class="font-semibold text-slate-700 dark:text-slate-300">IntelMedica.ai</strong></p>
+      <p class="mt-1">Open source and physician-maintained.</p>
+    </div>
+  </div>
+</footer>

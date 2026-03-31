@@ -1,0 +1,21 @@
+name: "tu-openalex-search-institutions"
+display_name: "openalex search institutions"
+description: "Search OpenAlex institutions via the /institutions endpoint. Use this to discover Institution IDs (I...) and then fetch details with openalex_get_institution."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "openalex"
+  - "scholarly-data"
+  - "bibliometrics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

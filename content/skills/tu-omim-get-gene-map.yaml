@@ -1,0 +1,21 @@
+name: "tu-omim-get-gene-map"
+display_name: "OMIM get gene map"
+description: "Get OMIM gene-disease mapping information. Returns genes mapped to chromosomal locations with associated phenotypes and inheritance patterns. Query by MIM number or chromosome. Useful for finding all disease genes on a chromosome."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "omim"
+  - "genetic-disorders"
+  - "mendelian-inheritance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

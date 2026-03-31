@@ -1,0 +1,21 @@
+name: "tu-whogho-get-indicator-data"
+display_name: "WHOGHO get indicator data"
+description: "Get actual health data values for a specific WHO Global Health Observatory indicator by its code. Returns country-level data with values, confidence intervals, year, and sex/age breakdowns. No authentication required. Common indicator codes: WHOSIS_000001 (life expectancy at birth), MALARIA002 (malaria cases), MDG_0000000026 (HIV prevalence), NCD_BMI_30C (obesity prevalence), SDGPM25 (PM2.5 air pollution), WHS4_100 (hospital beds per 10000)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "who-gho"
+  - "global-health"
+  - "health-statistics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

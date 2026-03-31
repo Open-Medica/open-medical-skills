@@ -1,0 +1,21 @@
+name: "tu-g2p-get-panel"
+display_name: "G2P get panel"
+description: "Get summary statistics for a Gene2Phenotype clinical panel. G2P organizes gene-disease associations into expert-curated panels: DD (developmental disorders), Cancer, Skeletal, Eye, Cardiac, Ear, Skin, and Prenatal. Returns panel name, description, last update date, total records count, total genes, and breakdown by confidence level (definitive, strong, moderate, limited)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "gene2phenotype"
+  - "genotype-phenotype"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

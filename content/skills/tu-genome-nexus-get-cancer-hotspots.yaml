@@ -1,0 +1,21 @@
+name: "tu-genome-nexus-get-cancer-hotspots"
+display_name: "GenomeNexus get cancer hotspots"
+description: "Get cancer mutation hotspot annotations from Genome Nexus (MSK) for a specific genomic variant. Cancer hotspots are recurrently mutated residues in cancer, curated by the Chang et al. study. Returns hotspot residue, tumor count, hotspot type (single residue or 3D cluster), and the gene symbol. Use this to check if a variant falls in a known cancer hotspot. Input is a GRCh37/hg19 HGVS genomic variant. Example: '7:g.140453136A>T' (BRAF V600E) returns V600 hotspot with 897 tumors."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "genome-nexus"
+  - "variant-annotation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

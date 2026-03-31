@@ -1,0 +1,21 @@
+name: "tu-civic-search-molecular-profiles"
+display_name: "civic search molecular profiles"
+description: "Search for molecular profiles in CIViC database. Molecular profiles represent combinations of variants or features (e.g., 'BRAF V600E', 'EGFR T790M') that serve as biomarkers for clinical interpretation. Returns a list of molecular profiles with IDs and names. Use the 'query' parameter to filter by profile name (alias: 'name')."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

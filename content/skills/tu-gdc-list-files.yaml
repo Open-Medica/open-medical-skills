@@ -1,0 +1,23 @@
+name: "tu-gdc-list-files"
+display_name: "GDC list files"
+description: "List GDC files filtered by data_type and other fields. Use to identify downloadable artifacts (e.g., expression quantification) for analysis pipelines."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gdc"
+  - "genomic-data-commons"
+  - "cancer-data"
+  - "files"
+  - "oncogenomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

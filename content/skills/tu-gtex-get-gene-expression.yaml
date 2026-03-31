@@ -1,0 +1,21 @@
+name: "tu-gtex-get-gene-expression"
+display_name: "GTEx get gene expression"
+description: "Get gene expression data at individual sample level (not aggregated). Returns normalized expression values (TPM) for each sample, allowing detailed distribution analysis. Can subset by donor attributes (sex, age_bracket) for demographic-specific analysis. Much more data than median expression. Use for: expression variability analysis, outlier detection, sample-level QC, demographic comparisons. Warning: large result sets for multiple genes/tissues."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

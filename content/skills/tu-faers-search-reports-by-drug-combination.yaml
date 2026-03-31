@@ -1,0 +1,22 @@
+name: "tu-faers-search-reports-by-drug-combination"
+display_name: "FAERS search reports by drug combination"
+description: "Search and retrieve detailed adverse event reports involving multiple drugs (drug interactions). Returns individual case reports where all specified drugs are present. Only medicinalproducts (list of at least 2 drug names) is required; all other parameters (limit, skip, patientsex, patientagegroup, serious) are optional. Data source: FDA Adverse Event Reporting System (FAERS)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event-detail"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -9,8 +9,8 @@ version: "0.0.10"
 license: "Apache-2.0"
 type: "plugin"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill aws-healthlake-fhir"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/aws-healthlake-fhir ~/.claude/plugins/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill aws-healthlake-fhir"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/plugins/aws-healthlake-fhir ~/.claude/plugins/"
 evidence_level: "high"
 safety_classification: "restricted"
 specialty: ["health-informatics", "enterprise-health-it"]

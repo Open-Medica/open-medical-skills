@@ -1,0 +1,21 @@
+name: "tu-who-guidelines-search"
+display_name: "WHO Guidelines Search"
+description: "Search WHO (World Health Organization) official clinical guidelines and health recommendations. Provides access to authoritative global health guidelines published by WHO."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

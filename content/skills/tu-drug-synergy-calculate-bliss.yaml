@@ -1,0 +1,21 @@
+name: "tu-drug-synergy-calculate-bliss"
+display_name: "DrugSynergy calculate bliss"
+description: "Calculate Bliss Independence synergy score for a drug combination. Model: E_expected = E_a + E_b - E_a*E_b. Synergy score = (E_combo - E_expected) * 100. Positive = synergy; Negative = antagonism. Inputs are fractional inhibition values (0-1). Based on Bliss (1939). Use for: single-concentration combination screening, high-throughput synergy assessment."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-synergy"
+  - "drug-combinations"
+  - "synergy-scoring"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-credible-set-detail"
+display_name: "OpenTargets get credible set detail"
+description: "Get detailed information about a specific GWAS credible set (fine-mapped locus) from Open Targets. Returns the lead variant, associated study, fine-mapping method, statistical significance, locus-to-gene (L2G) predictions mapping the signal to likely causal genes, and colocalization evidence with QTLs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget-genetics"
+  - "genetic-associations"
+  - "drug-discovery"
+  - "gwas"
+  - "credible-set"
+  - "fine-mapping"
+  - "l2g"
+  - "open-targets"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

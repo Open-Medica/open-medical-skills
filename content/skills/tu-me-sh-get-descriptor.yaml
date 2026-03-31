@@ -1,0 +1,21 @@
+name: "tu-me-sh-get-descriptor"
+display_name: "MeSH get descriptor"
+description: "Get detailed information for a MeSH descriptor by its ID. Returns the descriptor's label, type, annotation, tree numbers (for hierarchical browsing), date of introduction, and related terms. MeSH tree numbers encode the hierarchical position in the 16 MeSH categories (A=Anatomy, B=Organisms, C=Diseases, D=Chemicals, E=Analytical, etc.). Example: D009369 returns 'Neoplasms' with tree number C04, annotation about cancer terminology, and 'considerAlso' cross-references."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "mesh"
+  - "medical-subject-headings"
+  - "indexing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-pub-chem-get-compound-properties-by-cid"
+display_name: "PubChem get compound properties by CID"
+description: "Get a set of specified molecular properties through CID (Compound ID), such as molecular weight, IUPAC name, Canonical SMILES."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

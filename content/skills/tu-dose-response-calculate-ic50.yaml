@@ -1,0 +1,21 @@
+name: "tu-dose-response-calculate-ic50"
+display_name: "DoseResponse calculate ic50"
+description: "Determine the half-maximal inhibitory or effective concentration (IC50/EC50) from paired concentration-response data by fitting the Hill sigmoidal equation. Requires a minimum of 4 data points that span the dynamic response range. Output includes EC50 with 95% confidence interval, Hill exponent n, top plateau Emax, bottom plateau Emin, R2 goodness-of-fit, and log10(EC50) for convenient pIC50 conversion. Suited to potency ranking in compound screens, structure-activity relationship analysis, a..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dose-response"
+  - "pharmacology"
+  - "dose-response-curves"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

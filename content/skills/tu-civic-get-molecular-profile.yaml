@@ -1,0 +1,21 @@
+name: "tu-civic-get-molecular-profile"
+display_name: "civic get molecular profile"
+description: "Get detailed information about a specific molecular profile in CIViC database by molecular profile ID. Molecular profiles represent combinations of variants or features (e.g., 'BRAF V600E') that serve as biomarkers for clinical interpretation. Returns profile name, description, clinical significance score, and associated evidence items with diseases, therapies, and evidence levels."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

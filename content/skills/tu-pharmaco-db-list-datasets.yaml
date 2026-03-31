@@ -1,0 +1,21 @@
+name: "tu-pharmaco-db-list-datasets"
+display_name: "PharmacoDB list datasets"
+description: "List all cancer pharmacogenomics datasets available in PharmacoDB. Returns dataset names and IDs for the integrated collection including CCLE (Cancer Cell Line Encyclopedia), CTRPv2 (Cancer Therapeutics Response Portal), FIMM (Institute for Molecular Medicine Finland), GDSC1/GDSC2 (Genomics of Drug Sensitivity in Cancer), GRAY, NCI60, PRISM, UHNBreast, and gCSI (Genentech Cell Screening Initiative). Use dataset names to filter experiments and biomarker queries."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmacodb"
+  - "pharmacogenomics"
+  - "drug-response"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

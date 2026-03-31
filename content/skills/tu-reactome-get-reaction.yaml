@@ -1,0 +1,21 @@
+name: "tu-reactome-get-reaction"
+display_name: "Reactome get reaction"
+description: "Get detailed information about a specific reaction/event by its Stable ID. Returns comprehensive reaction data including inputs, outputs, regulation, literature references, and participants. Uses the unified query endpoint. Use Reactome_get_pathway_reactions to get valid reaction IDs first."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

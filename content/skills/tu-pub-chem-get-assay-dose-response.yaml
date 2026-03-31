@@ -1,0 +1,21 @@
+name: "tu-pub-chem-get-assay-dose-response"
+display_name: "PubChem get assay dose response"
+description: "Get dose-response data from a bioassay. Returns concentration-response curves for tested compounds. Essential for determining IC50/EC50 values. Limited to dose-response type assays."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

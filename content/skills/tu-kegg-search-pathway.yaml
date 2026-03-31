@@ -1,0 +1,23 @@
+name: "tu-kegg-search-pathway"
+display_name: "kegg search pathway"
+description: "Search KEGG pathways by keyword. Returns pathway IDs and descriptions matching the search term."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "kegg"
+  - "biological-pathways"
+  - "metabolic-networks"
+  - "pathway"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

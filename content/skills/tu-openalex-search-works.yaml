@@ -1,0 +1,21 @@
+name: "tu-openalex-search-works"
+display_name: "openalex search works"
+description: "Search OpenAlex works (papers) via the /works endpoint. Supports both general search and optional full-text-index filtering: set require_has_fulltext=true and/or pass fulltext_terms to add OpenAlex filters (has_fulltext:true and fulltext.search:<term>). Important: has_fulltext/fulltext.search only match works where OpenAlex has indexed full text; this can miss papers whose full text is available elsewhere (e.g., PMC) but not indexed by OpenAlex. Use this to discover Work IDs (W...) and DOIs, ..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "openalex"
+  - "scholarly-data"
+  - "bibliometrics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

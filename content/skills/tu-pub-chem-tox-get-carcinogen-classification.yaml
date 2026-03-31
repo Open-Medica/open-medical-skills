@@ -1,0 +1,21 @@
+name: "tu-pub-chem-tox-get-carcinogen-classification"
+display_name: "PubChemTox get carcinogen classification"
+description: "Get carcinogen classification data for a chemical compound from PubChem. Returns classifications from authoritative bodies including IARC (International Agency for Research on Cancer), NTP (National Toxicology Program), EPA, and others. IARC groups: Group 1 (Carcinogenic to humans), Group 2A (Probably carcinogenic), Group 2B (Possibly carcinogenic), Group 3 (Not classifiable). For example, arsenic (CID 5359596) is IARC Group 1 (Carcinogenic to humans), benzene (CID 241) is also Group 1, while..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem-tox"
+  - "toxicology"
+  - "chemical-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

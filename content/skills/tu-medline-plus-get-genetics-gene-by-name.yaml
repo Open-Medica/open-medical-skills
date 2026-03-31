@@ -1,0 +1,21 @@
+name: "tu-medline-plus-get-genetics-gene-by-name"
+display_name: "MedlinePlus get genetics gene by name"
+description: "Get detailed information from MedlinePlus Genetics corresponding to gene name. Returns XML data parsed into a dictionary with gene function, related health conditions, synonyms, and other details."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "medlineplus"
+  - "patient-education"
+  - "health-information"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

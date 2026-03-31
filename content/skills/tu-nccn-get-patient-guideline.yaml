@@ -1,0 +1,21 @@
+name: "tu-nccn-get-patient-guideline"
+display_name: "NCCN get patient guideline"
+description: "Fetch content from a specific NCCN Guidelines for Patients page. Takes a URL obtained from NCCN_list_patient_guidelines and scrapes the page for title, content sections, and PDF download links. Returns the guideline page content organized by sections. Note: NCCN patient guidelines are educational summaries; for full professional guidelines, use NCCN_search_guidelines to find JNCCN publications."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

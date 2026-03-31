@@ -1,0 +1,21 @@
+name: "tu-g2p-search"
+display_name: "G2P search"
+description: "Search the Gene2Phenotype (G2P) database for gene-disease associations curated by clinical geneticists. G2P is maintained by EBI and provides expert-curated evidence for gene-disease relationships used in clinical diagnosis. Returns gene-disease pairs with genotype (monoallelic/biallelic), molecular mechanism (loss/gain of function), clinical panel assignment (DD, Cancer, Skeletal, etc.), and confidence level (definitive, strong, moderate, limited). Useful for clinical variant interpretation ..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "gene2phenotype"
+  - "genotype-phenotype"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

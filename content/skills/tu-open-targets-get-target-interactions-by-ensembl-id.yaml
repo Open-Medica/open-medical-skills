@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-target-interactions-by-ensembl-id"
+display_name: "OpenTargets get target interactions by ensemblID"
+description: "Retrieve interaction data for a specific target ensemblID, including interaction partners and evidence."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target"
+  - "interaction"
+  - "evidence"
+  - "graphql"
+  - "pagination"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-icd11-search-diseases"
+display_name: "ICD11 search diseases"
+description: "Search ICD-11 for diseases by name, symptoms, or clinical terms. ICD-11 is the WHO's 11th revision of the International Classification of Diseases, the global standard for diagnostic health information. Returns matching disease entities with codes, titles, and descriptions. Supports flexible search across 50+ languages. Requires ICD_CLIENT_ID and ICD_CLIENT_SECRET (register free at https://icd.who.int/icdapi)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "icd"
+  - "medical-coding"
+  - "classification"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

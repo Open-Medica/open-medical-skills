@@ -1,0 +1,27 @@
+name: "tu-open-targets-get-drug-mechanisms-of-action-by-chembl-id"
+display_name: "OpenTargets get drug mechanisms of action by chemblId"
+description: "Retrieve the mechanisms of action associated with a specific drug using chemblId."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "mechanismsofaction"
+  - "target"
+  - "pharmacology"
+  - "chemblid"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

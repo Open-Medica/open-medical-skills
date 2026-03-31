@@ -1,0 +1,21 @@
+name: "tu-pub-med-get-article"
+display_name: "PubMed get article"
+description: "Get complete metadata for a specific PubMed article by its PMID (PubMed ID) using efetch. Returns comprehensive article information including title, full abstract, complete author list with affiliations, journal details (name, volume, issue, pages), publication dates, DOI, MeSH terms, article type, grant information, and references. Essential for accessing full abstracts, detailed metadata, and citation information. Find PMIDs using PubMed_search_articles (format: integer like 12345678)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "pubmed"
+  - "literature-search"
+  - "biomedical-research"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

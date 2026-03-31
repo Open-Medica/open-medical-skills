@@ -1,0 +1,22 @@
+name: "tu-admetai-predict-bbb-penetrance"
+display_name: "ADMETAI predict BBB penetrance"
+description: "Predicts blood-brain barrier (BBB) penetrance for a given list of molecules in SMILES format."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "admetai"
+  - "admet"
+  - "drug-properties"
+  - "ai-prediction"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

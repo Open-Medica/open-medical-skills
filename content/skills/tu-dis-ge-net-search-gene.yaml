@@ -1,0 +1,21 @@
+name: "tu-dis-ge-net-search-gene"
+display_name: "DisGeNET search gene"
+description: "Search DisGeNET for diseases associated with a gene. DisGeNET is the largest public database of gene-disease associations. Returns diseases, association scores, and evidence counts. Requires DISGENET_API_KEY env var (register free at disgenet.org)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "disgenet"
+  - "gene-disease-associations"
+  - "genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,23 @@
+name: "tu-dbsnp-search-by-gene"
+display_name: "dbsnp search by gene"
+description: "Search for variants in a specific gene. Returns variants associated with the gene symbol."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "dbsnp"
+  - "snp-database"
+  - "genetic-variation"
+  - "gene"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

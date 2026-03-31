@@ -1,0 +1,21 @@
+name: "tu-admetanalyzer-agent"
+display_name: "ADMETAnalyzerAgent"
+description: "AI agent that analyzes ADMET data and provides insights on drug-likeness and safety profiles"
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "drug-discovery-agents"
+  - "drug-discovery"
+  - "ai-agents"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

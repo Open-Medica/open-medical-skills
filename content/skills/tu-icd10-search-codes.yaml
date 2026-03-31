@@ -1,0 +1,21 @@
+name: "tu-icd10-search-codes"
+display_name: "ICD10 search codes"
+description: "Search ICD-10-CM (Clinical Modification) codes by disease name or code. ICD-10-CM is the US clinical modification of ICD-10, the current standard for diagnosis coding in US healthcare (effective through 2025). Returns matching codes with full descriptions. Uses NLM Clinical Tables API (no API key required). This provides 2026 ICD-10-CM codes for backward compatibility while ICD-11 adoption is ongoing."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "icd"
+  - "medical-coding"
+  - "classification"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

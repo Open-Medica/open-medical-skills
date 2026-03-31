@@ -1,0 +1,21 @@
+name: "tu-medline-plus-get-genetics-index"
+display_name: "MedlinePlus get genetics index"
+description: "Download index file (XML) of all genetics entries in MedlinePlus, get complete list in one call."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "medlineplus"
+  - "patient-education"
+  - "health-information"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

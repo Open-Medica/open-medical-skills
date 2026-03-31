@@ -1,0 +1,21 @@
+name: "tu-sider-search-drug"
+display_name: "SIDER search drug"
+description: "Search the SIDER drug side effects database for a drug by name. Returns matching drugs with SIDER IDs and any related side effects. SIDER contains adverse drug reaction data extracted from drug labels for marketed medicines. Use this to find the SIDER drug ID needed for other SIDER operations (get_side_effects, get_indications)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "sider"
+  - "side-effects"
+  - "drug-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -53,7 +53,7 @@ Immediately after the title, a 2-4 sentence paragraph expanding on the descripti
 ## Quick Install
 
 \`\`\`bash
-npx skills add gitjfmd/open-medical-skills --skill skill-name
+npx skills add Open-Medica/open-medical-skills --skill skill-name
 \`\`\`
 ```
 
@@ -184,7 +184,7 @@ Every SKILL.md should end with:
 ```markdown
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
 ```
 
 ### Research Tool Disclaimer
@@ -215,7 +215,7 @@ databases and peer-reviewed clinical pharmacology sources.
 ## Quick Install
 
 \`\`\`bash
-npx skills add gitjfmd/open-medical-skills --skill drug-interaction-checker
+npx skills add Open-Medica/open-medical-skills --skill drug-interaction-checker
 \`\`\`
 
 ## What It Does
@@ -275,7 +275,7 @@ Check interaction between warfarin and fluconazole
 
 ---
 
-*This skill is part of [Open Medical Skills](https://github.com/gitjfmd/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
+*This skill is part of [Open Medical Skills](https://github.com/Open-Medica/open-medical-skills), a curated marketplace of medical AI skills maintained by physicians for physicians and the healthcare industry.*
 ```
 
 ## Agent Skills Open Standard Compatibility

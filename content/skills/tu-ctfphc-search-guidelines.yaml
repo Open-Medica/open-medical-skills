@@ -1,0 +1,21 @@
+name: "tu-ctfphc-search-guidelines"
+display_name: "CTFPHC search guidelines"
+description: "Search published guidelines from the Canadian Task Force on Preventive Health Care (CTFPHC) by keyword. Covers preventive health topics including breast cancer, colorectal cancer, diabetes, depression, cognitive impairment, thyroid dysfunction, and more."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

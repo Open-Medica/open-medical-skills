@@ -1,0 +1,21 @@
+name: "tu-orphanet-search-by-name"
+display_name: "Orphanet search by name"
+description: "Search for rare diseases by exact or partial name match in Orphanet. More precise than keyword search. Returns ORPHA codes and disease names. Supports exact matching mode for disambiguation."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

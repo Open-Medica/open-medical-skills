@@ -1,0 +1,21 @@
+name: "tu-pub-chem-tox-get-target-organs"
+display_name: "PubChemTox get target organs"
+description: "Get the target organs affected by a toxic chemical compound from PubChem. Returns the organs and body systems known to be damaged by exposure to the chemical, based on toxicological studies and clinical evidence. For example, arsenic (CID 5359596) targets cardiovascular, dermal, endocrine, gastrointestinal, hematological, neurological, and renal systems, as well as liver, kidneys, skin, lungs, and lymphatic system. Lead (CID 5352425) primarily targets the nervous system, kidneys, and hematolo..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem-tox"
+  - "toxicology"
+  - "chemical-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-gtex-get-multi-tissue-eqtls"
+display_name: "GTEx get multi tissue eqtls"
+description: "Get multi-tissue eQTL meta-analysis results (Metasoft). Returns m-values (posterior probability of eQTL effect in each tissue), normalized effect sizes, p-values, and standard errors across all tissues for a gene-variant pair. Shows tissue-sharing patterns of eQTL effects. Use for: understanding tissue-specificity of eQTLs, finding shared vs tissue-specific effects, cross-tissue meta-analysis, regulatory mechanism studies. Requires gencode_id, optionally filter by variant_id."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

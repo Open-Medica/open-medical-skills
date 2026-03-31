@@ -1,0 +1,21 @@
+name: "tu-dose-response-fit-curve"
+display_name: "DoseResponse fit curve"
+description: "Nonlinear regression of paired concentration-response measurements to the Hill sigmoidal (4PL) model: f(x) = Emin + (Emax - Emin) / (1 + (EC50/x)^n). Returns the four fitted parameters (baseline Emin, plateau Emax, midpoint EC50, Hill exponent n) with standard errors, 95% CI for EC50, coefficient of determination R2, and predicted response at each measured concentration. Requires at least 4 positive concentration inputs. Useful for characterising pharmacological potency and assessing assay da..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dose-response"
+  - "pharmacology"
+  - "dose-response-curves"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

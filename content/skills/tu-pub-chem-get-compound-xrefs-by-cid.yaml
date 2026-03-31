@@ -1,0 +1,21 @@
+name: "tu-pub-chem-get-compound-xrefs-by-cid"
+display_name: "PubChem get compound xrefs by CID"
+description: "Get external references (XRefs) for compound by CID, including links to ChEBI, DrugBank, KEGG, etc."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-openalex-literature-search"
+display_name: "openalex literature search"
+description: "Search for academic literature using OpenAlex. Supports optional full-text-index filtering (has_fulltext + fulltext.search) when you need body-only term discovery, but note: OpenAlex full-text indexing is incomplete, and a work can be open-access elsewhere (e.g., PMC) while still having has_fulltext=false in OpenAlex. Returns paper metadata and (when available) OA links/content URLs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "openalex"
+  - "scholarly-data"
+  - "bibliometrics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

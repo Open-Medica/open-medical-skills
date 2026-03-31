@@ -1,0 +1,21 @@
+name: "tu-civic-search-variants"
+display_name: "civic search variants"
+description: "Search for variants in CIViC database. Returns a list of variants with their IDs and names. Use 'query' to search by variant name (e.g., 'V600E'), or 'gene'/'gene_name' to get all variants for a specific gene (e.g., 'EGFR'). To find a specific variant in a gene, combine gene_name + variant_name (e.g., gene_name='EGFR', variant_name='L858R'). Note: CIViC stores variants without gene prefix — do not combine gene and variant in a single string."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

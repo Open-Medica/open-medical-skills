@@ -1,0 +1,562 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="Privacy Policy"
+  description="Privacy Policy for OpenMedica by IntelMedica.ai — learn about our data collection practices, cookie usage, analytics, marketing, medical data handling, and legal compliance."
+>
+  <div class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+    <h1 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl dark:text-white">
+      Privacy Policy
+    </h1>
+
+    <p class="mt-4 text-sm text-slate-600 dark:text-slate-400">
+      Last updated: March 27, 2026
+    </p>
+
+    <div class="mt-8 space-y-8 text-slate-600 dark:text-slate-400 leading-7">
+
+      <!-- Introduction -->
+      <section>
+        <p>
+          OpenMedica is a project of <strong>IntelMedica.ai</strong>, a company founded by a physician.
+          OpenMedica is the umbrella platform that includes the Open Medical Skills catalog, CLI, and API.
+          We are committed to protecting your privacy and being transparent about our data practices. This Privacy
+          Policy explains exactly what data we collect, how we use it, the technologies involved, and your rights
+          regarding that data.
+        </p>
+        <p class="mt-4">
+          Our website is available at <strong>openmedica.us</strong>.
+        </p>
+      </section>
+
+      <!-- TL;DR Box -->
+      <section>
+        <div class="rounded-lg border border-cyan-800/50 bg-cyan-950/30 p-5">
+          <p class="text-sm font-semibold text-cyan-300">TL;DR — The Short Version</p>
+          <ul class="mt-2 space-y-1 text-sm text-cyan-200/80">
+            <li>We <strong>do not sell</strong> your data to anyone, ever</li>
+            <li>We <strong>do not collect</strong> patient data or PHI</li>
+            <li>We use <strong>two cookieless analytics tools</strong> (Cloudflare Web Analytics and self-hosted Umami) that collect no PII and require no consent</li>
+            <li>We use <strong>Mautic</strong> (self-hosted) for optional email marketing — this is the <strong>only service that sets tracking cookies and collects PII</strong> (your email), and it requires your explicit opt-in</li>
+            <li>GitHub OAuth is used only for skill submissions — your token stays in your browser</li>
+            <li>Your theme preference lives in <code class="rounded bg-cyan-900/50 px-1 text-[11px]">localStorage</code> on your device — it never leaves your browser</li>
+            <li>We are physicians, not advertisers. Your privacy is safe with us.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 1. What We Collect -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">1. What Data We Collect</h2>
+        <p class="mt-4">
+          OpenMedica is primarily a <strong>static directory website</strong> — we catalog medical AI skills and plugins.
+          You do not need an account, login, or any personally identifiable information (PII) to browse the directory.
+          However, certain features and services do involve data collection as described below.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.1 Data We Do NOT Collect</h3>
+        <p class="mt-2">Let us be clear about what we do <strong>not</strong> collect:</p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Payment or financial information</li>
+          <li>Patient data, medical records, or Protected Health Information (PHI)</li>
+          <li>Biometric data, health data, or genetic information</li>
+          <li>Social Security numbers or government-issued IDs</li>
+          <li>Browser fingerprints or advertising identifiers</li>
+          <li>Keystroke logs, session recordings, or mouse tracking data</li>
+          <li>Cross-site tracking data or third-party advertising cookies</li>
+        </ul>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.2 Cloudflare Web Analytics (Cookieless, No PII)</h3>
+        <p class="mt-2">
+          We use <strong>Cloudflare Web Analytics</strong>, a privacy-focused, cookieless analytics service built into
+          Cloudflare. It collects:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Page views</li>
+          <li>Referral sources</li>
+          <li>Device types</li>
+          <li>Country-level geographic data</li>
+        </ul>
+        <p class="mt-2">
+          Cloudflare Web Analytics does <strong>not</strong> use cookies, does <strong>not</strong> collect PII,
+          and does <strong>not</strong> track users across sites. It is compliant with GDPR without requiring
+          cookie consent because no cookies or personal data are involved.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.3 Umami Analytics (Self-Hosted, Cookieless, No PII)</h3>
+        <p class="mt-2">
+          We use <strong>Umami</strong> (<a href="https://umami.is" class="text-primary hover:underline" target="_blank" rel="noopener">umami.is</a>),
+          an open-source web analytics platform that we <strong>self-host on our own infrastructure</strong>. It collects:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Page views and referral sources</li>
+          <li>Device types and screen sizes</li>
+          <li>Operating system and browser family</li>
+          <li>Country-level geographic data</li>
+        </ul>
+        <p class="mt-2">
+          Umami does <strong>not</strong> use cookies, does <strong>not</strong> collect PII, and does <strong>not</strong>
+          track users across sites. All analytics data stays on our infrastructure and is never shared with third parties.
+          It is GDPR-compliant without requiring cookie consent.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.4 Mautic Marketing Automation (Self-Hosted, Opt-In Only)</h3>
+        <p class="mt-2">
+          We use <strong>Mautic</strong> (<a href="https://mautic.org" class="text-primary hover:underline" target="_blank" rel="noopener">mautic.org</a>),
+          an open-source marketing automation platform that we <strong>self-host on our own infrastructure</strong>.
+          <strong>This is the only service on our site that sets tracking cookies and collects PII.</strong>
+        </p>
+        <p class="mt-2">Mautic is used for:</p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Email marketing campaigns (requires your explicit opt-in)</li>
+          <li>Contact management (stores: your email address, name if you provide it, and engagement history such as email opens and link clicks)</li>
+          <li>Website visitor tracking via a Mautic tracking pixel/JavaScript snippet (sets cookies on your device)</li>
+          <li>Lead scoring and segmentation to send you relevant content</li>
+        </ul>
+        <p class="mt-2">
+          <strong>Mautic tracking cookies are only activated after you provide explicit consent</strong> via our cookie
+          consent banner. If you do not consent to marketing cookies, no Mautic cookies are set and no visitor
+          tracking occurs. Email marketing also requires your explicit opt-in (e.g., subscribing to a newsletter).
+          All Mautic data stays on our self-hosted infrastructure.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.5 GitHub OAuth (Skill Submissions)</h3>
+        <p class="mt-2">
+          If you use our web-based skill submission form, you may authenticate via <strong>GitHub OAuth</strong>.
+          This process collects:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Your GitHub username</li>
+          <li>Your GitHub avatar URL</li>
+          <li>Your public GitHub profile information</li>
+        </ul>
+        <p class="mt-2">
+          Your GitHub OAuth token and user information are stored <strong>only in your browser's
+          <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm dark:bg-slate-800">localStorage</code></strong>.
+          They are never stored on our servers. The token is used solely to create pull requests on your behalf.
+          GitHub's own data handling is governed by
+          <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="text-primary hover:underline" target="_blank" rel="noopener">GitHub's Privacy Statement</a>.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">1.6 Theme and Consent Preferences (Local Storage Only)</h3>
+        <p class="mt-2">
+          Your dark mode / light mode preference and cookie consent choice are stored in your browser's
+          <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm dark:bg-slate-800">localStorage</code>.
+          This data <strong>never leaves your device</strong>, is not transmitted to any server, and cannot be
+          read by us or anyone else.
+        </p>
+      </section>
+
+      <!-- 2. Cookies and Tracking Technologies -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">2. Cookies and Tracking Technologies</h2>
+        <p class="mt-4">
+          Below is our complete list of cookies, localStorage items, and tracking technologies used on this site:
+        </p>
+        <div class="mt-4 overflow-x-auto">
+          <table class="min-w-full text-sm">
+            <thead>
+              <tr class="border-b border-slate-700">
+                <th class="py-2 pr-4 text-left font-medium text-slate-300">Technology</th>
+                <th class="py-2 pr-4 text-left font-medium text-slate-300">Type</th>
+                <th class="py-2 pr-4 text-left font-medium text-slate-300">Purpose</th>
+                <th class="py-2 pr-4 text-left font-medium text-slate-300">Duration</th>
+                <th class="py-2 pr-4 text-left font-medium text-slate-300">PII?</th>
+                <th class="py-2 text-left font-medium text-slate-300">Consent Required?</th>
+              </tr>
+            </thead>
+            <tbody class="text-slate-400">
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-cyan-400">theme</td>
+                <td class="py-2 pr-4">localStorage</td>
+                <td class="py-2 pr-4">Dark/light mode preference</td>
+                <td class="py-2 pr-4">Persistent</td>
+                <td class="py-2 pr-4">No</td>
+                <td class="py-2">No (functional)</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-cyan-400">oms-cookie-consent</td>
+                <td class="py-2 pr-4">localStorage</td>
+                <td class="py-2 pr-4">Cookie consent preferences</td>
+                <td class="py-2 pr-4">Persistent</td>
+                <td class="py-2 pr-4">No</td>
+                <td class="py-2">No (functional)</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-cyan-400">oms_github_token</td>
+                <td class="py-2 pr-4">localStorage</td>
+                <td class="py-2 pr-4">GitHub auth token for submissions</td>
+                <td class="py-2 pr-4">Persistent</td>
+                <td class="py-2 pr-4">Yes (token)</td>
+                <td class="py-2">No (functional)</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-cyan-400">oms_github_user</td>
+                <td class="py-2 pr-4">localStorage</td>
+                <td class="py-2 pr-4">GitHub user info (username, avatar)</td>
+                <td class="py-2 pr-4">Persistent</td>
+                <td class="py-2 pr-4">Yes (username)</td>
+                <td class="py-2">No (functional)</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-cyan-400">__cf_bm</td>
+                <td class="py-2 pr-4">Cookie</td>
+                <td class="py-2 pr-4">Cloudflare bot management</td>
+                <td class="py-2 pr-4">30 minutes</td>
+                <td class="py-2 pr-4">No</td>
+                <td class="py-2">No (strictly necessary)</td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-amber-400">mautic_device_id</td>
+                <td class="py-2 pr-4">Cookie</td>
+                <td class="py-2 pr-4">Mautic visitor tracking</td>
+                <td class="py-2 pr-4">1 year</td>
+                <td class="py-2 pr-4">No directly</td>
+                <td class="py-2"><strong class="text-amber-300">Yes (marketing)</strong></td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-amber-400">mtc_id</td>
+                <td class="py-2 pr-4">Cookie</td>
+                <td class="py-2 pr-4">Mautic contact identification</td>
+                <td class="py-2 pr-4">1 year</td>
+                <td class="py-2 pr-4">Yes (linked to email)</td>
+                <td class="py-2"><strong class="text-amber-300">Yes (marketing)</strong></td>
+              </tr>
+              <tr class="border-b border-slate-800">
+                <td class="py-2 pr-4 font-mono text-xs text-amber-400">mtc_sid</td>
+                <td class="py-2 pr-4">Cookie</td>
+                <td class="py-2 pr-4">Mautic session tracking</td>
+                <td class="py-2 pr-4">Session</td>
+                <td class="py-2 pr-4">No</td>
+                <td class="py-2"><strong class="text-amber-300">Yes (marketing)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4">
+          <strong>Mautic cookies (highlighted above) are only set after you provide explicit consent</strong>
+          via our cookie consent banner. All other items are either strictly necessary for site functionality
+          or stored exclusively in your browser's localStorage.
+        </p>
+        <p class="mt-3">
+          You can disable cookies in your browser settings or clear localStorage at any time. Blocking marketing
+          cookies will not affect your ability to browse the directory. You can also withdraw your marketing cookie
+          consent at any time through the cookie settings on our site.
+        </p>
+      </section>
+
+      <!-- 3. Third-Party Services -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">3. Third-Party Services</h2>
+        <p class="mt-4">
+          We rely on the following third-party services. Where we self-host a service, data stays on our
+          infrastructure and is not shared externally.
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-3">
+          <li>
+            <strong>Cloudflare Pages + Workers</strong>: Our website is hosted on Cloudflare's CDN as a static site,
+            with edge functions (Workers) handling API operations such as skill submissions and search. Cloudflare
+            may log IP addresses and timestamps for DDoS protection and security purposes, subject to
+            <a href="https://www.cloudflare.com/privacypolicy/" class="text-primary hover:underline" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a>.
+          </li>
+          <li>
+            <strong>Cloudflare Web Analytics</strong>: Privacy-focused, cookieless analytics built into Cloudflare.
+            No PII collected. No cookies set. No cross-site tracking.
+          </li>
+          <li>
+            <strong>Umami Analytics</strong> (self-hosted): Open-source, cookieless web analytics hosted on our
+            own infrastructure. No PII collected. No cookies set. Data never leaves our servers.
+          </li>
+          <li>
+            <strong>Mautic</strong> (self-hosted): Open-source marketing automation hosted on our own infrastructure.
+            Collects email addresses and engagement data only with your explicit opt-in. Sets tracking cookies
+            only with your consent. Data stays on our infrastructure.
+          </li>
+          <li>
+            <strong>GitHub</strong>: Skill submissions and pull requests are hosted on GitHub. If you authenticate
+            via GitHub OAuth, your public profile information is accessed. GitHub Actions run validation on
+            submissions.
+            <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" class="text-primary hover:underline" target="_blank" rel="noopener">GitHub's Privacy Statement</a> applies.
+          </li>
+          <li>
+            <strong>Google Fonts</strong>: We load the Inter and JetBrains Mono typefaces from Google's CDN.
+            Google may log basic request metadata (IP address, user agent) when your browser fetches the font files.
+            No cookies are set by Google Fonts.
+            <a href="https://developers.google.com/fonts/faq/privacy" class="text-primary hover:underline" target="_blank" rel="noopener">Google Fonts Privacy FAQ</a>.
+          </li>
+        </ul>
+        <p class="mt-4">
+          We do <strong>not</strong> use: Google Analytics, Facebook/Meta SDKs, Hotjar, Mixpanel, Segment, Amplitude,
+          or any other invasive user behavior tracking service.
+        </p>
+      </section>
+
+      <!-- 4. Data Storage and Retention -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">4. Data Storage and Retention</h2>
+        <p class="mt-4">
+          OpenMedica is primarily a <strong>static website</strong> served via Cloudflare's CDN. For most visitors
+          who simply browse the directory, we have no server-side database storing your personal data.
+        </p>
+        <p class="mt-4">Data retention by service:</p>
+        <ul class="mt-2 list-disc pl-6 space-y-2">
+          <li>
+            <strong>Cloudflare Web Analytics</strong>: Aggregated metrics retained by Cloudflare per their data
+            retention policies. No individual user data is stored.
+          </li>
+          <li>
+            <strong>Umami Analytics</strong> (self-hosted): Aggregated page view data retained on our infrastructure.
+            No individual user data is stored.
+          </li>
+          <li>
+            <strong>Mautic</strong> (self-hosted): If you opt in to email marketing, your contact record
+            (email address, name, engagement history) is retained until you unsubscribe or request deletion.
+            You can unsubscribe at any time via the link in every marketing email or by contacting us.
+          </li>
+          <li>
+            <strong>GitHub OAuth data</strong>: Stored only in your browser's localStorage. We do not retain
+            your GitHub token or profile on any server. Clear your browser storage at any time to remove it.
+          </li>
+          <li>
+            <strong>Cloudflare security logs</strong>: IP addresses and request metadata may be retained by
+            Cloudflare for security purposes per their retention schedule.
+          </li>
+        </ul>
+        <p class="mt-4">
+          If we introduce user accounts or new data collection in the future, we will update this policy
+          <strong>before</strong> collecting any new data and will require fresh consent where applicable.
+        </p>
+      </section>
+
+      <!-- 5. Data Sharing and Selling -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">5. Data Sharing and Selling</h2>
+        <div class="mt-4 rounded-lg border border-emerald-800/50 bg-emerald-950/30 p-4">
+          <p class="font-medium text-emerald-300">We Do Not Sell Your Data. Period.</p>
+          <p class="mt-2 text-sm text-emerald-200/80">
+            We do not sell, rent, lease, trade, or otherwise transfer any user data to third parties for any reason —
+            commercial, marketing, analytics, or otherwise. This includes data collected through Mautic.
+            Your email address, if you provide it for marketing, is used solely to send you communications
+            from IntelMedica.ai and is never shared with or sold to third parties.
+          </p>
+        </div>
+        <p class="mt-4">
+          We may share limited data with the following categories of service providers, solely to operate our platform:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li><strong>Cloudflare</strong> — hosting and security (necessary for site operation)</li>
+          <li><strong>GitHub</strong> — only when you initiate a skill submission via OAuth</li>
+          <li><strong>Google Fonts</strong> — font delivery (request metadata only)</li>
+        </ul>
+        <p class="mt-3">
+          Umami and Mautic are self-hosted on our own infrastructure and do not involve any third-party data sharing.
+        </p>
+      </section>
+
+      <!-- 6. Patient Data & PHI -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">6. Patient Data and Protected Health Information (PHI)</h2>
+        <p class="mt-4">
+          OpenMedica is a <strong>directory of research tools</strong> — we do not collect, process, store, transmit,
+          or have access to any patient data or Protected Health Information (PHI). We are <strong>not a covered entity</strong>
+          and <strong>not a business associate</strong> under HIPAA.
+        </p>
+        <p class="mt-4">
+          The tools listed in our catalog are <strong>independent third-party projects</strong>, each classified as
+          research tools with their own data handling practices.
+          <strong>You are solely responsible for reviewing the privacy policy, data handling practices, and compliance posture
+          of any skill or plugin before deploying it in a clinical, research, or production environment.</strong>
+        </p>
+        <p class="mt-4">
+          We strongly recommend that healthcare professionals and organizations:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Conduct independent security and privacy assessments before deploying any tool with patient data</li>
+          <li>Ensure any skill handling PHI has a valid Business Associate Agreement (BAA) with the skill provider</li>
+          <li>Follow your organization's data governance and information security policies</li>
+          <li>Comply with HIPAA, HITECH, state privacy laws, and institutional review board (IRB) requirements where applicable</li>
+        </ul>
+      </section>
+
+      <!-- 7. Medical Disclaimer -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">7. Medical Disclaimer</h2>
+        <div class="mt-4 rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-800/50 dark:bg-amber-950/30">
+          <p class="font-medium text-amber-800 dark:text-amber-200">Important Medical Disclaimer</p>
+          <p class="mt-2 text-sm text-amber-800 dark:text-amber-200">
+            OpenMedica is a <strong>directory of research tools</strong> — it does not provide medical advice,
+            diagnosis, or treatment. The skills and plugins listed here are third-party software tools intended to assist
+            healthcare professionals in research contexts. They are <strong>not medical devices</strong> and are
+            <strong>not clinical decision support systems</strong>. They do not replace clinical judgment, medical
+            training, or the physician-patient relationship. Always consult a qualified healthcare professional
+            for medical decisions.
+          </p>
+        </div>
+      </section>
+
+      <!-- 8. HIPAA Compliance Stance -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">8. HIPAA Compliance Stance</h2>
+        <p class="mt-4">
+          OpenMedica is a <strong>publicly accessible directory website</strong>. We are not a covered entity
+          or business associate under the Health Insurance Portability and Accountability Act (HIPAA). We do not handle
+          PHI and do not enter into Business Associate Agreements (BAAs) for the directory service itself.
+        </p>
+        <p class="mt-4">
+          No part of our platform — including the website, API, CLI, analytics, or marketing systems — collects,
+          processes, or stores Protected Health Information.
+        </p>
+        <p class="mt-4">
+          If you deploy a skill from this directory in a HIPAA-regulated environment, you are responsible for ensuring
+          that the skill's author has appropriate compliance measures in place and that you execute any necessary BAAs
+          with the skill provider directly.
+        </p>
+      </section>
+
+      <!-- 9. Your Privacy Rights -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">9. Your Privacy Rights</h2>
+        <p class="mt-4">
+          Depending on your location, you may have specific rights under applicable data protection laws.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">9.1 European Union (GDPR)</h3>
+        <p class="mt-2">
+          If you are in the European Economic Area (EEA), the General Data Protection Regulation (GDPR) grants you
+          the following rights with respect to any personal data we process:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li><strong>Right of access</strong> — request a copy of the personal data we hold about you</li>
+          <li><strong>Right to rectification</strong> — request correction of inaccurate personal data</li>
+          <li><strong>Right to erasure</strong> ("right to be forgotten") — request deletion of your personal data</li>
+          <li><strong>Right to data portability</strong> — receive your data in a structured, machine-readable format</li>
+          <li><strong>Right to restrict processing</strong> — request that we limit how we use your data</li>
+          <li><strong>Right to object</strong> — object to processing based on legitimate interests or for direct marketing</li>
+          <li><strong>Right to withdraw consent</strong> — withdraw consent at any time for consent-based processing (e.g., Mautic marketing)</li>
+        </ul>
+        <p class="mt-2">
+          <strong>Legal bases for processing:</strong> Our cookieless analytics (Cloudflare Web Analytics, Umami) process
+          no personal data and require no legal basis. Mautic marketing operates on your <strong>explicit consent</strong>
+          (opt-in). Cloudflare's security cookies are processed under <strong>legitimate interest</strong> (strictly necessary
+          for security). GitHub OAuth data is processed based on your <strong>consent</strong> when you initiate authentication.
+        </p>
+        <p class="mt-2">
+          Data Protection Authority contact: <a href="mailto:privacy@intelmedica.ai" class="text-primary hover:underline">privacy@intelmedica.ai</a>
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">9.2 California (CCPA/CPRA)</h3>
+        <p class="mt-2">
+          If you are a California resident, the California Consumer Privacy Act (CCPA) as amended by the California
+          Privacy Rights Act (CPRA) grants you the following rights:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li><strong>Right to know</strong> — request disclosure of what personal information we collect, use, and share</li>
+          <li><strong>Right to delete</strong> — request deletion of your personal information</li>
+          <li><strong>Right to opt-out of sale or sharing</strong> — we do <strong>not</strong> sell or share your personal information as defined by the CCPA/CPRA</li>
+          <li><strong>Right to non-discrimination</strong> — we will not discriminate against you for exercising your rights</li>
+          <li><strong>Right to correct</strong> — request correction of inaccurate personal information</li>
+          <li><strong>Right to limit use of sensitive personal information</strong> — we do not collect sensitive personal information as defined by the CPRA</li>
+        </ul>
+        <p class="mt-2">
+          Because we do not sell personal information, there is no need to opt out of sale. If you have subscribed
+          to Mautic marketing emails, you can unsubscribe at any time or contact us to have your data deleted.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">9.3 ePrivacy Directive (Cookie Law)</h3>
+        <p class="mt-2">
+          In compliance with the EU ePrivacy Directive, we obtain explicit consent before setting any non-essential
+          cookies on your device. The only non-essential cookies on our site are <strong>Mautic tracking cookies</strong>
+          (<code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm dark:bg-slate-800">mautic_device_id</code>,
+          <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm dark:bg-slate-800">mtc_id</code>,
+          <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm dark:bg-slate-800">mtc_sid</code>), which are
+          only set after you provide affirmative consent via our cookie banner. Cloudflare's
+          <code class="rounded bg-slate-100 px-1.5 py-0.5 text-sm dark:bg-slate-800">__cf_bm</code> cookie is
+          classified as strictly necessary for security and does not require consent.
+        </p>
+
+        <h3 class="mt-6 text-lg font-medium text-slate-900 dark:text-white">9.4 Exercising Your Rights</h3>
+        <p class="mt-2">
+          To exercise any of the rights described above, contact us at
+          <a href="mailto:privacy@intelmedica.ai" class="text-primary hover:underline">privacy@intelmedica.ai</a>.
+          We will respond to verifiable requests within 30 days (GDPR) or 45 days (CCPA/CPRA). We do not charge
+          a fee to process legitimate requests.
+        </p>
+      </section>
+
+      <!-- 10. Children's Privacy -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">10. Children's Privacy</h2>
+        <p class="mt-4">
+          OpenMedica is not directed at children under the age of 13 (or 16 in the EU/EEA). We do not knowingly
+          collect personal information from children. If you believe a child has submitted information to us
+          (e.g., via Mautic marketing opt-in or GitHub OAuth), please contact us immediately at
+          <a href="mailto:privacy@intelmedica.ai" class="text-primary hover:underline">privacy@intelmedica.ai</a>
+          and we will promptly delete such information.
+        </p>
+      </section>
+
+      <!-- 11. International Users -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">11. International Users</h2>
+        <p class="mt-4">
+          OpenMedica is operated from the United States and is accessible worldwide. If you access the site from
+          outside the United States, please be aware that:
+        </p>
+        <ul class="mt-2 list-disc pl-6 space-y-1">
+          <li>Cloudflare serves content from edge locations globally and may process request data in various jurisdictions</li>
+          <li>GitHub data (for submissions) is processed in the United States per GitHub's policies</li>
+          <li>Google Fonts requests may be processed in jurisdictions where Google operates CDN infrastructure</li>
+          <li>Umami analytics and Mautic marketing data are stored on our self-hosted infrastructure in the United States</li>
+        </ul>
+        <p class="mt-3">
+          By using our site, you acknowledge that data may be processed in the United States or other jurisdictions
+          where our service providers operate, which may have different data protection laws than your country of residence.
+        </p>
+      </section>
+
+      <!-- 12. Changes to This Policy -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">12. Changes to This Privacy Policy</h2>
+        <p class="mt-4">
+          We may update this Privacy Policy from time to time to reflect changes in our practices, technologies,
+          or legal requirements. Updates will be posted on this page with a new "Last updated" date.
+        </p>
+        <p class="mt-4">
+          If we make material changes — such as introducing new data collection, new cookies, or new third-party
+          services — we will provide prominent notice on the site and, where required, request fresh consent before
+          any new processing begins.
+        </p>
+        <p class="mt-4">
+          Your continued use of the site after non-material changes are posted constitutes acceptance of the updated
+          policy.
+        </p>
+      </section>
+
+      <!-- 13. Contact -->
+      <section>
+        <h2 class="text-2xl font-semibold text-slate-900 dark:text-white">13. Contact Information</h2>
+        <p class="mt-4">
+          If you have questions or concerns about this Privacy Policy, our data practices, or wish to exercise
+          your privacy rights, please contact:
+        </p>
+        <div class="mt-4 rounded-lg border border-slate-200 bg-slate-50 p-4 dark:border-slate-800 dark:bg-slate-900/50">
+          <p class="font-medium text-slate-900 dark:text-white">IntelMedica.ai</p>
+          <p class="mt-1 text-sm">Privacy inquiries: <a href="mailto:privacy@intelmedica.ai" class="text-primary hover:underline">privacy@intelmedica.ai</a></p>
+          <p class="mt-1 text-sm">Website: <a href="https://openmedica.us" class="text-primary hover:underline" target="_blank" rel="noopener">openmedica.us</a></p>
+          <p class="mt-1 text-sm">GitHub: <a href="https://github.com/Open-Medica" class="text-primary hover:underline" target="_blank" rel="noopener">Open-Medica</a></p>
+        </div>
+      </section>
+
+      <!-- Footer Note -->
+      <section class="mt-12 border-t border-slate-200 pt-8 dark:border-slate-800">
+        <p class="text-sm text-slate-500 dark:text-slate-500">
+          <strong>OpenMedica</strong> is a project of <strong>IntelMedica.ai</strong>, founded by a physician.
+          We are committed to transparency, privacy, and building tools that serve the healthcare community responsibly.
+        </p>
+      </section>
+
+    </div>
+  </div>
+</BaseLayout>

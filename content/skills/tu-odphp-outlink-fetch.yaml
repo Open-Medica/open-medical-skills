@@ -1,0 +1,21 @@
+name: "tu-odphp-outlink-fetch"
+display_name: "odphp outlink fetch"
+description: "This tool retrieves readable text from ODPHP article links and information sources. This is helpful after using the `odphp_myhealthfinder` or `odphp_topicsearch` tools or when the user wants to simply dive deeper into ODPHP data."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "odphp"
+  - "preventive-health"
+  - "health-objectives"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

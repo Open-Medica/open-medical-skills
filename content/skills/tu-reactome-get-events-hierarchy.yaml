@@ -1,0 +1,21 @@
+name: "tu-reactome-get-events-hierarchy"
+display_name: "Reactome get events hierarchy"
+description: "Get the full event hierarchy (pathways and reactions) for a specific species. Returns complete nested hierarchy structure with top-level pathways and their children (subpathways and reactions). Note: Use taxonomy ID (e.g., '9606') for best results."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

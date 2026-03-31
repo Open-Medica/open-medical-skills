@@ -1,0 +1,27 @@
+name: "tu-get-clinical-trial-conditions-and-interventions"
+display_name: "get clinical trial conditions and interventions"
+description: "Retrieves the list of conditions or diseases and the interventions and arm groups that the clinical trials are focused on, using their NCT IDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "clinical-research-summarizing"
+tags:
+  - "tooluniverse"
+  - "clinical-trials"
+  - "trial-search"
+  - "clinical-research"
+  - "clinicaltrials.gov"
+  - "clinical-trial"
+  - "study"
+  - "condition"
+  - "intervention"
+  - "arm-group"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

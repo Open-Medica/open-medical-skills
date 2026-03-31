@@ -1,0 +1,23 @@
+name: "tu-kegg-list-organisms"
+display_name: "kegg list organisms"
+description: "List all available organisms in the KEGG database. Returns organism codes, names, and descriptions."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "kegg"
+  - "biological-pathways"
+  - "metabolic-networks"
+  - "organism"
+  - "list"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

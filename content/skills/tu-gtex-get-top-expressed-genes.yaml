@@ -1,0 +1,21 @@
+name: "tu-gtex-get-top-expressed-genes"
+display_name: "GTEx get top expressed genes"
+description: "Get top expressed genes in a specific tissue sorted by median expression. Returns gene list with expression levels (TPM), useful for understanding tissue-specific gene signatures. Option to filter mitochondrial genes (default: true). Use for: tissue characterization, finding housekeeping genes, identifying tissue markers, quality control. Essential for understanding what genes are active in each tissue type."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

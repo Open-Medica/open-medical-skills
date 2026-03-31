@@ -1,0 +1,14 @@
+<svg viewBox="0 0 360 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+<title>Open Medical Skills</title>
+<defs>
+  <linearGradient id="wmGrad" x1="0" y1="0" x2="200" y2="0" gradientUnits="userSpaceOnUse">
+    <stop offset="0%" stop-color="#22D3EE"/>
+    <stop offset="100%" stop-color="#06B6D4"/>
+  </linearGradient>
+</defs>
+<text x="8" y="38" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#FFFFFF">
+  <tspan font-weight="300">Open Medical </tspan><tspan font-weight="700" fill="url(#wmGrad)">Skills</tspan>
+</text>
+<text x="8" y="58" font-family="Inter, system-ui, sans-serif" font-size="12" font-weight="400" fill="#94A3B8">by IntelMedica.ai</text>
+<rect x="174" y="41" width="44" height="1.5" rx="0.75" fill="#EF4444" opacity="0.5"/>
+</svg>

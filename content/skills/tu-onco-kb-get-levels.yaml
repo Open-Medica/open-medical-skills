@@ -1,0 +1,22 @@
+name: "tu-onco-kb-get-levels"
+display_name: "OncoKB get levels"
+description: "Get OncoKB evidence level definitions. Returns descriptions of all therapeutic actionability levels (1, 2, 3A, 3B, 4, R1, R2). Level 1 = FDA-approved, Level 2 = Standard care, Level 3A = Compelling clinical evidence, etc."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "oncokb"
+  - "oncology"
+  - "precision-medicine"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

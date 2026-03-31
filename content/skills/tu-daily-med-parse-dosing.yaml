@@ -1,0 +1,21 @@
+name: "tu-daily-med-parse-dosing"
+display_name: "DailyMed parse dosing"
+description: "Parse dosage and administration section from SPL XML. Returns structured dosing instructions, dose modifications, and administration guidelines. Example: standard dose, dose adjustments for renal/hepatic impairment."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dailymed"
+  - "drug-information"
+  - "medication-labels"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,22 @@
+name: "tu-onco-kb-annotate-copy-number"
+display_name: "OncoKB annotate copy number"
+description: "Annotate copy number alterations (amplification/deletion) for oncogenic potential. Returns evidence for gene amplification or deletion in cancer. Example: ERBB2 amplification in breast cancer, CDKN2A deletion."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "oncokb"
+  - "oncology"
+  - "precision-medicine"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

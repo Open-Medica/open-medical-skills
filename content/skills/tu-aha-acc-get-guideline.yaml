@@ -1,0 +1,21 @@
+name: "tu-aha-acc-get-guideline"
+display_name: "AHA ACC get guideline"
+description: "Fetch the full text (or a detailed snippet) of a specific AHA (American Heart Association) or ACC (American College of Cardiology) guideline from PubMed Central using its PMID. Returns the abstract and, when the article is open-access in PMC, the full guideline text up to 6000 characters covering recommendations, evidence tables, and rationale. Use AHA_list_guidelines or ACC_list_guidelines first to obtain PMIDs. Many recent AHA/ACC guidelines are open-access in PMC."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "ada-aha-nccn"
+  - "clinical-guidelines"
+  - "specialty-guidelines"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

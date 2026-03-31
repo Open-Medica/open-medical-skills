@@ -1,0 +1,26 @@
+name: "tu-open-targets-target-disease-evidence"
+display_name: "OpenTargets target disease evidence"
+description: "Explore IntOGen somatic driver evidence for a target-disease association (cancer mutation data only). For broader evidence across all data sources (genetics, literature, pathways, etc.), use OpenTargets_get_evidence_by_datasource instead. Input is disease efoId and target ensemblID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target"
+  - "disease"
+  - "evidence"
+  - "association"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

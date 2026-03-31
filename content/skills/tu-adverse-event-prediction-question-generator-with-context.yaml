@@ -1,0 +1,21 @@
+name: "tu-adverse-event-prediction-question-generator-with-context"
+display_name: "AdverseEventPredictionQuestionGeneratorWithContext"
+description: "Generates a set of personalized adverse‐event prediction questions for a given disease and drug, incorporating additional context information such as patient medical history, clinical findings, or research data."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "adverse-event"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

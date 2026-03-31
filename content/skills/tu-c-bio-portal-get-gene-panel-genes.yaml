@@ -1,0 +1,21 @@
+name: "tu-c-bio-portal-get-gene-panel-genes"
+display_name: "cBioPortal get gene panel genes"
+description: "Get all genes in a specific gene panel. Essential for understanding what genes are covered when analyzing mutation frequency data from targeted sequencing studies."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cbioportal"
+  - "cancer-genomics"
+  - "tumor-profiling"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

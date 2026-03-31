@@ -1,0 +1,21 @@
+name: "tu-synergx-db-get-drug"
+display_name: "SYNERGxDB get drug"
+description: "Get detailed information about a specific drug in SYNERGxDB by its database ID. Returns drug name, ATC code, PubChem ID, and DrugBank ID. Known drug IDs: 11 (Bortezomib), 24 (Dasatinib), 34 (Erlotinib), 41 (Fluorouracil), 48 (Imatinib), 52 (Lapatinib), 97 (Topotecan), 106 (Vorinostat)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "synergxdb"
+  - "drug-combinations"
+  - "synergy-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

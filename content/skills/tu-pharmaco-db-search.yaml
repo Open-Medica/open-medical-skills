@@ -1,0 +1,21 @@
+name: "tu-pharmaco-db-search"
+display_name: "PharmacoDB search"
+description: "Search PharmacoDB for compounds, cell lines, tissues, or genes by name. PharmacoDB integrates cancer pharmacogenomics data from 10 major datasets (CCLE, CTRPv2, FIMM, GDSC1, GDSC2, GRAY, NCI60, PRISM, UHNBreast, gCSI). Returns matching entities with their PharmacoDB UIDs and type (compound, cell_line, tissue, gene). Use this to find PharmacoDB identifiers for use with other PharmacoDB tools. Example: search for 'paclitaxel' to find its PharmacoDB compound ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmacodb"
+  - "pharmacogenomics"
+  - "drug-response"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

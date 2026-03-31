@@ -2,7 +2,7 @@ name: Validate Submission
 
 on:
   pull_request:
-    branches: [main]
+    branches: [main, dev]
     paths:
       - "content/skills/**"
       - "content/plugins/**"
@@ -68,7 +68,7 @@ jobs:
           import sys
           import yaml
 
-          required_fields = ['name', 'display_name', 'description', 'author', 'repository', 'category', 'version', 'license', 'install']
+          required_fields = ['name', 'display_name', 'description', 'author', 'repository', 'category', 'date_added']
 
           try:
               with open(sys.argv[1], 'r') as f:
@@ -102,7 +102,7 @@ jobs:
             fi
 
             # 3. Check required fields
-            REQUIRED_FIELDS="name display_name description author repository category version license"
+            REQUIRED_FIELDS="name display_name description author repository category date_added"
             for field in $REQUIRED_FIELDS; do
               if ! grep -q "^${field}:" "$file"; then
                 ERRORS="${ERRORS}\n- **${file}**: Missing required field \`${field}\`"
@@ -116,7 +116,7 @@ jobs:
 
             # 5. Validate category is in allowed list
             CATEGORY=$(grep "^category:" "$file" | sed 's/^category:\s*//' | tr -d '"' | tr -d "'" | xargs)
-            VALID_CATEGORIES="clinical diagnostic administrative research education pharmacology radiology pathology surgery mental-health pediatrics emergency-medicine public-health telemedicine ehr-integration workflow-automation other"
+            VALID_CATEGORIES="diagnosis treatment lab-imaging pharmacy emergency surgery nursing pediatrics mental-health public-health research education administrative clinical-research-summarizing"
             if [ -n "$CATEGORY" ] && ! echo "$VALID_CATEGORIES" | tr ' ' '\n' | grep -qx "$CATEGORY"; then
               ERRORS="${ERRORS}\n- **${file}**: Invalid category \`${CATEGORY}\`. Must be one of: ${VALID_CATEGORIES}"
             fi
@@ -527,13 +527,15 @@ jobs:
             if (authorEmail) yaml += `author_email: "${authorEmail}"\n`;
             yaml += `repository: "${repository}"\n`;
             yaml += `category: "${category}"\n`;
-            yaml += `version: "${version}"\n`;
-            yaml += `license: "${license}"\n`;
+            if (version) yaml += `version: "${version}"\n`;
+            if (license) yaml += `license: "${license}"\n`;
 
             if (tags) {
               const tagList = tags.split(',').map(t => t.trim()).filter(Boolean);
               yaml += `tags:\n`;
               tagList.forEach(t => { yaml += `  - "${t}"\n`; });
+            } else {
+              yaml += `tags: []\n`;
             }
 
             yaml += `install:\n`;
@@ -545,29 +547,16 @@ jobs:
               yaml += `  git: "git clone ${repository}.git"\n`;
             }
 
-            yaml += `\nverified: false\n`;
-            yaml += `reviewer: "pending"\n`;
-            yaml += `date_submitted: "${today}"\n`;
-            yaml += `date_added: null\n`;
-            yaml += `source_issue: ${issue.number}\n`;
-
-            if (clinicalEvidence) {
-              yaml += `\nclinical_evidence: |\n`;
-              clinicalEvidence.split('\n').forEach(line => {
-                yaml += `  ${line}\n`;
-              });
-            }
-
-            if (safetyGuardrails) {
-              yaml += `\nsafety_guardrails: |\n`;
-              safetyGuardrails.split('\n').forEach(line => {
-                yaml += `  ${line}\n`;
-              });
-            }
+            yaml += `evidence_level: "moderate"\n`;
+            yaml += `safety_classification: "safe"\n`;
+            yaml += `specialty: []\n`;
+            yaml += `verified: false\n`;
+            yaml += `reviewer: "Pending Review"\n`;
+            yaml += `date_added: "${today}"\n`;
 
             // Write to environment for next step
             const fs = require('fs');
-            const fileName = `${name}.yml`;
+            const fileName = `${name}.yaml`;
             const filePath = `${contentDir}/${fileName}`;
 
             fs.writeFileSync(filePath, yaml);
@@ -609,7 +598,7 @@ jobs:
               repo: context.repo.repo,
               title: `[${type.charAt(0).toUpperCase() + type.slice(1)} Submission] ${name}`,
               head: branch,
-              base: 'main',
+              base: 'dev',
               body: [
                 `## ${type.charAt(0).toUpperCase() + type.slice(1)} Submission: ${name}`,
                 '',

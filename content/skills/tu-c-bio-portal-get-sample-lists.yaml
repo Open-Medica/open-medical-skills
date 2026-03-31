@@ -1,0 +1,21 @@
+name: "tu-c-bio-portal-get-sample-lists"
+display_name: "cBioPortal get sample lists"
+description: "Get all sample lists (cohort definitions) in a cancer study. Sample lists define groups like 'samples with mutations', 'samples with CNA data'. Use for targeted queries."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cbioportal"
+  - "cancer-genomics"
+  - "tumor-profiling"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

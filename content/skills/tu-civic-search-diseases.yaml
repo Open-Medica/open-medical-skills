@@ -1,0 +1,21 @@
+name: "tu-civic-search-diseases"
+display_name: "civic search diseases"
+description: "Search for diseases in CIViC database. Returns a list of cancer diseases and conditions (with IDs and names) that are associated with variants and evidence in CIViC. Use 'query' or 'name' to filter by disease name (e.g., 'leukemia', 'melanoma')."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

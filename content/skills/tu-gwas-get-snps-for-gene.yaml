@@ -1,0 +1,24 @@
+name: "tu-gwas-get-snps-for-gene"
+display_name: "gwas get snps for gene"
+description: "Get all GWAS Catalog SNPs mapped to a specific gene by gene name (e.g., 'BRCA1', 'TP53'). Returns variant details including rs IDs, chromosomal positions, and functional annotations. Use this when you want to find all catalogued variants within or near a specific gene."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gwas"
+  - "genome-wide-association"
+  - "genetic-variants"
+  - "snps"
+  - "gene"
+  - "mapping"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

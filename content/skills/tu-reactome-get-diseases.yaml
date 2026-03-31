@@ -1,0 +1,21 @@
+name: "tu-reactome-get-diseases"
+display_name: "Reactome get diseases"
+description: "Get list of disease pathways or DOIDs (Disease Ontology IDs) annotated in Reactome. Returns disease-related pathway information including database identifiers, definitions, and names."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []
