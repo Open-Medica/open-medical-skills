@@ -1,0 +1,194 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="PA Doc Generator — AI-Powered Prior Authorization in Minutes"
+  description="Open-source, AI-assisted prior authorization package generator. Complete PA submissions in 5-10 minutes instead of 30-60. Built by a physician, for physicians."
+>
+  <!-- Hero -->
+  <section class="relative overflow-hidden border-b border-slate-800 bg-gradient-to-b from-slate-900 via-rose-950/10 to-gray-950">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(244,63,94,0.08),transparent)]"></div>
+    <div class="relative mx-auto max-w-7xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
+      <div class="grid items-center gap-12 lg:grid-cols-2">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-rose-800/40 bg-rose-950/30 px-4 py-1.5 text-xs font-medium text-rose-300">
+            <span class="h-1.5 w-1.5 rounded-full bg-rose-400 animate-pulse"></span>
+            Open Source &middot; HIPAA Compliant &middot; Built by a Physician
+          </div>
+
+          <h1 class="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+            Because spending 45 minutes on PA isn't how you wanted to <span class="bg-gradient-to-r from-rose-400 to-pink-400 bg-clip-text text-transparent">practice medicine.</span>
+          </h1>
+
+          <p class="mt-6 text-lg leading-relaxed text-slate-400">
+            AI-powered prior authorization package generator. Pick a template, fill smart forms, and let AI draft your medical necessity justification &mdash; backed by real clinical guidelines.
+            Complete in <strong class="text-white">5-10 minutes</strong> instead of 30-60.
+          </p>
+
+          <div class="mt-8 flex flex-wrap items-center gap-4">
+            <span
+              class="cursor-not-allowed rounded-lg bg-rose-500/30 px-6 py-3 text-sm font-semibold text-rose-300/60"
+              title="Coming soon — app not yet deployed"
+            >
+              Launch App (Coming Soon)
+            </span>
+            <a
+              href="https://intelmedica.ai/pa-doc-generator"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-lg border border-rose-800/50 bg-rose-950/30 px-6 py-3 text-sm font-semibold text-rose-300 transition-colors hover:border-rose-700 hover:text-white"
+            >
+              IntelMedica.ai
+              <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+            </a>
+            <a
+              href="https://github.com/IntelMedica/prior-auth-generator"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 rounded-lg border border-slate-700 bg-slate-800/50 px-6 py-3 text-sm font-semibold text-slate-300 transition-colors hover:border-slate-600 hover:text-white"
+            >
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+              View on GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Screenshot -->
+        <div class="relative">
+          <div class="overflow-hidden rounded-xl border border-slate-700/50 shadow-2xl shadow-rose-500/5">
+            <img src="/images/pa/generate.png" alt="PA Doc Generator — AI-assisted form with clinical justification" class="w-full" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Stats -->
+  <section class="border-b border-slate-800 bg-gray-950">
+    <div class="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
+      <h2 class="text-center text-lg font-semibold text-white">The math isn't mathing.</h2>
+      <div class="mt-8 grid gap-6 sm:grid-cols-3">
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 text-center">
+          <p class="text-4xl font-bold text-rose-400">82%</p>
+          <p class="mt-2 text-sm text-slate-400">of PA denials are overturned on appeal</p>
+          <p class="mt-1 text-xs text-slate-600">Source: AMA Prior Auth Survey</p>
+        </div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 text-center">
+          <p class="text-4xl font-bold text-rose-400">11%</p>
+          <p class="mt-2 text-sm text-slate-400">of denials are actually appealed</p>
+          <p class="mt-1 text-xs text-slate-600">Staff don't have time to fight</p>
+        </div>
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-6 text-center">
+          <p class="text-4xl font-bold text-rose-400">45 min</p>
+          <p class="mt-2 text-sm text-slate-400">average time per PA submission</p>
+          <p class="mt-1 text-xs text-slate-600">Down to 5-10 min with this tool</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="text-center text-2xl font-bold text-white">Five steps. That's it.</h2>
+    <p class="mt-2 text-center text-slate-400">From template to submission-ready PDF</p>
+
+    <div class="mt-10 grid gap-4 sm:grid-cols-5">
+      {[
+        { step: "1", title: "Pick Template", desc: "Imaging, Surgery, DME, Medication, or Therapy", color: "cyan" },
+        { step: "2", title: "Fill Smart Form", desc: "Dynamic fields with ICD-10, CPT, NPI auto-lookup", color: "violet" },
+        { step: "3", title: "AI Justification", desc: "RAG-backed letter using real clinical guidelines", color: "rose" },
+        { step: "4", title: "Review & Edit", desc: "Rich text editor with tracked changes — mandatory", color: "amber" },
+        { step: "5", title: "Export PDF", desc: "Cover sheet, PA form, letter, supporting docs", color: "emerald" },
+      ].map((item) => (
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5 text-center">
+          <div class={`mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-${item.color}-500/10 text-${item.color}-400 text-lg font-bold`}>
+            {item.step}
+          </div>
+          <h3 class="mt-3 text-sm font-semibold text-white">{item.title}</h3>
+          <p class="mt-1 text-xs leading-relaxed text-slate-500">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Screenshots -->
+  <section class="border-t border-slate-800 bg-slate-950/50">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <h2 class="text-center text-2xl font-bold text-white">See it in action</h2>
+      <div class="mt-10 grid gap-8 lg:grid-cols-2">
+        <div>
+          <div class="overflow-hidden rounded-xl border border-slate-700/50 shadow-xl">
+            <img src="/images/pa/dashboard.png" alt="Template categories — Imaging, Surgery, DME, Medications, Therapy" class="w-full" loading="lazy" />
+          </div>
+          <p class="mt-3 text-center text-sm text-slate-500">Template categories across 5 procedure types</p>
+        </div>
+        <div>
+          <div class="overflow-hidden rounded-xl border border-slate-700/50 shadow-xl">
+            <img src="/images/pa/landing.png" alt="PA Doc Generator landing page" class="w-full" loading="lazy" />
+          </div>
+          <p class="mt-3 text-center text-sm text-slate-500">Landing page with features overview</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="text-center text-2xl font-bold text-white">Everything you need. Nothing you don't.</h2>
+    <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      {[
+        { title: "5 Template Categories", desc: "Imaging, Surgery, DME, Medication, Therapy — each with dynamic fields tailored to the procedure type.", icon: "M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" },
+        { title: "Real-Time Code Lookup", desc: "ICD-10, CPT/HCPCS, NPI, RxNorm validation via MCP servers. Invalid codes block submission.", icon: "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" },
+        { title: "RAG Clinical Guidelines", desc: "AI justifications cite real guidelines from ACR, AUA, NCCN, AAN — never hallucinated facts.", icon: "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" },
+        { title: "7-Layer Anti-Hallucination", desc: "Structured input, retrieval-only, constrained generation, citation enforcement, clinical validation, code verification, mandatory human review.", icon: "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" },
+        { title: "HIPAA Compliant", desc: "End-to-end encryption, audit logging, role-based access, session timeouts, PHI scrubbing. Self-hostable.", icon: "M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" },
+        { title: "Section 508 Accessible", desc: "WCAG 2.1 AA compliant using CMS Design System. Built for government and healthcare settings.", icon: "M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" },
+      ].map((feature) => (
+        <div class="rounded-xl border border-slate-800 bg-slate-900/50 p-5">
+          <svg class="h-6 w-6 text-rose-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d={feature.icon} />
+          </svg>
+          <h3 class="mt-3 text-sm font-semibold text-white">{feature.title}</h3>
+          <p class="mt-1 text-xs leading-relaxed text-slate-500">{feature.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Open Source -->
+  <section class="border-t border-slate-800">
+    <div class="mx-auto max-w-3xl px-4 py-16 text-center sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-800/50 bg-emerald-950/30 px-3 py-1 text-xs font-medium text-emerald-400">
+        <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+        Fully Open Source
+      </span>
+      <h2 class="mt-4 text-2xl font-bold text-white">Built in the open. Auditable by design.</h2>
+      <p class="mt-4 text-slate-400 leading-relaxed">
+        The PA Doc Generator is fully open source under the MIT license. Self-host it in your clinic,
+        deploy on your own infrastructure, or contribute improvements. Every line of code &mdash; including
+        the AI pipeline &mdash; is transparent and auditable.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="https://github.com/IntelMedica/prior-auth-generator"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg bg-slate-800 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+        >
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          Star on GitHub
+        </a>
+        <a
+          href="/"
+          class="text-sm font-medium text-slate-500 transition-colors hover:text-white"
+        >
+          &larr; Back to OpenMedica
+        </a>
+      </div>
+      <p class="mt-8 text-xs text-slate-600">
+        An <span class="font-semibold text-cyan-400">OpenMedica</span> project by <a href="https://intelmedica.ai" target="_blank" rel="noopener noreferrer" class="font-medium text-primary hover:text-primary-light">IntelMedica.ai</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
