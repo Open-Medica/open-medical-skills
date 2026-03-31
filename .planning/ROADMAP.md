@@ -144,17 +144,19 @@ Plans:
 ## Progress
 
 **Execution Order:**
-Phases execute in numeric order: 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 -> 8 -> 9 -> 10
+Phases 1-4 sequential, then 5+8 parallel, 6→7 sequential, 9→10→11→12 sequential.
 
 | Phase | Plans Complete | Status | Completed |
 |-------|----------------|--------|-----------|
-| 1. Public Repository Creation | 1/1 | Complete | 2026-03-22 |
-| 2. Community Standards | 1/1 | Complete | - |
-| 3. Content Sync via Submodule | 0/1 | Planned | - |
-| 4. Cross-Repo Authentication | 0/? | Not started | - |
-| 5. Public Repo CI/CD | 0/? | Not started | - |
-| 6. Private Repo CI/CD | 0/? | Not started | - |
-| 7. Branch Protection | 0/? | Not started | - |
-| 8. Submission Pipeline | 0/? | Not started | - |
-| 9. Documentation | 0/? | Not started | - |
-| 10. Private Repo Cleanup | 0/? | Not started | - |
+| 1. Public Repository Creation | 1/1 | ✓ Complete | 2026-03-22 |
+| 2. Community Standards | 1/1 | ✓ Complete | 2026-03-22 |
+| 3. Content Sync via Submodule | 1/1 | ✓ Complete | 2026-03-25 |
+| 4. Fix Distribution URLs | ad-hoc | ✓ Complete (ad-hoc) | 2026-03-25 |
+| 5. Automate Index Sync | 1/1 | ◆ Executed (pending commit) | - |
+| 6. Deploy REST API | 0/? | ○ Not started | - |
+| 7. Make MCP Server Work | 0/? | ○ Not started | - |
+| 8. Rebrand to OpenMedica | 0/4 | ◆ Planned (4 plans, ready to execute) | - |
+| 9. Private Repo Setup | 0/? | ○ Not started | - |
+| 10. CI/CD Pipeline | 0/? | ○ Not started | - |
+| 11. Branch Protection | 0/? | ○ Not started | - |
+| 12. Documentation | 0/? | ○ Not started | - |
