@@ -73,7 +73,7 @@ Switched from GitHub Pages to Cloudflare Pages:
 ## Workflow
 
 1. User fills out submission form on website
-2. Frontend calls `POST https://api.openmedicalskills.org/api/submit`
+2. Frontend calls `POST https://api.openmedica.us/api/submit`
 3. Worker validates input and checks rate limit
 4. Worker generates sanitized YAML content
 5. Worker creates GitHub branch and commits file
@@ -96,7 +96,7 @@ Switched from GitHub Pages to Cloudflare Pages:
 ## Example Request
 
 ```bash
-curl -X POST https://api.openmedicalskills.org/api/submit \
+curl -X POST https://api.openmedica.us/api/submit \
   -H "Content-Type: application/json" \
   -d '{
     "name": "medical-terminology-assistant",
@@ -133,7 +133,7 @@ curl -X POST https://api.openmedicalskills.org/api/submit \
    - Run `npm run deploy`
 
 2. **Set Up Custom Domain**:
-   - Add `api.openmedicalskills.org` in Cloudflare Dashboard
+   - Add `api.openmedica.us` in Cloudflare Dashboard
    - Update frontend to use custom domain
 
 3. **Configure GitHub Secrets**:

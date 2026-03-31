@@ -80,10 +80,10 @@ This deploys to a separate dev environment with relaxed CORS (`ALLOWED_ORIGINS =
 
 1. Go to Cloudflare Dashboard → Workers & Pages → oms-submission-api
 2. Click "Triggers" → "Add Custom Domain"
-3. Add: `api.openmedicalskills.org` (or your preferred subdomain)
+3. Add: `api.openmedica.us` (or your preferred subdomain)
 4. DNS records will be created automatically
 
-Update your frontend to call: `https://api.openmedicalskills.org/api/submit`
+Update your frontend to call: `https://api.openmedica.us/api/submit`
 
 ## Monitoring
 

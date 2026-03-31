@@ -1,0 +1,12 @@
+name = "openmedica-mcp"
+main = "src/index.ts"
+compatibility_date = "2024-06-14"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "openmedica-skills"
+database_id = "${CLOUDFLARE_D1_DATABASE_ID}"
+
+[[vectorize]]
+binding = "VECTORIZE"
+index_name = "openmedica-skills-vectors"

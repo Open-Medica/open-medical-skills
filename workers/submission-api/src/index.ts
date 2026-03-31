@@ -274,7 +274,7 @@ async function createSubmissionPR(
   const { data: ref } = await octokit.git.getRef({
     owner,
     repo,
-    ref: 'heads/main',
+    ref: 'heads/dev',
   });
   const baseSha = ref.object.sha;
 
@@ -322,7 +322,7 @@ async function createSubmissionPR(
       '- [ ] Approved for listing',
     ].join('\n'),
     head: branchName,
-    base: 'main',
+    base: 'dev',
   });
 
   // 5. Add labels (best-effort, don't fail if labels don't exist)
