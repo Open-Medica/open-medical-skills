@@ -16,6 +16,7 @@
   ],
   "author": "",
   "license": "ISC",
+  "packageManager": "pnpm@10.29.3",
   "dependencies": {
     "js-yaml": "^4.1.1"
   },
