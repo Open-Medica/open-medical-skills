@@ -6,55 +6,49 @@ on:
     branches: [dev, main]
 
 jobs:
-  type-check-build:
-    name: "Type Check & Build"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - name: Type check
-        run: pnpm exec astro check
-      - name: Build
-        run: pnpm build
-
   security:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: Check for leaked secrets
         run: |
-          if grep -rn '100\.\(88\|120\)\.' --include='*.ts' --include='*.tsx' --include='*.astro' --include='*.toml' --include='*.json' --exclude-dir=node_modules --exclude-dir=.git .; then
+          if grep -rn '100\.\(88\|120\)\.' --include='*.ts' --include='*.tsx' --include='*.js' --include='*.json' --include='*.yaml' --include='*.yml' --exclude-dir=node_modules --exclude-dir=.git .; then
             echo "::error::Found potential internal IP addresses in source files"
             exit 1
           fi
-          if grep -rn 'password\s*=\s*["\x27][^"\x27]*["\x27]' --include='*.ts' --include='*.toml' --exclude-dir=node_modules --exclude-dir=.git .; then
+          if grep -rn 'password\s*=\s*["\x27][^"\x27]*["\x27]' --include='*.ts' --include='*.js' --include='*.json' --exclude-dir=node_modules --exclude-dir=.git .; then
             echo "::error::Found potential hardcoded passwords in source files"
             exit 1
           fi
 
-  dependency-audit:
-    name: Dependency Audit
+  yaml-validation:
+    name: YAML Content Validation
     runs-on: ubuntu-latest
     if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-python@v5
         with:
-          node-version: 22
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - name: Audit main dependencies
-        run: pnpm audit --audit-level=moderate || echo "::warning::Dependency vulnerabilities found"
-      - name: Audit search-api dependencies
-        run: cd workers/search-api && npm audit --audit-level=moderate 2>/dev/null || echo "::warning::search-api vulnerabilities found"
-      - name: Audit submission-api dependencies
-        run: cd workers/submission-api && npm audit --audit-level=moderate 2>/dev/null || echo "::warning::submission-api vulnerabilities found"
+          python-version: '3.12'
+      - name: Validate skill YAMLs
+        run: |
+          pip install pyyaml -q
+          python3 -c "
+          import yaml, glob, sys
+          errors = 0
+          for f in glob.glob('content/skills/*.yaml') + glob.glob('content/skills/*.yml'):
+              try:
+                  with open(f) as fh:
+                      data = yaml.safe_load(fh)
+                  if not data or not data.get('name'):
+                      print(f'::error::{f}: missing required field \"name\"')
+                      errors += 1
+              except Exception as e:
+                  print(f'::error::{f}: {e}')
+                  errors += 1
+          print(f'Validated {len(glob.glob(\"content/skills/*.yaml\"))} skill files, {errors} errors')
+          sys.exit(1 if errors else 0)
+          "
 
   credential-scan:
     name: Credential Leak Scan

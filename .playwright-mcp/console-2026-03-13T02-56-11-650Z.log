@@ -1,3 +1,0 @@
-[    1075ms] [ERROR] Each child in a list should have a unique "key" prop.%s%s See https://react.dev/link/warning-keys for more information. 
-
-Check the render method of `ShortageTable`.  @ http://localhost:4321/node_modules/.vite/deps/@astrojs_react_client__js.js?v=51da3e2c:18618
