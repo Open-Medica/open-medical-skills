@@ -69,11 +69,8 @@ export default {
         const params = {
           category: url.searchParams.get('category') || undefined,
           domain: url.searchParams.get('domain') || undefined,
-          limit: Math.min(
-            parseInt(url.searchParams.get('limit') || '20', 10),
-            100
-          ),
-          offset: parseInt(url.searchParams.get('offset') || '0', 10),
+          limit: Math.max(1, Math.min(100, parseInt(url.searchParams.get('limit') || '20', 10) || 20)),
+          offset: Math.max(0, parseInt(url.searchParams.get('offset') || '0', 10) || 0),
         };
         const result = await handleStructuredSearch(params, env);
         result.took_ms = Date.now() - start;

@@ -34,8 +34,8 @@ export async function handleStructuredSearch(
   env: Env
 ): Promise<SearchResponse> {
   const start = Date.now();
-  const limit = params.limit ?? 20;
-  const offset = params.offset ?? 0;
+  const limit = Math.max(1, Math.min(100, params.limit ?? 20));
+  const offset = Math.max(0, params.offset ?? 0);
 
   try {
     // Build WHERE clause from filters
@@ -56,21 +56,20 @@ export async function handleStructuredSearch(
       ? `WHERE ${conditions.join(' AND ')}`
       : '';
 
-    // Count total matching rows
-    const countQuery = `SELECT COUNT(*) as total FROM skills ${whereClause}`;
-    const countResult = await env.DB.prepare(countQuery)
-      .bind(...bindings)
-      .first<{ total: number }>();
-    const total = countResult?.total ?? 0;
+    // Batch count + select into a single D1 round-trip
+    const countStmt = env.DB.prepare(
+      `SELECT COUNT(*) as total FROM skills ${whereClause}`
+    ).bind(...bindings);
+    const selectStmt = env.DB.prepare(
+      `SELECT id, name, description, category, domain FROM skills ${whereClause} ORDER BY name ASC LIMIT ? OFFSET ?`
+    ).bind(...bindings, limit, offset);
 
-    // Fetch paginated results
-    const dataQuery = `SELECT id, name, description, category, domain FROM skills ${whereClause} ORDER BY name ASC LIMIT ? OFFSET ?`;
-    const { results: records } = await env.DB.prepare(dataQuery)
-      .bind(...bindings, limit, offset)
-      .all<SkillRecord>();
+    const [countResult, dataResult] = await env.DB.batch([countStmt, selectStmt]);
+    const total = (countResult.results?.[0] as Record<string, unknown>)?.total as number ?? 0;
+    const records = dataResult.results as SkillRecord[] ?? [];
 
     const results: SearchResult[] = (records ?? []).map((record, index) => ({
-      id: record.id || String(index),
+      id: record.id || record.name || `skill-${index}`,
       name: record.name || '',
       description: record.description || '',
       category: record.category || 'uncategorized',
