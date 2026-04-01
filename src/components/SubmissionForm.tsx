@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { CATEGORIES, CATEGORY_LABELS } from "../lib/categories";
-import { getUser, isLoggedIn, type GitHubUser } from "../lib/auth";
+import { getCurrentUser, type User } from "../lib/auth";
 
 const API_BASE_URL =
   import.meta.env.PUBLIC_API_BASE_URL || "https://api.openmedica.us";
@@ -10,27 +10,25 @@ export default function SubmissionForm() {
   const [prUrl, setPrUrl] = useState("");
   const [error, setError] = useState("");
   const [submitting, setSubmitting] = useState(false);
-  const [authUser, setAuthUser] = useState<GitHubUser | null>(null);
+  const [authUser, setAuthUser] = useState<User | null>(null);
   const authorInputRef = useRef<HTMLInputElement>(null);
 
   // Check auth state on mount + listen for auth events from SubmitAuthBanner
   useEffect(() => {
-    if (isLoggedIn()) {
-      const user = getUser();
+    getCurrentUser().then((user) => {
       if (user) {
         setAuthUser(user);
-        // Pre-fill the author field
         if (authorInputRef.current && !authorInputRef.current.value) {
-          authorInputRef.current.value = user.login;
+          authorInputRef.current.value = user.name || user.email || "";
         }
       }
-    }
+    });
 
     function handleAuthUser(e: Event) {
-      const detail = (e as CustomEvent<GitHubUser>).detail;
+      const detail = (e as CustomEvent<User>).detail;
       setAuthUser(detail);
       if (authorInputRef.current && !authorInputRef.current.value) {
-        authorInputRef.current.value = detail.login;
+        authorInputRef.current.value = detail.name || detail.email || "";
       }
     }
 
@@ -220,11 +218,11 @@ export default function SubmissionForm() {
             id="author"
             name="author"
             placeholder="Your Name or Organization"
-            defaultValue={authUser?.login || ""}
+            defaultValue={authUser?.name || authUser?.email || ""}
             required
             className="mt-1 w-full rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-900 placeholder-slate-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary dark:border-slate-600 dark:bg-slate-800 dark:text-white dark:placeholder-slate-500"
           />
-          {authUser && (
+          {authUser && authUser.avatar_url && (
             <span className="absolute right-3 top-1/2 mt-0.5 -translate-y-1/2 flex items-center gap-1.5 text-xs text-primary dark:text-primary-light">
               <img
                 src={authUser.avatar_url}
@@ -233,7 +231,7 @@ export default function SubmissionForm() {
                 width={16}
                 height={16}
               />
-              via GitHub
+              Signed in
             </span>
           )}
         </div>
