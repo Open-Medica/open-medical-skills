@@ -1,5 +1,6 @@
 /**
- * Validation handler — checks skill health (repo access, YAML schema validity).
+ * Validation handler — checks skill health (DB existence, required fields,
+ * repo accessibility).
  *
  * GET /api/validate?skill=<name>
  */
@@ -27,53 +28,41 @@ export async function handleValidate(
   const errors: string[] = [];
   let repoAccessible = false;
 
-  // Query Supabase for the skill metadata
+  // Query D1 for the skill metadata
   try {
-    const response = await fetch(
-      `${env.SUPABASE_URL}/rest/v1/skill_tracker?name=eq.${encodeURIComponent(skillName)}`,
-      {
-        headers: {
-          'apikey': env.SUPABASE_KEY || '',
-          'Authorization': `Bearer ${env.SUPABASE_KEY || ''}`,
-        },
-      }
-    );
+    const skill = await env.DB.prepare(
+      'SELECT name, display_name, description, author, repository, category FROM skills WHERE name = ?'
+    )
+      .bind(skillName)
+      .first<Record<string, unknown>>();
 
-    if (!response.ok) {
-      errors.push(`Could not look up skill "${skillName}" in database`);
+    if (!skill) {
+      errors.push(`Skill "${skillName}" not found in database`);
     } else {
-      const skills = await response.json() as Record<string, unknown>[];
-
-      if (skills.length === 0) {
-        errors.push(`Skill "${skillName}" not found in database`);
-      } else {
-        const skill = skills[0];
-
-        // Validate required fields
-        for (const field of REQUIRED_FIELDS) {
-          if (!skill[field]) {
-            errors.push(`Missing required field: ${field}`);
-          }
+      // Validate required fields
+      for (const field of REQUIRED_FIELDS) {
+        if (!skill[field]) {
+          errors.push(`Missing required field: ${field}`);
         }
+      }
 
-        // Validate category
-        if (skill.category && !VALID_CATEGORIES.includes(skill.category as string)) {
-          errors.push(`Invalid category: ${skill.category}. Must be one of: ${VALID_CATEGORIES.join(', ')}`);
-        }
+      // Validate category
+      if (skill.category && !VALID_CATEGORIES.includes(skill.category as string)) {
+        errors.push(`Invalid category: ${skill.category}. Must be one of: ${VALID_CATEGORIES.join(', ')}`);
+      }
 
-        // Check repository accessibility
-        const repoUrl = skill.repository as string;
-        if (repoUrl) {
-          try {
-            const normalizedUrl = repoUrl.startsWith('http') ? repoUrl : `https://${repoUrl}`;
-            const repoResponse = await fetch(normalizedUrl, {
-              method: 'HEAD',
-              redirect: 'follow',
-            });
-            repoAccessible = repoResponse.ok || repoResponse.status === 301 || repoResponse.status === 302;
-          } catch {
-            errors.push(`Repository URL not accessible: ${repoUrl}`);
-          }
+      // Check repository accessibility
+      const repoUrl = skill.repository as string;
+      if (repoUrl) {
+        try {
+          const normalizedUrl = repoUrl.startsWith('http') ? repoUrl : `https://${repoUrl}`;
+          const repoResponse = await fetch(normalizedUrl, {
+            method: 'HEAD',
+            redirect: 'follow',
+          });
+          repoAccessible = repoResponse.ok || repoResponse.status === 301 || repoResponse.status === 302;
+        } catch {
+          errors.push(`Repository URL not accessible: ${repoUrl}`);
         }
       }
     }

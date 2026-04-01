@@ -6,14 +6,13 @@
  * localhost endpoints (configured in wrangler.toml [vars]).
  */
 export interface Env {
+  DB: D1Database;
   QDRANT_URL: string;
   SURREALDB_URL: string;
-  SUPABASE_URL: string;
   OLLAMA_URL: string;
   QDRANT_COLLECTION: string;
   EMBED_MODEL: string;
   ALLOWED_ORIGIN: string;
-  SUPABASE_KEY?: string;
   SURREALDB_USER?: string;
   SURREALDB_PASS?: string;
 }

@@ -1,15 +1,11 @@
 /**
- * Autocomplete suggestion handler — Supabase ILIKE prefix search.
+ * Autocomplete suggestion handler — D1 LIKE prefix search.
  *
  * Provides fast typeahead suggestions by querying tool names that
  * match a given prefix, returning up to 10 results.
  */
 
 import type { Env } from '../lib/types';
-
-interface SuggestRecord {
-  name: string;
-}
 
 const MAX_SUGGESTIONS = 10;
 
@@ -24,43 +20,22 @@ export async function handleSuggest(
   prefix: string,
   env: Env
 ): Promise<string[]> {
-  // Sanitize prefix for PostgREST ILIKE pattern
+  // Sanitize prefix — strip LIKE wildcards to prevent injection
   const sanitized = prefix.replace(/[%_]/g, '');
   if (!sanitized) {
     return [];
   }
 
-  const queryParts: string[] = [];
-  queryParts.push('select=name');
-  queryParts.push(`name=ilike.${encodeURIComponent(sanitized)}*`);
-  queryParts.push('order=name.asc');
-  queryParts.push(`limit=${MAX_SUGGESTIONS}`);
-
-  const url = `${env.SUPABASE_URL}/rest/v1/tools?${queryParts.join('&')}`;
-
-  const headers: Record<string, string> = {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
-  };
-
-  if (env.SUPABASE_KEY) {
-    headers['apikey'] = env.SUPABASE_KEY;
-    headers['Authorization'] = `Bearer ${env.SUPABASE_KEY}`;
-  }
+  const pattern = `${sanitized}%`;
 
   try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers,
-    });
+    const { results } = await env.DB.prepare(
+      'SELECT name, display_name FROM skills WHERE display_name LIKE ? OR name LIKE ? ORDER BY name ASC LIMIT ?'
+    )
+      .bind(pattern, pattern, MAX_SUGGESTIONS)
+      .all<{ name: string; display_name: string }>();
 
-    if (!response.ok) {
-      console.error(`Suggest query failed (${response.status})`);
-      return [];
-    }
-
-    const records = (await response.json()) as SuggestRecord[];
-    return records.map((r) => r.name).filter(Boolean);
+    return (results ?? []).map((r) => r.name).filter(Boolean);
   } catch (err) {
     console.error('Suggest request failed:', err);
     return [];
