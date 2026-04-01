@@ -67,6 +67,22 @@ function getSessionToken(c: any): string | null {
 }
 
 // ---------------------------------------------------------------------------
+// Rate limiting (in-memory, resets on Worker restart)
+// ---------------------------------------------------------------------------
+
+const rateLimitMap = new Map<string, number[]>();
+
+function isRateLimited(key: string, maxRequests: number, windowMs: number): boolean {
+  const now = Date.now();
+  const timestamps = rateLimitMap.get(key) || [];
+  const recent = timestamps.filter(t => now - t < windowMs);
+  if (recent.length >= maxRequests) return true;
+  recent.push(now);
+  rateLimitMap.set(key, recent);
+  return false;
+}
+
+// ---------------------------------------------------------------------------
 // App
 // ---------------------------------------------------------------------------
 
@@ -450,6 +466,16 @@ app.post('/auth/magic-link', async (c) => {
   }
 
   const email = body.email.toLowerCase().trim();
+
+  // Rate limit: 3 per email per 15 min, 10 per IP per hour
+  const clientIp = c.req.header('cf-connecting-ip') || c.req.header('x-forwarded-for') || 'unknown';
+  if (isRateLimited(`magic:email:${email}`, 3, 15 * 60 * 1000)) {
+    return c.json({ error: 'Too many requests for this email. Try again later.' }, 429);
+  }
+  if (isRateLimited(`magic:ip:${clientIp}`, 10, 60 * 60 * 1000)) {
+    return c.json({ error: 'Too many requests. Try again later.' }, 429);
+  }
+
   const token = generateToken();
   const expiresAt = new Date(Date.now() + 15 * 60 * 1000).toISOString(); // 15 minutes
 
