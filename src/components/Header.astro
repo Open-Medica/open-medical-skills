@@ -1,6 +1,6 @@
 ---
 import ThemeToggle from "./ThemeToggle.tsx";
-import AuthButton from "./AuthButton.tsx";
+import UserMenu from "./UserMenu.tsx";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -45,7 +45,7 @@ const currentPath = Astro.url.pathname;
 
     <!-- Right side: auth + theme toggle + mobile menu button -->
     <div class="flex items-center gap-2">
-      <AuthButton client:load />
+      <UserMenu client:load />
       <div class="mx-0.5 h-5 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block" aria-hidden="true"></div>
       <ThemeToggle client:load />
 

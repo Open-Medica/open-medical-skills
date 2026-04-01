@@ -1,226 +1,212 @@
 /**
- * GitHub OAuth authentication helpers for client-side auth flow.
+ * Authentication client library for OpenMedica.
  *
- * Flow:
- * 1. User clicks "Sign in with GitHub" -> redirect to GitHub authorize URL
- * 2. GitHub redirects back to /auth/callback with ?code=...
- * 3. Callback page sends code to our Worker API to exchange for access token
- * 4. Token + user info stored in localStorage
- * 5. Subsequent requests use the stored token
+ * Flow (new — cookie-based, multi-provider):
+ * 1. User signs in via GitHub, Google, or email magic link
+ * 2. API handles OAuth exchange or magic link verification
+ * 3. API sets an httpOnly session cookie
+ * 4. Client calls /auth/me to check session state
+ * 5. All subsequent requests include credentials (cookies)
  *
- * The client secret never touches the browser — the Worker handles the
- * code-to-token exchange server-side.
+ * Supports: GitHub OAuth, Google OAuth, email magic link.
  */
 
 // ---------------------------------------------------------------------------
 // Configuration
 // ---------------------------------------------------------------------------
 
-/**
- * GitHub OAuth App Client ID.
- * Set this to your actual Client ID, or read from an env-injected global.
- * For Astro static builds, this is baked in at build time.
- */
-const GITHUB_CLIENT_ID = import.meta.env.PUBLIC_GITHUB_CLIENT_ID || "GITHUB_CLIENT_ID";
-
-/**
- * Base URL of the Cloudflare Worker API that handles token exchange.
- */
-const API_BASE_URL = import.meta.env.PUBLIC_API_BASE_URL || "https://api.openmedica.us";
-
-/**
- * OAuth callback URL — must match the one registered in the GitHub OAuth App.
- */
-const REDIRECT_URI = import.meta.env.PUBLIC_OAUTH_REDIRECT_URI || "https://openmedica.us/auth/callback";
-
-// ---------------------------------------------------------------------------
-// localStorage keys
-// ---------------------------------------------------------------------------
-
-const STORAGE_KEY_TOKEN = "oms_github_token";
-const STORAGE_KEY_USER = "oms_github_user";
-const STORAGE_KEY_RETURN_URL = "oms_auth_return_url";
+const API_URL = import.meta.env.PUBLIC_API_URL || '/api';
 
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
 
-export interface GitHubUser {
-  login: string;
-  id: number;
-  avatar_url: string;
+export interface User {
+  id: string;
+  email: string | null;
   name: string | null;
-  html_url: string;
+  avatar_url: string | null;
+  github_id: string | null;
+  google_id: string | null;
 }
 
 // ---------------------------------------------------------------------------
-// Auth URL
+// Session
 // ---------------------------------------------------------------------------
 
 /**
- * Constructs the GitHub OAuth authorize URL and saves the current page
- * as the return URL so we can redirect back after auth.
+ * Fetch the currently authenticated user from the API session cookie.
+ * Returns null if not logged in or on any error.
  */
-export function getAuthUrl(): string {
-  // Save current page so callback can redirect back
-  if (typeof window !== "undefined") {
-    localStorage.setItem(STORAGE_KEY_RETURN_URL, window.location.href);
-  }
-
-  const params = new URLSearchParams({
-    client_id: GITHUB_CLIENT_ID,
-    redirect_uri: REDIRECT_URI,
-    scope: "read:user",
-    state: generateState(),
-  });
-
-  return `https://github.com/login/oauth/authorize?${params.toString()}`;
-}
-
-/**
- * Generate a random state parameter to prevent CSRF attacks.
- */
-function generateState(): string {
-  const array = new Uint8Array(16);
-  crypto.getRandomValues(array);
-  const state = Array.from(array, (b) => b.toString(16).padStart(2, "0")).join("");
-
-  // Store state so we can verify it on callback
-  if (typeof window !== "undefined") {
-    sessionStorage.setItem("oms_oauth_state", state);
-  }
-
-  return state;
-}
-
-/**
- * Verify the state parameter returned from GitHub matches what we sent.
- */
-export function verifyState(state: string): boolean {
-  if (typeof window === "undefined") return false;
-  const stored = sessionStorage.getItem("oms_oauth_state");
-  sessionStorage.removeItem("oms_oauth_state");
-  return stored === state;
-}
-
-// ---------------------------------------------------------------------------
-// Token exchange
-// ---------------------------------------------------------------------------
-
-/**
- * Exchange the authorization code for an access token via our Worker API.
- * The Worker calls GitHub's token endpoint with the client secret so the
- * secret is never exposed to the browser.
- */
-export async function exchangeCode(code: string): Promise<string> {
-  const response = await fetch(`${API_BASE_URL}/auth/github/callback`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ code }),
-  });
-
-  if (!response.ok) {
-    const data = await response.json().catch(() => ({}));
-    throw new Error((data as Record<string, string>).error || "Failed to exchange authorization code");
-  }
-
-  const data = (await response.json()) as { access_token: string };
-
-  if (!data.access_token) {
-    throw new Error("No access token received");
-  }
-
-  return data.access_token;
-}
-
-// ---------------------------------------------------------------------------
-// User info
-// ---------------------------------------------------------------------------
-
-/**
- * Fetch the authenticated user's profile from the GitHub API.
- */
-export async function fetchUser(token: string): Promise<GitHubUser> {
-  const response = await fetch("https://api.github.com/user", {
-    headers: {
-      Authorization: `Bearer ${token}`,
-      Accept: "application/vnd.github.v3+json",
-    },
-  });
-
-  if (!response.ok) {
-    throw new Error("Failed to fetch user info from GitHub");
-  }
-
-  const data = (await response.json()) as GitHubUser;
-  return {
-    login: data.login,
-    id: data.id,
-    avatar_url: data.avatar_url,
-    name: data.name,
-    html_url: data.html_url,
-  };
-}
-
-// ---------------------------------------------------------------------------
-// Persistence
-// ---------------------------------------------------------------------------
-
-/**
- * Save auth credentials to localStorage.
- */
-export function saveAuth(token: string, user: GitHubUser): void {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY_TOKEN, token);
-  localStorage.setItem(STORAGE_KEY_USER, JSON.stringify(user));
-}
-
-/**
- * Get the stored access token, or null if not logged in.
- */
-export function getToken(): string | null {
-  if (typeof window === "undefined") return null;
-  return localStorage.getItem(STORAGE_KEY_TOKEN);
-}
-
-/**
- * Get the stored user info, or null if not logged in.
- */
-export function getUser(): GitHubUser | null {
-  if (typeof window === "undefined") return null;
-  const raw = localStorage.getItem(STORAGE_KEY_USER);
-  if (!raw) return null;
-
+export async function getCurrentUser(): Promise<User | null> {
   try {
-    return JSON.parse(raw) as GitHubUser;
+    const res = await fetch(`${API_URL}/auth/me`, { credentials: 'include' });
+    if (!res.ok) return null;
+    const data = await res.json();
+    return data.user;
   } catch {
     return null;
   }
 }
 
+// ---------------------------------------------------------------------------
+// Saved skills
+// ---------------------------------------------------------------------------
+
 /**
- * Check whether the user is currently logged in (has a stored token).
+ * Fetch the list of skill names saved by the current user.
  */
+export async function getSavedSkills(): Promise<string[]> {
+  try {
+    const res = await fetch(`${API_URL}/auth/saved-skills`, { credentials: 'include' });
+    if (!res.ok) return [];
+    const data = await res.json();
+    return data.skills.map((s: { skill_name: string }) => s.skill_name);
+  } catch {
+    return [];
+  }
+}
+
+/**
+ * Save a skill to the current user's saved list.
+ */
+export async function saveSkill(skillName: string): Promise<boolean> {
+  try {
+    const res = await fetch(`${API_URL}/auth/saved-skills`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ skill_name: skillName }),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+/**
+ * Remove a skill from the current user's saved list.
+ */
+export async function unsaveSkill(skillName: string): Promise<boolean> {
+  try {
+    const res = await fetch(`${API_URL}/auth/saved-skills/${encodeURIComponent(skillName)}`, {
+      method: 'DELETE',
+      credentials: 'include',
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Magic link
+// ---------------------------------------------------------------------------
+
+/**
+ * Request a magic link email for passwordless sign-in.
+ */
+export async function sendMagicLink(email: string): Promise<boolean> {
+  try {
+    const res = await fetch(`${API_URL}/auth/magic-link`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email }),
+    });
+    return res.ok;
+  } catch {
+    return false;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Logout
+// ---------------------------------------------------------------------------
+
+/**
+ * Sign out by calling the API (clears session cookie) then redirect home.
+ */
+export async function logout(): Promise<void> {
+  await fetch(`${API_URL}/auth/logout`, { method: 'POST', credentials: 'include' });
+  window.location.href = '/';
+}
+
+// ---------------------------------------------------------------------------
+// OAuth URLs
+// ---------------------------------------------------------------------------
+
+/**
+ * Get the URL to start GitHub OAuth flow (server-side redirect).
+ */
+export function getGitHubAuthUrl(): string {
+  return `${API_URL}/auth/github`;
+}
+
+/**
+ * Get the URL to start Google OAuth flow (server-side redirect).
+ */
+export function getGoogleAuthUrl(): string {
+  return `${API_URL}/auth/google`;
+}
+
+// ---------------------------------------------------------------------------
+// Legacy compat — kept for AuthButton migration period
+// ---------------------------------------------------------------------------
+
+export type GitHubUser = User;
+
+/** @deprecated Use getCurrentUser() instead */
 export function isLoggedIn(): boolean {
-  return getToken() !== null;
+  if (typeof window === 'undefined') return false;
+  return localStorage.getItem('oms_github_token') !== null;
 }
 
-/**
- * Clear all auth data from localStorage.
- */
-export function logout(): void {
-  if (typeof window === "undefined") return;
-  localStorage.removeItem(STORAGE_KEY_TOKEN);
-  localStorage.removeItem(STORAGE_KEY_USER);
-  localStorage.removeItem(STORAGE_KEY_RETURN_URL);
+/** @deprecated Use getCurrentUser() instead */
+export function getUser(): User | null {
+  if (typeof window === 'undefined') return null;
+  const raw = localStorage.getItem('oms_github_user');
+  if (!raw) return null;
+  try {
+    return JSON.parse(raw);
+  } catch {
+    return null;
+  }
 }
 
-/**
- * Get and clear the return URL (the page the user was on before auth).
- */
+/** @deprecated Use getGitHubAuthUrl() instead */
+export function getAuthUrl(): string {
+  return getGitHubAuthUrl();
+}
+
+/** @deprecated Handled server-side now */
+export function verifyState(_state: string): boolean {
+  return true;
+}
+
+/** @deprecated Handled server-side now */
+export async function exchangeCode(_code: string): Promise<string> {
+  return '';
+}
+
+/** @deprecated Handled server-side now */
+export async function fetchUser(_token: string): Promise<User> {
+  const user = await getCurrentUser();
+  if (!user) throw new Error('Not authenticated');
+  return user;
+}
+
+/** @deprecated Handled server-side now */
+export function saveAuth(_token: string, _user: User): void {}
+
+/** @deprecated Handled server-side now */
+export function getToken(): string | null {
+  return null;
+}
+
+/** @deprecated Use the callback page flow */
 export function getReturnUrl(): string {
-  if (typeof window === "undefined") return "/";
-  const url = localStorage.getItem(STORAGE_KEY_RETURN_URL);
-  localStorage.removeItem(STORAGE_KEY_RETURN_URL);
-  return url || "/";
+  if (typeof window === 'undefined') return '/';
+  const url = localStorage.getItem('oms_auth_return_url');
+  localStorage.removeItem('oms_auth_return_url');
+  return url || '/';
 }

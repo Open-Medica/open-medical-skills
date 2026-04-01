@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SavedSkillsView from "../components/SavedSkillsView.tsx";
+---
+
+<BaseLayout title="Saved Skills" description="Your saved medical AI skills.">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="mb-8">
+      <h1 class="text-2xl font-bold text-white">Saved Skills</h1>
+      <p class="mt-1.5 text-sm text-slate-400">
+        Skills you've saved for quick access.
+      </p>
+    </div>
+
+    <SavedSkillsView client:load />
+  </div>
+</BaseLayout>

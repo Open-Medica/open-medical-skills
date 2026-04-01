@@ -2,40 +2,36 @@
 import BaseLayout from "../../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Signing in..." description="Completing authentication.">
+<BaseLayout title="Verify Magic Link" description="Verifying your magic link sign-in.">
   <div class="flex min-h-[calc(100vh-200px)] items-center justify-center px-4 py-12">
     <div class="w-full max-w-sm text-center">
       <!-- Loading state -->
-      <div id="auth-loading">
+      <div id="verify-loading">
         <div class="mx-auto mb-6 h-10 w-10 animate-spin rounded-full border-4 border-slate-700 border-t-primary-light"></div>
-        <h1 class="text-xl font-semibold text-white">Signing you in...</h1>
-        <p class="mt-2 text-sm text-slate-400">
-          Completing authentication. You will be redirected shortly.
-        </p>
+        <h1 class="text-xl font-semibold text-white">Verifying your link...</h1>
+        <p class="mt-2 text-sm text-slate-400">Please wait while we sign you in.</p>
       </div>
 
       <!-- Success state -->
-      <div id="auth-success" class="hidden">
+      <div id="verify-success" class="hidden">
         <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-green-900/30">
           <svg class="h-7 w-7 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path d="M5 13l4 4L19 7" />
           </svg>
         </div>
         <h1 class="text-xl font-semibold text-white">Signed in successfully!</h1>
-        <p class="mt-2 text-sm text-slate-400">
-          Welcome back! Redirecting...
-        </p>
+        <p class="mt-2 text-sm text-slate-400">Redirecting you now...</p>
       </div>
 
       <!-- Error state -->
-      <div id="auth-error" class="hidden">
+      <div id="verify-error" class="hidden">
         <div class="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-full bg-red-900/30">
           <svg class="h-7 w-7 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path d="M6 18L18 6M6 6l12 12" />
           </svg>
         </div>
-        <h1 class="text-xl font-semibold text-white">Authentication failed</h1>
-        <p id="auth-error-message" class="mt-2 text-sm text-red-400"></p>
+        <h1 class="text-xl font-semibold text-white">Verification failed</h1>
+        <p id="verify-error-message" class="mt-2 text-sm text-red-400"></p>
         <div class="mt-6 flex flex-col gap-3">
           <a
             href="/auth/signin"
@@ -53,27 +49,18 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <script>
-  import { getCurrentUser } from "../../lib/auth";
+  const API_URL = import.meta.env.PUBLIC_API_URL || '/api';
 
-  /**
-   * OAuth callback handler.
-   *
-   * The API handles the OAuth code exchange and sets a session cookie.
-   * The API then redirects to this page. We just need to verify the
-   * session is active and redirect the user home.
-   *
-   * If there's an error parameter, show the error.
-   */
-  async function handleCallback() {
-    const loadingEl = document.getElementById("auth-loading");
-    const successEl = document.getElementById("auth-success");
-    const errorEl = document.getElementById("auth-error");
-    const errorMsgEl = document.getElementById("auth-error-message");
+  async function verifyToken() {
+    const loadingEl = document.getElementById("verify-loading");
+    const successEl = document.getElementById("verify-success");
+    const errorEl = document.getElementById("verify-error");
+    const errorMsgEl = document.getElementById("verify-error-message");
 
-    function showError(message: string) {
+    function showError(msg: string) {
       loadingEl?.classList.add("hidden");
       errorEl?.classList.remove("hidden");
-      if (errorMsgEl) errorMsgEl.textContent = message;
+      if (errorMsgEl) errorMsgEl.textContent = msg;
     }
 
     function showSuccess() {
@@ -83,20 +70,23 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
 
     try {
       const params = new URLSearchParams(window.location.search);
-      const error = params.get("error");
+      const token = params.get("token");
 
-      // API returned an error
-      if (error) {
-        const description = params.get("error_description") || error;
-        showError(description);
+      if (!token) {
+        showError("No verification token found. The link may be invalid or expired.");
         return;
       }
 
-      // Verify we have an active session (cookie set by API)
-      const user = await getCurrentUser();
+      const res = await fetch(`${API_URL}/auth/magic-link/verify`, {
+        method: "POST",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
 
-      if (!user) {
-        showError("Authentication did not complete. Please try signing in again.");
+      if (!res.ok) {
+        const data = await res.json().catch(() => ({}));
+        showError((data as Record<string, string>).error || "The magic link is invalid or has expired. Please request a new one.");
         return;
       }
 
@@ -109,5 +99,5 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
     }
   }
 
-  handleCallback();
+  verifyToken();
 </script>
