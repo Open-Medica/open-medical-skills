@@ -250,14 +250,30 @@ app.get('/api/stats', async (c) => {
 // GitHub OAuth — redirect to GitHub
 app.get('/auth/github', (c) => {
   const redirectUri = `${c.env.SITE_URL}/auth/callback`;
-  const url = `https://github.com/login/oauth/authorize?client_id=${c.env.GITHUB_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=read:user%20user:email&state=github`;
+  const stateValue = `github:${generateToken()}`;
+  setCookie(c, 'oauth_state', stateValue, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Lax',
+    path: '/',
+    maxAge: 5 * 60, // 5 minutes
+  });
+  const url = `https://github.com/login/oauth/authorize?client_id=${c.env.GITHUB_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirectUri)}&scope=read:user%20user:email&state=${encodeURIComponent(stateValue)}`;
   return c.redirect(url);
 });
 
 // Google OAuth — redirect to Google
 app.get('/auth/google', (c) => {
   const redirectUri = `${c.env.SITE_URL}/auth/callback`;
-  const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${c.env.GOOGLE_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=openid%20email%20profile&state=google`;
+  const stateValue = `google:${generateToken()}`;
+  setCookie(c, 'oauth_state', stateValue, {
+    httpOnly: true,
+    secure: true,
+    sameSite: 'Lax',
+    path: '/',
+    maxAge: 5 * 60, // 5 minutes
+  });
+  const url = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${c.env.GOOGLE_CLIENT_ID}&redirect_uri=${encodeURIComponent(redirectUri)}&response_type=code&scope=openid%20email%20profile&state=${encodeURIComponent(stateValue)}`;
   return c.redirect(url);
 });
 
@@ -265,11 +281,23 @@ app.get('/auth/google', (c) => {
 app.get('/auth/callback', async (c) => {
   const db = c.env.DB;
   const code = c.req.query('code');
-  const state = c.req.query('state'); // 'github' or 'google'
+  const state = c.req.query('state');
 
   if (!code || !state) {
     return c.json({ error: 'Missing code or state parameter' }, 400);
   }
+
+  // Verify CSRF: state from query must match the cookie we set before redirect
+  const storedState = getCookie(c, 'oauth_state');
+  if (!storedState || storedState !== state) {
+    return c.json({ error: 'Invalid OAuth state — possible CSRF attack' }, 403);
+  }
+
+  // Clear the one-time state cookie
+  deleteCookie(c, 'oauth_state', { path: '/' });
+
+  // Extract provider from state (format: "provider:random")
+  const provider = state.split(':')[0];
 
   try {
     let email: string | null = null;
@@ -278,7 +306,7 @@ app.get('/auth/callback', async (c) => {
     let githubId: string | null = null;
     let googleId: string | null = null;
 
-    if (state === 'github') {
+    if (provider === 'github') {
       // Exchange code for access token
       const tokenRes = await fetch('https://github.com/login/oauth/access_token', {
         method: 'POST',
@@ -317,7 +345,7 @@ app.get('/auth/callback', async (c) => {
         const primary = emails.find(e => e.primary && e.verified);
         email = primary?.email || emails[0]?.email || null;
       }
-    } else if (state === 'google') {
+    } else if (provider === 'google') {
       // Exchange code for tokens
       const redirectUri = `${c.env.SITE_URL}/auth/callback`;
       const tokenRes = await fetch('https://oauth2.googleapis.com/token', {
@@ -347,7 +375,7 @@ app.get('/auth/callback', async (c) => {
       name = userData.name || null;
       avatarUrl = userData.picture || null;
     } else {
-      return c.json({ error: 'Invalid state parameter' }, 400);
+      return c.json({ error: 'Unsupported OAuth provider' }, 400);
     }
 
     // Upsert user: find by provider ID, then by email, or create
