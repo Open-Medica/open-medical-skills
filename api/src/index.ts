@@ -73,7 +73,11 @@ function getSessionToken(c: any): string | null {
 const app = new Hono<{ Bindings: Env }>();
 
 app.use('/*', cors({
-  origin: (origin, c) => origin || '*',
+  origin: (origin, c) => {
+    const allowed = c.env.SITE_URL;
+    if (origin === allowed) return origin;
+    return null;
+  },
   credentials: true,
 }));
 
