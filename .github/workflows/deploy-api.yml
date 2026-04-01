@@ -25,6 +25,14 @@ jobs:
         run: npm ci
         working-directory: ./api
 
+      - name: Run D1 migrations
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: ./api
+          command: d1 migrations apply openmedica-skills --remote
+
       - name: Deploy API
         uses: cloudflare/wrangler-action@v3
         with:

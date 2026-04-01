@@ -6,3 +6,9 @@ compatibility_date = "2024-06-14"
 binding = "DB"
 database_name = "openmedica-skills"
 database_id = "2a8dc2dd-5dee-4af8-90b2-e0bfe10e597c"
+
+[vars]
+SITE_URL = "http://localhost:4321"
+
+[env.production.vars]
+SITE_URL = "https://openmedica.us"
