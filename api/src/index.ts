@@ -91,7 +91,10 @@ app.use('/api/*', async (c, next) => {
     return c.json({ error: 'Unauthorized' }, 401);
   }
   const providedToken = authHeader.slice(7);
-  if (providedToken !== token) {
+  const encoder = new TextEncoder();
+  const a = encoder.encode(providedToken);
+  const b = encoder.encode(token);
+  if (a.byteLength !== b.byteLength || !crypto.subtle.timingSafeEqual(a, b)) {
     return c.json({ error: 'Invalid token' }, 401);
   }
   await next();
