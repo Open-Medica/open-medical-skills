@@ -69,13 +69,21 @@ export default function UserMenu() {
   // ------ Logged out ------
   if (!user) {
     return (
-      <a
-        href="/auth/signin"
-        className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:border-slate-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:border-slate-500"
-      >
-        <UserIcon className="h-4 w-4" />
-        <span className="hidden sm:inline">Sign In</span>
-      </a>
+      <div className="flex items-center gap-2">
+        <a
+          href="/auth/signin"
+          className="hidden sm:inline-flex items-center gap-1.5 rounded-lg bg-gradient-to-r from-cyan-500 to-teal-500 px-3.5 py-1.5 text-sm font-semibold text-white shadow-sm transition-all hover:from-cyan-400 hover:to-teal-400 hover:shadow-md hover:shadow-cyan-500/20 active:scale-95"
+        >
+          Get Started
+        </a>
+        <a
+          href="/auth/signin"
+          className="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-1.5 text-sm font-medium text-slate-700 transition-colors hover:bg-slate-50 hover:border-slate-400 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:border-slate-500"
+        >
+          <UserIcon className="h-4 w-4" />
+          <span className="hidden sm:inline">Sign In</span>
+        </a>
+      </div>
     );
   }
 
