@@ -61,7 +61,7 @@ export async function getSavedSkills(): Promise<string[]> {
     const res = await fetch(`${API_URL}/auth/saved-skills`, { credentials: 'include' });
     if (!res.ok) return [];
     const data = await res.json();
-    return data.skills.map((s: { skill_name: string }) => s.skill_name);
+    return data.saved_skills.map((s: { skill_name: string }) => s.skill_name);
   } catch {
     return [];
   }

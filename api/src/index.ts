@@ -14,24 +14,6 @@ type Env = {
   SITE_URL: string;
 };
 
-type Skill = {
-  name: string;
-  display_name: string;
-  description: string;
-  author: string;
-  repository: string;
-  category: string;
-  tags: string[];
-  version: string;
-  license: string;
-  evidence_level: string;
-  safety_classification: string;
-  specialty: string[];
-  reviewer: string;
-  date_added: string;
-  verified: boolean;
-};
-
 // ---------------------------------------------------------------------------
 // Auth helpers
 // ---------------------------------------------------------------------------

@@ -77,11 +77,8 @@ import BaseLayout from "../../layouts/BaseLayout.astro";
         return;
       }
 
-      const res = await fetch(`${API_URL}/auth/magic-link/verify`, {
-        method: "POST",
+      const res = await fetch(`${API_URL}/auth/verify?token=${encodeURIComponent(token)}`, {
         credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ token }),
       });
 
       if (!res.ok) {
