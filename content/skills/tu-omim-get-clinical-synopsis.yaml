@@ -1,0 +1,21 @@
+name: "tu-omim-get-clinical-synopsis"
+display_name: "OMIM get clinical synopsis"
+description: "Get clinical synopsis (phenotype features) for an OMIM phenotype entry. Returns structured clinical features organized by body system (e.g., neurologic, cardiovascular). Essential for phenotype-based disease matching. Requires OMIM_API_KEY."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "omim"
+  - "genetic-disorders"
+  - "mendelian-inheritance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

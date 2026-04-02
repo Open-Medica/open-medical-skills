@@ -1,0 +1,20 @@
+name: "tu-magicapp-get-guideline"
+display_name: "MAGICapp get guideline"
+description: "Get detailed information about a specific clinical guideline from MAGICapp by its numeric guideline ID. Returns comprehensive guideline metadata including title, authoring organization, contact information, version details, GRADE methodology settings, and links to PDF/JSON exports. Use MAGICapp_list_guidelines first to find guideline IDs, then use this tool to get full details. For the guideline's clinical recommendations, use MAGICapp_get_recommendations instead."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

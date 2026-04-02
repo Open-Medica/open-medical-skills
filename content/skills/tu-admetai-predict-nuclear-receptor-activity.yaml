@@ -1,0 +1,22 @@
+name: "tu-admetai-predict-nuclear-receptor-activity"
+display_name: "ADMETAI predict nuclear receptor activity"
+description: "Predicts nuclear receptor activity endpoints (NR-AR-LBD, NR-AR, NR-AhR, NR-Aromatase, NR-ER-LBD, NR-ER, NR-PPAR-gamma) for a given list of molecules in SMILES format."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "admetai"
+  - "admet"
+  - "drug-properties"
+  - "ai-prediction"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-g2p-get-gene"
+display_name: "G2P get gene"
+description: "Get Gene2Phenotype information for a specific gene by symbol. Returns gene location, cross-references to HGNC/Ensembl/OMIM, gene synonyms, and genomic coordinates. This provides the gene-level data without disease associations. For disease associations, use G2P_search with the gene name instead."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "gene2phenotype"
+  - "genotype-phenotype"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

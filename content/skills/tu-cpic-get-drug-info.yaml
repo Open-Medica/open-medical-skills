@@ -1,0 +1,21 @@
+name: "tu-cpic-get-drug-info"
+display_name: "CPIC get drug info"
+description: "Get pharmacogenomics information for a drug from the CPIC database. Returns drug identifiers including PharmGKB ID, RxNorm, DrugBank, and ATC codes. Use to find pharmacogenomics guidelines for a specific drug. Example drugs: warfarin, codeine, clopidogrel, simvastatin, tamoxifen, fluorouracil, mercaptopurine."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

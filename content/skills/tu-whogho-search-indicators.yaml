@@ -1,0 +1,21 @@
+name: "tu-whogho-search-indicators"
+display_name: "WHOGHO search indicators"
+description: "Search WHO Global Health Observatory (GHO) health indicators by name using the ODATA API. Returns indicator codes and names covering mortality, disease, nutrition, maternal health, mental health, and more. No authentication required. Use indicator codes with WHOGHO_get_indicator_data to retrieve actual data values. Examples: 'life expectancy' (WHOSIS_000001), 'malaria' (MALARIA002), 'obesity' (NCD_BMI_30C)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "public-health"
+tags:
+  - "tooluniverse"
+  - "who-gho"
+  - "global-health"
+  - "health-statistics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

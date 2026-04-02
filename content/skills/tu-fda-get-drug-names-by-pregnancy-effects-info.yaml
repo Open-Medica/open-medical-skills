@@ -1,0 +1,25 @@
+name: "tu-fda-get-drug-names-by-pregnancy-effects-info"
+display_name: "FDA get drug names by pregnancy effects info"
+description: "Retrieve drug names based on information about effects the drug may have on pregnant women or on a fetus."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "pregnancy"
+  - "useinspecificpopulations"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,23 @@
+name: "tu-gdc-get-mutation-frequency"
+display_name: "GDC get mutation frequency"
+description: "Get mutation frequency statistics for a gene across all TCGA/GDC cancer projects. Returns total SSM occurrence count and per-project case counts via /ssm_occurrences faceting. Also returns gene metadata (biotype, cancer gene census status). Answers 'How often is this gene mutated across cancers?'"
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gdc"
+  - "genomic-data-commons"
+  - "cancer-data"
+  - "frequency"
+  - "statistics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -10,7 +10,7 @@ license: "ISC"
 type: "plugin"
 install:
   npx: "npx @medikode/mcp-server"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/plugins/medikode-medical-coding-platform ~/.claude/plugins/"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/plugins/medikode-medical-coding-platform ~/.claude/plugins/"
 evidence_level: "moderate"
 safety_classification: "safe"
 specialty: ["medical-coding", "health-information-management", "revenue-cycle"]

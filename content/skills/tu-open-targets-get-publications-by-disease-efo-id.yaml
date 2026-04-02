@@ -1,0 +1,24 @@
+name: "tu-open-targets-get-publications-by-disease-efo-id"
+display_name: "OpenTargets get publications by disease efoId"
+description: "Retrieve publications related to a disease efoId, including PubMed IDs and publication dates."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "publications"
+  - "data-retrieval-and-aggregation"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

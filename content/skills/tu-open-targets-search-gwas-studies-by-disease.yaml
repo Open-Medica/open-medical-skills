@@ -1,0 +1,26 @@
+name: "tu-open-targets-search-gwas-studies-by-disease"
+display_name: "OpenTargets search gwas studies by disease"
+description: "Search for GWAS studies associated with a disease or trait in Open Targets. Takes disease ontology IDs (EFO, MONDO) and returns matching GWAS studies with their metadata including sample sizes, traits, publications, and associated diseases. Use enableIndirect=true to include child disease terms."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget-genetics"
+  - "genetic-associations"
+  - "drug-discovery"
+  - "gwas"
+  - "study"
+  - "disease"
+  - "search"
+  - "open-targets"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

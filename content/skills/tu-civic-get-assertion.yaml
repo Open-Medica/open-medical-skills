@@ -1,0 +1,21 @@
+name: "tu-civic-get-assertion"
+display_name: "civic get assertion"
+description: "Get detailed information about a specific assertion in CIViC database by assertion ID. Assertions are higher-level clinical interpretations that integrate multiple evidence items into formal statements about clinical actionability. Returns assertion description, evidence summary, and associated molecular profile or variant information."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "civic"
+  - "clinical-interpretation"
+  - "cancer-genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

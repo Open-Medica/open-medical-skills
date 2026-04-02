@@ -5,9 +5,6 @@ node_modules/
 
 # Build output
 dist/
-.astro/
-out/
-build/
 
 # Environment
 .env
@@ -52,8 +49,10 @@ wrangler.local.toml
 # Handoff (session-specific)
 HANDOFF.md
 
-# Temp build artifacts
-_astro-temp/
-
 # Research docs
 SKILLS-RESEARCH.md
+
+# ML model weights (stored on SMB: /mnt/smb/Black_Storage/home-lab/local-ai/ai-models/oms-models/)
+oms-models/models/
+*.safetensors
+*.gguf

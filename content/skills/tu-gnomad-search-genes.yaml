@@ -1,0 +1,21 @@
+name: "tu-gnomad-search-genes"
+display_name: "gnomad search genes"
+description: "Search for genes in gnomAD by free-text query (typically a gene symbol). Returns matching `ensembl_id` (Ensembl gene ID) and `symbol`. Use `ensembl_id` as `gene_id` for `gnomad_get_gene`."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

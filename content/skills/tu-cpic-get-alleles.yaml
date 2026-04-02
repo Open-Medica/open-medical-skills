@@ -1,0 +1,21 @@
+name: "tu-cpic-get-alleles"
+display_name: "CPIC get alleles"
+description: "Get pharmacogenomics alleles and their functional status for a gene from CPIC. Returns allele names, activity values, and functional status. Note: use 'clinicalfunctionalstatus' field for the active clinical classification (e.g., 'No function', 'Normal function'); the 'functionalstatus' field may be null for some genes. Critical for translating genotype to phenotype (e.g., CYP2D6 *4 = no function, CYP2D6 *1 = normal function)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

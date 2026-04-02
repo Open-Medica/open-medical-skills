@@ -1,0 +1,22 @@
+name: "tu-faers-count-reactions-by-drug-event"
+display_name: "FAERS count reactions by drug event"
+description: "Count the number of adverse reactions reported for a given drug. Only medicinalproduct is required; all other filters (patientsex, patientagegroup, occurcountry, serious, seriousnessdeath, reactionmeddraverse) are optional. When reactionmeddraverse is not specified, returns all adverse reactions (AE) with their counts grouped by MedDRA Preferred Term. When reactionmeddraverse is specified, filters results to only include that specific MedDRA Lowest Level Term. Use filters sparingly to avoid o..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

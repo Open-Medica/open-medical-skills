@@ -1,0 +1,21 @@
+name: "tu-nca-fit-one-compartment"
+display_name: "NCA fit one compartment"
+description: "Fit a one-compartment IV bolus pharmacokinetic model (C(t) = C0 × exp(-k_el × t)) to plasma concentration-time data using nonlinear least squares. Returns C0 (initial concentration), k_el (elimination rate constant), t½ (half-life), R², and when dose is provided: Vd (volume of distribution) and CL (clearance). Assumes mono-exponential decline — appropriate for drugs with rapid distribution and linear elimination. If R² < 0.85, consider a two-compartment model. Use NCA_compute_parameters for m..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "nca"
+  - "pharmacokinetics"
+  - "non-compartmental-analysis"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

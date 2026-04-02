@@ -1,0 +1,21 @@
+name: "tu-gtex-get-tissue-sites"
+display_name: "GTEx get tissue sites"
+description: "Get all available GTEx tissue sites with metadata. Returns tissue IDs, names, sample counts, eGene counts, and color codes for 54 non-diseased tissue sites. Includes RNA-seq sample summaries with donor age and sex statistics. Use for: discovering available tissues, finding tissue IDs for queries, checking sample sizes, understanding tissue coverage. Essential first step before querying tissue-specific data."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

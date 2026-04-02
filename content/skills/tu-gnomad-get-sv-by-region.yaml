@@ -1,0 +1,21 @@
+name: "tu-gnomad-get-sv-by-region"
+display_name: "gnomad get sv by region"
+description: "Get structural variants (SVs) from gnomAD v4 overlapping a genomic region. Returns DEL/DUP/INV/BND/CPX variants with allele frequencies and consequences. Use for CNV interpretation in specific chromosomal regions. Region should be < 5Mb."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

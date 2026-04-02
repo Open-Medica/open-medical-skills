@@ -1,0 +1,21 @@
+name: "tu-open-fda-search-drug-ndc"
+display_name: "OpenFDA search drug ndc"
+description: "Search the FDA National Drug Code (NDC) Directory via openFDA. The NDC directory identifies drugs listed under Section 510 of the FDA Act, covering finished dosage forms, unfinished APIs, and non-prescription drugs. Returns product/package codes, brand/generic names, dosage forms, routes of administration, active ingredients, and marketing information."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "openfda"
+  - "fda"
+  - "regulatory-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

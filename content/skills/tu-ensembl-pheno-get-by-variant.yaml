@@ -1,0 +1,21 @@
+name: "tu-ensembl-pheno-get-by-variant"
+display_name: "EnsemblPheno get by variant"
+description: "Get phenotype associations for a specific variant (by rsID) from the Ensembl REST API. Returns traits, diseases, and phenotypes associated with the variant from NHGRI-EBI GWAS catalog, ClinVar, and other sources. Includes risk alleles, beta coefficients/odds ratios, p-values, and study references. Example: rs429358 (APOE epsilon 4 variant) returns 1004 phenotype associations including Alzheimer disease, LDL cholesterol levels, and metabolite measurements."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ensembl-phenotype"
+  - "phenotype-associations"
+  - "genomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

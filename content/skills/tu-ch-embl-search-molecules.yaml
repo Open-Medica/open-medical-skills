@@ -1,0 +1,21 @@
+name: "tu-ch-embl-search-molecules"
+display_name: "ChEMBL search molecules"
+description: "Search molecules by name, ChEMBL ID, or other criteria. Supports filtering and pagination. Note: some text-based filters (especially `pref_name__contains`) may legitimately return zero results because `pref_name` coverage is incomplete and may not contain common drug names. For reliable retrieval, prefer ID-based filters like `molecule_chembl_id` or use `ChEMBL_get_molecule` when you already have a ChEMBL ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "chembl"
+  - "bioactivity-data"
+  - "drug-discovery"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

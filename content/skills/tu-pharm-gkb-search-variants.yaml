@@ -1,0 +1,21 @@
+name: "tu-pharm-gkb-search-variants"
+display_name: "PharmGKB search variants"
+description: "Search for genetic variants in PharmGKB by rsID or name. Returns variant IDs and associated gene info."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmgkb"
+  - "pharmacogenomics"
+  - "drug-gene-interactions"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-drug-props-lipinski-filter"
+display_name: "DrugProps lipinski filter"
+description: "Check drug-likeness of a compound using Lipinski Rule of Five (Ro5), Veber, Pfizer 3/75, Egan, and Ghose filters. Returns MW, cLogP, HBD, HBA, TPSA, RotBonds, Csp3 fraction, and pass/fail status for each filter. Essential first step in hit-to-lead optimization. Lipinski Ro5 (pass = drug-like): MW≤500, cLogP≤5, HBD≤5, HBA≤10 (max 1 violation). Veber (oral bioavailability): RotBonds≤10, TPSA≤140. Pfizer 3/75 (reduces promiscuity): cLogP≤3, TPSA≥75. Examples: aspirin ('CC(=O)Oc1ccccc1C(=O)O') pa..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "drug-properties"
+  - "molecular-properties"
+  - "cheminformatics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

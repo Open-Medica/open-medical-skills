@@ -1,0 +1,22 @@
+name: "tu-faers-compare-drugs"
+display_name: "FAERS compare drugs"
+description: "Compare safety signals for two drugs with the same adverse event. Returns ROR/PRR/IC for both drugs with comparative analysis. Example: compare fulvestrant vs tamoxifen for hepatotoxicity. Use for safety benchmarking."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "faers-analytics"
+  - "fda"
+  - "adverse-events"
+  - "safety-surveillance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

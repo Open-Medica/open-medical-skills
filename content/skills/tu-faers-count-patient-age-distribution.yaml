@@ -1,0 +1,22 @@
+name: "tu-faers-count-patient-age-distribution"
+display_name: "FAERS count patient age distribution"
+description: "Analyze the age distribution of patients experiencing adverse events for a specific drug. Only medicinalproduct is required. The age groups are: Neonate (0-28 days), Infant (29 days - 23 months), Child (2-11 years), Adolescent (12-17 years), Adult (18-64 years), Elderly (65+ years). Data source: FDA Adverse Event Reporting System (FAERS)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

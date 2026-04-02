@@ -1,0 +1,21 @@
+name: "tu-ensembl-vep-annotate-hgvs"
+display_name: "EnsemblVEP annotate hgvs"
+description: "Predict functional consequences of a genetic variant using HGVS notation via the Ensembl Variant Effect Predictor (VEP). Returns impact on genes, transcripts, and proteins including SIFT/PolyPhen pathogenicity scores, consequence types, amino acid changes, and colocated known variants. HGVS notation examples: 'BRAF:p.Val600Glu' (protein), 'ENST00000366667:c.803C>T' (coding DNA). This complements the existing region-based VEP tool by accepting standard clinical variant nomenclature."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ensembl-vep"
+  - "variant-effect-prediction"
+  - "annotation"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

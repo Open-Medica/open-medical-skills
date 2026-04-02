@@ -1,0 +1,21 @@
+name: "tu-pharm-gkb-search-genes"
+display_name: "PharmGKB search genes"
+description: "Search for genes in PharmGKB by name, symbol, or ID. Returns PharmGKB Gene ID and basic gene metadata."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmgkb"
+  - "pharmacogenomics"
+  - "drug-gene-interactions"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,25 @@
+name: "tu-open-targets-get-associated-diseases-by-drug-chembl-id"
+display_name: "OpenTargets get associated diseases by drug chemblId"
+description: "Retrieve the list of diseases associated with a specific drug chemblId based on clinical trial data or post-marketed drugs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "disease"
+  - "drug-information"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

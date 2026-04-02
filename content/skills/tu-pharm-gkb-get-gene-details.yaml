@@ -1,0 +1,21 @@
+name: "tu-pharm-gkb-get-gene-details"
+display_name: "PharmGKB get gene details"
+description: "Get detailed information for a gene using its PharmGKB Accession ID. Returns chromosomal location, cross-references, and other metadata."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmgkb"
+  - "pharmacogenomics"
+  - "drug-gene-interactions"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

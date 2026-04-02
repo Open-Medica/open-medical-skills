@@ -1,0 +1,21 @@
+name: "tu-cpic-list-drugs"
+display_name: "CPIC list drugs"
+description: "List all drugs in the CPIC database that have pharmacogenomic annotations. Returns drug names and their associated CPIC guideline IDs. Drugs without a guideline ID have annotations but no full CPIC dosing guideline yet. Use the guidelineid with CPIC_get_recommendations to retrieve dosing recommendations. Covers 100+ drugs including commonly used medications like warfarin, codeine, clopidogrel, simvastatin, tamoxifen, fluorouracil, and abacavir."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

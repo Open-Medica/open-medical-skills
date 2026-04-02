@@ -1,0 +1,23 @@
+name: "tu-dep-map-get-cell-lines"
+display_name: "DepMap get cell lines"
+description: "Get list of cancer cell lines from DepMap/Sanger with metadata. Filter by tissue or cancer type. Returns cell line IDs, tissue, and cancer type for target validation studies."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "depmap"
+  - "cancer-dependencies"
+  - "functional-genomics"
+  - "cell-lines"
+  - "cancer"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

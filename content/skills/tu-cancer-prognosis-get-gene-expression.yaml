@@ -1,0 +1,22 @@
+name: "tu-cancer-prognosis-get-gene-expression"
+display_name: "CancerPrognosis get gene expression"
+description: "Fetch gene expression values (RNA-seq) for a specific gene across cancer samples in a TCGA or cBioPortal study. Returns per-sample expression values with summary statistics (mean, median, min, max). Output can be combined with survival data for expression-based prognostic analysis. Supports 33 TCGA cancer types and any cBioPortal study with mRNA expression data."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "cancer-prognosis"
+  - "oncology"
+  - "prognosis"
+  - "survival"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

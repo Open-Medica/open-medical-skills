@@ -1,0 +1,22 @@
+name: "tu-fda-pharmacogenomic-biomarkers"
+display_name: "fda pharmacogenomic biomarkers"
+description: "Retrieve pharmacogenomic biomarkers from FDA drug labels. This tool fetches the Table of Pharmacogenomic Biomarkers in Drug Labeling from the FDA website and allows filtering by drug name or biomarker."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "fda-pharmacogenomic-biomarkers"
+  - "pharmacogenomics"
+  - "biomarkers"
+  - "fda"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

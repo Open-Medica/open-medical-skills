@@ -1,0 +1,21 @@
+name: "tu-clin-gen-get-variant-classifications"
+display_name: "ClinGen get variant classifications"
+description: "Get variant pathogenicity classifications from ClinGen Evidence Repository. Returns expert-curated variant classifications with supporting evidence. Optional filters by gene or variant. Classifications follow ACMG/AMP guidelines with expert review."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

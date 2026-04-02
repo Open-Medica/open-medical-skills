@@ -1,0 +1,21 @@
+name: "tu-me-sh-search-terms"
+display_name: "MeSH search terms"
+description: "Search MeSH terms (entry terms/synonyms) by label. MeSH terms include the preferred descriptor names as well as alternative entry terms, synonyms, and common names. This is broader than descriptor search and can find terms like 'heart attack' that map to the descriptor 'Myocardial Infarction'. Supports exact, contains, and startswith matching. Example: searching 'tumor' returns terms like 'Tumors', 'Tumor Growth', 'Tumors, Neoplastic'."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "mesh"
+  - "medical-subject-headings"
+  - "indexing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

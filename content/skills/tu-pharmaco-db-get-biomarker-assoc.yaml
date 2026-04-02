@@ -1,0 +1,21 @@
+name: "tu-pharmaco-db-get-biomarker-assoc"
+display_name: "PharmacoDB get biomarker assoc"
+description: "Get gene-compound biomarker associations from PharmacoDB showing how gene expression or other molecular features correlate with drug sensitivity. Returns statistical associations including effect estimate, p-values, FDR, sensitivity statistic (AAC/IC50), molecular data type (rna/cnv/mutation), sample size, and tissue/dataset context. Filter by compound, gene (Ensembl ID), tissue, and molecular data type. Useful for pharmacogenomics biomarker discovery and validating drug sensitivity predictor..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmacodb"
+  - "pharmacogenomics"
+  - "drug-response"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

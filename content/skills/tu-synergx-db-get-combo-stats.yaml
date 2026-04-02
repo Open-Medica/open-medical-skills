@@ -1,0 +1,21 @@
+name: "tu-synergx-db-get-combo-stats"
+display_name: "SYNERGxDB get combo stats"
+description: "Get per-dataset combination statistics from SYNERGxDB. Returns the number of unique drug combinations, total experiments, and data points for each screening study. Useful for understanding the scale and coverage of each integrated dataset."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "synergxdb"
+  - "drug-combinations"
+  - "synergy-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

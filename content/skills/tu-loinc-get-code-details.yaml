@@ -1,0 +1,27 @@
+name: "tu-loinc-get-code-details"
+display_name: "LOINC get code details"
+description: "Get detailed information for a specific LOINC code including full name, component, property, system, scale, method, and clinical classification. Use this to understand the precise meaning and context of a LOINC code obtained from lab results or clinical data."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "lab-imaging"
+tags:
+  - "tooluniverse"
+  - "loinc"
+  - "laboratory"
+  - "test-codes"
+  - "interoperability"
+  - "clinical"
+  - "code-details"
+  - "observation"
+  - "medical-terminology"
+  - "standardization"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

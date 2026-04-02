@@ -1,0 +1,21 @@
+name: "tu-gtex-get-sample-info"
+display_name: "GTEx get sample info"
+description: "Get detailed GTEx sample and subject metadata. Returns sample IDs, tissue types, donor demographics (age, sex), ischemic time, RIN scores, Hardy scale, pathology notes, and QC metrics. Filter by sample ID, subject ID, tissue, demographics, or data type. Use for: sample selection, cohort design, QC filtering, demographic analysis, understanding data provenance. Essential for selecting appropriate samples for analysis."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gtex-v2"
+  - "gene-expression"
+  - "tissue-specific"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

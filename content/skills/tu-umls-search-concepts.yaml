@@ -1,0 +1,21 @@
+name: "tu-umls-search-concepts"
+display_name: "umls search concepts"
+description: "Search for concepts in UMLS (Unified Medical Language System) using concept names or terms. UMLS provides access to multiple medical terminologies including SNOMED CT, ICD-10, ICD-11, LOINC, RxNorm, and more. Requires free UMLS API key (register at https://uts.nlm.nih.gov/uts/). Set UMLS_API_KEY environment variable."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "education"
+tags:
+  - "tooluniverse"
+  - "umls"
+  - "terminology"
+  - "medical-ontology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

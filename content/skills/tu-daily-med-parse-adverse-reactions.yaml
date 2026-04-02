@@ -1,0 +1,21 @@
+name: "tu-daily-med-parse-adverse-reactions"
+display_name: "DailyMed parse adverse reactions"
+description: "Parse adverse reactions section from SPL XML into structured table format. Returns AE frequencies, severity, and descriptions. Example: setid='030d9bca-a934-6ef9-e063-6394a90a8277' extracts headache 10%, GI upset 5%."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "dailymed"
+  - "drug-information"
+  - "medication-labels"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

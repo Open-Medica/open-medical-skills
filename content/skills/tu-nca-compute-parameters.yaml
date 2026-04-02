@@ -1,0 +1,21 @@
+name: "tu-nca-compute-parameters"
+display_name: "NCA compute parameters"
+description: "Perform Non-Compartmental Analysis (NCA) on time-concentration pharmacokinetic data. Computes key PK parameters: Cmax (peak concentration), Tmax (time to peak), AUC0-t (area under curve to last measured point using linear-log trapezoidal method), AUC0-inf (extrapolated), terminal elimination half-life (t½), elimination rate constant (λz), clearance (CL), and volume of distribution (Vd) when dose is provided. Follows FDA/EMA NCA guidelines. Use this when you have raw plasma concentration vs. t..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "nca"
+  - "pharmacokinetics"
+  - "non-compartmental-analysis"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

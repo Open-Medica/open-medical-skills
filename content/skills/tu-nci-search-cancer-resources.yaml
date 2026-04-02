@@ -1,0 +1,20 @@
+name: "tu-nci-search-cancer-resources"
+display_name: "NCI search cancer resources"
+description: "Search NCI (National Cancer Institute) Resources for Researchers (R4R) for cancer research tools, databases, datasets, and clinical research resources. The R4R collection includes bioinformatics tools, clinical research tools, lab instruments, datasets, specimen repositories, and community resources. Returns resource descriptions, links, tool types, research areas, and research types. Useful for finding cancer-specific research resources, analysis tools, and clinical resources."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

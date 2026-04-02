@@ -1,0 +1,22 @@
+name: "tu-fda-orange-book-get-exclusivity"
+display_name: "FDA OrangeBook get exclusivity"
+description: "Get drug exclusivity information (NCE, orphan, pediatric). Note: Specific expiration dates require Orange Book data files. Returns exclusivity types (5-year NCE, 3-year clinical study, 7-year orphan, 180-day generic). Use for generic launch planning."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "administrative"
+tags:
+  - "tooluniverse"
+  - "fda-orange-book"
+  - "fda"
+  - "generic-drugs"
+  - "patents"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

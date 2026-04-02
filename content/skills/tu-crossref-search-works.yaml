@@ -1,0 +1,21 @@
+name: "tu-crossref-search-works"
+display_name: "Crossref search works"
+description: "Search Crossref Works API for scholarly articles, publications, and research outputs by keyword. Returns metadata including title, abstract, journal, authors, publication year, DOI, URL, citations, and publisher. Supports filtering by publication type (journal article, conference paper, etc.) and date range. Use this to discover academic literature, verify citations, or build bibliographies. Find DOIs to use with Crossref_get_work for complete metadata."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "crossref"
+  - "doi-metadata"
+  - "scholarly-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

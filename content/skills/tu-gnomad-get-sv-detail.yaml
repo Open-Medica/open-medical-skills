@@ -1,0 +1,21 @@
+name: "tu-gnomad-get-sv-detail"
+display_name: "gnomad get sv detail"
+description: "Get detailed information for a specific gnomAD structural variant by its ID (e.g., DEL_chr17_24e4872b). Returns SV coordinates, type, length, population allele frequency, consequence, and filter status. Use gnomad_get_sv_by_gene or gnomad_get_sv_by_region to discover variant IDs first."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gnomad"
+  - "population-genetics"
+  - "variant-frequency"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

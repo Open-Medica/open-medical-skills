@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-diseases-phenotypes-by-target-ensembl"
+display_name: "OpenTargets get diseases phenotypes by target ensembl"
+description: "Find diseases or phenotypes associated with a specific target using ensemblId."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target"
+  - "disease"
+  - "phenotype"
+  - "association"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

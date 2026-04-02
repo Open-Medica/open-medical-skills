@@ -1,0 +1,21 @@
+name: "tu-c-bio-portal-get-cancer-types"
+display_name: "cBioPortal get cancer types"
+description: "Get all cancer types from cBioPortal including TCGA, Pan-Cancer Atlas, and other studies. Returns cancerTypeId, name, and clinical trial keywords for filtering studies."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "cbioportal"
+  - "cancer-genomics"
+  - "tumor-profiling"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

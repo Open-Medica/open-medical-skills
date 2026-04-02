@@ -1,0 +1,21 @@
+name: "tu-synergx-db-search-combos"
+display_name: "SYNERGxDB search combos"
+description: "Search drug combination synergy scores in SYNERGxDB. Returns synergy metrics (Bliss, Loewe, HSA, ZIP) for drug pairs across cancer cell lines. Filter by drug IDs, cell line/tissue, and dataset. The database integrates 22,507 unique drug combinations from 9 major studies (NCI-ALMANAC, MERCK, MIT-MELANOMA, VISAGE, DECREASE, YALE-TNBC, YALE-PDAC, STANFORD, CLOUD). Positive ZIP scores indicate synergy. Use list_drugs first to find drug IDs. NOTE: SYNERGxDB covers pairwise in vitro cytotoxicity sc..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "synergxdb"
+  - "drug-combinations"
+  - "synergy-data"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

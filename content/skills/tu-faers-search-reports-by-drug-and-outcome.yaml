@@ -1,0 +1,22 @@
+name: "tu-faers-search-reports-by-drug-and-outcome"
+display_name: "FAERS search reports by drug and outcome"
+description: "Search and retrieve detailed adverse event reports for a specific drug filtered by reaction outcome. Returns individual case reports with patient information, adverse event details, drug information, and report metadata. Only medicinalproduct is required; all other parameters (reactionoutcome, limit, skip, patientsex, patientagegroup, serious) are optional. Data source: FDA Adverse Event Reporting System (FAERS)."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-adverse-event-detail"
+  - "fda"
+  - "adverse-events"
+  - "pharmacovigilance"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

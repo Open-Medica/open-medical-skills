@@ -1,0 +1,22 @@
+name: "tu-dep-map-search-genes"
+display_name: "DepMap search genes"
+description: "Search for genes in DepMap/Sanger by symbol or name. Returns matching genes with Ensembl IDs and exact-match flags. Use this helper to find the correct gene symbol before querying dependencies, especially when DepMap_get_gene_dependencies returns mismatched genes."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "depmap"
+  - "cancer-dependencies"
+  - "functional-genomics"
+  - "gene-search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

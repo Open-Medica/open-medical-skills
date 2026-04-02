@@ -1,0 +1,24 @@
+name: "tu-open-targets-get-disease-ancestors-parents-by-efo-id"
+display_name: "OpenTargets get disease ancestors parents by efoId"
+description: "Retrieve the disease ancestors and parents in the ontology using the disease EFO ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "disease"
+  - "disease-information"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

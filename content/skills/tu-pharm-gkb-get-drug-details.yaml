@@ -1,0 +1,21 @@
+name: "tu-pharm-gkb-get-drug-details"
+display_name: "PharmGKB get drug details"
+description: "Get detailed information for a drug using its PharmGKB Chemical ID. Returns structural info, cross-references, and related genes."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pharmgkb"
+  - "pharmacogenomics"
+  - "drug-gene-interactions"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

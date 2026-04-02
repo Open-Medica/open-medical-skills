@@ -1,0 +1,24 @@
+name: "tu-open-targets-get-known-drugs-by-drug-chembl-id"
+display_name: "OpenTargets get known drugs by drug chemblId"
+description: "Get a list of known drugs and associated information using the specified chemblId."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "drug"
+  - "drug-information"
+  - "graphql"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-who-guideline-full-text"
+display_name: "WHO Guideline Full Text"
+description: "Fetch full text content from a WHO (World Health Organization) guideline publication page. Extracts available web content and finds PDF download links. Use this after finding a guideline with WHO_Guidelines_Search to get the full content or PDF link."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "treatment"
+tags:
+  - "tooluniverse"
+  - "guidelines"
+  - "clinical-guidelines"
+  - "evidence-based-medicine"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

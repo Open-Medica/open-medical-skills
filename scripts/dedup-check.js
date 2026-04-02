@@ -11,7 +11,7 @@
 
 import { readFileSync } from 'node:fs';
 
-const API_URL = process.env.OMS_API_URL || 'https://api.openmedicalskills.org';
+const API_URL = process.env.OMS_API_URL || 'https://api.openmedica.us';
 const THRESHOLD = parseFloat(process.env.OMS_DEDUP_THRESHOLD || '0.85');
 
 function parseYamlDescription(filePath) {

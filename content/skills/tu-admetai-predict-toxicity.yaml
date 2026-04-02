@@ -1,0 +1,22 @@
+name: "tu-admetai-predict-toxicity"
+display_name: "ADMETAI predict toxicity"
+description: "Predicts toxicity endpoints (AMES, Carcinogens_Lagunin, ClinTox, DILI, LD50_Zhu, Skin_Reaction, hERG) for a given list of molecules in SMILES format."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "admetai"
+  - "admet"
+  - "drug-properties"
+  - "ai-prediction"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-pub-chem-tox-get-acute-effects"
+display_name: "PubChemTox get acute effects"
+description: "Get acute toxicity effects for a chemical compound from PubChem. Returns documented acute (short-term) health effects from exposure, including symptoms, clinical observations, and effects from different exposure routes (oral, inhalation, dermal). Data comes from toxicological databases and clinical case reports. For example, arsenic acute effects include severe gastrointestinal damage, cardiovascular collapse, and multi-organ failure. Methanol (CID 887) causes visual disturbances, metabolic a..."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem-tox"
+  - "toxicology"
+  - "chemical-safety"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,25 @@
+name: "tu-fda-retrieve-drug-names-by-patient-medication-info"
+display_name: "FDA retrieve drug names by patient medication info"
+description: "Retrieve drug names based on patient medication information, which is about safe use of the drug."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "fda-drug-label"
+  - "fda"
+  - "drug-labels"
+  - "pharmacology"
+  - "fdadruglabel"
+  - "patientmedicationinformation"
+  - "drugnames"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-ctd-get-disease-chemicals"
+display_name: "CTD get disease chemicals"
+description: "Get curated disease-chemical associations from CTD. Given a disease name, returns chemicals associated with it, including evidence type. Example: 'Breast Neoplasms' returns chemicals linked to breast cancer including both therapeutic agents and toxicants."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ctd"
+  - "chemical-gene-disease"
+  - "toxicogenomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

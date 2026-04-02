@@ -1,0 +1,25 @@
+name: "tu-open-targets-get-variant-info"
+display_name: "OpenTargets get variant info"
+description: "Get detailed information about a genetic variant from Open Targets Platform, including genomic coordinates, rsIDs, allele frequencies across populations (gnomAD), functional consequence, transcript consequences, and HGVS notation. Useful for GWAS variant annotation and population genetics."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget-genetics"
+  - "genetic-associations"
+  - "drug-discovery"
+  - "gwas"
+  - "variant"
+  - "genetics"
+  - "open-targets"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

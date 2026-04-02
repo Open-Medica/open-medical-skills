@@ -1,0 +1,21 @@
+name: "tu-orphanet-get-epidemiology"
+display_name: "Orphanet get epidemiology"
+description: "Get epidemiology data (prevalence, incidence) for a rare disease from Orphanet. Returns prevalence estimates by geographic region and type (point prevalence, birth prevalence, annual incidence). Data includes validation status and literature sources."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "orphanet"
+  - "rare-disease"
+  - "genetic-disorders"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

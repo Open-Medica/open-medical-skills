@@ -1,0 +1,21 @@
+name: "tu-reactome-get-complex"
+display_name: "Reactome get complex"
+description: "Get detailed information about a protein complex by its Stable ID. Returns comprehensive complex data including subunits, compartments, and related information. Uses the unified query endpoint that works for all entity types."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "reactome"
+  - "pathway-analysis"
+  - "molecular-biology"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

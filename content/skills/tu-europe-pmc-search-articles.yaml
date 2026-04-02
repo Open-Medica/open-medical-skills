@@ -1,0 +1,21 @@
+name: "tu-europe-pmc-search-articles"
+display_name: "EuropePMC search articles"
+description: "Search for articles on Europe PMC including abstracts and metadata. Europe PMC supports fielded queries for indexed full text (e.g., BODY:\"term\") but only for records where Europe PMC has full text indexed (HAS_FT:Y). Use require_has_ft/fulltext_terms to avoid confusing 'has a full-text link somewhere' with 'full text searchable in Europe PMC'."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "europepmc"
+  - "literature-search"
+  - "open-access"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

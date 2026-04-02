@@ -1,0 +1,23 @@
+name: "tu-dbsnp-get-variant-by-rsid"
+display_name: "dbsnp get variant by rsid"
+description: "Get variant information from dbSNP by rsID. Returns genomic coordinates, alleles, and basic variant information."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "dbsnp"
+  - "snp-database"
+  - "genetic-variation"
+  - "variant"
+  - "rsid"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

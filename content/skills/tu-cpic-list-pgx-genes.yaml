@@ -1,0 +1,21 @@
+name: "tu-cpic-list-pgx-genes"
+display_name: "CPIC list pgx genes"
+description: "List all pharmacogenomics genes curated by the Clinical Pharmacogenomics Implementation Consortium (CPIC). Returns 130+ genes with known drug interactions including CYP enzymes, transporters, and other pharmacogenes. Includes gene coordinates, sequence IDs, and database cross-references."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "cpic"
+  - "pharmacogenomics"
+  - "drug-dosing"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

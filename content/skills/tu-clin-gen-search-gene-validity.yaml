@@ -1,0 +1,21 @@
+name: "tu-clin-gen-search-gene-validity"
+display_name: "ClinGen search gene validity"
+description: "Search ClinGen gene-disease validity curations by gene symbol. Returns classification (Definitive, Strong, Moderate, Limited, Disputed, Refuted), disease associations, and inheritance patterns. Essential for ACMG variant classification. Example: BRCA1 returns validity scores for hereditary breast/ovarian cancer."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

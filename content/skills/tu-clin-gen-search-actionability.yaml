@@ -1,0 +1,21 @@
+name: "tu-clin-gen-search-actionability"
+display_name: "ClinGen search actionability"
+description: "Search ClinGen clinical actionability across both adult and pediatric contexts by gene. Returns actionability data from both contexts for comparison. Useful for comprehensive actionability assessment of a gene across age groups."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "diagnosis"
+tags:
+  - "tooluniverse"
+  - "clingen"
+  - "gene-disease"
+  - "clinical-genetics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

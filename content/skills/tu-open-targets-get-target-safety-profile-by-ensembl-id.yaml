@@ -1,0 +1,26 @@
+name: "tu-open-targets-get-target-safety-profile-by-ensembl-id"
+display_name: "OpenTargets get target safety profile by ensemblID"
+description: "Retrieve known target safety liabilities for a specific target Ensembl ID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "opentarget"
+  - "target-identification"
+  - "drug-discovery"
+  - "target"
+  - "safetyliability"
+  - "graphql"
+  - "safety"
+  - "liabilities"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

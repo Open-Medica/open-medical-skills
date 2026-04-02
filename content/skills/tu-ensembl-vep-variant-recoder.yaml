@@ -1,0 +1,21 @@
+name: "tu-ensembl-vep-variant-recoder"
+display_name: "EnsemblVEP variant recoder"
+description: "Convert genetic variant identifiers between different nomenclature formats using the Ensembl Variant Recoder. Given a variant ID (e.g., rs number), returns equivalent representations in HGVS genomic (hgvsg), HGVS coding (hgvsc), HGVS protein (hgvsp), and SPDI format. Essential for cross-referencing variants across databases that use different notation systems. Example: 'rs429358' returns HGVS coding notation for all APOE transcripts."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ensembl-vep"
+  - "variant-effect-prediction"
+  - "annotation"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

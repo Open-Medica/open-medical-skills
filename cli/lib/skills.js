@@ -114,3 +114,7 @@ export function getCategories() {
   }
   return cats;
 }
+
+export function listAllSkills() {
+  return loadSkillsIndex();
+}

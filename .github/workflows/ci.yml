@@ -1,0 +1,92 @@
+name: CI
+on:
+  push:
+    branches: [dev, 'feat/**', 'fix/**']
+  pull_request:
+    branches: [dev, main]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check for leaked secrets
+        run: |
+          if grep -rn '100\.\(88\|120\)\.' --include='*.ts' --include='*.tsx' --include='*.js' --include='*.json' --include='*.yaml' --include='*.yml' --exclude-dir=node_modules --exclude-dir=.git .; then
+            echo "::error::Found potential internal IP addresses in source files"
+            exit 1
+          fi
+          if grep -rn 'password\s*=\s*["\x27][^"\x27]*["\x27]' --include='*.ts' --include='*.js' --include='*.json' --exclude-dir=node_modules --exclude-dir=.git .; then
+            echo "::error::Found potential hardcoded passwords in source files"
+            exit 1
+          fi
+
+  yaml-validation:
+    name: YAML Content Validation
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate skill YAMLs
+        run: |
+          pip install pyyaml -q
+          python3 -c "
+          import yaml, glob, sys
+          errors = 0
+          for f in glob.glob('content/skills/*.yaml') + glob.glob('content/skills/*.yml'):
+              try:
+                  with open(f) as fh:
+                      data = yaml.safe_load(fh)
+                  if not data or not data.get('name'):
+                      print(f'::error::{f}: missing required field \"name\"')
+                      errors += 1
+              except Exception as e:
+                  print(f'::error::{f}: {e}')
+                  errors += 1
+          print(f'Validated {len(glob.glob(\"content/skills/*.yaml\"))} skill files, {errors} errors')
+          sys.exit(1 if errors else 0)
+          "
+
+  credential-scan:
+    name: Credential Leak Scan
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scan for leaked credentials
+        run: |
+          echo "Scanning for credential leaks..."
+          FOUND=0
+          # AWS Access Keys
+          if grep -rEn 'AKIA[0-9A-Z]{16}' --include='*.ts' --include='*.js' --include='*.json' --include='*.toml' --include='*.yaml' --include='*.yml' . 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::AWS Access Key detected"
+            FOUND=1
+          fi
+          # GitHub PATs
+          if grep -rEn 'ghp_[a-zA-Z0-9]{36}' --include='*.ts' --include='*.js' --include='*.json' --include='*.toml' --include='*.yaml' --include='*.yml' . 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::GitHub PAT detected"
+            FOUND=1
+          fi
+          # OpenAI/Anthropic keys
+          if grep -rEn 'sk-[a-zA-Z0-9]{20,}' --include='*.ts' --include='*.js' --include='*.json' --include='*.toml' --include='*.yaml' --include='*.yml' . 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::API key detected"
+            FOUND=1
+          fi
+          # Hardcoded passwords
+          if grep -rEn "password\s*[:=]\s*[\"'][^\"']{8,}" --include='*.ts' --include='*.js' --include='*.json' --include='*.toml' . 2>/dev/null | grep -v node_modules | grep -v '.git/' | grep -v 'package-lock'; then
+            echo "::error::Hardcoded password detected"
+            FOUND=1
+          fi
+          # Internal IPs (Tailscale CGNAT range used by IntelMedica infra)
+          if grep -rEn '100\.(8[89]|9[0-9]|1[01][0-9]|12[0-7])\.[0-9]+\.[0-9]+' --include='*.ts' --include='*.js' --include='*.json' --include='*.toml' --include='*.yaml' --include='*.yml' . 2>/dev/null | grep -v node_modules | grep -v '.git/'; then
+            echo "::error::Internal IP address detected"
+            FOUND=1
+          fi
+          if [ $FOUND -eq 1 ]; then
+            echo "::error::Credential leak scan failed — review flagged items above"
+            exit 1
+          fi
+          echo "No credential leaks detected"

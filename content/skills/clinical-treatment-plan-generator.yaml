@@ -2,15 +2,15 @@ name: "clinical-treatment-plan-generator"
 display_name: "Clinical Treatment Plan Generator"
 description: "Generate comprehensive clinical treatment plans with SMART goal frameworks and evidence-based interventions. Exports to LaTeX/PDF format for clinical documentation."
 author: "OMS Contributors"
-repository: "https://github.com/gitjfmd/open-medical-skills/tree/main/skills/clinical-treatment-plan-generator"
+repository: "https://github.com/Open-Medica/open-medical-skills/tree/main/skills/clinical-treatment-plan-generator"
 category: "treatment"
 tags: ["treatment-planning", "clinical-documentation", "smart-goals"]
 version: "1.0.0"
 license: "MIT"
 type: "skill"
 install:
-  npx: "npx skills add gitjfmd/open-medical-skills --skill clinical-treatment-plan-generator"
-  git: "git clone https://github.com/gitjfmd/open-medical-skills.git && cp -r open-medical-skills/skills/clinical-treatment-plan-generator ~/.claude/skills/"
+  npx: "npx skills add Open-Medica/open-medical-skills --skill clinical-treatment-plan-generator"
+  git: "git clone https://github.com/Open-Medica/open-medical-skills.git && cp -r open-medical-skills/skills/clinical-treatment-plan-generator ~/.claude/skills/"
 evidence_level: "moderate"
 safety_classification: "caution"
 specialty: ["internal-medicine", "psychiatry", "family-medicine"]

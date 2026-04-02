@@ -1,0 +1,24 @@
+name: "tu-gwas-search-studies"
+display_name: "gwas search studies"
+description: "Search for GWAS studies by various criteria including disease trait, cohort, GxE interactions, and summary statistics availability."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "gwas"
+  - "genome-wide-association"
+  - "genetic-variants"
+  - "study"
+  - "research"
+  - "search"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

@@ -1,0 +1,21 @@
+name: "tu-ctd-get-chemical-gene-interactions"
+display_name: "CTD get chemical gene interactions"
+description: "Get curated chemical-gene interactions from CTD (Comparative Toxicogenomics Database). Given a chemical name, returns genes it interacts with, including organism, PubMed references, and interaction types. Example: 'bisphenol A' returns thousands of gene interactions across species."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "research"
+tags:
+  - "tooluniverse"
+  - "ctd"
+  - "chemical-gene-disease"
+  - "toxicogenomics"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

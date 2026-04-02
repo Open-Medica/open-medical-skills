@@ -1,0 +1,21 @@
+name: "tu-pub-chem-search-assays-by-type"
+display_name: "PubChem search assays by type"
+description: "Search bioassays by assay type. Types: screening (HTS), confirmatory, doseresponse, summary, cellbased, biochemical, invivo, invitro. Returns list of matching AIDs."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []

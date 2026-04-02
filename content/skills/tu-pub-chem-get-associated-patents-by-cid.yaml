@@ -1,0 +1,21 @@
+name: "tu-pub-chem-get-associated-patents-by-cid"
+display_name: "PubChem get associated patents by CID"
+description: "Get a list of patents associated with a specific compound CID."
+author: "Harvard MIMS Lab (ToolUniverse)"
+repository: "https://github.com/mims-harvard/ToolUniverse"
+category: "pharmacy"
+tags:
+  - "tooluniverse"
+  - "pubchem"
+  - "chemical-database"
+  - "compound-properties"
+evidence_level: "moderate"
+safety_classification: "safe"
+status: "published"
+verified: false
+reviewer: "Automated import"
+date_added: "2026-03-30"
+type: "skill"
+install:
+  git: "pip install tooluniverse"
+specialty: []
