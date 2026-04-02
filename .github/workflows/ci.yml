@@ -96,3 +96,57 @@ jobs:
             exit 1
           fi
           echo "No credential leaks detected"
+
+  sast-scan:
+    name: SAST Security Scan (Semgrep)
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    container:
+      image: semgrep/semgrep
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run Semgrep SAST
+        run: semgrep scan --config auto --config p/owasp-top-ten --config p/secrets --error --json --output semgrep-results.json src/ workers/ || true
+      - name: Check for high severity findings
+        run: |
+          if [ -f semgrep-results.json ]; then
+            HIGH=$(python3 -c "import json; r=json.load(open('semgrep-results.json')); print(sum(1 for f in r.get('results',[]) if f.get('extra',{}).get('severity','') in ['ERROR','WARNING']))")
+            echo "High/Warning severity findings: $HIGH"
+            if [ "$HIGH" -gt 0 ]; then
+              echo "::error::Semgrep found $HIGH high/warning severity issues"
+              python3 -c "
+          import json
+          r = json.load(open('semgrep-results.json'))
+          for f in r.get('results', []):
+              sev = f.get('extra', {}).get('severity', 'INFO')
+              if sev in ['ERROR', 'WARNING']:
+                  path = f.get('path', '?')
+                  line = f.get('start', {}).get('line', '?')
+                  msg = f.get('extra', {}).get('message', 'No message')
+                  rule = f.get('check_id', '?')
+                  print(f'::error file={path},line={line}::[{sev}] {rule}: {msg}')
+          "
+              exit 1
+            fi
+          fi
+          echo "No high severity SAST findings"
+
+  license-check:
+    name: License Compliance
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - name: Check for copyleft licenses
+        run: |
+          npx license-checker --production --failOn 'GPL-2.0;GPL-3.0;AGPL-1.0;AGPL-3.0;SSPL-1.0' --summary 2>&1 || {
+            echo "::error::Copyleft license detected in dependencies"
+            exit 1
+          }
+          echo "No copyleft licenses found"
