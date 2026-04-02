@@ -29,17 +29,13 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          node-version: "22"
-          cache: "pnpm"
+          python-version: "3.12"
 
-      - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+      - name: Install PyYAML
+        run: pip install pyyaml -q
 
       - name: Get changed files
         id: changed-files
@@ -60,11 +56,9 @@ jobs:
             echo "Checking: $file"
 
             # 1. Validate YAML syntax
-            if ! npx yaml-lint "$file" 2>/dev/null; then
-              if ! python3 -c "import yaml; yaml.safe_load(open('$file'))" 2>/dev/null; then
-                ERRORS="${ERRORS}\n- **${file}**: Invalid YAML syntax"
-                continue
-              fi
+            if ! python3 -c "import yaml; yaml.safe_load(open('$file'))" 2>/dev/null; then
+              ERRORS="${ERRORS}\n- **${file}**: Invalid YAML syntax"
+              continue
             fi
 
             # 1.5. Validate YAML schema structure
