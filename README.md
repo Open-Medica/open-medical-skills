@@ -1,17 +1,22 @@
 <p align="center">
-  <img src="public/logo-shield.svg" width="80" alt="Open Medical Skills">
+  <img src="https://raw.githubusercontent.com/Open-Medica/open-medical-skills/dev/logo/oms-icon.svg" width="80" alt="Open Medical Skills">
 </p>
 
 <h1 align="center">Open Medical Skills</h1>
 
 <p align="center">
   A curated marketplace of physician-reviewed medical AI skills and plugins.<br>
-  Compiled and maintained by physicians, for physicians and the healthcare industry.
+  Compiled and maintained by physicians, for physicians and the healthcare industry.<br>
+  Includes 698 clinical tools from Harvard MIMS ToolUniverse, covering pharmacy, research, diagnosis, treatment, and more.
+</p>
+
+<p align="center">
+  <strong><a href="https://openmedica.us">Website: openmedica.us</a></strong>
 </p>
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
-  <img src="https://img.shields.io/badge/Skills-49-teal" alt="Skills: 49">
+  <img src="https://img.shields.io/badge/Skills-747-teal" alt="Skills: 747">
   <img src="https://img.shields.io/badge/Plugins-5-teal" alt="Plugins: 5">
   <img src="https://img.shields.io/badge/Status-Active-green" alt="Status: Active">
   <img src="https://img.shields.io/badge/Physician-Reviewed-blue" alt="Physician Reviewed">
@@ -37,29 +42,29 @@ OMS skills work with major AI coding agents including Claude Code, Cursor, Codex
 Install any skill with a single command:
 
 ```bash
-npx skills add gitjfmd/open-medical-skills --skill <skill-name>
+npx skills add Open-Medica/open-medical-skills --skill <skill-name>
 ```
 
 ### Agent-Specific Installation
 
 ```bash
 # Claude Code
-npx skills add gitjfmd/open-medical-skills --skill <skill-name> -a claude-code
+npx skills add Open-Medica/open-medical-skills --skill <skill-name> -a claude-code
 
 # Cursor
-npx skills add gitjfmd/open-medical-skills --skill <skill-name> -a cursor
+npx skills add Open-Medica/open-medical-skills --skill <skill-name> -a cursor
 
 # Codex
-npx skills add gitjfmd/open-medical-skills --skill <skill-name> -a codex
+npx skills add Open-Medica/open-medical-skills --skill <skill-name> -a codex
 
 # Windsurf
-npx skills add gitjfmd/open-medical-skills --skill <skill-name> -a windsurf
+npx skills add Open-Medica/open-medical-skills --skill <skill-name> -a windsurf
 
 # GitHub Copilot
-npx skills add gitjfmd/open-medical-skills --skill <skill-name> -a github-copilot
+npx skills add Open-Medica/open-medical-skills --skill <skill-name> -a github-copilot
 
 # All agents at once
-npx skills add gitjfmd/open-medical-skills --skill <skill-name> -a '*'
+npx skills add Open-Medica/open-medical-skills --skill <skill-name> -a '*'
 ```
 
 ---
@@ -293,12 +298,12 @@ These skills are intended for **educational and clinical decision support purpos
 ---
 
 <p align="center">
-  Built by <a href="https://intelmedica.ai"><strong>IntelMedica.ai</strong></a><br>
+  An <a href="https://openmedica.us"><strong>OpenMedica</strong></a> project by <a href="https://intelmedica.ai"><strong>IntelMedica.ai</strong></a><br>
   Compiled and maintained by physicians, for physicians and the healthcare industry.
 </p>
 
 <p align="center">
-  <a href="https://openmedicalskills.org">Website</a> &middot;
-  <a href="https://github.com/gitjfmd/open-medical-skills/issues">Report an Issue</a> &middot;
+  <a href="https://openmedica.us">Website</a> &middot;
+  <a href="https://github.com/Open-Medica/open-medical-skills/issues">Report an Issue</a> &middot;
   <a href="CONTRIBUTING.md">Contribute</a>
 </p>
