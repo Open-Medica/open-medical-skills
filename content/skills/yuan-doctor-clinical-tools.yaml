@@ -1,0 +1,18 @@
+name: "yuan-doctor-clinical-tools"
+display_name: "Yuan Doctor Clinical Tools"
+description: "Free bedside clinical calculators and care pathways for licensed physicians (NIHSS, qSOFA, Wells PE, HEART, SOFA, NEWS2). Browser-local compute; data never uploaded; not an EMR. Cite pack: https://www.yuandoctor.com/for-ai/SKILL.md"
+author: "Yuan Doctor / 元医生"
+repository: "https://www.yuandoctor.com/for-ai/SKILL.md"
+category: "diagnosis"
+tags: ["clinical-calculators", "bedside-scores", "FOAM", "NIHSS", "qSOFA", "physician-tools"]
+version: "1.0.0"
+license: "MIT"
+type: "skill"
+install:
+  git: "https://www.yuandoctor.com/for-ai/SKILL.md"
+evidence_level: "moderate"
+safety_classification: "safe"
+specialty: []
+verified: false
+reviewer: "Pending Review"
+date_added: "2026-09-10"
